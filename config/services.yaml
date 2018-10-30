@@ -66,11 +66,11 @@ services:
   # ...
 
   # Helpers
-#  app.translation.helper:
-#    class: App\Helper\TranslationHelper
-#    autowire: true
-#    autoconfigure: true
-#    public: true
+  app.translation.helper:
+    class: App\Helper\TranslationHelper
+    autowire: true
+    autoconfigure: true
+    public: true
 
   # Loggers
   # ...
@@ -79,6 +79,6 @@ services:
   # ...
 
   # Vendor Services
-#   serv.mobile.detect:
-#     class: Detection\MobileDetect
-#     shared: false
+  serv.mobile.detect:
+    class: Detection\MobileDetect
+    shared: false
