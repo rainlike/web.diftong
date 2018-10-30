@@ -1,4 +1,10 @@
 twig:
-    default_path: '%kernel.project_dir%/templates'
-    debug: '%kernel.debug%'
-    strict_variables: '%kernel.debug%'
+  paths: ['%kernel.project_dir%/templates']
+  debug: '%kernel.debug%'
+  strict_variables: '%kernel.debug%'
+  globals:
+    app_env: '%app_env%'
+    app_prefix: '%app_prefix%'
+    site_name: '%site_name%'
+#  form_themes:
+#    - '@RainlikeAdminBundle/Resources/views/components/vich/fields.html.twig'

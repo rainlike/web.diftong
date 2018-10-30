@@ -1,24 +1,50 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
-    providers:
-        in_memory: { memory: ~ }
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        main:
-            anonymous: true
+  # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+  providers:
+# @TODO: uncomment for FOS
+#    fos_userbundle:
+#      id: fos_user.user_provider.username
+    in_memory:
+      memory:
+        users:
+          admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-            # activate different ways to authenticate
+  # activate different ways to authenticate
+  # http_basic: ~
+  # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+  # form_login: ~
+  # https://symfony.com/doc/current/cookbook/security/form_login_setup.html
+  firewalls:
+    main:
+      anonymous: true
+# @TODO: uncomment for FOS
+#      pattern: ^/
+#      form_login:
+#        provider:   fos_userbundle
+#        login_path: fos_user_security_login
+#        check_path: fos_user_security_check
+#        #csrf_provider: security.csrf.token_manager
+#      logout:
+#        path:   fos_user_security_logout
+#        target: front_index_page
+    dev:
+      pattern:  ^/(_(profiler|wdt)|css|images|js)/
+      security: false
 
-            # http_basic: true
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+# @TODO: uncomment for FOS
+#  encoders:
+#    FOS\UserBundle\Model\UserInterface: sha512 # bcrypt
 
-            # form_login: true
-            # https://symfony.com/doc/current/security/form_login_setup.html
+  access_control:
+    - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/group, roles: ROLE_ADMIN }
+    - { path: ^/register, roles: ROLE_ADMIN }
+    - { path: ^/resetting, roles: ROLE_ADMIN }
+    - { path: ^/change_password, roles: ROLE_ADMIN }
+    - { path: ^/profile, roles: ROLE_ADMIN }
+    - { path: .*/admin/, roles: ROLE_ADMIN }
+    - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+  role_hierarchy:
+    ROLE_ADMIN: ROLE_USER
+    ROLE_STOIC: ROLE_USER, ROLE_ADMIN

@@ -1,31 +1,84 @@
-# This file is the entry point to configure your own services.
-# Files in the packages/ subdirectory configure your dependencies.
+imports:
+#  - { resource: 'packages/knp_gaufrette.yaml' }
+  - { resource: 'packages/sensio_framework_extra.yaml' }
+
+# Local parameters
+  - { resource: 'app/local_parameters.yml' }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'en'
+  app_env: '%env(APP_ENV)%'
+  app_prefix: '%env(APP_PREFIX)%'
+  default_locale: 'ru'
+  app_locales: ru|uk
+  i18n_locales: [ru,uk]
+  user_email: '%env(USER_EMAIL)%'
+  site_name: '%env(SITE_NAME)%'
+  server_ip: '%env(SERVER_IP)%'
+  in_developing: true
+  github_link: 'https://github.com/rainlike/web.limba'
+  configs_dir: '%kernel.project_dir%/config'
+
+# JMSI18nRoutingBundle Configuration
+# Read the documentation:
+# GitHub: https://github.com/schmittjoh/JMSI18nRoutingBundle
+# Packagist: https://packagist.org/packages/jms/i18n-routing-bundle
+#jms_i18n_routing:
+#  default_locale: '%default_locale%'
+#  locales: '%i18n_locales%'
+#  strategy: prefix
 
 services:
-    # default configuration for services in *this* file
-    _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
-        public: false       # Allows optimizing the container by removing unused services; this also means
-                            # fetching services directly from the container via $container->get() won't work.
-                            # The best practice is to be explicit about your dependencies anyway.
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    public: false       # Allows optimizing the container by removing unused services; this also means
+    # fetching services directly from the container via $container->get() won't work.
+    # The best practice is to be explicit about your dependencies anyway.
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  App\:
+    resource: '../src/*'
+    exclude: '../src/{Entity,Migrations,Tests}'
 
-    # controllers are imported separately to make sure services can be injected
-    # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller'
-        tags: ['controller.service_arguments']
+  # Subscribers
+  #App\Subscriber\HelpfulSubscriber:
+  #    $variable: {variable}
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+  # controllers are imported separately to make sure services can be injected
+  # as action arguments even if you don't extend any base controller class
+  App\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # add more service definitions when explicit configuration is needed
+  # please note that last definitions always *replace* previous ones
+
+  # Symfony standart services
+  sym.finder:
+    class: Symfony\Component\Finder\Finder
+    public: false
+
+  # Services
+  # ...
+
+  # Helpers
+#  app.translation.helper:
+#    class: App\Helper\TranslationHelper
+#    autowire: true
+#    autoconfigure: true
+#    public: true
+
+  # Loggers
+  # ...
+
+  # Twig Extensions
+  # ...
+
+  # Vendor Services
+#   serv.mobile.detect:
+#     class: Detection\MobileDetect
+#     shared: false
