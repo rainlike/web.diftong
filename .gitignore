@@ -1,0 +1,52 @@
+# environment
+*.*~
+*___jb_tmp___
+.env
+.idea
+.web-server-pid
+
+# libs
+/libs/
+!/libs/.gitkeep
+
+# patches
+/patches/
+!/patches/.gitkeep
+
+# logs & cache
+/var/
+!/var/.gitkeep
+/.sass-cache/
+npm-debug.log
+
+# debug
+/debug/
+!/debug/.gitkeep
+
+# build
+/build/
+!/build/.gitkeep
+
+# docs
+docs/phpdoc/
+
+# tests
+.phpunit
+/phpunit.xml
+/tests/_data/*
+!/tests/_data/.gitkeep
+/tests/_output/*
+!/tests/_output/.gitkeep
+/tests/_support/_generated/*
+!/tests/_support/_generated/.gitkeep
+
+# vendors
+/vendor/
+/assets/bower/
+/node_modules/
+/assets/libs/
+!/assets/libs/.gitkeep
+
+# public
+/public/bundles/
+/public/cdn/
