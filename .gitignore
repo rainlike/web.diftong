@@ -18,6 +18,7 @@
 !/var/.gitkeep
 /.sass-cache/
 npm-debug.log
+yarn-error.log
 
 # debug
 /debug/
