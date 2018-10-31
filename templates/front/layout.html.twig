@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block body_class %}{% endblock %}
+
+{% block body %}
+    {% trans_default_domain 'messages' %}
+
+    <header class="{% block header_class %}{% endblock %}">
+        {% block header %}{% endblock %}
+    </header>
+
+    <main class="{% block main_class %}{% endblock %}">
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer class="{% block footer_class %}{% endblock %}">
+        {% block footer %}{% endblock %}
+    </footer>
+{% endblock %}

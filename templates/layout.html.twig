@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        {% block meta %}
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="initial-scale=1"/>
+        {% endblock %}
+        {% block seo %}
+            {# TODO: SEO service #}
+            <meta name="keywords" content="{% block keywords %}{{ 'default.keywords'|trans({}, 'seo') }}{% endblock %}">
+            {# TODO: SEO service #}
+            <meta name="description" content="{% block description %}{{ 'default.description'|trans({}, 'seo') }}{% endblock %}">
+            {# TODO: SEO service #}
+            <title>{% block title %}{{ 'default.title'|trans({}, 'seo') }}{% endblock %}</title>
+        {% endblock %}
+        {% block css %}
+            {% include '_includes/css.html.twig' %}
+        {% endblock %}
+        {% block links %}
+            {% include '_includes/links.html.twig' %}
+        {% endblock %}
+        {% block window %}
+            <script>
+                window.app_locale = "{{ app.request.locale }}";
+            </script>
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% block body %}{% endblock %}
+
+        {% block js %}
+            {% include '_includes/js.html.twig' %}
+        {% endblock %}
+
+        {% block modal %}{% endblock %}
+    </body>
+</html>
