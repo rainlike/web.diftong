@@ -1,0 +1,42 @@
+# Base
+base:
+  no: "Ні"
+  yes: "Так"
+  back: "Назад"
+  send: "Відправити"
+  submit: "Відправити"
+  reset: "Скинути"
+  show: "Переглянути"
+  overview: "Огляд"
+  new: "Новий"
+  create: "Створити"
+  edit: "Редагувати"
+  editing: "Редагування"
+  update: "Оновити"
+  done: "Готово"
+  list: "Список"
+  delete: "Видалити"
+  remove: "Удалить"
+  add: "Додати"
+  go: "Перейти"
+  log_in: "Увійти"
+  close: "Закрити"
+  warning: "Попередження"
+  error: "Помилка"
+  attention: "Увага"
+  absent: "Відсутнє"
+  filter: "Фільтр"
+  github: "GitHub"
+# Language
+language:
+  uk: "українська"
+  ru: "російська"
+  native:
+    uk: "українська"
+    ru: "русский"
+  short:
+    uk: "укр"
+    ru: "рос"
+    native:
+      uk: "укр"
+      ru: "рус"

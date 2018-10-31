@@ -1,0 +1,9 @@
+# Booleans
+boolean:
+  yes: "Так"
+  no: "Ні"
+# Actions
+actions: "Дії"
+action:
+  submit: "Відправити"
+  reset: "Скинути"

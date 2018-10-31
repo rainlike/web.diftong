@@ -1,0 +1,42 @@
+# Base
+base:
+  no: "Нет"
+  yes: "Да"
+  back: "Назад"
+  send: "Отправить"
+  submit: "Отправить"
+  reset: "Сброс"
+  show: "Показать"
+  overview: "Обзор"
+  new: "Новый"
+  create: "Создать"
+  edit: "Редактировать"
+  editing: "Редактирование"
+  update: "Обновить"
+  done: "Готово"
+  list: "Список"
+  delete: "Удалить"
+  remove: "Удалить"
+  add: "Добавить"
+  go: "Перейти"
+  log_in: "Войти"
+  close: "Закрыть"
+  warning: "Предупреждение"
+  error: "Ошибка"
+  attention: "Внимание"
+  absent: "Отсутствует"
+  filter: "Фильтр"
+  github: "GitHub"
+# Language
+language:
+  uk: "украинский"
+  ru: "русский"
+  native:
+    uk: "українська"
+    ru: "русский"
+  short:
+    uk: "укр"
+    ru: "рус"
+    native:
+      uk: "укр"
+      ru: "рус"

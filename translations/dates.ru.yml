@@ -1,0 +1,30 @@
+# Time
+time:
+  until_now: "до сих пор"
+# Months
+month:
+  january: "Январь"
+  february: "Февраль"
+  march: "Март"
+  april: "Апрель"
+  may: "Май"
+  june: "Июнь"
+  july: "Июль"
+  august: "Август"
+  september: "Сентябрь"
+  october: "Октябрь"
+  november: "Ноябрь"
+  december: "Декабрь"
+  lower:
+    january: "январь"
+    february: "февраль"
+    march: "март"
+    april: "апрель"
+    may: "май"
+    june: "июнь"
+    july: "июль"
+    august: "август"
+    september: "сентябрь"
+    october: "октябрь"
+    november: "ноябрь"
+    december: "декабрь"
