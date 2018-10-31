@@ -19,7 +19,8 @@
     "encore:dev:serv": "encore dev-server",
     "encore:dev": "encore dev",
     "encore:watch": "encore dev --watch",
-    "encore:build": "encore production"
+    "encore:build": "encore production",
+    "check": "npx npm-check"
   },
   "dependencies": {
     "animate.css": "^3.7.0",
