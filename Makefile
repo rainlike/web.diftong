@@ -32,6 +32,11 @@ db.rebuild:
 	bin/console doctrine:migrations:migrate --no-interaction
 	$(MAKE) sym.cache.perms
 
+# Git
+.PHONY: git.pull
+git.push:
+	git push
+
 # Versions
 .PHONY: ver.self ver.packs
 ver.self:
