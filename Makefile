@@ -16,8 +16,8 @@ sym.cache.clear:
 	sudo chmod 777 -R var/cache/
 	sudo chown ${USER}:www-data -R var/cache/
 # misc
-.PHONY: sym.temp
-sym.temp:
+.PHONY: sym.perms
+sym.perms:
 	sudo chmod 777 -R var/cache/ var/log/ var/sessions/
 	sudo chown ${USER}:www-data -R var/cache/ var/log/ var/sessions/
 
