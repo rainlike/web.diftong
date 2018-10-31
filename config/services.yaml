@@ -24,10 +24,10 @@ parameters:
 # Read the documentation:
 # GitHub: https://github.com/schmittjoh/JMSI18nRoutingBundle
 # Packagist: https://packagist.org/packages/jms/i18n-routing-bundle
-#jms_i18n_routing:
-#  default_locale: '%default_locale%'
-#  locales: '%i18n_locales%'
-#  strategy: prefix
+jms_i18n_routing:
+  default_locale: '%default_locale%'
+  locales: '%i18n_locales%'
+  strategy: prefix
 
 services:
   # default configuration for services in *this* file
