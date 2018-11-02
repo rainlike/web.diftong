@@ -63,7 +63,7 @@ class LanguageFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setLocale($language['locale']);
             $entity->setIcu($language['icu']);
             $entity->setName($language['name']);
-            $entity->setEnabled(true);
+            $entity->setEnabled($language['enabled']);
             $manager->persist($entity);
 
             $this->addReference('language-'.$language['locale'], $entity);
