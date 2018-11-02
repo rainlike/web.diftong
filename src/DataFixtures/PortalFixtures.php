@@ -28,6 +28,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'short_name' => 'english',
             'article_prefix' => 'eng',
             'url_prefix' => 'english',
+            'active' => true,
             'translations' => [
                 'uk' => 'Англійська мова'
             ]
@@ -37,6 +38,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'short_name' => 'espanol',
             'article_prefix' => 'esp',
             'url_prefix' => 'espanol',
+            'active' => true,
             'translations' => [
                 'uk' => 'Іспанська мова'
             ]
@@ -52,12 +54,17 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager): void
     {
+        $now = new \DateTime();
+
         foreach (self::$portals as $portal) {
             $entity = new Portal();
             $entity->setName($portal['name']);
             $entity->setShortName($portal['short_name']);
             $entity->setArticlePrefix($portal['article_prefix']);
             $entity->setUrlPrefix($portal['url_prefix']);
+            $entity->setActive($portal['active']);
+            $entity->setCreated($now);
+            $entity->setUpdated($now);
 
             $manager->persist($entity);
 

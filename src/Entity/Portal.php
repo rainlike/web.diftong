@@ -14,7 +14,10 @@ use Gedmo\Translatable\Translatable;
 use App\Entity\Translations\PortalTranslation;
 
 use App\Entity\Traits\Id as IdField;
+use App\Entity\Traits\Active as ActiveField;
 use App\Entity\Traits\Locale as LocaleField;
+use App\Entity\Traits\Created as CreatedField;
+use App\Entity\Traits\Updated as UpdatedField;
 use App\Entity\Traits\NameTranslatable as NameField;
 
 /**
@@ -30,7 +33,10 @@ class Portal implements Translatable
 {
     use IdField;
     use NameField;
+    use ActiveField;
     use LocaleField;
+    use CreatedField;
+    use UpdatedField;
 
     /**
      * @var string
