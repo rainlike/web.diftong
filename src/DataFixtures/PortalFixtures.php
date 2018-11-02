@@ -28,19 +28,47 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'short_name' => 'english',
             'article_prefix' => 'eng',
             'url_prefix' => 'english',
-            'active' => true,
+            'enabled' => true,
             'translations' => [
-                'uk' => 'Англійська мова'
+                'uk' => 'Англійська мова',
+                'en' => 'English',
+                'es' => 'Idioma ingles'
             ]
         ],
         [
             'name' => 'Испанский язык',
-            'short_name' => 'espanol',
+            'short_name' => 'spanish',
             'article_prefix' => 'esp',
-            'url_prefix' => 'espanol',
-            'active' => true,
+            'url_prefix' => 'spanish',
+            'enabled' => true,
             'translations' => [
-                'uk' => 'Іспанська мова'
+                'uk' => 'Іспанська мова',
+                'en' => 'Spanish',
+                'es' => 'Idioma español'
+            ]
+        ],
+        [
+            'name' => 'Русский язык',
+            'short_name' => 'russian',
+            'article_prefix' => 'rus',
+            'url_prefix' => 'russian',
+            'enabled' => false,
+            'translations' => [
+                'uk' => 'Російська мова',
+                'en' => 'Russian',
+                'es' => 'Idioma ruso'
+            ]
+        ],
+        [
+            'name' => 'Украинский язык',
+            'short_name' => 'ukrainian',
+            'article_prefix' => 'ukr',
+            'url_prefix' => 'ukrainian',
+            'enabled' => false,
+            'translations' => [
+                'uk' => 'Українська мова',
+                'en' => 'Ukrainian',
+                'es' => 'Idioma ucraniano'
             ]
         ]
     ];
@@ -62,7 +90,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setShortName($portal['short_name']);
             $entity->setArticlePrefix($portal['article_prefix']);
             $entity->setUrlPrefix($portal['url_prefix']);
-            $entity->setActive($portal['active']);
+            $entity->setEnabled($portal['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);
 

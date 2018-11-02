@@ -11,8 +11,8 @@ parameters:
   app_env: '%env(APP_ENV)%'
   app_prefix: '%env(APP_PREFIX)%'
   default_locale: 'ru'
-  app_locales: ru|uk
-  i18n_locales: [ru,uk]
+  app_locales: ru|uk|en|es
+  i18n_locales: [ru,uk,en,es]
   user_email: '%env(USER_EMAIL)%'
   site_name: '%env(SITE_NAME)%'
   server_ip: '%env(SERVER_IP)%'
