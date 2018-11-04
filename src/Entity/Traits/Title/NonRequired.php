@@ -1,0 +1,49 @@
+<?php
+declare(strict_types=1);
+
+namespace App\Entity\Traits\Title;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Trait NonRequired
+ *
+ * @package App\Entity\Traits
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
+trait NonRequired
+{
+    /**
+     * @var string
+     * @ORM\Column(name="title", type="string", length=255, nullable=true, unique=false)
+     * @Assert\NotBlank(
+     *      message = "Title should not be blank."
+     * )
+     */
+    private $title;
+
+    /**
+     * Set title
+     *
+     * @param string|null $title
+     * @return self
+     */
+    public function setTitle(?string $title = null): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string|null
+     */
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+}

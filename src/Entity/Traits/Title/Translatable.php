@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Traits\Title;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,47 +10,47 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Trait NameTranslatable
+ * Trait Translatable
  *
  * @package App\Entity\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-trait NameTranslatable
+trait Translatable
 {
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false, unique=true)
      * @Assert\NotBlank(
-     *      message = "Name should not be blank."
+     *      message = "Title should not be blank."
      * )
      * @Assert\Length(
      *      max = 255,
-     *      maxMessage = "Name must be no longer than {{ limit }} characters."
+     *      maxMessage = "Title should be no longer than {{ limit }} characters."
      * )
      */
-    private $name;
+    private $title;
 
     /**
-     * Set name
+     * Set title
      *
-     * @param string $name
+     * @param string $title
      * @return self
      */
-    public function setName(string $name): self
+    public function setTitle(string $title): self
     {
-        $this->name = $name;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get title
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->name;
+        return $this->title;
     }
 }

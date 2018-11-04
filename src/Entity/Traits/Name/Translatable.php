@@ -1,26 +1,32 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Traits\Name;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
- * Trait NameUnique
+ * Trait Translatable
  *
  * @package App\Entity\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-trait NameUnique
+trait Translatable
 {
     /**
      * @var string
-     * @ORM\Column(name="name", type="string", length=255, nullable=true, unique=true)
+     * @Gedmo\Translatable
+     * @ORM\Column(name="name", type="string", length=255, nullable=false, unique=true)
+     * @Assert\NotBlank(
+     *      message = "Name should not be blank."
+     * )
      * @Assert\Length(
      *      max = 255,
-     *      maxMessage = "Name must be no longer than {{ limit }} characters."
+     *      maxMessage = "Name should be no longer than {{ limit }} characters."
      * )
      */
     private $name;
@@ -28,10 +34,10 @@ trait NameUnique
     /**
      * Set name
      *
-     * @param string|null $name
+     * @param string $name
      * @return self
      */
-    public function setName(?string $name = null): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 

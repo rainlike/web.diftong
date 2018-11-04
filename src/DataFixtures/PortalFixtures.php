@@ -24,51 +24,63 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
      */
     private static $portals = [
         [
-            'name' => 'Английский язык',
-            'short_name' => 'english',
-            'article_prefix' => 'eng',
-            'url_prefix' => 'english',
+            'title' => 'English',
+            'name' => 'english',
+            'uri' => '/english',
             'enabled' => true,
             'translations' => [
+                'es' => 'Ingles',
                 'uk' => 'Англійська мова',
-                'en' => 'English',
-                'es' => 'Idioma ingles'
+                'ru' => 'Английский язык',
+                'pl' => 'Język angielski'
             ]
         ],
         [
-            'name' => 'Испанский язык',
-            'short_name' => 'spanish',
-            'article_prefix' => 'esp',
-            'url_prefix' => 'spanish',
+            'title' => 'Spanish',
+            'name' => 'spanish',
+            'uri' => '/spanish',
             'enabled' => true,
             'translations' => [
+                'es' => 'Español',
                 'uk' => 'Іспанська мова',
-                'en' => 'Spanish',
-                'es' => 'Idioma español'
+                'ru' => 'Испанский язык',
+                'pl' => 'Język hiszpański'
             ]
         ],
         [
-            'name' => 'Русский язык',
-            'short_name' => 'russian',
-            'article_prefix' => 'rus',
-            'url_prefix' => 'russian',
+            'title' => 'Ukrainian',
+            'name' => 'ukrainian',
+            'uri' => '/ukrainian',
             'enabled' => false,
             'translations' => [
-                'uk' => 'Російська мова',
-                'en' => 'Russian',
-                'es' => 'Idioma ruso'
-            ]
-        ],
-        [
-            'name' => 'Украинский язык',
-            'short_name' => 'ukrainian',
-            'article_prefix' => 'ukr',
-            'url_prefix' => 'ukrainian',
-            'enabled' => false,
-            'translations' => [
+                'es' => 'Ucraniano',
                 'uk' => 'Українська мова',
-                'en' => 'Ukrainian',
-                'es' => 'Idioma ucraniano'
+                'ru' => 'Украинский язык',
+                'pl' => 'Język ukraiński'
+            ]
+        ],
+        [
+            'title' => 'Russian',
+            'name' => 'russian',
+            'uri' => '/russian',
+            'enabled' => false,
+            'translations' => [
+                'es' => 'Ruso',
+                'uk' => 'Російська мова',
+                'ru' => 'Русский язык',
+                'pl' => 'Język rosyjski'
+            ]
+        ],
+        [
+            'title' => 'Polish',
+            'name' => 'polish',
+            'uri' => '/polish',
+            'enabled' => false,
+            'translations' => [
+                'es' => 'Polaco',
+                'uk' => 'Польська мова',
+                'ru' => 'Польский язык',
+                'pl' => 'Język polski'
             ]
         ]
     ];
@@ -86,17 +98,16 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
 
         foreach (self::$portals as $portal) {
             $entity = new Portal();
+            $entity->setTitle($portal['title']);
             $entity->setName($portal['name']);
-            $entity->setShortName($portal['short_name']);
-            $entity->setArticlePrefix($portal['article_prefix']);
-            $entity->setUrlPrefix($portal['url_prefix']);
+            $entity->setUri($portal['uri']);
             $entity->setEnabled($portal['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);
 
             $manager->persist($entity);
 
-            $this->addReference('portal-'.$portal['short_name'], $entity);
+            $this->addReference('portal-'.$portal['name'], $entity);
 
             $manager->flush();
 
@@ -104,7 +115,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             $translations = $portal['translations'];
             foreach ($translations as $locale => $translation) {
                 $entity->setTranslatableLocale($locale);
-                $entity->setName($translation);
+                $entity->setTitle($translation);
                 $manager->persist($entity);
                 $manager->flush();
             }

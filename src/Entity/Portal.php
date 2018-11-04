@@ -18,7 +18,9 @@ use App\Entity\Traits\Locale as LocaleField;
 use App\Entity\Traits\Enabled as EnabledField;
 use App\Entity\Traits\Created as CreatedField;
 use App\Entity\Traits\Updated as UpdatedField;
-use App\Entity\Traits\NameTranslatable as NameField;
+use App\Entity\Traits\Uri\RequiredUnique as UriField;
+use App\Entity\Traits\Title\Translatable as TitleField;
+use App\Entity\Traits\Name\RequiredUnique as NameField;
 
 /**
  * Class Portal
@@ -32,50 +34,13 @@ use App\Entity\Traits\NameTranslatable as NameField;
 class Portal implements Translatable
 {
     use IdField;
+    use UriField;
     use NameField;
+    use TitleField;
     use LocaleField;
     use EnabledField;
     use CreatedField;
     use UpdatedField;
-
-    /**
-     * @var string
-     * @ORM\Column(name="short_name", type="string", length=32, nullable=false, unique=true)
-     * @Assert\NotBlank(
-     *      message = "Short name should not be blank."
-     * )
-     * @Assert\Length(
-     *      max = 32,
-     *      maxMessage = "Short name must be no longer than {{ limit }} characters."
-     * )
-     */
-    private $shortName;
-
-    /**
-     * @var string
-     * @ORM\Column(name="article_prefix", type="string", length=10, nullable=false, unique=true)
-     * @Assert\NotBlank(
-     *      message = "Article prefix should not be blank."
-     * )
-     * @Assert\Length(
-     *      max = 10,
-     *      maxMessage = "Article prefix must be no longer than {{ limit }} characters."
-     * )
-     */
-    private $articlePrefix;
-
-    /**
-     * @var string
-     * @ORM\Column(name="url_prefix", type="string", length=32, nullable=false, unique=true)
-     * @Assert\NotBlank(
-     *      message = "URL prefix should not be blank."
-     * )
-     * @Assert\Length(
-     *      max = 32,
-     *      maxMessage = "URL prefix must be no longer than {{ limit }} characters."
-     * )
-     */
-    private $urlPrefix;
 
     /**
      * @var ArrayCollection
@@ -140,26 +105,26 @@ class Portal implements Translatable
     }
 
     /**
-     * Set urlPrefix
+     * Set URI
      *
-     * @param string $urlPrefix
+     * @param string $uri
      * @return self
      */
-    public function setUrlPrefix(string $urlPrefix): self
+    public function setUri(string $uri): self
     {
-        $this->urlPrefix = $urlPrefix;
+        $this->uri = $uri;
 
         return $this;
     }
 
     /**
-     * Get urlPrefix
+     * Get URI
      *
      * @return string|null
      */
-    public function getUrlPrefix(): ?string
+    public function getUri(): ?string
     {
-        return $this->urlPrefix;
+        return $this->uri;
     }
 
     /**

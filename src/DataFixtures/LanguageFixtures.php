@@ -46,6 +46,12 @@ class LanguageFixtures extends Fixture implements OrderedFixtureInterface
             'icu' => 'es_ES',
             'name' => 'spanish',
             'enabled' => false
+        ],
+        [
+            'locale' => 'pl',
+            'icu' => 'pl_PL',
+            'name' => 'polish',
+            'enabled' => false
         ]
     ];
 

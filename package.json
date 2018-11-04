@@ -1,16 +1,16 @@
 {
-  "name": "limba.com.ua",
+  "name": "diftong.com",
   "version": "0.0.1",
-  "description": "Dependency packages for limba.com.ua project.",
+  "description": "Dependency packages for diftong.com project.",
   "author": "Alexander Saveliev <alex@spbcrew.com>",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/rainlike/web.limba.git"
+    "url": "https://github.com/rainlike/web.diftong.git"
   },
   "bugs": {
-    "url": "https://github.com/rainlike/web.limba/issues"
+    "url": "https://github.com/rainlike/web.diftong/issues"
   },
   "directories": {
     "test": "tests"
@@ -36,6 +36,7 @@
     "normalize.css": "^8.0.0",
     "popper.js": "^1.14.4",
     "tether": "^1.4.5",
+    "trumbowyg": "^2.11.1",
     "typescript": "^3.1.5",
     "underscore": "^1.9.1",
     "vue": "^2.5.17",

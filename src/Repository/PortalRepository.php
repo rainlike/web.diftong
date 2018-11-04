@@ -30,5 +30,4 @@ class PortalRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Portal::class);
     }
-
 }

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Traits\Description;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,12 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Trait Description
+ * Trait NonRequired
  *
  * @package App\Entity\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-trait Description
+trait NonRequired
 {
     /**
      * @var string
@@ -23,7 +23,7 @@ trait Description
      * @ORM\Column(name="description", type="text", nullable=true, unique=false)
      * @Assert\Length(
      *      max = 1000,
-     *      maxMessage = "Description must be no longer than {{ limit }} characters."
+     *      maxMessage = "Description should be no longer than {{ limit }} characters."
      * )
      */
     private $description;
