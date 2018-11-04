@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
-
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -44,6 +42,12 @@ class Portal implements Translatable
 
     /**
      * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="portal")
+     */
+    private $categories;
+
+    /**
+     * @var ArrayCollection
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\Translations\PortalTranslation",
      *     mappedBy="object",
@@ -52,6 +56,14 @@ class Portal implements Translatable
      */
     private $translations;
 
+    /**
+     * Portal constructor
+     */
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+    }
+
     /** @return string */
     public function __toString(): string
     {
@@ -59,72 +71,37 @@ class Portal implements Translatable
     }
 
     /**
-     * Set shortName
+     * Add category
      *
-     * @param string $shortName
+     * @param Category $category
      * @return self
      */
-    public function setShortName(string $shortName): self
+    public function addCategory(Category $category): self
     {
-        $this->shortName = $shortName;
+        $this->categories[] = $category;
 
         return $this;
     }
 
     /**
-     * Get shortName
+     * Remove category
      *
-     * @return string|null
+     * @param Category $category
+     * @return void
      */
-    public function getShortName(): ?string
+    public function removeCategory(Category $category): void
     {
-        return $this->shortName;
+        $this->categories->removeElement($category);
     }
 
     /**
-     * Set articlePrefix
+     * Get categories
      *
-     * @param string $articlePrefix
-     * @return self
+     * @return ArrayCollection|null
      */
-    public function setArticlePrefix(string $articlePrefix): self
+    public function getCategories(): ?ArrayCollection
     {
-        $this->articlePrefix = $articlePrefix;
-
-        return $this;
-    }
-
-    /**
-     * Get articlePrefix
-     *
-     * @return string|null
-     */
-    public function getArticlePrefix(): ?string
-    {
-        return $this->articlePrefix;
-    }
-
-    /**
-     * Set URI
-     *
-     * @param string $uri
-     * @return self
-     */
-    public function setUri(string $uri): self
-    {
-        $this->uri = $uri;
-
-        return $this;
-    }
-
-    /**
-     * Get URI
-     *
-     * @return string|null
-     */
-    public function getUri(): ?string
-    {
-        return $this->uri;
+        return $this->categories;
     }
 
     /**
