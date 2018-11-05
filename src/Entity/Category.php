@@ -47,6 +47,12 @@ class Category implements Translatable
     private $isGeneral;
 
     /**
+     * @var bool
+     * @ORM\Column(name="personal_page", type="boolean", nullable=true, unique=false)
+     */
+    private $personalPage;
+
+    /**
      * @var Portal
      * @ORM\ManyToOne(targetEntity="Portal", inversedBy="categories")
      * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
@@ -119,6 +125,29 @@ class Category implements Translatable
     public function getIsGeneral(): ?bool
     {
         return $this->isGeneral;
+    }
+
+    /**
+     * Set personalPage
+     *
+     * @param bool $personalPage
+     * @return self
+     */
+    public function setPersonalPage(bool $personalPage = true): self
+    {
+        $this->personalPage = $personalPage;
+
+        return $this;
+    }
+
+    /**
+     * Get personalPage
+     *
+     * @return bool|null
+     */
+    public function getPersonalPage(): ?bool
+    {
+        return $this->personalPage;
     }
 
     /**

@@ -29,6 +29,7 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
                 'title' => 'Grammar',
                 'uri' => '/grammar',
                 'is_general' => true,
+                'personal_page' => true,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => null,
@@ -42,8 +43,9 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
             [ /** 2.Verb **/
                 'index' => '2.verb',
                 'title' => 'Verb',
-                'uri' => null,
+                'uri' => '/verb',
                 'is_general' => false,
+                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-1.grammar',
@@ -55,10 +57,11 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
                 ]
             ],
             [ /** 3.Personal and non-verbal forms of the verb **/
-                'index' => '3.personal-non-verbal-verbs',
+                'index' => '3.verbs-personal-non-verbal',
                 'title' => 'Personal and non-verbal forms of the verb',
-                'uri' => null,
+                'uri' => '/verbs-personal-non-verbal',
                 'is_general' => false,
+                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-2.verb',
@@ -72,8 +75,9 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
             [ /** 2.Noun **/
                 'index' => '1.noun',
                 'title' => 'Noun',
-                'uri' => null,
+                'uri' => '/noun',
                 'is_general' => false,
+                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-1.grammar',
@@ -105,6 +109,7 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
                 $entity = new Category();
                 $entity->setTitle($category['title']);
                 $entity->setIsGeneral($category['is_general']);
+                $entity->setPersonalPage($category['personal_page']);
                 $entity->setEnabled($category['enabled']);
                 $entity->setCreated($now);
                 $entity->setUpdated($now);
