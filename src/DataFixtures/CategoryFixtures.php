@@ -24,10 +24,11 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
      */
     private static $categories = [
         'Grammar' => [
-            [
+            [ /** 1.Grammar **/
+                'index' => '1.grammar',
                 'title' => 'Grammar',
-                'name' => 'grammar',
                 'uri' => '/grammar',
+                'is_general' => true,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => null,
@@ -38,32 +39,49 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
                     'pl' => 'Gramatyka'
                 ]
             ],
-            [
-                'title' => 'Verb to be',
-                'name' => 'verb-to-be',
-                'uri' => '/verb-to-be',
+            [ /** 2.Verb **/
+                'index' => '2.verb',
+                'title' => 'Verb',
+                'uri' => null,
+                'is_general' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
-                'parent' => 'category-grammar',
+                'parent' => 'category-1.grammar',
                 'translations' => [
-                    'es' => 'Verbo to be',
-                    'uk' => 'Дієслово to be',
-                    'ru' => 'Глагол to have',
-                    'pl' => 'Czasownik to be'
+                    'es' => 'Verbo',
+                    'uk' => 'Дієслово',
+                    'ru' => 'Глагол',
+                    'pl' => 'Czasownik'
                 ]
             ],
-            [
-                'title' => 'Verb to have',
-                'name' => 'verb-to-have',
-                'uri' => '/verb-to-have',
+            [ /** 3.Personal and non-verbal forms of the verb **/
+                'index' => '3.personal-non-verbal-verbs',
+                'title' => 'Personal and non-verbal forms of the verb',
+                'uri' => null,
+                'is_general' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
-                'parent' => 'category-grammar',
+                'parent' => 'category-2.verb',
                 'translations' => [
-                    'es' => 'Verbo to have',
-                    'uk' => 'Дієслово to have',
-                    'ru' => 'Глагол to have',
-                    'pl' => 'Czasownik to have'
+                    'es' => 'Formas personales y no verbales del verbo',
+                    'uk' => 'Особисті і неособисті форми дієслова',
+                    'ru' => 'Личные и неличные формы глагола',
+                    'pl' => 'Osobiste i niewerbalne formy czasownika'
+                ]
+            ],
+            [ /** 2.Noun **/
+                'index' => '1.noun',
+                'title' => 'Noun',
+                'uri' => null,
+                'is_general' => false,
+                'enabled' => true,
+                'portal' => 'portal-english',
+                'parent' => 'category-1.grammar',
+                'translations' => [
+                    'es' => 'Sustantivo',
+                    'uk' => 'Іменник',
+                    'ru' => 'существительное',
+                    'pl' => 'Rzeczownik'
                 ]
             ]
         ],
@@ -86,11 +104,14 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
             foreach ($categoryList as $category) {
                 $entity = new Category();
                 $entity->setTitle($category['title']);
-                $entity->setName($category['name']);
-                $entity->setUri($category['uri']);
+                $entity->setIsGeneral($category['is_general']);
                 $entity->setEnabled($category['enabled']);
                 $entity->setCreated($now);
                 $entity->setUpdated($now);
+
+                if ($category['uri']) {
+                    $entity->setUri($category['uri']);
+                }
 
                 $entity->setPortal($this->getReference($category['portal']));
 
@@ -100,7 +121,7 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
 
                 $manager->persist($entity);
 
-                $this->addReference('category-'.$category['name'], $entity);
+                $this->addReference('category-'.$category['index'], $entity);
 
                 $manager->flush();
 
