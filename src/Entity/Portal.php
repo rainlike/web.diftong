@@ -62,6 +62,7 @@ class Portal implements Translatable
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->translations = new ArrayCollection();
     }
 
     /** @return string */

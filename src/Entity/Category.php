@@ -49,6 +49,12 @@ class Category implements Translatable
     private $isGeneral;
 
     /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Theory", mappedBy="category")
+     */
+    private $theories;
+
+    /**
      * @var Category
      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
      */
@@ -83,7 +89,9 @@ class Category implements Translatable
      */
     public function __construct()
     {
+        $this->theories = new ArrayCollection();
         $this->children = new ArrayCollection();
+        $this->translations = new ArrayCollection();
     }
 
     /** @return string */
@@ -113,6 +121,40 @@ class Category implements Translatable
     public function getIsGeneral(): ?bool
     {
         return $this->isGeneral;
+    }
+
+    /**
+     * Add theory
+     *
+     * @param Theory $theory
+     * @return self
+     */
+    public function addTheory(Theory $theory): self
+    {
+        $this->theories[] = $theory;
+
+        return $this;
+    }
+
+    /**
+     * Remove theory
+     *
+     * @param Theory $theory
+     * @return void
+     */
+    public function removeTheory(Theory $theory): void
+    {
+        $this->theories->removeElement($theory);
+    }
+
+    /**
+     * Get theories
+     *
+     * @return ArrayCollection|null
+     */
+    public function getTheories(): ?ArrayCollection
+    {
+        return $this->theories;
     }
 
     /**
