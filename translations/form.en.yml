@@ -1,0 +1,9 @@
+# Booleans
+boolean:
+  yes: "yes"
+  no: "no"
+# Actions
+actions: "actions"
+action:
+  submit: "submit"
+  reset: "reset"

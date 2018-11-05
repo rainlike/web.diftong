@@ -24,18 +24,6 @@ class LanguageFixtures extends Fixture implements OrderedFixtureInterface
      */
     private static $languages = [
         [
-            'locale' => 'uk',
-            'icu' => 'uk_UA',
-            'name' => 'ukrainian',
-            'enabled' => true
-        ],
-        [
-            'locale' => 'ru',
-            'icu' => 'ru_RU',
-            'name' => 'russian',
-            'enabled' => true
-        ],
-        [
             'locale' => 'en',
             'icu' => 'en_US',
             'name' => 'english',
@@ -46,6 +34,18 @@ class LanguageFixtures extends Fixture implements OrderedFixtureInterface
             'icu' => 'es_ES',
             'name' => 'spanish',
             'enabled' => false
+        ],
+        [
+            'locale' => 'uk',
+            'icu' => 'uk_UA',
+            'name' => 'ukrainian',
+            'enabled' => true
+        ],
+        [
+            'locale' => 'ru',
+            'icu' => 'ru_RU',
+            'name' => 'russian',
+            'enabled' => true
         ],
         [
             'locale' => 'pl',

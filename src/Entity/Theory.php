@@ -170,6 +170,7 @@ class Theory implements Translatable
     public function setCategory(Category $category): self
     {
         $this->category = $category;
+        $category->addTheory($this);
 
         return $this;
     }
@@ -193,6 +194,7 @@ class Theory implements Translatable
     public function setReferrer(?Theory $referrer = null): self
     {
         $this->referrer = $referrer;
+        $referrer->addRelation($this);
 
         return $this;
     }

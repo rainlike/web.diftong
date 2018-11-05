@@ -1,9 +1,9 @@
 # Booleans
 boolean:
-  yes: "Так"
-  no: "Ні"
+  yes: "так"
+  no: "ні"
 # Actions
-actions: "Дії"
+actions: "дії"
 action:
-  submit: "Відправити"
-  reset: "Скинути"
+  submit: "відправити"
+  reset: "скинути"

@@ -132,6 +132,7 @@ class Category implements Translatable
     public function setPortal(Portal $portal): self
     {
         $this->portal = $portal;
+        $portal->addCategory($this);
 
         return $this;
     }
@@ -155,6 +156,7 @@ class Category implements Translatable
     public function setParent(?Category $parent = null): self
     {
         $this->parent = $parent;
+        $parent->addChild($this);
 
         return $this;
     }

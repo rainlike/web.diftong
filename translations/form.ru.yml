@@ -1,9 +1,9 @@
 # Booleans
 boolean:
-  yes: "Да"
-  no: "Нет"
+  yes: "да"
+  no: "нет"
 # Actions
-actions: "Действия"
+actions: "действия"
 action:
-  submit: "Отправить"
-  reset: "Сбросить"
+  submit: "отправить"
+  reset: "сбросить"
