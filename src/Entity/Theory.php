@@ -71,20 +71,31 @@ class Theory
     private $html;
 
     /**
+     * @var Theory
+     * @ORM\OneToMany(targetEntity="Theory", mappedBy="referrer")
+     */
+    private $relations;
+
+    /**
+     * @var Theory
+     * @ORM\ManyToOne(targetEntity="Theory", inversedBy="relations")
+     * @ORM\JoinColumn(name="referrer", referencedColumnName="id")
+     */
+    private $referrer;
+
+    /**
      * @var Category
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="theories")
      * @ORM\JoinColumn(name="category", referencedColumnName="id", nullable=false, unique=false)
      */
     private $category;
 
-    # content (t)
-    # relations (cross)
-
     /**
      * Theory constructor
      */
     public function __construct()
     {
+        $this->relations = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
 
