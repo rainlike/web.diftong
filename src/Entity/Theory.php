@@ -31,7 +31,7 @@ use App\Entity\Traits\Name\RequiredUnique as NameField;
  * @ORM\Entity(repositoryClass="App\Repository\TheoryRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TheoryTranslation")
  */
-class Theory
+class Theory implements Translatable
 {
     use IdField;
     use UriField;
@@ -71,24 +71,34 @@ class Theory
     private $html;
 
     /**
+     * @var Category
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="theories")
+     * @ORM\JoinColumn(name="category", referencedColumnName="id", nullable=false, unique=false)
+     */
+    private $category;
+
+    /**
+     * @var Theory
+     * @ORM\ManyToOne(targetEntity="Theory", inversedBy="relations")
+     * @ORM\JoinColumn(name="referrer", referencedColumnName="id", nullable=true, unique=false)
+     */
+    private $referrer;
+
+    /**
      * @var Theory
      * @ORM\OneToMany(targetEntity="Theory", mappedBy="referrer")
      */
     private $relations;
 
     /**
-     * @var Theory
-     * @ORM\ManyToOne(targetEntity="Theory", inversedBy="relations")
-     * @ORM\JoinColumn(name="referrer", referencedColumnName="id")
+     * @var ArrayCollection
+     * @ORM\OneToMany(
+     *     targetEntity="App\Entity\Translations\TheoryTranslation",
+     *     mappedBy="object",
+     *     cascade={"persist", "remove"}
+     * )
      */
-    private $referrer;
-
-    /**
-     * @var Category
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="theories")
-     * @ORM\JoinColumn(name="category", referencedColumnName="id", nullable=false, unique=false)
-     */
-    private $category;
+    private $translations;
 
     /**
      * Theory constructor
@@ -175,14 +185,61 @@ class Theory
     }
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(
-     *     targetEntity="App\Entity\Translations\TheoryTranslation",
-     *     mappedBy="object",
-     *     cascade={"persist", "remove"}
-     * )
+     * Set referrer
+     *
+     * @param self|null $referrer
+     * @return self
      */
-    private $translations;
+    public function setReferrer(?Theory $referrer = null): self
+    {
+        $this->referrer = $referrer;
+
+        return $this;
+    }
+
+    /**
+     * Get referrer
+     *
+     * @return self|null
+     */
+    public function getReferrer(): ?self
+    {
+        return $this->referrer;
+    }
+
+    /**
+     * Add relation
+     *
+     * @param self $relation
+     * @return self
+     */
+    public function addRelation(Theory $relation): self
+    {
+        $this->relations[] = $relation;
+
+        return $this;
+    }
+
+    /**
+     * Remove relation
+     *
+     * @param self $relation
+     * @return void
+     */
+    public function removeRelation(Theory $relation): void
+    {
+        $this->relations->removeElement($relation);
+    }
+
+    /**
+     * Get relations
+     *
+     * @return ArrayCollection|null
+     */
+    public function getRelations(): ?ArrayCollection
+    {
+        return $this->relations;
+    }
 
     /**
      * Add translations

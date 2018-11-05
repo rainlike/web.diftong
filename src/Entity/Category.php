@@ -49,10 +49,18 @@ class Category implements Translatable
     private $isGeneral;
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Theory", mappedBy="category")
+     * @var Portal
+     * @ORM\ManyToOne(targetEntity="Portal", inversedBy="categories")
+     * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
      */
-    private $theories;
+    private $portal;
+
+    /**
+     * @var Category
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true, unique=false)
+     */
+    private $parent;
 
     /**
      * @var Category
@@ -61,18 +69,10 @@ class Category implements Translatable
     private $children;
 
     /**
-     * @var Category
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
-     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Theory", mappedBy="category")
      */
-    private $parent;
-
-    /**
-     * @var Portal
-     * @ORM\ManyToOne(targetEntity="Portal", inversedBy="categories")
-     * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
-     */
-    private $portal;
+    private $theories;
 
     /**
      * @var ArrayCollection
@@ -124,6 +124,86 @@ class Category implements Translatable
     }
 
     /**
+     * Set portal
+     *
+     * @param Portal $portal
+     * @return self
+     */
+    public function setPortal(Portal $portal): self
+    {
+        $this->portal = $portal;
+
+        return $this;
+    }
+
+    /**
+     * Get portal
+     *
+     * @return Portal|null
+     */
+    public function getPortal(): ?Portal
+    {
+        return $this->portal;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param self|null $parent
+     * @return self
+     */
+    public function setParent(?Category $parent = null): self
+    {
+        $this->parent = $parent;
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return self|null
+     */
+    public function getParent(): ?self
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Add child
+     *
+     * @param self $child
+     * @return self
+     */
+    public function addChild(Category $child): self
+    {
+        $this->children[] = $child;
+
+        return $this;
+    }
+
+    /**
+     * Remove child
+     *
+     * @param self $child
+     * @return void
+     */
+    public function removeChild(Category $child): void
+    {
+        $this->children->removeElement($child);
+    }
+
+    /**
+     * Get children
+     *
+     * @return ArrayCollection|null
+     */
+    public function getChildren(): ?ArrayCollection
+    {
+        return $this->children;
+    }
+
+    /**
      * Add theory
      *
      * @param Theory $theory
@@ -155,29 +235,6 @@ class Category implements Translatable
     public function getTheories(): ?ArrayCollection
     {
         return $this->theories;
-    }
-
-    /**
-     * Set portal
-     *
-     * @param Portal $portal
-     * @return self
-     */
-    public function setPortal(Portal $portal): self
-    {
-        $this->portal = $portal;
-
-        return $this;
-    }
-
-    /**
-     * Get portal
-     *
-     * @return Portal|null
-     */
-    public function getPortal(): ?Portal
-    {
-        return $this->portal;
     }
 
     /**
