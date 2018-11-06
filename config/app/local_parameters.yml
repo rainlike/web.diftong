@@ -1,3 +1,3 @@
 # information for develop environment
 parameters:
-  dev.site_name: 'diftong.loc'
+  dev.domain: 'diftong.loc'
