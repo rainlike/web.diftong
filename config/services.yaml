@@ -14,7 +14,7 @@ parameters:
   app_locales: en|es|uk|ru|pl
   i18n_locales: [en,es,uk,ru,pl]
   user_email: '%env(USER_EMAIL)%'
-  site_name: '%env(SITE_NAME)%'
+  domain: '%env(DOMAIN)%'
   server_ip: '%env(SERVER_IP)%'
   in_developing: true
   github_link: 'https://github.com/rainlike/web.diftong'
