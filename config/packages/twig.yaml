@@ -5,6 +5,6 @@ twig:
   globals:
     app_env: '%app_env%'
     app_prefix: '%app_prefix%'
-    site_name: '%site_name%'
+    domain: '%domain%'
 #  form_themes:
 #    - '@RainlikeAdminBundle/Resources/views/components/vich/fields.html.twig'
