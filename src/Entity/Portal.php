@@ -44,9 +44,9 @@ class Portal implements Translatable
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Category", mappedBy="portal")
+     * @ORM\OneToMany(targetEntity="Theory", mappedBy="portal")
      */
-    private $categories;
+    private $theories;
 
     /**
      * @var ArrayCollection
@@ -63,7 +63,7 @@ class Portal implements Translatable
      */
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
+        $this->theories = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
 
@@ -74,37 +74,37 @@ class Portal implements Translatable
     }
 
     /**
-     * Add category
+     * Add theory
      *
-     * @param Category $category
+     * @param Theory $theory
      * @return self
      */
-    public function addCategory(Category $category): self
+    public function addTheory(Theory $theory): self
     {
-        $this->categories[] = $category;
+        $this->theories[] = $theory;
 
         return $this;
     }
 
     /**
-     * Remove category
+     * Remove theory
      *
-     * @param Category $category
+     * @param Theory $theory
      * @return void
      */
-    public function removeCategory(Category $category): void
+    public function removeTheory(Theory $theory): void
     {
-        $this->categories->removeElement($category);
+        $this->theories->removeElement($theory);
     }
 
     /**
-     * Get categories
+     * Get theories
      *
      * @return ArrayCollection|null
      */
-    public function getCategories(): ?ArrayCollection
+    public function getTheories(): ?ArrayCollection
     {
-        return $this->categories;
+        return $this->theories;
     }
 
     /**

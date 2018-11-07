@@ -1,0 +1,80 @@
+1.grammar:
+  title: "Grammar"
+  full_title: "@TODO"
+  uri: "/grammar"
+  is_general: true
+  enabled: true
+  portal: "portal-english"
+  parent:
+  translations:
+    title:
+      es: "Gramática"
+      uk: "Граматика"
+      ru: "Грамматика"
+      pl: "Gramatyka"
+    full_title:
+      es: "@TODO"
+      uk: "@TODO"
+      ru: "@TODO"
+      pl: "@TODO"
+  sub_categories:
+    2.verb:
+      title: "Verb"
+      full_title: "@TODO"
+      uri: "/verb"
+      is_general: false
+      enabled: true
+      portal: "portal-english"
+      parent: "category-1.grammar"
+      translations:
+        title:
+          es: "Verbo"
+          uk: "Дієслово"
+          ru: "Глагол"
+          pl: "Czasownik"
+        full_title:
+          es: "@TODO"
+          uk: "@TODO"
+          ru: "@TODO"
+          pl: "@TODO"
+      sub_categories:
+        3.verbs-personal-non-verbal:
+          title: "Personal and non-verbal forms of the verb"
+          full_title: "@TODO"
+          uri: "/verbs-personal-non-verbal"
+          is_general: false
+          enabled: true
+          portal: "portal-english"
+          parent: "category-2.verb"
+          translations:
+            title:
+              es: "Formas personales y no verbales del verbo"
+              uk: "Особисті і неособисті форми дієслова"
+              ru: "Личные и неличные формы глагола"
+              pl: "Osobiste i niewerbalne formy czasownika"
+            full_title:
+              es: "@TODO"
+              uk: "@TODO"
+              ru: "@TODO"
+              pl: "@TODO"
+    2.noun:
+      title: Noun
+      full_title: "@TODO"
+      uri: "/noun"
+      is_general: false
+      enabled: true
+      portal: "portal-english"
+      parent: "category-1.grammar"
+      translations:
+        title:
+          es: "Sustantivo"
+          uk: "Іменник"
+          ru: "Существительное"
+          pl: "Rzeczownik"
+        full_title:
+          es: "@TODO"
+          uk: "@TODO"
+          ru: "@TODO"
+          pl: "@TODO"
+1.pronounce: {}
+1.vocabulary: {}

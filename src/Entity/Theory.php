@@ -43,6 +43,12 @@ class Theory implements Translatable
     use FullTitleField;
 
     /**
+     * @var bool
+     * @ORM\Column(name="is_general", type="boolean", nullable=true, unique=false)
+     */
+    private $isGeneral;
+
+    /**
      * @var string
      * @Gedmo\Translatable
      * @ORM\Column(name="content", type="text", nullable=false, unique=false)
@@ -71,24 +77,39 @@ class Theory implements Translatable
     private $html;
 
     /**
-     * @var Category
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="theories")
-     * @ORM\JoinColumn(name="category", referencedColumnName="id", nullable=false, unique=false)
+     * @ORM\OneToOne(targetEntity="Theory")
+     * @ORM\JoinColumn(name="previous_id", referencedColumnName="id", nullable=true, unique=false)
      */
-    private $category;
+    private $previous;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Theory")
+     * @ORM\JoinColumn(name="next_id", referencedColumnName="id", nullable=true, unique=false)
+     */
+    private $next;
+
+    /**
+     * @var Portal
+     * @ORM\ManyToOne(targetEntity="Portal", inversedBy="theories")
+     * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
+     * @Assert\NotBlank(
+     *      message = "Portal should not be blank."
+     * )
+     */
+    private $portal;
 
     /**
      * @var Theory
-     * @ORM\ManyToOne(targetEntity="Theory", inversedBy="relations")
-     * @ORM\JoinColumn(name="referrer", referencedColumnName="id", nullable=true, unique=false)
+     * @ORM\ManyToOne(targetEntity="Theory", inversedBy="children")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id", nullable=true, unique=false)
      */
-    private $referrer;
+    private $parent;
 
     /**
      * @var Theory
-     * @ORM\OneToMany(targetEntity="Theory", mappedBy="referrer")
+     * @ORM\OneToMany(targetEntity="Theory", mappedBy="parent")
      */
-    private $relations;
+    private $children;
 
     /**
      * @var ArrayCollection
@@ -105,7 +126,7 @@ class Theory implements Translatable
      */
     public function __construct()
     {
-        $this->relations = new ArrayCollection();
+        $this->children = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
 
@@ -113,6 +134,29 @@ class Theory implements Translatable
     public function __toString(): string
     {
         return (string)$this->getId();
+    }
+
+    /**
+     * Set isGeneral
+     *
+     * @param bool $isGeneral
+     * @return self
+     */
+    public function setIsGeneral(bool $isGeneral = true): self
+    {
+        $this->isGeneral = $isGeneral;
+
+        return $this;
+    }
+
+    /**
+     * Get isGeneral
+     *
+     * @return bool|null
+     */
+    public function getIsGeneral(): ?bool
+    {
+        return $this->isGeneral;
     }
 
     /**
@@ -162,85 +206,131 @@ class Theory implements Translatable
     }
 
     /**
-     * Set category
+     * Set previous one
      *
-     * @param Category $category
+     * @param self $previous
      * @return self
      */
-    public function setCategory(Category $category): self
+    public function setPrevious(Theory $previous): self
     {
-        $this->category = $category;
-        $category->addTheory($this);
+        $this->previous = $previous;
 
         return $this;
     }
 
     /**
-     * Get category
-     *
-     * @return Category|null
-     */
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    /**
-     * Set referrer
-     *
-     * @param self|null $referrer
-     * @return self
-     */
-    public function setReferrer(?Theory $referrer = null): self
-    {
-        $this->referrer = $referrer;
-        $referrer->addRelation($this);
-
-        return $this;
-    }
-
-    /**
-     * Get referrer
+     * Get previous one
      *
      * @return self|null
      */
-    public function getReferrer(): ?self
+    public function getPrevious(): ?self
     {
-        return $this->referrer;
+        return $this->previous;
     }
 
     /**
-     * Add relation
+     * Set next one
      *
-     * @param self $relation
+     * @param self $next
      * @return self
      */
-    public function addRelation(Theory $relation): self
+    public function setNext(Theory $next): self
     {
-        $this->relations[] = $relation;
+        $this->next = $next;
 
         return $this;
     }
 
     /**
-     * Remove relation
+     * Get next one
      *
-     * @param self $relation
-     * @return void
+     * @return self|null
      */
-    public function removeRelation(Theory $relation): void
+    public function getNext(): ?self
     {
-        $this->relations->removeElement($relation);
+        return $this->next;
     }
 
     /**
-     * Get relations
+     * Set portal
+     *
+     * @param Portal $portal
+     * @return self
+     */
+    public function setPortal(Portal $portal): self
+    {
+        $this->portal = $portal;
+        $portal->addTheory($this);
+
+        return $this;
+    }
+
+    /**
+     * Get portal
+     *
+     * @return Portal|null
+     */
+    public function getPortal(): ?Portal
+    {
+        return $this->portal;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param self|null $parent
+     * @return self
+     */
+    public function setParent(?Theory $parent = null): self
+    {
+        $this->parent = $parent;
+        $parent->addChild($this);
+
+        return $this;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return self|null
+     */
+    public function getParent(): ?self
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Add child
+     *
+     * @param self $child
+     * @return self
+     */
+    public function addChild(Theory $child): self
+    {
+        $this->children[] = $child;
+
+        return $this;
+    }
+
+    /**
+     * Remove child
+     *
+     * @param self $child
+     * @return void
+     */
+    public function removeChild(Theory $child): void
+    {
+        $this->children->removeElement($child);
+    }
+
+    /**
+     * Get children
      *
      * @return ArrayCollection|null
      */
-    public function getRelations(): ?ArrayCollection
+    public function getChildren(): ?ArrayCollection
     {
-        return $this->relations;
+        return $this->children;
     }
 
     /**
