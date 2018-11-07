@@ -63,7 +63,11 @@ services:
     public: false
 
   # Services
-  # ...
+  app.yml.parser:
+    class: App\Service\YmlParser
+    autowire: true
+    autoconfigure: true
+    public: true
 
   # Helpers
   app.translation.helper:
