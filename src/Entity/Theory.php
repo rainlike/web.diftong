@@ -36,11 +36,11 @@ class Theory implements Translatable
     use IdField;
     use UriField;
     use TitleField;
+    use FullTitleField;
     use LocaleField;
     use EnabledField;
     use CreatedField;
     use UpdatedField;
-    use FullTitleField;
 
     /**
      * @var bool
@@ -65,16 +65,16 @@ class Theory implements Translatable
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="html", type="text", nullable=false, unique=false)
+     * @ORM\Column(name="formatted_content", type="text", nullable=false, unique=false)
      * @Assert\NotBlank(
-     *      message="HTML content should not be blank."
+     *      message="Formatted content should not be blank."
      * )
      * @Assert\Length(
      *      max = 5000,
-     *      maxMessage = "HTML content should be no longer than {{ limit }} characters."
+     *      maxMessage = "Formatted content should be no longer than {{ limit }} characters."
      * )
      */
-    private $html;
+    private $formattedContent;
 
     /**
      * @ORM\OneToOne(targetEntity="Theory")
@@ -183,35 +183,35 @@ class Theory implements Translatable
     }
 
     /**
-     * Set HTML
+     * Set formattedContent
      *
-     * @param string $html
+     * @param string $formattedContent
      * @return self
      */
-    public function setHtml(string $html): self
+    public function setFormattedContent(string $formattedContent): self
     {
-        $this->html = $html;
+        $this->formattedContent = $formattedContent;
 
         return $this;
     }
 
     /**
-     * Get HTML
+     * Get formattedContent
      *
      * @return string|null
      */
-    public function getHtml(): ?string
+    public function getFormattedContent(): ?string
     {
-        return $this->html;
+        return $this->formattedContent;
     }
 
     /**
      * Set previous one
      *
-     * @param self $previous
+     * @param self|null $previous
      * @return self
      */
-    public function setPrevious(Theory $previous): self
+    public function setPrevious(?Theory $previous = null): self
     {
         $this->previous = $previous;
 
@@ -231,10 +231,10 @@ class Theory implements Translatable
     /**
      * Set next one
      *
-     * @param self $next
+     * @param self|null $next
      * @return self
      */
-    public function setNext(Theory $next): self
+    public function setNext(?Theory $next = null): self
     {
         $this->next = $next;
 
@@ -284,7 +284,9 @@ class Theory implements Translatable
     public function setParent(?Theory $parent = null): self
     {
         $this->parent = $parent;
-        $parent->addChild($this);
+        if ($parent) {
+            $parent->addChild($this);
+        }
 
         return $this;
     }
