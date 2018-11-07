@@ -27,65 +27,77 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
             [ /** 1.Grammar **/
                 'index' => '1.grammar',
                 'title' => 'Grammar',
+                'full_title' => '@TODO',
                 'uri' => '/grammar',
                 'is_general' => true,
-                'personal_page' => true,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => null,
                 'translations' => [
-                    'es' => 'Gramática',
-                    'uk' => 'Граматика',
-                    'ru' => 'Грамматика',
-                    'pl' => 'Gramatyka'
+                    'title' => [
+                        'es' => 'Gramática',
+                        'uk' => 'Граматика',
+                        'ru' => 'Грамматика',
+                        'pl' => 'Gramatyka'
+                    ],
+                    'full_title' => []
                 ]
             ],
             [ /** 2.Verb **/
                 'index' => '2.verb',
                 'title' => 'Verb',
+                'full_title' => '@TODO',
                 'uri' => '/verb',
                 'is_general' => false,
-                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-1.grammar',
                 'translations' => [
-                    'es' => 'Verbo',
-                    'uk' => 'Дієслово',
-                    'ru' => 'Глагол',
-                    'pl' => 'Czasownik'
+                    'title' => [
+                        'es' => 'Verbo',
+                        'uk' => 'Дієслово',
+                        'ru' => 'Глагол',
+                        'pl' => 'Czasownik'
+                    ],
+                    'full_title' => []
                 ]
             ],
             [ /** 3.Personal and non-verbal forms of the verb **/
                 'index' => '3.verbs-personal-non-verbal',
                 'title' => 'Personal and non-verbal forms of the verb',
+                'full_title' => '@TODO',
                 'uri' => '/verbs-personal-non-verbal',
                 'is_general' => false,
-                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-2.verb',
                 'translations' => [
-                    'es' => 'Formas personales y no verbales del verbo',
-                    'uk' => 'Особисті і неособисті форми дієслова',
-                    'ru' => 'Личные и неличные формы глагола',
-                    'pl' => 'Osobiste i niewerbalne formy czasownika'
+                    'title' => [
+                        'es' => 'Formas personales y no verbales del verbo',
+                        'uk' => 'Особисті і неособисті форми дієслова',
+                        'ru' => 'Личные и неличные формы глагола',
+                        'pl' => 'Osobiste i niewerbalne formy czasownika'
+                    ],
+                    'full_title' => []
                 ]
             ],
             [ /** 2.Noun **/
                 'index' => '1.noun',
                 'title' => 'Noun',
+                'full_title' => '@TODO',
                 'uri' => '/noun',
                 'is_general' => false,
-                'personal_page' => false,
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'category-1.grammar',
                 'translations' => [
-                    'es' => 'Sustantivo',
-                    'uk' => 'Іменник',
-                    'ru' => 'существительное',
-                    'pl' => 'Rzeczownik'
+                    'title' => [
+                        'es' => 'Sustantivo',
+                        'uk' => 'Іменник',
+                        'ru' => 'существительное',
+                        'pl' => 'Rzeczownik'
+                    ],
+                    'full_title' => []
                 ]
             ]
         ],
@@ -108,21 +120,15 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
             foreach ($categoryList as $category) {
                 $entity = new Category();
                 $entity->setTitle($category['title']);
+                $entity->setFullTitle($category['full_title'] ?? null);
+                $entity->setUri($category['uri']);
                 $entity->setIsGeneral($category['is_general']);
-                $entity->setPersonalPage($category['personal_page']);
                 $entity->setEnabled($category['enabled']);
                 $entity->setCreated($now);
                 $entity->setUpdated($now);
-
-                if ($category['uri']) {
-                    $entity->setUri($category['uri']);
-                }
+                $entity->setParent($category['parent'] ? $this->getReference($category['parent']) : null);
 
                 $entity->setPortal($this->getReference($category['portal']));
-
-                if ($category['parent']) {
-                    $entity->setParent($this->getReference($category['parent']));
-                }
 
                 $manager->persist($entity);
 
@@ -132,11 +138,19 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
 
                 /** @var array $translations */
                 $translations = $category['translations'];
-                foreach ($translations as $locale => $translation) {
-                    $entity->setTranslatableLocale($locale);
-                    $entity->setTitle($translation);
-                    $manager->persist($entity);
-                    $manager->flush();
+                foreach ($translations as $translationName => $targetTranslations) {
+                    foreach ($targetTranslations as $locale => $translation) {
+                        $setterName = $this->mapping($translationName);
+
+                        if ($setterName) {
+                            $setter = 'set'.\ucfirst($setterName);
+
+                            $entity->setTranslatableLocale($locale);
+                            $entity->$setter($translation);
+                            $manager->persist($entity);
+                            $manager->flush();
+                        }
+                    }
                 }
             }
         }
@@ -150,5 +164,21 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
     public function getOrder(): int
     {
         return 2;
+    }
+
+    /**
+     * Get mapping
+     *
+     * @param string $key
+     * @return string|null
+     */
+    private function mapping(string $key): ?string
+    {
+        $mapping = [
+            'title' => 'title',
+            'full_title' => 'fullTitle'
+        ];
+
+        return $mapping[$key] ?? null;
     }
 }

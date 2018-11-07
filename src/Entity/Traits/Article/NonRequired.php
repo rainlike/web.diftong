@@ -18,8 +18,9 @@ trait NonRequired
     /**
      * @var string
      * @ORM\Column(name="article", type="string", length=255, nullable=true, unique=false)
-     * @Assert\NotBlank(
-     *      message = "Article should not be blank."
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Article should be no longer than {{ limit }} characters."
      * )
      */
     private $article;

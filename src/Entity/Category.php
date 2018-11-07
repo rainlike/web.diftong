@@ -15,11 +15,12 @@ use App\Entity\Translations\CategoryTranslation;
 
 use App\Entity\Traits\Id as IdField;
 use App\Entity\Traits\Locale as LocaleField;
-use App\Entity\Traits\Uri\Unique as UriField;
 use App\Entity\Traits\Enabled as EnabledField;
 use App\Entity\Traits\Created as CreatedField;
 use App\Entity\Traits\Updated as UpdatedField;
+use App\Entity\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Traits\Title\Translatable as TitleField;
+use App\Entity\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
 
 /**
  * Class Category
@@ -33,24 +34,19 @@ use App\Entity\Traits\Title\Translatable as TitleField;
 class Category implements Translatable
 {
     use IdField;
-    use UriField;
     use TitleField;
-    use LocaleField;
+    use FullTitleField;
+    use UriField;
     use EnabledField;
     use CreatedField;
     use UpdatedField;
+    use LocaleField;
 
     /**
      * @var bool
      * @ORM\Column(name="is_general", type="boolean", nullable=true, unique=false)
      */
     private $isGeneral;
-
-    /**
-     * @var bool
-     * @ORM\Column(name="personal_page", type="boolean", nullable=true, unique=false)
-     */
-    private $personalPage;
 
     /**
      * @var Portal
@@ -128,29 +124,6 @@ class Category implements Translatable
     }
 
     /**
-     * Set personalPage
-     *
-     * @param bool $personalPage
-     * @return self
-     */
-    public function setPersonalPage(bool $personalPage = true): self
-    {
-        $this->personalPage = $personalPage;
-
-        return $this;
-    }
-
-    /**
-     * Get personalPage
-     *
-     * @return bool|null
-     */
-    public function getPersonalPage(): ?bool
-    {
-        return $this->personalPage;
-    }
-
-    /**
      * Set portal
      *
      * @param Portal $portal
@@ -183,7 +156,10 @@ class Category implements Translatable
     public function setParent(?Category $parent = null): self
     {
         $this->parent = $parent;
-        $parent->addChild($this);
+
+        if ($parent) {
+            $parent->addChild($this);
+        }
 
         return $this;
     }

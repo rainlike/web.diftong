@@ -25,62 +25,82 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
     private static $portals = [
         [
             'title' => 'English',
+            'full_title' => '@TODO',
             'name' => 'english',
             'uri' => '/english',
             'enabled' => true,
             'translations' => [
-                'es' => 'Ingles',
-                'uk' => 'Англійська мова',
-                'ru' => 'Английский язык',
-                'pl' => 'Język angielski'
+                'title' => [
+                    'es' => 'Ingles',
+                    'uk' => 'Англійська мова',
+                    'ru' => 'Английский язык',
+                    'pl' => 'Język angielski'
+                ],
+                'full_title' => []
             ]
         ],
         [
             'title' => 'Spanish',
+            'full_title' => '@TODO',
             'name' => 'spanish',
             'uri' => '/spanish',
             'enabled' => true,
             'translations' => [
-                'es' => 'Español',
-                'uk' => 'Іспанська мова',
-                'ru' => 'Испанский язык',
-                'pl' => 'Język hiszpański'
+                'title' => [
+                    'es' => 'Español',
+                    'uk' => 'Іспанська мова',
+                    'ru' => 'Испанский язык',
+                    'pl' => 'Język hiszpański'
+                ],
+                'full_title' => []
             ]
         ],
         [
             'title' => 'Ukrainian',
+            'full_title' => '@TODO',
             'name' => 'ukrainian',
             'uri' => '/ukrainian',
             'enabled' => false,
             'translations' => [
-                'es' => 'Ucraniano',
-                'uk' => 'Українська мова',
-                'ru' => 'Украинский язык',
-                'pl' => 'Język ukraiński'
+                'title' => [
+                    'es' => 'Ucraniano',
+                    'uk' => 'Українська мова',
+                    'ru' => 'Украинский язык',
+                    'pl' => 'Język ukraiński'
+                ],
+                'full_title' => []
             ]
         ],
         [
             'title' => 'Russian',
+            'full_title' => '@TODO',
             'name' => 'russian',
             'uri' => '/russian',
             'enabled' => false,
             'translations' => [
-                'es' => 'Ruso',
-                'uk' => 'Російська мова',
-                'ru' => 'Русский язык',
-                'pl' => 'Język rosyjski'
+                'title' => [
+                    'es' => 'Ruso',
+                    'uk' => 'Російська мова',
+                    'ru' => 'Русский язык',
+                    'pl' => 'Język rosyjski'
+                ],
+                'full_title' => []
             ]
         ],
         [
             'title' => 'Polish',
+            'full_title' => '@TODO',
             'name' => 'polish',
             'uri' => '/polish',
             'enabled' => false,
             'translations' => [
-                'es' => 'Polaco',
-                'uk' => 'Польська мова',
-                'ru' => 'Польский язык',
-                'pl' => 'Język polski'
+                'title' => [
+                    'es' => 'Polaco',
+                    'uk' => 'Польська мова',
+                    'ru' => 'Польский язык',
+                    'pl' => 'Język polski'
+                ],
+                'full_title' => []
             ]
         ]
     ];
@@ -99,6 +119,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         foreach (self::$portals as $portal) {
             $entity = new Portal();
             $entity->setTitle($portal['title']);
+            $entity->setFullTitle($portal['full_title'] ?? null);
             $entity->setName($portal['name']);
             $entity->setUri($portal['uri']);
             $entity->setEnabled($portal['enabled']);
@@ -113,11 +134,19 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
 
             /** @var array $translations */
             $translations = $portal['translations'];
-            foreach ($translations as $locale => $translation) {
-                $entity->setTranslatableLocale($locale);
-                $entity->setTitle($translation);
-                $manager->persist($entity);
-                $manager->flush();
+            foreach ($translations as $translationName => $targetTranslations) {
+                foreach ($targetTranslations as $locale => $translation) {
+                    $setterName = $this->mapping($translationName);
+
+                    if ($setterName) {
+                        $setter = 'set'.\ucfirst($setterName);
+
+                        $entity->setTranslatableLocale($locale);
+                        $entity->$setter($translation);
+                        $manager->persist($entity);
+                        $manager->flush();
+                    }
+                }
             }
         }
     }
@@ -130,5 +159,21 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
     public function getOrder(): int
     {
         return 1;
+    }
+
+    /**
+     * Get mapping
+     *
+     * @param string $key
+     * @return string|null
+     */
+    private function mapping(string $key): ?string
+    {
+        $mapping = [
+            'title' => 'title',
+            'full_title' => 'fullTitle'
+        ];
+
+        return $mapping[$key] ?? null;
     }
 }

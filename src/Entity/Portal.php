@@ -19,6 +19,7 @@ use App\Entity\Traits\Updated as UpdatedField;
 use App\Entity\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Traits\Title\Translatable as TitleField;
 use App\Entity\Traits\Name\RequiredUnique as NameField;
+use App\Entity\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
 
 /**
  * Class Portal
@@ -32,13 +33,14 @@ use App\Entity\Traits\Name\RequiredUnique as NameField;
 class Portal implements Translatable
 {
     use IdField;
-    use UriField;
     use NameField;
     use TitleField;
-    use LocaleField;
+    use FullTitleField;
+    use UriField;
     use EnabledField;
     use CreatedField;
     use UpdatedField;
+    use LocaleField;
 
     /**
      * @var ArrayCollection

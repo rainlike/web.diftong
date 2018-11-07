@@ -20,6 +20,7 @@ use App\Entity\Traits\Created as CreatedField;
 use App\Entity\Traits\Updated as UpdatedField;
 use App\Entity\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Traits\Title\Translatable as TitleField;
+use App\Entity\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
 
 /**
  * Class Theory
@@ -39,6 +40,7 @@ class Theory implements Translatable
     use EnabledField;
     use CreatedField;
     use UpdatedField;
+    use FullTitleField;
 
     /**
      * @var string
