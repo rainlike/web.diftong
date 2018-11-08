@@ -11,14 +11,16 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Translations\PortalTranslation;
 
+use App\Entity\Library\Interfaces\Seoful;
+
 use App\Entity\Library\Traits\Id as IdField;
-use App\Entity\Library\Traits\Locale as LocaleField;
 use App\Entity\Library\Traits\Enabled as EnabledField;
 use App\Entity\Library\Traits\Created as CreatedField;
 use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Title\Translatable as TitleField;
 use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
+use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
 
 /**
@@ -30,7 +32,7 @@ use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleFiel
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
  */
-class Portal implements Translatable
+class Portal implements Translatable, Seoful
 {
     use IdField;
     use NameField;
@@ -41,6 +43,12 @@ class Portal implements Translatable
     use CreatedField;
     use UpdatedField;
     use LocaleField;
+
+    /**
+     * @var PortalSeo
+     * @ORM\OneToOne(targetEntity="PortalSeo", mappedBy="target")
+     */
+    private $seo;
 
     /**
      * @var ArrayCollection
@@ -71,6 +79,29 @@ class Portal implements Translatable
     public function __toString(): string
     {
         return (string)$this->getId();
+    }
+
+    /**
+     * Set SEO
+     *
+     * @param PortalSeo $seo
+     * @return self
+     */
+    public function setSeo(?PortalSeo $seo = null): self
+    {
+        $this->seo = $seo;
+
+        return $this;
+    }
+
+    /**
+     * Get SEO
+     *
+     * @return PortalSeo
+     */
+    public function getSeo()
+    {
+        return $this->seo;
     }
 
     /**

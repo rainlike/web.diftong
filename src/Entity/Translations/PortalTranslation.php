@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
+use App\Entity\Portal;
+
 /**
  * Class PortalTranslation
  *
@@ -24,6 +26,7 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 class PortalTranslation extends AbstractPersonalTranslation
 {
     /**
+     * @var Portal
      * @ORM\ManyToOne(targetEntity="App\Entity\Portal", inversedBy="translations")
      * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */

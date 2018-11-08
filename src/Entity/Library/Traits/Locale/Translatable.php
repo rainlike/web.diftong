@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Library\Traits;
+namespace App\Entity\Library\Traits\Locale;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Trait Locale
+ * Trait Translatable
  *
  * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-trait Locale
+trait Translatable
 {
     /**
      * @var string
