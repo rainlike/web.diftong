@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits\Article;
+namespace App\Entity\Library\Traits\Article;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Trait NonRequired
  *
- * @package App\Entity\Traits
+ * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait NonRequired

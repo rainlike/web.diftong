@@ -13,14 +13,14 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Translations\TheoryTranslation;
 
-use App\Entity\Traits\Id as IdField;
-use App\Entity\Traits\Locale as LocaleField;
-use App\Entity\Traits\Enabled as EnabledField;
-use App\Entity\Traits\Created as CreatedField;
-use App\Entity\Traits\Updated as UpdatedField;
-use App\Entity\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Traits\Title\Translatable as TitleField;
-use App\Entity\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
+use App\Entity\Library\Traits\Id as IdField;
+use App\Entity\Library\Traits\Locale as LocaleField;
+use App\Entity\Library\Traits\Enabled as EnabledField;
+use App\Entity\Library\Traits\Created as CreatedField;
+use App\Entity\Library\Traits\Updated as UpdatedField;
+use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
+use App\Entity\Library\Traits\Title\Translatable as TitleField;
+use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
 
 /**
  * Class Theory

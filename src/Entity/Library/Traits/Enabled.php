@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Library\Traits;
 
 /**
  * Trait Enabled
  *
- * @package App\Entity\Traits
+ * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Enabled

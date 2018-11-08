@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Library\Traits;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Trait Locale
  *
- * @package App\Entity\Traits
+ * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Locale

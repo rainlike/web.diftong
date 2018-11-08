@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Entity\Traits;
+namespace App\Entity\Library\Traits;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -12,7 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Trait Updated
  *
- * @package App\Entity\Traits
+ * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Updated

@@ -7,8 +7,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use App\Entity\Traits\Id as IdField;
-use App\Entity\Traits\Enabled as EnabledField;
+use App\Entity\Library\Traits\Id as IdField;
+use App\Entity\Library\Traits\Enabled as EnabledField;
 
 /**
  * Class Language
