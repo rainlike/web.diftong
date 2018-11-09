@@ -13,6 +13,7 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Translations\TheoryTranslation;
 
+use App\Entity\Library\Interfaces\Slug;
 use App\Entity\Library\Interfaces\Seoful;
 
 use App\Entity\Library\Traits\Id as IdField;
@@ -20,9 +21,11 @@ use App\Entity\Library\Traits\Enabled as EnabledField;
 use App\Entity\Library\Traits\Created as CreatedField;
 use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Library\Traits\Title\Translatable as TitleField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
+use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
+use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
+
+use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 
 /**
  * Class Theory
@@ -33,7 +36,7 @@ use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleFiel
  * @ORM\Entity(repositoryClass="App\Repository\TheoryRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TheoryTranslation")
  */
-class Theory implements Translatable, Seoful
+class Theory implements Translatable, Seoful, Slug
 {
     use IdField;
     use UriField;
@@ -43,6 +46,21 @@ class Theory implements Translatable, Seoful
     use EnabledField;
     use CreatedField;
     use UpdatedField;
+
+    use SlugMethods;
+
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=true)
+     * @Assert\NotBlank(
+     *      message = "Slug should not be blank."
+     * )
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Slug should be no longer than {{ limit }} characters."
+     * )
+     */
+    private $slug;
 
     /**
      * @var bool

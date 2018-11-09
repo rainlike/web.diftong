@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -11,6 +13,7 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Translations\PortalTranslation;
 
+use App\Entity\Library\Interfaces\Slug;
 use App\Entity\Library\Interfaces\Seoful;
 
 use App\Entity\Library\Traits\Id as IdField;
@@ -18,10 +21,12 @@ use App\Entity\Library\Traits\Enabled as EnabledField;
 use App\Entity\Library\Traits\Created as CreatedField;
 use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Library\Traits\Title\Translatable as TitleField;
 use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleField;
+use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
+use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
+
+use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 
 /**
  * Class Portal
@@ -32,7 +37,7 @@ use App\Entity\Library\Traits\Title\FullNonRequiredTranslatable as FullTitleFiel
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
  */
-class Portal implements Translatable, Seoful
+class Portal implements Translatable, Seoful, Slug
 {
     use IdField;
     use NameField;
@@ -43,6 +48,21 @@ class Portal implements Translatable, Seoful
     use CreatedField;
     use UpdatedField;
     use LocaleField;
+
+    use SlugMethods;
+
+    /**
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false, unique=true)
+     * @Assert\NotBlank(
+     *      message = "Slug should not be blank."
+     * )
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "Slug should be no longer than {{ limit }} characters."
+     * )
+     */
+    private $slug;
 
     /**
      * @var PortalSeo

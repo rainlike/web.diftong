@@ -20,7 +20,7 @@ interface Seo
     public function setTarget(Seoful $target);
 
     /**
-     * Set target
+     * Get target
      *
      * @return mixed|null
      */

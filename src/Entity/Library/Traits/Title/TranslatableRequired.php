@@ -10,12 +10,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Trait Translatable
+ * Trait TranslatableRequired
  *
  * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-trait Translatable
+trait TranslatableRequired
 {
     /**
      * @var string
