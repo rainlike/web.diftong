@@ -13,9 +13,6 @@ use Gedmo\Translatable\Translatable;
 use App\Entity\Library\Interfaces\Seoful;
 use App\Entity\Library\Interfaces\Seo as SeoInterface;
 
-use App\Entity\Library\Traits\Created as CreatedField;
-use App\Entity\Library\Traits\Updated as UpdatedField;
-use App\Entity\Library\Traits\Enabled as EnabledField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 use App\Entity\Library\Traits\Title\TranslatableNonRequired as TitleField;
 use App\Entity\Library\Traits\Description\TranslatableNonRequired as DescriptionField;
@@ -27,13 +24,10 @@ use App\Entity\Library\Traits\Description\TranslatableNonRequired as Description
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\MappedSuperclass()
  */
-abstract class Seo implements SeoInterface, Translatable
+abstract class Seo extends Basic implements SeoInterface, Translatable
 {
     use TitleField;
     use DescriptionField;
-    use EnabledField;
-    use CreatedField;
-    use UpdatedField;
     use LocaleField;
 
     /**

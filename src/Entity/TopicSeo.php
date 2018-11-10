@@ -8,24 +8,24 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\Interfaces\Seoful;
 
-use App\Entity\Translations\PortalSeoTranslation;
+use App\Entity\Translations\TopicSeoTranslation;
 
 use App\Entity\Library\Seo;
 
 /**
- * Class PortalSeo
+ * Class TopicSeo
  *
  * @package App\Entity
  * @author Alexander Saveliev <alex@spbcrew.com>
- * @ORM\Table(name="app_portal_seo")
- * @ORM\Entity(repositoryClass="App\Repository\PortalSeoRepository")
+ * @ORM\Table(name="app_topic_seo")
+ * @ORM\Entity(repositoryClass="App\Repository\TopicSeoRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class PortalSeo extends Seo
+class TopicSeo extends Seo
 {
     /**
-     * @var Portal
-     * @ORM\OneToOne(targetEntity="Portal", inversedBy="seo")
+     * @var Topic
+     * @ORM\OneToOne(targetEntity="Topic", inversedBy="seo")
      * @ORM\JoinColumn(name="target", referencedColumnName="id")
      */
     private $target;
@@ -33,7 +33,7 @@ class PortalSeo extends Seo
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(
-     *     targetEntity="App\Entity\Translations\PortalSeoTranslation",
+     *     targetEntity="App\Entity\Translations\TopicSeoTranslation",
      *     mappedBy="object",
      *     cascade={"persist", "remove"}
      * )
@@ -41,7 +41,7 @@ class PortalSeo extends Seo
     private $translations;
 
     /**
-     * PortalSeo constructor
+     * TopicSeo constructor
      */
     public function __construct()
     {
@@ -70,9 +70,9 @@ class PortalSeo extends Seo
     /**
      * Set target
      *
-     * @return Portal|null
+     * @return Topic|null
      */
-    public function getTarget(): ?Portal
+    public function getTarget(): ?Topic
     {
         return $this->target;
     }
@@ -80,10 +80,10 @@ class PortalSeo extends Seo
     /**
      * Add translations
      *
-     * @param PortalSeoTranslation $translation
+     * @param TopicSeoTranslation $translation
      * @return self
      */
-    public function addTranslation(PortalSeoTranslation $translation): self
+    public function addTranslation(TopicSeoTranslation $translation): self
     {
         $this->translations[] = $translation;
 
@@ -93,10 +93,10 @@ class PortalSeo extends Seo
     /**
      * Remove translations
      *
-     * @param PortalSeoTranslation $translation
+     * @param TopicSeoTranslation $translation
      * @return void
      */
-    public function removeTranslation(PortalSeoTranslation $translation): void
+    public function removeTranslation(TopicSeoTranslation $translation): void
     {
         $this->translations->removeElement($translation);
     }

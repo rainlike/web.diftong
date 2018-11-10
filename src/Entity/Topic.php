@@ -13,17 +13,13 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Library\Basic;
 
-use App\Entity\Translations\PortalTranslation;
+use App\Entity\Translations\TopicTranslation;
 
 use App\Entity\Library\Interfaces\Slug;
 use App\Entity\Library\Interfaces\Seoful;
 
-use App\Entity\Library\Traits\Id as IdField;
-use App\Entity\Library\Traits\Enabled as EnabledField;
-use App\Entity\Library\Traits\Created as CreatedField;
-use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
+use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
@@ -32,20 +28,20 @@ use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
 
 /**
- * Class Portal
+ * Class Topic
  *
  * @package App\Entity
  * @author Alexander Saveliev <alex@spbcrew.com>
- * @ORM\Table(name="app_portal")
- * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
- * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
+ * @ORM\Table(name="app_topic")
+ * @ORM\Entity(repositoryClass="App\Repository\TopicRepository")
+ * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicTranslation")
  */
-class Portal extends Basic implements Translatable, Seoful, Slug
+class Topic extends Basic implements Translatable, Seoful, Slug
 {
-    use NameField;
     use TitleField;
     use FullTitleField;
     use UriField;
+    use ContentField;
     use LocaleField;
 
     use SeoMethods;
@@ -65,27 +61,25 @@ class Portal extends Basic implements Translatable, Seoful, Slug
     private $slug;
 
     /**
-     * @var PortalSeo
-     * @ORM\OneToOne(targetEntity="PortalSeo", mappedBy="target")
+     * @var TopicSeo
+     * @ORM\OneToOne(targetEntity="TopicSeo", mappedBy="target")
      */
     private $seo;
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Theory", mappedBy="portal")
+     * @var Portal
+     * @ORM\ManyToOne(targetEntity="Portal", inversedBy="topics")
+     * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
+     * @Assert\NotBlank(
+     *      message = "Portal should not be blank."
+     * )
      */
-    private $theories;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Topic", mappedBy="portal")
-     */
-    private $topics;
+    private $portal;
 
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(
-     *     targetEntity="App\Entity\Translations\PortalTranslation",
+     *     targetEntity="App\Entity\Translations\TopicTranslation",
      *     mappedBy="object",
      *     cascade={"persist", "remove"}
      * )
@@ -93,12 +87,10 @@ class Portal extends Basic implements Translatable, Seoful, Slug
     private $translations;
 
     /**
-     * Portal constructor
+     * Topic constructor
      */
     public function __construct()
     {
-        $this->theories = new ArrayCollection();
-        $this->topics = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
 
@@ -109,80 +101,36 @@ class Portal extends Basic implements Translatable, Seoful, Slug
     }
 
     /**
-     * Add theory
+     * Set portal
      *
-     * @param Theory $theory
+     * @param Portal $portal
      * @return self
      */
-    public function addTheory(Theory $theory): self
+    public function setPortal(Portal $portal): self
     {
-        $this->theories[] = $theory;
+        $this->portal = $portal;
+        $portal->addTopic($this);
 
         return $this;
     }
 
     /**
-     * Remove theory
+     * Get portal
      *
-     * @param Theory $theory
-     * @return void
+     * @return Portal|null
      */
-    public function removeTheory(Theory $theory): void
+    public function getPortal(): ?Portal
     {
-        $this->theories->removeElement($theory);
-    }
-
-    /**
-     * Get theories
-     *
-     * @return ArrayCollection|null
-     */
-    public function getTheories(): ?ArrayCollection
-    {
-        return $this->theories;
-    }
-
-    /**
-     * Add topic
-     *
-     * @param Topic $topic
-     * @return self
-     */
-    public function addTopic(Topic $topic): self
-    {
-        $this->theories[] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * Remove topic
-     *
-     * @param Topic $topic
-     * @return void
-     */
-    public function removeTopic(Topic $topic): void
-    {
-        $this->theories->removeElement($topic);
-    }
-
-    /**
-     * Get topics
-     *
-     * @return ArrayCollection|null
-     */
-    public function getTopics(): ?ArrayCollection
-    {
-        return $this->topics;
+        return $this->portal;
     }
 
     /**
      * Add translations
      *
-     * @param PortalTranslation $translation
+     * @param TopicTranslation $translation
      * @return self
      */
-    public function addTranslation(PortalTranslation $translation): self
+    public function addTranslation(TopicTranslation $translation): self
     {
         $this->translations[] = $translation;
 
@@ -192,10 +140,10 @@ class Portal extends Basic implements Translatable, Seoful, Slug
     /**
      * Remove translations
      *
-     * @param PortalTranslation $translation
+     * @param TopicTranslation $translation
      * @return void
      */
-    public function removeTranslation(PortalTranslation $translation): void
+    public function removeTranslation(TopicTranslation $translation): void
     {
         $this->translations->removeElement($translation);
     }

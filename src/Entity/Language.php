@@ -7,8 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use App\Entity\Library\Traits\Id as IdField;
-use App\Entity\Library\Traits\Enabled as EnabledField;
+use App\Entity\Library\Basic;
 
 /**
  * Class Language
@@ -19,11 +18,8 @@ use App\Entity\Library\Traits\Enabled as EnabledField;
  * @ORM\Entity(repositoryClass="App\Repository\LanguageRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Language
+class Language extends Basic
 {
-    use IdField;
-    use EnabledField;
-
     /**
      * @var string
      * @ORM\Column(name="locale", type="string", length=3, nullable=false, unique=true)

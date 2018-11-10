@@ -11,21 +11,21 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
 
+use App\Entity\Library\Basic;
+
 use App\Entity\Translations\TheoryTranslation;
 
 use App\Entity\Library\Interfaces\Slug;
 use App\Entity\Library\Interfaces\Seoful;
 
-use App\Entity\Library\Traits\Id as IdField;
-use App\Entity\Library\Traits\Enabled as EnabledField;
-use App\Entity\Library\Traits\Created as CreatedField;
-use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
+use App\Entity\Library\Traits\Content\TranslatableRequired as ContentField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
 
 /**
  * Class Theory
@@ -36,17 +36,15 @@ use App\Entity\Library\Traits\Slug\Required as SlugMethods;
  * @ORM\Entity(repositoryClass="App\Repository\TheoryRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TheoryTranslation")
  */
-class Theory implements Translatable, Seoful, Slug
+class Theory extends Basic implements Translatable, Seoful, Slug
 {
-    use IdField;
-    use UriField;
     use TitleField;
     use FullTitleField;
+    use UriField;
+    use ContentField;
     use LocaleField;
-    use EnabledField;
-    use CreatedField;
-    use UpdatedField;
 
+    use SeoMethods;
     use SlugMethods;
 
     /**
@@ -67,20 +65,6 @@ class Theory implements Translatable, Seoful, Slug
      * @ORM\Column(name="is_general", type="boolean", nullable=true, unique=false)
      */
     private $isGeneral;
-
-    /**
-     * @var string
-     * @Gedmo\Translatable
-     * @ORM\Column(name="content", type="text", nullable=false, unique=false)
-     * @Assert\NotBlank(
-     *      message="Content should not be blank."
-     * )
-     * @Assert\Length(
-     *      max = 5000,
-     *      maxMessage = "Content should be no longer than {{ limit }} characters."
-     * )
-     */
-    private $content;
 
     /**
      * @var string
@@ -177,29 +161,6 @@ class Theory implements Translatable, Seoful, Slug
     public function getIsGeneral(): ?bool
     {
         return $this->isGeneral;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return self
-     */
-    public function setContent(string $content): self
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string|null
-     */
-    public function getContent(): ?string
-    {
-        return $this->content;
     }
 
     /**

@@ -12,8 +12,6 @@ use App\Entity\Translations\TheorySeoTranslation;
 
 use App\Entity\Library\Seo;
 
-use App\Entity\Library\Traits\Id as IdField;
-
 /**
  * Class TheorySeo
  *
@@ -25,8 +23,6 @@ use App\Entity\Library\Traits\Id as IdField;
  */
 class TheorySeo extends Seo
 {
-    use IdField;
-
     /**
      * @var Theory
      * @ORM\OneToOne(targetEntity="Theory", inversedBy="seo")
