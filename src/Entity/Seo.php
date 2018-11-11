@@ -31,7 +31,7 @@ use App\Entity\Library\Traits\Description\TranslatableNonRequired as Description
 final class Seo extends Basic implements Translatable
 {
     /** @var string */
-    public const TARGET_CLASS_PREFIX = 'App.Entity'; // @TODO: rename to correct
+    public const TARGET_CLASS_PREFIX = 'App\Controller\\'; // @TODO: move to SeoService
 
     use TitleField;
     use DescriptionField;
