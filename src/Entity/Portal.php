@@ -15,13 +15,9 @@ use App\Entity\Library\Basic;
 
 use App\Entity\Translations\PortalTranslation;
 
-use App\Entity\Library\Interfaces\Slug;
-use App\Entity\Library\Interfaces\Seoful;
+use App\Entity\Library\Interfaces\ISlug;
+use App\Entity\Library\Interfaces\ISeoful;
 
-use App\Entity\Library\Traits\Id as IdField;
-use App\Entity\Library\Traits\Enabled as EnabledField;
-use App\Entity\Library\Traits\Created as CreatedField;
-use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
@@ -29,7 +25,6 @@ use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
-use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
 
 /**
  * Class Portal
@@ -40,7 +35,7 @@ use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
  */
-class Portal extends Basic implements Translatable, Seoful, Slug
+class Portal extends Basic implements Translatable, ISeoful, ISlug
 {
     use NameField;
     use TitleField;
@@ -48,7 +43,6 @@ class Portal extends Basic implements Translatable, Seoful, Slug
     use UriField;
     use LocaleField;
 
-    use SeoMethods;
     use SlugMethods;
 
     /**
@@ -63,12 +57,6 @@ class Portal extends Basic implements Translatable, Seoful, Slug
      * )
      */
     private $slug;
-
-    /**
-     * @var PortalSeo
-     * @ORM\OneToOne(targetEntity="PortalSeo", mappedBy="target")
-     */
-    private $seo;
 
     /**
      * @var ArrayCollection

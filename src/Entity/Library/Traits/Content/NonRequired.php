@@ -17,7 +17,7 @@ trait NonRequired
 {
     /**
      * @var string
-     * @ORM\Column(name="content", type="text", nullable=true, unique=false)
+     * @ORM\Column(name="content", type="text", length=5000, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 5000,
      *      maxMessage = "Content should be no longer than {{ limit }} characters."

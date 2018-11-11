@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace App\Entity\Library\Interfaces;
 
 /**
- * Interface Slug
+ * Interface ISlug
  *
  * @package App\Entity\Library\Interfaces
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-interface Slug
+interface ISlug
 {
     /**
      * Set target

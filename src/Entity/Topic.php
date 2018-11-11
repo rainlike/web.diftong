@@ -15,8 +15,8 @@ use App\Entity\Library\Basic;
 
 use App\Entity\Translations\TopicTranslation;
 
-use App\Entity\Library\Interfaces\Slug;
-use App\Entity\Library\Interfaces\Seoful;
+use App\Entity\Library\Interfaces\ISlug;
+use App\Entity\Library\Interfaces\ISeoful;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
@@ -25,7 +25,6 @@ use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
-use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
 
 /**
  * Class Topic
@@ -36,7 +35,7 @@ use App\Entity\Library\Traits\Seo\NonRequired as SeoMethods;
  * @ORM\Entity(repositoryClass="App\Repository\TopicRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicTranslation")
  */
-class Topic extends Basic implements Translatable, Seoful, Slug
+final class Topic extends Basic implements Translatable, ISeoful, ISlug
 {
     use TitleField;
     use FullTitleField;
@@ -44,7 +43,6 @@ class Topic extends Basic implements Translatable, Seoful, Slug
     use ContentField;
     use LocaleField;
 
-    use SeoMethods;
     use SlugMethods;
 
     /**
@@ -59,12 +57,6 @@ class Topic extends Basic implements Translatable, Seoful, Slug
      * )
      */
     private $slug;
-
-    /**
-     * @var TopicSeo
-     * @ORM\OneToOne(targetEntity="TopicSeo", mappedBy="target")
-     */
-    private $seo;
 
     /**
      * @var Portal

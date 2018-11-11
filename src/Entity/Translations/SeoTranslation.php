@@ -7,33 +7,33 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
-use App\Entity\TopicSeo;
+use App\Entity\Seo;
 
 /**
- * Class TopicSeoTranslation
+ * Class SeoTranslation
  *
  * @package App\Entity\Translation
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\Entity
- * @ORM\Table(name="app_topic_seo_translation",
+ * @ORM\Table(name="app_seo_translation",
  *     indexes={
- *         @ORM\Index(name="topic_seo_translation_index", columns={
- *             "locale", "topic_seo", "field"
+ *         @ORM\Index(name="seo_translation_index", columns={
+ *             "locale", "seo", "field"
  *         })
  *     }
  * )
  */
-class TopicSeoTranslation extends AbstractPersonalTranslation
+class SeoTranslation extends AbstractPersonalTranslation
 {
     /**
-     * @var TopicSeo
-     * @ORM\ManyToOne(targetEntity="App\Entity\TopicSeo", inversedBy="translations")
-     * @ORM\JoinColumn(name="topic_seo", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     * @var Seo
+     * @ORM\ManyToOne(targetEntity="App\Entity\Seo", inversedBy="translations")
+     * @ORM\JoinColumn(name="seo", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $object;
 
     /**
-     * TopicSeoTranslation constructor
+     * SeoTranslation constructor
      *
      * @param string|null $locale
      * @param string|null $field

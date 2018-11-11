@@ -18,7 +18,7 @@ use App\Entity\Library\Basic;
  * @ORM\Entity(repositoryClass="App\Repository\LanguageRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Language extends Basic
+final class Language extends Basic
 {
     /**
      * @var string

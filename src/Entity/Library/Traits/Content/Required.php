@@ -17,7 +17,7 @@ trait Required
 {
     /**
      * @var string
-     * @ORM\Column(name="content", type="text", nullable=false, unique=false)
+     * @ORM\Column(name="content", type="text", length=5000, nullable=false, unique=false)
      * @Assert\NotBlank(
      *      message="Content should not be blank."
      * )

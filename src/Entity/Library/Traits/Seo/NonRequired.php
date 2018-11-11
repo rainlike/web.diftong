@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Library\Traits\Seo;
 
-use App\Entity\Library\Interfaces\Seo;
+use App\Entity\Library\Interfaces\ISeo;
 
 /**
  * Trait NonRequired
@@ -13,16 +13,16 @@ use App\Entity\Library\Interfaces\Seo;
  */
 trait NonRequired
 {
-    /** @var Seo */
+    /** @var ISeo */
     private $seo;
 
     /**
      * Set SEO
      *
-     * @param Seo|null $seo
+     * @param ISeo|null $seo
      * @return self
      */
-    public function setSeo(?Seo $seo = null): self
+    public function setSeo(?ISeo $seo = null): self
     {
         $this->seo = $seo;
 
@@ -32,9 +32,9 @@ trait NonRequired
     /**
      * Get SEO
      *
-     * @return Seo
+     * @return ISeo
      */
-    public function getSeo()
+    public function getSeo(): ISeo
     {
         return $this->seo;
     }

@@ -20,7 +20,7 @@ trait NonRequired
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="description", type="text", nullable=true, unique=false)
+     * @ORM\Column(name="description", type="text", length=1000, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 1000,
      *      maxMessage = "Description should be no longer than {{ limit }} characters."
