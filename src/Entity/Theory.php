@@ -81,6 +81,12 @@ class Theory extends Basic implements Translatable, Seoful, Slug
     private $formattedContent;
 
     /**
+     * @var TheorySeo
+     * @ORM\OneToOne(targetEntity="TheorySeo", mappedBy="target")
+     */
+    private $seo;
+
+    /**
      * @ORM\OneToOne(targetEntity="Theory")
      * @ORM\JoinColumn(name="previous_id", referencedColumnName="id", nullable=true, unique=false)
      */
