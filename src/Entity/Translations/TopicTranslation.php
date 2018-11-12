@@ -9,6 +9,8 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
 use App\Entity\Topic;
 
+use App\Entity\Library\Interfaces\ITranslation;
+
 /**
  * Class TopicTranslation
  *
@@ -23,7 +25,7 @@ use App\Entity\Topic;
  *     }
  * )
  */
-class TopicTranslation extends AbstractPersonalTranslation
+class TopicTranslation extends AbstractPersonalTranslation implements ITranslation
 {
     /**
      * @var Topic

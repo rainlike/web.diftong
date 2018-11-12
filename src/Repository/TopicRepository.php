@@ -9,6 +9,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Topic;
 
+use App\Repository\Library\Interfaces\ISeoable;
+
+use App\Repository\Library\Traits\Seoable as SeoableMethods;
+
 /**
  * Class TopicRepository
  *
@@ -19,8 +23,10 @@ use App\Entity\Topic;
  * @method Topic[]    findAll()
  * @method Topic[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TopicRepository extends ServiceEntityRepository
+class TopicRepository extends ServiceEntityRepository implements ISeoable
 {
+    use SeoableMethods;
+
     /**
      * TopicRepository constructor
      *

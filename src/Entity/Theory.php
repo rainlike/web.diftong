@@ -13,10 +13,9 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Library\Basic;
 
-use App\Entity\Translations\TheoryTranslation;
-
 use App\Entity\Library\Interfaces\ISlug;
-use App\Entity\Library\Interfaces\ISeoful;
+use App\Entity\Library\Interfaces\ISeoable;
+use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
@@ -25,6 +24,7 @@ use App\Entity\Library\Traits\Content\TranslatableRequired as ContentField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class Theory
@@ -35,7 +35,7 @@ use App\Entity\Library\Traits\Slug\Required as SlugMethods;
  * @ORM\Entity(repositoryClass="App\Repository\TheoryRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TheoryTranslation")
  */
-final class Theory extends Basic implements Translatable, ISeoful, ISlug
+final class Theory extends Basic implements Translatable, ISeoable, ITranslatable, ISlug
 {
     use TitleField;
     use FullTitleField;
@@ -44,6 +44,7 @@ final class Theory extends Basic implements Translatable, ISeoful, ISlug
     use LocaleField;
 
     use SlugMethods;
+    use TranslationMethods;
 
     /**
      * @Gedmo\Slug(fields={"title"})
@@ -312,39 +313,5 @@ final class Theory extends Basic implements Translatable, ISeoful, ISlug
     public function getChildren(): ?ArrayCollection
     {
         return $this->children;
-    }
-
-    /**
-     * Add translations
-     *
-     * @param TheoryTranslation $translation
-     * @return self
-     */
-    public function addTranslation(TheoryTranslation $translation): self
-    {
-        $this->translations[] = $translation;
-
-        return $this;
-    }
-
-    /**
-     * Remove translations
-     *
-     * @param TheoryTranslation $translation
-     * @return void
-     */
-    public function removeTranslation(TheoryTranslation $translation): void
-    {
-        $this->translations->removeElement($translation);
-    }
-
-    /**
-     * Get translations
-     *
-     * @return ArrayCollection|null
-     */
-    public function getTranslations(): ?ArrayCollection
-    {
-        return $this->translations;
     }
 }

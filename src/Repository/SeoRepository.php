@@ -9,6 +9,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Seo;
 
+use App\Entity\Library\Interfaces\ISeoable;
+
 /**
  * Class SeoRepository
  *
@@ -29,5 +31,17 @@ class SeoRepository extends ServiceEntityRepository
     public function __construct(Registry $registry)
     {
         parent::__construct($registry, Seo::class);
+    }
+
+    /**
+     * Get target
+     *
+     * @param ISeoable $target
+     * @return ISeoable|null
+     */
+    public function getTarget(ISeoable $target): ?ISeoable
+    {
+        # TODO
+        return null;
     }
 }

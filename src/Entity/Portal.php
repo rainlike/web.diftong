@@ -13,10 +13,9 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Library\Basic;
 
-use App\Entity\Translations\PortalTranslation;
-
 use App\Entity\Library\Interfaces\ISlug;
-use App\Entity\Library\Interfaces\ISeoful;
+use App\Entity\Library\Interfaces\ISeoable;
+use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
@@ -25,6 +24,7 @@ use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class Portal
@@ -35,7 +35,7 @@ use App\Entity\Library\Traits\Slug\Required as SlugMethods;
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
  */
-class Portal extends Basic implements Translatable, ISeoful, ISlug
+class Portal extends Basic implements Translatable, ISeoable, ITranslatable, ISlug
 {
     use NameField;
     use TitleField;
@@ -44,6 +44,7 @@ class Portal extends Basic implements Translatable, ISeoful, ISlug
     use LocaleField;
 
     use SlugMethods;
+    use TranslationMethods;
 
     /**
      * @Gedmo\Slug(fields={"title"})
@@ -162,39 +163,5 @@ class Portal extends Basic implements Translatable, ISeoful, ISlug
     public function getTopics(): ?ArrayCollection
     {
         return $this->topics;
-    }
-
-    /**
-     * Add translations
-     *
-     * @param PortalTranslation $translation
-     * @return self
-     */
-    public function addTranslation(PortalTranslation $translation): self
-    {
-        $this->translations[] = $translation;
-
-        return $this;
-    }
-
-    /**
-     * Remove translations
-     *
-     * @param PortalTranslation $translation
-     * @return void
-     */
-    public function removeTranslation(PortalTranslation $translation): void
-    {
-        $this->translations->removeElement($translation);
-    }
-
-    /**
-     * Get translations
-     *
-     * @return ArrayCollection|null
-     */
-    public function getTranslations(): ?ArrayCollection
-    {
-        return $this->translations;
     }
 }

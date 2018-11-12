@@ -57,7 +57,7 @@ services:
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones
 
-  # Symfony standart services
+  # Symfony standard services
   sym.finder:
     class: Symfony\Component\Finder\Finder
     public: false
@@ -68,6 +68,14 @@ services:
     autowire: true
     autoconfigure: true
     public: true
+
+  app.seo:
+    class: App\Service\Seo
+    autowire: true
+    autoconfigure: true
+    public: true
+    arguments:
+      $domain: '%domain%'
 
   # Helpers
   app.translation.helper:

@@ -8,7 +8,11 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
+use App\Entity\Seo;
 use App\Entity\Theory;
+
+use App\DataFixtures\Library\Traits\Mapping as MappingMethods;
+use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class TheoryFixtures
@@ -18,6 +22,9 @@ use App\Entity\Theory;
  */
 class TheoryFixtures extends Fixture implements OrderedFixtureInterface
 {
+    use MappingMethods;
+    use TranslationMethods;
+
     /**
      * List of preset Theories
      * @var array
@@ -27,7 +34,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
             [
                 'index' => '1.grammar',
                 'title' => 'Grammar',
-                'full_title' => '@TODO',
+                'full_title' => 'English grammar',
                 'uri' => '/grammar',
                 'is_general' => true,
                 'content' => '@TODO',
@@ -44,7 +51,12 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                         'ru' => 'Грамматика',
                         'pl' => 'Gramatyka'
                     ],
-                    'full_title' => [],
+                    'full_title' => [
+                        'es' => 'Gramatica inglesa',
+                        'uk' => 'Граматика англійської мови',
+                        'ru' => 'Грамматика английского языка',
+                        'pl' => 'Gramatyka angielska'
+                    ],
                     'content' => [],
                     'formatted_content' => []
                 ]
@@ -52,7 +64,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
             [
                 'index' => '2.verb',
                 'title' => 'Verb',
-                'full_title' => '@TODO',
+                'full_title' => null,
                 'uri' => '/verb',
                 'is_general' => false,
                 'content' => '@TODO',
@@ -72,6 +84,31 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                     'full_title' => [],
                     'content' => [],
                     'formatted_content' => []
+                ],
+                'seo' => [
+                    'title' => 'Verb - title',
+                    'description' => 'Verb - description',
+                    'keywords' => 'Verb - keywords',
+                    'translations' => [
+                        'title' => [
+                            'es' => 'Verbo - title',
+                            'uk' => 'Дієслово - title',
+                            'ru' => 'Глагол - title',
+                            'pl' => 'Czasownik - title'
+                        ],
+                        'description' => [
+                            'es' => 'Verbo - description',
+                            'uk' => 'Дієслово - description',
+                            'ru' => 'Глагол - description',
+                            'pl' => 'Czasownik - description'
+                        ],
+                        'keywords' => [
+                            'es' => 'Verbo - keywords',
+                            'uk' => 'Дієслово - keywords',
+                            'ru' => 'Глагол - keywords',
+                            'pl' => 'Czasownik - keywords'
+                        ],
+                    ]
                 ]
             ],
             [
@@ -165,19 +202,31 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 $manager->flush();
 
                 /** @var array $translations */
-                $translations = $theory['translations'];
-                foreach ($translations as $translationName => $targetTranslations) {
-                    foreach ($targetTranslations as $locale => $translation) {
-                        $setterName = $this->mapping($translationName);
+                $translations = $theory['translations'] ?? null;
+                if ($translations) {
+                    $this->saveTranslations($translations, $entity, $manager);
+                }
 
-                        if ($setterName) {
-                            $setter = 'set'.\ucfirst($setterName);
+                /** @var array $seo */
+                $seo = $theory['seo'] ?? null;
+                if ($seo) {
+                    $seoEntity = new Seo();
+                    $seoEntity->setTitle($seo['title']);
+                    $seoEntity->setDescription($seo['description']);
+                    $seoEntity->setKeywords($seo['keywords']);
+                    $seoEntity->setEnabled(true);
+                    $seoEntity->setAutoGenerate(true);
+                    $seoEntity->setCreated($now);
+                    $seoEntity->setUpdated($now);
+                    $seoEntity->setTarget($entity);
 
-                            $entity->setTranslatableLocale($locale);
-                            $entity->$setter($translation);
-                            $manager->persist($entity);
-                            $manager->flush();
-                        }
+                    $manager->persist($seoEntity);
+                    $manager->flush();
+
+                    /** @var array $seoTranslations */
+                    $seoTranslations = $seo['translations'] ?? null;
+                    if ($seoTranslations) {
+                        $this->saveTranslations($seoTranslations, $seoEntity, $manager);
                     }
                 }
             }
@@ -192,23 +241,5 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
     public function getOrder(): int
     {
         return 2;
-    }
-
-    /**
-     * Get mapping
-     *
-     * @param string $key
-     * @return string|null
-     */
-    private function mapping(string $key): ?string
-    {
-        $mapping = [
-            'title' => 'title',
-            'full_title' => 'fullTitle',
-            'content' => 'content',
-            'formatted_content' => 'formattedContent'
-        ];
-
-        return $mapping[$key] ?? null;
     }
 }

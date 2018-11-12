@@ -2,8 +2,11 @@ OUT=false
 
 # Symfony
 # server
-.PHONY: sym.serv
+.PHONY: sym.start sym.stop
+sym.start:
 	bin/console server:start
+sym.stop:
+	bin/console server:stop
 # cache
 .PHONY: sym.cache.perms sym.cache.clear
 sym.cache.perms:

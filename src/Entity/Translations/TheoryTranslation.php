@@ -9,6 +9,8 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
 use App\Entity\Theory;
 
+use App\Entity\Library\Interfaces\ITranslation;
+
 /**
  * Class TheoryTranslation
  *
@@ -23,7 +25,7 @@ use App\Entity\Theory;
  *     }
  * )
  */
-class TheoryTranslation extends AbstractPersonalTranslation
+class TheoryTranslation extends AbstractPersonalTranslation implements ITranslation
 {
     /**
      * @var Theory

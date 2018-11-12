@@ -10,6 +10,8 @@ use App\Entity\Library\Traits\Created as CreatedField;
 use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Enabled as EnabledField;
 
+use App\Utility\StaticLibrary;
+
 /**
  * Class Basic
  *
@@ -23,4 +25,14 @@ abstract class Basic
     use EnabledField;
     use CreatedField;
     use UpdatedField;
+
+    /**
+     * Get pure class name
+     *
+     * @return string
+     */
+    public function getClassName(): string
+    {
+        return StaticLibrary::className(\get_class($this));
+    }
 }

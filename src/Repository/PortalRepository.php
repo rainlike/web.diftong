@@ -9,6 +9,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Portal;
 
+use App\Repository\Library\Interfaces\ISeoable;
+
+use App\Repository\Library\Traits\Seoable as SeoableMethods;
+
 /**
  * Class PortalRepository
  *
@@ -19,8 +23,10 @@ use App\Entity\Portal;
  * @method Portal[]    findAll()
  * @method Portal[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PortalRepository extends ServiceEntityRepository
+class PortalRepository extends ServiceEntityRepository implements ISeoable
 {
+    use SeoableMethods;
+
     /**
      * PortalRepository constructor
      *

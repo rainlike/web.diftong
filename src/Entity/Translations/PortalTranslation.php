@@ -9,6 +9,8 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
 use App\Entity\Portal;
 
+use App\Entity\Library\Interfaces\ITranslation;
+
 /**
  * Class PortalTranslation
  *
@@ -23,7 +25,7 @@ use App\Entity\Portal;
  *     }
  * )
  */
-class PortalTranslation extends AbstractPersonalTranslation
+class PortalTranslation extends AbstractPersonalTranslation implements ITranslation
 {
     /**
      * @var Portal

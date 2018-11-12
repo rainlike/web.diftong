@@ -10,6 +10,9 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 use App\Entity\Portal;
 
+use App\DataFixtures\Library\Traits\Mapping as MappingMethods;
+use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
+
 /**
  * Class PortalFixtures
  *
@@ -18,6 +21,9 @@ use App\Entity\Portal;
  */
 class PortalFixtures extends Fixture implements OrderedFixtureInterface
 {
+    use MappingMethods;
+    use TranslationMethods;
+
     /**
      * List of Portals
      * @var array
@@ -36,7 +42,12 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Английский язык',
                     'pl' => 'Język angielski'
                 ],
-                'full_title' => []
+                'full_title' => [
+                    'es' => 'Ingles en linea',
+                    'uk' => 'Англійська мова онлайн',
+                    'ru' => 'Английский язык онлайн',
+                    'pl' => 'Język angielski online'
+                ]
             ]
         ],
         [
@@ -134,19 +145,8 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
 
             /** @var array $translations */
             $translations = $portal['translations'];
-            foreach ($translations as $translationName => $targetTranslations) {
-                foreach ($targetTranslations as $locale => $translation) {
-                    $setterName = $this->mapping($translationName);
-
-                    if ($setterName) {
-                        $setter = 'set'.\ucfirst($setterName);
-
-                        $entity->setTranslatableLocale($locale);
-                        $entity->$setter($translation);
-                        $manager->persist($entity);
-                        $manager->flush();
-                    }
-                }
+            if ($translations) {
+                $this->saveTranslations($translations, $entity, $manager);
             }
         }
     }
@@ -159,21 +159,5 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
     public function getOrder(): int
     {
         return 1;
-    }
-
-    /**
-     * Get mapping
-     *
-     * @param string $key
-     * @return string|null
-     */
-    private function mapping(string $key): ?string
-    {
-        $mapping = [
-            'title' => 'title',
-            'full_title' => 'fullTitle'
-        ];
-
-        return $mapping[$key] ?? null;
     }
 }

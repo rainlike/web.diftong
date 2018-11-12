@@ -9,6 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 use App\Entity\Library\Basic;
 
+use App\Entity\Library\Interfaces\IBasic;
+
 /**
  * Class Language
  *
@@ -18,7 +20,7 @@ use App\Entity\Library\Basic;
  * @ORM\Entity(repositoryClass="App\Repository\LanguageRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Language extends Basic
+final class Language extends Basic implements IBasic
 {
     /**
      * @var string

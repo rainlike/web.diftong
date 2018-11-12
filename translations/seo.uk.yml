@@ -1,6 +1,6 @@
 # SEO defaults
 default:
-  domain: "diftong.com"
+  site_name: "diftong.com"
   title: "diftong.com"
   description: ""
   keywords: ""

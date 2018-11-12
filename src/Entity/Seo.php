@@ -13,11 +13,15 @@ use Gedmo\Translatable\Translatable;
 
 use App\Entity\Library\Basic;
 
-use App\Entity\Translations\SeoTranslation;
+use App\Entity\Library\Interfaces\IBasic;
+use App\Entity\Library\Interfaces\ISeoable;
+use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 use App\Entity\Library\Traits\Title\TranslatableNonRequired as TitleField;
 use App\Entity\Library\Traits\Description\TranslatableNonRequired as DescriptionField;
+
+use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class Seo
@@ -26,16 +30,22 @@ use App\Entity\Library\Traits\Description\TranslatableNonRequired as Description
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\Table(name="app_seo")
  * @ORM\Entity(repositoryClass="App\Repository\SeoRepository")
+ * @Gedmo\TranslationEntity(class="App\Entity\Translations\SeoTranslation")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Seo extends Basic implements Translatable
+final class Seo extends Basic implements Translatable, IBasic, ITranslatable
 {
-    /** @var string */
-    public const TARGET_CLASS_PREFIX = 'App\Controller\\'; // @TODO: move to SeoService
-
     use TitleField;
     use DescriptionField;
     use LocaleField;
+
+    use TranslationMethods;
+
+    /**
+     * @var bool
+     * @ORM\Column(name="auto_generate", type="boolean", nullable=true, unique=false)
+     */
+    private $autoGenerate;
 
     /**
      * @var string
@@ -86,7 +96,7 @@ final class Seo extends Basic implements Translatable
     private $translations;
 
     /**
-     * PortalSeo constructor
+     * Seo constructor
      */
     public function __construct()
     {
@@ -97,6 +107,29 @@ final class Seo extends Basic implements Translatable
     public function __toString(): string
     {
         return (string)$this->getId();
+    }
+
+    /**
+     * Set autoGenerate
+     *
+     * @param bool $autoGenerate
+     * @return self
+     */
+    public function setAutoGenerate(bool $autoGenerate = true): self
+    {
+        $this->autoGenerate = $autoGenerate;
+
+        return $this;
+    }
+
+    /**
+     * Get autoGenerate
+     *
+     * @return bool|null
+     */
+    public function getAutoGenerate(): ?bool
+    {
+        return $this->autoGenerate;
     }
 
     /**
@@ -169,36 +202,16 @@ final class Seo extends Basic implements Translatable
     }
 
     /**
-     * Add translations
+     * Set target properties
      *
-     * @param SeoTranslation $translation
-     * @return self
+     * @param ISeoable $target
+     * @return Seo
      */
-    public function addTranslation(SeoTranslation $translation): self
+    public function setTarget(ISeoable $target): self
     {
-        $this->translations[] = $translation;
+        $this->targetId = $target->getId();
+        $this->targetName = $target->getClassName();
 
         return $this;
-    }
-
-    /**
-     * Remove translations
-     *
-     * @param SeoTranslation $translation
-     * @return void
-     */
-    public function removeTranslation(SeoTranslation $translation): void
-    {
-        $this->translations->removeElement($translation);
-    }
-
-    /**
-     * Get translations
-     *
-     * @return ArrayCollection|null
-     */
-    public function getTranslations(): ?ArrayCollection
-    {
-        return $this->translations;
     }
 }

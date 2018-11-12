@@ -9,6 +9,8 @@ use Gedmo\Translatable\Entity\MappedSuperclass\AbstractPersonalTranslation;
 
 use App\Entity\Seo;
 
+use App\Entity\Library\Interfaces\ITranslation;
+
 /**
  * Class SeoTranslation
  *
@@ -23,7 +25,7 @@ use App\Entity\Seo;
  *     }
  * )
  */
-class SeoTranslation extends AbstractPersonalTranslation
+class SeoTranslation extends AbstractPersonalTranslation implements ITranslation
 {
     /**
      * @var Seo
