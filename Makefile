@@ -36,9 +36,11 @@ db.rebuild:
 	$(MAKE) sym.cache.perms
 
 # Tests
-.PHONY: test.unit test.utility
+.PHONY: test.unit test.cover test.utility
 test.unit:
 	bin/phpunit
+test.cover:
+	bin/phpunit --configuration phpunit.coverage.xml
 test.utility:
 	bin/phpunit --group utility
 
