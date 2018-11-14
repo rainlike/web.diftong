@@ -519,4 +519,648 @@ class StaticLibraryTest extends AbstractUnitTest
             ]
         ];
     }
+
+    /**
+     * Test `simpleArrayShift` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arraySimpleShiftProvider
+     */
+    public function testSimpleArrayShift(array $data, array $expected): void
+    {
+        $result = Target::simpleArrayShift($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testSimpleArrayShift
+     *
+     * @return array
+     */
+    public function arraySimpleShiftProvider(): array
+    {
+        return [
+            'simple case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [1, 2, 3, 4, 5]
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayShift` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @param int $count
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayShiftProvider
+     */
+    public function testArrayShift(array $data, array $expected, ?int $count = null): void
+    {
+        $result = Target::arrayShift($data, $count);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayShift
+     *
+     * @return array
+     */
+    public function arrayShiftProvider(): array
+    {
+        return [
+            'null count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [1, 2, 3, 4, 5],
+                'count' => null
+            ],
+            '0 count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [0, 1, 2, 3, 4, 5],
+                'count' => 0
+            ],
+            '1 count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [1, 2, 3, 4, 5],
+                'count' => 1
+            ],
+            '2 count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [2, 3, 4, 5],
+                'count' => 2
+            ],
+            'pre max count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [5],
+                'count' => 5
+            ],
+            'max count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [],
+                'count' => 6
+            ],
+            'negative count case' => [
+                'data' => [0, 1, 2, 3, 4, 5],
+                'expected' => [1, 2, 3, 4, 5],
+                'count' => -1
+            ]
+        ];
+    }
+
+    /**
+     * Test `isSequentialArray` static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider isSequentialArrayProvider
+     */
+    public function testIsSequentialArray(array $data, bool $expected): void
+    {
+        $result = Target::isSequentialArray($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testIsSequentialArray
+     *
+     * @return array
+     */
+    public function isSequentialArrayProvider(): array
+    {
+        return [
+            'numeric case' => [
+                'data' => [0, 1, 2, 3],
+                'expected' => true
+            ],
+            'strings case' => [
+                'data' => ['lorem', 'ipsum'],
+                'expected' => true
+            ],
+            'arrays case' => [
+                'data' => [[], []],
+                'expected' => true
+            ],
+            'different types case' => [
+                'data' => [1, 'lorem ipsum'],
+                'expected' => true
+            ],
+            'incorrect case' => [
+                'data' => [
+                    'lorem' => 'lorem',
+                    'ipsum' => 'ipsum'
+                ],
+                'expected' => false
+            ]
+        ];
+    }
+
+    /**
+     * Test `isAssociativeArray` static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider isAssociativeArrayProvider
+     */
+    public function testIsAssociativeArray(array $data, bool $expected): void
+    {
+        $result = Target::isAssociativeArray($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testIsAssociativeArray
+     *
+     * @return array
+     */
+    public function isAssociativeArrayProvider(): array
+    {
+        return [
+            'correct case' => [
+                'data' => [
+                    'lorem' => 'lorem',
+                    'ipsum' => 'ipsum'
+                ],
+                'expected' => true
+            ],
+            'incorrect case' => [
+                'data' => ['lorem', 'ipsum'],
+                'expected' => false
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayType` static method
+     *
+     * @param array $data
+     * @param int|string $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayTypeProvider
+     */
+    public function testArrayType(array $data, $expected): void
+    {
+        $result = Target::arrayType(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayType
+     *
+     * @return array
+     */
+    public function arrayTypeProvider(): array
+    {
+        return [
+            'string array case' => [
+                'data' => [['a', 'b', 'c'], null],
+                'expected' => 'sequential'
+            ],
+            'numeric array case' => [
+                'data' => [[1, 2, 3], null],
+                'expected' => 'sequential'
+            ],
+            'associative array case' => [
+                'data' => [[
+                    'a' => 1,
+                    'b' => 2
+                ], null],
+                'expected' => 'associative'
+            ],
+            'numeric flag case' => [
+                'data' => [[1, 2, 3], Target::$flag_array_type_numeric],
+                'expected' => 2
+            ],
+            'numeric flag associative array case' => [
+                'data' => [[
+                    'a' => 1,
+                    'b' => 2
+                ], Target::$flag_array_type_numeric],
+                'expected' => 1
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayKeysExists` static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayKeysExistsProvider
+     */
+    public function testArrayKeysExists(array $data, bool $expected): void
+    {
+        $result = Target::arrayKeysExists(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayKeysExists
+     *
+     * @return array
+     */
+    public function arrayKeysExistsProvider(): array
+    {
+        $targetArray = [
+            'a' => 2,
+            'b' => 3,
+            'c' => 5
+        ];
+
+        return [
+            'incorrect $keys argument type case' => [
+                'data' => [false, []],
+                'expected' => false
+            ],
+            'associative $keys case' => [
+                'data' => [[
+                    'a' => 1,
+                    'b' => 2
+                ], []],
+                'expected' => false
+            ],
+            'simple string key case' => [
+                'data' => ['a', $targetArray, false],
+                'expected' => true
+            ],
+            'simple array keys case' => [
+                'data' => [['a'], $targetArray, false],
+                'expected' => true
+            ],
+            'full coincidence case' => [
+                'data' => [['a', 'b', 'c'], $targetArray, true],
+                'expected' => true
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayExcept` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayExceptProvider
+     */
+    public function testArrayExcept(array $data, array $expected): void
+    {
+        $result = Target::arrayExcept(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayExcept
+     *
+     * @return array
+     */
+    public function arrayExceptProvider(): array
+    {
+        $sourceArray = ['a', 'b', 'c'];
+
+        return [
+            'associative $excepts case' => [
+                'data' => [$sourceArray, ['lorem' => 'ipsum']],
+                'expected' => $sourceArray
+            ],
+            'first simple case' => [
+                'data' => [$sourceArray, ['a']],
+                'expected' => ['b', 'c']
+            ],
+            'second simple case' => [
+                'data' => [$sourceArray, ['a', 'c']],
+                'expected' => ['b']
+            ],
+            'associative array case' => [
+                'data' => [[
+                    'a' => 'aaa',
+                    'b' => 'bbb',
+                    'c' => 'ccc'
+                ], ['a', 'c']],
+                'expected' => [
+                    'b' => 'bbb'
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayHasOnlyTypes` static method
+     *
+     * @param array $data
+     * @param bool|null $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayHasOnlyTypesProvider
+     */
+    public function testArrayHasOnlyTypes(array $data, ?bool $expected = null): void
+    {
+        $result = Target::arrayHasOnlyTypes(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayHasOnlyTypes
+     *
+     * @return array
+     */
+    public function arrayHasOnlyTypesProvider(): array
+    {
+        return [
+            'incorrect type case' => [
+                'data' => [[2, 3, 5], 'fake'],
+                'expected' => null
+            ],
+            'integer type case' => [
+                'data' => [[2, 3, 5], 'integer'],
+                'expected' => true
+            ],
+            'string type case' => [
+                'data' => [['lorem', 'ipsum'], 'string'],
+                'expected' => true
+            ],
+            'array type case' => [
+                'data' => [[[], [], []], 'array'],
+                'expected' => true
+            ],
+            'negative case' => [
+                'data' => [[2, 3, 5, 'lorem ipsum'], 'array'],
+                'expected' => false
+            ]
+        ];
+    }
+
+    /**
+     * Test `transformToSequentialArray` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider transformToSequentialArrayProvider
+     */
+    public function testTransformToSequentialArray(array $data, array $expected): void
+    {
+        $result = Target::transformToSequentialArray(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testTransformToSequentialArray
+     *
+     * @return array
+     */
+    public function transformToSequentialArrayProvider(): array
+    {
+        return [
+            'sequential array case' => [
+                'data' => [['a', 'b', 'c'], '-'],
+                'expected' => ['a', 'b', 'c']
+            ],
+            'correct case' => [
+                'data' => [[
+                    'a' => 'aaa',
+                    'b' => 'bbb',
+                    'c' => 'ccc'
+                ], '-'],
+                'expected' => [
+                    'a-aaa',
+                    'b-bbb',
+                    'c-ccc'
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Test `transformToAssociativeArray` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider transformToAssociativeArrayProvider
+     */
+    public function testTransformToAssociativeArray(array $data, array $expected): void
+    {
+        $result = Target::transformToAssociativeArray($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testTransformToAssociativeArray
+     *
+     * @return array
+     */
+    public function transformToAssociativeArrayProvider(): array
+    {
+        return [
+            'associative array case' => [
+                'data' => [
+                    'a' => 'aaa',
+                    'b' => 'bbb',
+                    'c' => 'ccc'
+                ],
+                'expected' => [
+                    'a' => 'aaa',
+                    'b' => 'bbb',
+                    'c' => 'ccc'
+                ]
+            ],
+            'correct case' => [
+                'data' => ['a', 'b', 'c'],
+                'expected' => [
+                    'a' => 'a',
+                    'b' => 'b',
+                    'c' => 'c'
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Test `isMaterialArray` static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider isMaterialArrayProvider
+     */
+    public function testIsMaterialArray(array $data, bool $expected): void
+    {
+        $result = Target::isMaterialArray(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testIsMaterialArray
+     *
+     * @return array
+     */
+    public function isMaterialArrayProvider(): array
+    {
+        return [
+            'full material numeric array case' => [
+                'data' => [[2, 3, 5], null, false, false],
+                'expected' => true
+            ],
+            'full material numeric array case with 0' => [
+                'data' => [[0, 1, 1, 2, 3, 5], null, false, false],
+                'expected' => true
+            ],
+            'at least one numeric array case' => [
+                'data' => [[null, null, 5], null, false, true],
+                'expected' => true
+            ],
+            'at least one numeric array case with 0' => [
+                'data' => [[null, null, 0], null, false, true],
+                'expected' => true
+            ],
+            'full material string array case' => [
+                'data' => [['lorem', 'ipsum'], Target::$flag_is_material_array_string, false, false],
+                'expected' => true
+            ],
+            'full material string array case with wrong flag' => [
+                'data' => [['lorem', 'ipsum'], Target::$flag_is_material_array_collection, false, false],
+                'expected' => false
+            ],
+            'full material list array case' => [
+                'data' => [[[1], [2], [5]], Target::$flag_is_material_array_list, false, false],
+                'expected' => true
+            ],
+            'incorrect flag positive case' => [
+                'data' => [[2, 3, 5], Target::$flag_is_material_array_collection + 10, false, false],
+                'expected' => true
+            ],
+            'incorrect flag negative case' => [
+                'data' => [[2, 3, 5], Target::$flag_is_material_array_string, false, false],
+                'expected' => false
+            ],
+            'numeric strict case' => [
+                'data' => [[2, 3, 5], Target::$flag_is_material_array_number, true, false],
+                'expected' => true
+            ],
+            'numeric strict negative case' => [
+                'data' => [[0, 1, 1, 2, 3, 5], Target::$flag_is_material_array_number, true, false],
+                'expected' => false
+            ],
+            'at least one list array case with empty item' => [
+                'data' => [[null, null, []], Target::$flag_is_material_array_list, true, true],
+                'expected' => false
+            ],
+            'at least one item array case with empty item without flag' => [
+                'data' => [[null, null, []], null, true, true],
+                'expected' => false
+            ]
+        ];
+    }
+
+    /**
+     * Test `arrayMaterialItems` static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider arrayMaterialItemsProvider
+     */
+    public function testArrayMaterialItems(array $data, array $expected): void
+    {
+        $result = Target::arrayMaterialItems(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testArrayMaterialItems
+     *
+     * @return array
+     */
+    public function arrayMaterialItemsProvider(): array
+    {
+        return [
+            'simple $noZero case' => [
+                'data' => [[
+                    'lorem ipsum',
+                    null,
+                    0,
+                    235,
+                    [],
+                    new \StdClass()
+                ], true],
+                'expected' => [
+                    'lorem ipsum',
+                    235
+                ]
+            ],
+            'simple case with possible zeros' => [
+                'data' => [[
+                    'lorem ipsum',
+                    null,
+                    0,
+                    235,
+                    [],
+                    new \StdClass()
+                ], false],
+                'expected' => [
+                    'lorem ipsum',
+                    0,
+                    235
+                ]
+            ],
+            'associative simple case' => [
+                'data' => [[
+                    'veni' => 'lorem ipsum',
+                    'vidi' => [],
+                    'vici' => ['lorem ipsum']
+                ], true],
+                'expected' => [
+                    'veni' => 'lorem ipsum',
+                    'vici' => ['lorem ipsum']
+                ]
+            ],
+            'blanked resultcase' => [
+                'data' => [[
+                    'lorem' => '',
+                    'ipsum' => null
+                ], true],
+                'expected' => []
+            ]
+        ];
+    }
 }
