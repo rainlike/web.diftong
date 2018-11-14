@@ -35,6 +35,13 @@ db.rebuild:
 	bin/console doctrine:migrations:migrate --no-interaction
 	$(MAKE) sym.cache.perms
 
+# Tests
+.PHONY: test.unit test.utility
+test.unit:
+	bin/phpunit
+test.utility:
+	bin/phpunit --group utility
+
 # Git
 .PHONY: git.pull
 git.push:

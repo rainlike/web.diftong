@@ -34,6 +34,8 @@ docs/phpdoc/
 # tests
 .phpunit
 /phpunit.xml
+/tests/_coverage/*
+!/tests/_coverage/.gitkeep
 /tests/_data/*
 !/tests/_data/.gitkeep
 /tests/_output/*
