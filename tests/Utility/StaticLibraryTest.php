@@ -7,6 +7,8 @@ use App\Tests\Library\AbstractUnitTest;
 
 use App\Utility\StaticLibrary as Target;
 
+use App\Entity\Portal;
+
 /**
  * Class StaticLibraryTest
  *
@@ -1160,6 +1162,180 @@ class StaticLibraryTest extends AbstractUnitTest
                     'ipsum' => null
                 ], true],
                 'expected' => []
+            ]
+        ];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Test `startInUrl` static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider startInUrlProvider
+     */
+    public function testStartInUrl(array $data, bool $expected): void
+    {
+        $result = Target::startInUrl(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testStartInUrl
+     *
+     * @return array
+     */
+    public function startInUrlProvider(): array
+    {
+        return [
+            'correct case' => [
+                'data' => ['https://spbcrew.com/en/admin/work/list', 'admin'],
+                'expected' => true
+            ],
+            'incorrect case' => [
+                'data' => ['https://spbcrew.com/en/admin/work/list', 'work'],
+                'expected' => false
+            ]
+        ];
+    }
+
+    /**
+     * Test `cutUrlQueryParameters` static method
+     *
+     * @param string $data
+     * @param array $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider cutUrlQueryParametersProvider
+     */
+    public function testCutUrlQueryParameters(string $data, array $expected): void
+    {
+        $result = Target::cutUrlQueryParameters($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testCutUrlQueryParameters
+     *
+     * @return array
+     */
+    public function cutUrlQueryParametersProvider(): array
+    {
+        return [
+            'empty case' => [
+                'data' => 'https://spbcrew.com/en/admin/work/list',
+                'expected' => []
+            ],
+            'simple corect case' => [
+                'data' => 'https://spbcrew.com/en/admin/work/list?first=lorem&second=ipsum',
+                'expected' => [
+                    'first' => 'lorem',
+                    'second' => 'ipsum'
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Test `className` static method
+     *
+     * @param string $data
+     * @param string $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider classNameProvider
+     */
+    public function testClassName(string $data, string $expected): void
+    {
+        $result = Target::className($data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testClassName
+     *
+     * @return array
+     */
+    public function classNameProvider(): array
+    {
+        return [
+            'correct case' => [
+                'data' => \get_class(new Portal()),
+                'expected' => 'Portal'
+            ]
+        ];
+    }
+
+    /**
+     * Test `classPath` static method
+     *
+     * @param array $data
+     * @param string $expected
+     * @return void
+     * @group utility
+     * @group done
+     * @dataProvider classPathProvider
+     */
+    public function testClassPath(array $data, string $expected): void
+    {
+        $result = Target::classPath(...$data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testClassPath
+     *
+     * @return array
+     */
+    public function classPathProvider(): array
+    {
+        return [
+            'no save slash case' => [
+                'data' => [\get_class(new Portal())],
+                'expected' => 'App\Entity\Portal'
+            ],
+            'save slash case' => [
+                'data' => ['Proxies\__CG__\\'.\get_class(new Portal()), true],
+                'expected' => '\App\Entity\Portal'
             ]
         ];
     }
