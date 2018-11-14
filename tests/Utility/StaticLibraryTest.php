@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Utility;
 
-use PHPUnit\Framework\TestCase;
+use App\Tests\Library\AbstractUnitTest;
 
 use App\Utility\StaticLibrary as Target;
 
@@ -12,7 +12,7 @@ use App\Utility\StaticLibrary as Target;
  *
  * @package App\Tests\Utility
  */
-class StaticLibraryTest extends TestCase
+class StaticLibraryTest extends AbstractUnitTest
 {
     /**
      * Test `slug` static method
@@ -385,6 +385,137 @@ class StaticLibraryTest extends TestCase
             'incorrect placeholders case' => [
                 'data' => [$testedString, ['%', '#'], null, false],
                 'expected' => []
+            ]
+        ];
+    }
+
+    /**
+     * Test private `stringPlaceholdersHandle` private static method
+     *
+     * @param array $data
+     * @param array $expected
+     * @return void
+     * @throws \Exception
+     * @group utility
+     * @group done
+     * @dataProvider stringPlaceholdersHandleProvider
+     */
+    public function testStringPlaceholdersHandle(array $data, array $expected): void
+    {
+        $assertExpected = [
+            $expected['processed_string'],
+            $expected['processed_descriptors'],
+            $expected['failed']
+        ];
+
+        $method = $this->reflectionMethod('stringPlaceholdersHandle');
+
+        $result = $method->invoke(null, ...$data);
+
+        $this->assertEquals($assertExpected, $result);
+    }
+
+    /**
+     * Data for testStringPlaceholdersHandle
+     *
+     * @return array
+     */
+    public function stringPlaceholdersHandleProvider(): array
+    {
+        $testedString = 'tested_%placeholder%_string';
+        $testedDescriptors = ['%', '%'];
+
+        return [
+            'without descriptors case' => [
+                'data' => [$testedString, false],
+                'expected' => [
+                    'processed_string' => $testedString,
+                    'processed_descriptors' => Target::$string_placeholders_default_descriptors,
+                    'failed' => false
+                ]
+            ],
+            'with descriptors case' => [
+                'data' => [$testedString, false, $testedDescriptors],
+                'expected' => [
+                    'processed_string' => $testedString,
+                    'processed_descriptors' => $testedDescriptors,
+                    'failed' => false
+                ]
+            ],
+            'without descriptors failed case' => [
+                'data' => [$testedString, true],
+                'expected' => [
+                    'processed_string' => $testedString,
+                    'processed_descriptors' => Target::$string_placeholders_default_descriptors,
+                    'failed' => true
+                ]
+            ],
+            'with descriptors with handling case' => [
+                'data' => [$testedString, true, $testedDescriptors],
+                'expected' => [
+                    'processed_string' => \str_replace($testedDescriptors, Target::$string_placeholders_default_descriptors, $testedString),
+                    'processed_descriptors' => Target::$string_placeholders_default_descriptors,
+                    'failed' => false
+                ]
+            ],
+            'no any descriptors case' => [
+                'data' => [$testedString, false],
+                'expected' => [
+                    'processed_string' => $testedString,
+                    'processed_descriptors' => ['{{', '}}'],
+                    'failed' => false
+                ]
+            ],
+            'with descriptors without handling case' => [
+                'data' => [$testedString, false, $testedDescriptors],
+                'expected' => [
+                    'processed_string' => $testedString,
+                    'processed_descriptors' => $testedDescriptors,
+                    'failed' => false
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * Test `isValidDescriptors` private static method
+     *
+     * @param array $data
+     * @param bool $expected
+     * @return void
+     * @throws \Exception
+     * @group utility
+     * @group done
+     * @dataProvider isValidDescriptorsProvider
+     */
+    public function testIsValidDescriptors(array $data, bool $expected): void
+    {
+        $method = $this->reflectionMethod('isValidDescriptors');
+
+        $result = $method->invoke(null, $data);
+
+        $this->assertEquals($expected, $result);
+    }
+
+    /**
+     * Data for testIsValidDescriptors
+     *
+     * @return array
+     */
+    public function isValidDescriptorsProvider(): array
+    {
+        return [
+            'valid descriptors case' => [
+                'data' => ['%', '%'],
+                'expected' => true
+            ],
+            'incorrect count of descriptors case' => [
+                'data' => ['%', '%', '%'],
+                'expected' => false
+            ],
+            'incorrect types of descriptors case' => [
+                'data' => ['%', 1],
+                'expected' => false
             ]
         ];
     }
