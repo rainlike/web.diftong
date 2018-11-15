@@ -3,9 +3,15 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Symfony\Bridge\Doctrine\RegistryInterface as Registry;
 
+use Doctrine\ORM\Query;
+
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+
+use App\Utility\StaticLibrary;
 
 use App\Entity\Seo;
 
@@ -34,14 +40,32 @@ class SeoRepository extends ServiceEntityRepository
     }
 
     /**
-     * Get target
+     * Get target SEO
      *
      * @param ISeoable $target
      * @return ISeoable|null
+     * @throws NonUniqueResultException
      */
-    public function getTarget(ISeoable $target): ?ISeoable
+    public function getSeo(ISeoable $target): ?ISeoable
     {
-        # TODO
-        return null;
+        return $this->getSeoQuery($target)->getOneOrNullResult();
+    }
+
+    /**
+     * Get query for target SEO
+     *
+     * @param ISeoable $target
+     * @return Query
+     */
+    public function getSeoQuery(ISeoable $target)
+    {
+        $qb = $this->createQueryBuilder('seo')
+            ->select('seo')
+            ->where('seo.targetId = :targetId')
+            ->andWhere('seo.targetName = :targetName')
+            ->setParameter('targetId', $target->getId())
+            ->setParameter('targetName', StaticLibrary::className($target));
+
+        return $qb->getQuery();
     }
 }

@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
 
-use App\Entity\Library\Basic;
+use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
@@ -33,7 +33,7 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\SeoTranslation")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Seo extends Basic implements Translatable, IBasic, ITranslatable
+final class Seo extends BasicEntity implements Translatable, IBasic, ITranslatable
 {
     use TitleField;
     use DescriptionField;

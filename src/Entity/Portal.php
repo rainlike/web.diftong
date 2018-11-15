@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Translatable\Translatable;
 
-use App\Entity\Library\Basic;
+use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\ISlug;
 use App\Entity\Library\Interfaces\ISeoable;
@@ -35,7 +35,7 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\PortalTranslation")
  */
-class Portal extends Basic implements Translatable, ISeoable, ITranslatable, ISlug
+class Portal extends BasicEntity implements Translatable, ISeoable, ITranslatable, ISlug
 {
     use NameField;
     use TitleField;

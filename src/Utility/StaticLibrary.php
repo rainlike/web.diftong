@@ -697,11 +697,13 @@ class StaticLibrary
     /**
      * Get pure name of class
      *
-     * @param string $className
+     * @param object $class
      * @return string
      */
-    public static function className(string $className): string
+    public static function className(object $class): string
     {
+        $className = \get_class($class);
+
         $path = \explode('\\', $className);
         $count = \count($path);
 
@@ -711,12 +713,13 @@ class StaticLibrary
     /**
      * Get pure class path
      *
-     * @param string $className
+     * @param object $class
      * @param bool $saveSlash
      * @return string
      */
-    public static function classPath(string $className, bool $saveSlash = false): string
+    public static function classPath(object $class, bool $saveSlash = false): string
     {
+        $className = \get_class($class);
         $proxyStr = $saveSlash ? 'Proxies\__CG__' : 'Proxies\__CG__\\';
 
         return str_replace($proxyStr, '', $className);

@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use App\Entity\Library\Basic;
+use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\IBasic;
 
@@ -20,7 +20,7 @@ use App\Entity\Library\Interfaces\IBasic;
  * @ORM\Entity(repositoryClass="App\Repository\LanguageRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Language extends Basic implements IBasic
+final class Language extends BasicEntity implements IBasic
 {
     /**
      * @var string

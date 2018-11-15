@@ -13,13 +13,13 @@ use App\Entity\Library\Traits\Enabled as EnabledField;
 use App\Utility\StaticLibrary;
 
 /**
- * Class Basic
+ * Class BasicEntity
  *
  * @package App\Entity\Library
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\MappedSuperclass()
  */
-abstract class Basic
+abstract class BasicEntity
 {
     use IdField;
     use EnabledField;
@@ -33,6 +33,6 @@ abstract class Basic
      */
     public function getClassName(): string
     {
-        return StaticLibrary::className(\get_class($this));
+        return StaticLibrary::className($this);
     }
 }

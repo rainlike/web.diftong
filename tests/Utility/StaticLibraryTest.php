@@ -1275,14 +1275,14 @@ class StaticLibraryTest extends AbstractUnitTest
     /**
      * Test `className` static method
      *
-     * @param string $data
+     * @param object $data
      * @param string $expected
      * @return void
      * @group utility
      * @group done
      * @dataProvider classNameProvider
      */
-    public function testClassName(string $data, string $expected): void
+    public function testClassName(object $data, string $expected): void
     {
         $result = Target::className($data);
 
@@ -1298,7 +1298,7 @@ class StaticLibraryTest extends AbstractUnitTest
     {
         return [
             'correct case' => [
-                'data' => \get_class(new Portal()),
+                'data' => new Portal(),
                 'expected' => 'Portal'
             ]
         ];
@@ -1330,12 +1330,8 @@ class StaticLibraryTest extends AbstractUnitTest
     {
         return [
             'no save slash case' => [
-                'data' => [\get_class(new Portal())],
+                'data' => [new Portal()],
                 'expected' => 'App\Entity\Portal'
-            ],
-            'save slash case' => [
-                'data' => ['Proxies\__CG__\\'.\get_class(new Portal()), true],
-                'expected' => '\App\Entity\Portal'
             ]
         ];
     }
