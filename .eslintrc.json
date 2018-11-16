@@ -1,0 +1,87 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "globals": {
+        "env": true,
+        "$": true,
+        "jquery": true,
+        "_": true
+    },
+    "rules": {
+        "indent": ["error", 4, {
+            "ignoreComments": true
+        }],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "comma-spacing": ["error", {
+            "before": false,
+            "after": true
+        }],
+        "comma-style": ["error", "last"],
+        "capitalized-comments": ["error", "always", {
+            "ignoreInlineComments": true,
+            "ignoreConsecutiveComments": true
+        }],
+        "func-call-spacing": ["error", "never"],
+        "dot-notation": "warn",
+        "dot-location": ["warn", "property"],
+        "valid-typeof": "error",
+        "eqeqeq": ["error", "smart"],
+        "no-console": ["error", {
+            "allow": ["warn", "error"]
+        }],
+        "no-alert": "error",
+        "no-debugger": "error",
+        "no-empty": "error",
+        "no-sparse-arrays": "error",
+        "no-invalid-regexp": "error",
+        "no-inner-declarations": "warn",
+        "no-extra-boolean-cast": "warn",
+        "no-unreachable": "error",
+        "strict": ["warn", "safe"],
+        "no-eval": "error",
+        "vars-on-top": "error",
+        "yoda": ["warn", "never"],
+        "array-bracket-newline": ["warn", "consistent"],
+        "array-bracket-spacing": ["warn", "never"],
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-spacing": "error",
+        "no-empty-function": ["error", {
+            "allow": ["generatorMethods", "constructors"]
+        }],
+        "getter-return": ["error", {
+            "allowImplicit": true
+        }],
+        "no-caller": "error",
+        "no-else-return": ["warn", {
+            "allowElseIf": true
+        }],
+        "no-magic-numbers": ["warn", {
+            "ignore": [-1, 0, 1],
+            "ignoreArrayIndexes": true,
+            "enforceConst": false,
+            "detectObjects": false
+        }],
+        "no-undef": "error",
+        "no-unused-vars": ["error", {
+            "vars": "all",
+            "varsIgnorePattern": "[iI]gnored",
+            "args": "after-used",
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true,
+            "caughtErrors": "none"
+        }],
+        "no-undefined": "error",
+        "no-delete-var": "error"
+    }
+}

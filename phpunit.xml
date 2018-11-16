@@ -42,13 +42,4 @@
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
-
-    <logging>
-        <log type="coverage-html" target="tests/_output/coverage"/>
-        <log type="coverage-clover" target="tests/_output/coverage.xml"/>
-        <log type="coverage-php" target="tests/_output/coverage.serialized"/>
-        <log type="testdox-html" target="tests/_output/testdox.html"/>
-        <log type="testdox-text" target="tests/_output/testdox.txt"/>
-        <log type="junit" target="var/log/phpunit/logfile.xml"/>
-    </logging>
 </phpunit>

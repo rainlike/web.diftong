@@ -1,0 +1,9 @@
+# Vendors
+/node_modules/
+/vendor/
+
+# Production
+/public/
+
+# Minified
+**/*min.css

@@ -49,6 +49,6 @@
         <log type="coverage-php" target="tests/_output/coverage.serialized"/>
         <log type="testdox-html" target="tests/_output/testdox.html"/>
         <log type="testdox-text" target="tests/_output/testdox.txt"/>
-        <log type="junit" target="var/log/phpunit/logfile.xml"/>
+        <log type="junit" target="var/log/phpunit-log.xml"/>
     </logging>
 </phpunit>

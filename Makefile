@@ -44,6 +44,34 @@ test.cover:
 test.utility:
 	bin/phpunit --group utility
 
+# Linting
+.PHONY: lint.all lint.js lint.ts lint.scripts lint.style
+lint.js:
+ifeq (${OUT}, true)
+	npx eslint --format compact --output-file var/log/eslint.log assets/**/*.js
+else
+	npx eslint --format codeframe assets/**/*.js
+endif
+lint.ts:
+ifeq (${OUT}, true)
+	npx tslint --project tsconfig.json --format msbuild --out var/log/tslint.log
+else
+	npx tslint --project tsconfig.json --format codeFrame
+endif
+lint.scripts:
+	$(MAKE) lint.js
+	$(MAKE) lint.ts
+lint.style:
+ifeq (${OUT}, true)
+	npx stylelint "assets/styles/**/*.scss" --syntax scss > var/log/stylelint.log
+else
+	npx stylelint "assets/styles/**/*.scss" --syntax scss
+endif
+lint.all:
+	$(MAKE) lint.js
+	$(MAKE) lint.ts
+	$(MAKE) lint.styles
+
 # Git
 .PHONY: git.pull
 git.push:
