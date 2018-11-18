@@ -9,9 +9,12 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Portal;
 
+use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISeoable;
 
+use App\Repository\Library\Traits\Enabled as EnabledMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
+use App\Repository\Library\Traits\MagicCallable as MagicCallableMethod;
 
 /**
  * Class PortalRepository
@@ -23,9 +26,11 @@ use App\Repository\Library\Traits\Seoable as SeoableMethods;
  * @method Portal[]    findAll()
  * @method Portal[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PortalRepository extends ServiceEntityRepository implements ISeoable
+class PortalRepository extends ServiceEntityRepository implements IBasic, ISeoable
 {
+    use EnabledMethods;
     use SeoableMethods;
+    use MagicCallableMethod;
 
     /**
      * PortalRepository constructor

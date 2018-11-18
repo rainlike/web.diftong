@@ -15,7 +15,10 @@ use App\Utility\StaticLibrary;
 
 use App\Entity\Seo;
 
+use App\Repository\Library\Traits\Enabled as EnabledMethods;
+
 use App\Entity\Library\Interfaces\ISeoable;
+use App\Repository\Library\Interfaces\IBasic;
 
 /**
  * Class SeoRepository
@@ -27,8 +30,10 @@ use App\Entity\Library\Interfaces\ISeoable;
  * @method Seo[]    findAll()
  * @method Seo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SeoRepository extends ServiceEntityRepository
+class SeoRepository extends ServiceEntityRepository implements IBasic
 {
+    use EnabledMethods;
+
     /**
      * SeoRepository constructor
      *

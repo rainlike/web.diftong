@@ -1,7 +1,7 @@
 <?php
 /**
  * Static Library
- * provides access to common static properties
+ * Provides access to common static properties
  *
  * @package App\Utility
  * @version 1.0.0

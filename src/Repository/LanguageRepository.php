@@ -11,6 +11,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Language;
 
+use App\Repository\Library\Traits\Enabled as EnabledMethods;
+
+use App\Repository\Library\Interfaces\IBasic;
+
 /**
  * Class LanguageRepository
  *
@@ -21,8 +25,10 @@ use App\Entity\Language;
  * @method Language[]    findAll()
  * @method Language[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LanguageRepository extends ServiceEntityRepository
+class LanguageRepository extends ServiceEntityRepository implements IBasic
 {
+    use EnabledMethods;
+
     /**
      * LanguageRepository constructor
      *
@@ -93,9 +99,10 @@ class LanguageRepository extends ServiceEntityRepository
     public function getEnabledLocales(?string $sort = null): array
     {
         $locales = [];
-        $languages = $this->getEnabledLanguages();
+        $languages = $this->getEnabled();
 
         if ($languages) {
+            /** @var Language $language */
             foreach ($languages as $language) {
                 $locales[] = $language->getLocale();
             }
@@ -106,8 +113,6 @@ class LanguageRepository extends ServiceEntityRepository
                         \asort($locales);
                         break;
                     case 'DESC':
-                        \arsort($locales);
-                        break;
                     default:
                         \arsort($locales);
                 }

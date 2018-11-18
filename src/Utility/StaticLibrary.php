@@ -1,7 +1,7 @@
 <?php
 /**
  * Static Library
- * provides useful static methods
+ * Provides useful static methods
  *
  * @package App\Utility
  * @version 1.0.0

@@ -24,6 +24,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
+use App\Entity\Portal;
+
 /**
  * Class BaseController
  *
@@ -48,10 +50,14 @@ class BaseController extends Controller
      */
     public function index(Request $request)
     {
-        $temp = 1;
+        $portals = $this->getDoctrine()->getRepository(Portal::class)->getEnabled();
+
+        # @TODO: $this->get('app.seo')->generateForIndexPage()
+        $seo = null;
 
         return [
-            'temp' => $temp
+            'portals' => $portals,
+            'seo' => $seo
         ];
     }
 }

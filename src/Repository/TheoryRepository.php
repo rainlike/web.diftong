@@ -9,8 +9,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Theory;
 
+use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISeoable;
 
+use App\Repository\Library\Traits\Enabled as EnabledMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
 
 /**
@@ -23,8 +25,9 @@ use App\Repository\Library\Traits\Seoable as SeoableMethods;
  * @method Theory[]    findAll()
  * @method Theory[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TheoryRepository extends ServiceEntityRepository implements ISeoable
+class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoable
 {
+    use EnabledMethods;
     use SeoableMethods;
 
     /**
