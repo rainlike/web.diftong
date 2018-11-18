@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
+use App\Utility\StaticLibrary;
+
 /**
  * Class CommonController
  *
@@ -58,22 +60,21 @@ class CommonController extends Controller
         string $url
     ): Response
     {
+        # @TODO: check if null
         $user = $this->getUser();
-//        $selfContainer = $this->get('app.self.container');
 
         # @TODO: $backLink -> check if it's own link
+//        $selfContainer = $this->get('app.self.container');
 //        $prevUrl = $selfContainer->previousUrl();
         $backLink = null;
 
-        # @TODO: $languageSwitcher
-        $langSwitcher = null;
-//        $queryParameters = $this->get('app.library')->cutUrlQueryParameters($url);
-//        $langSwitcher = $this->get('app.lang.switcher')
-//            ->init($request)
-//            ->setRoute($route)
-//            ->setRouteParameters($routeParams)
-//            ->setQueryParameters($queryParameters)
-//            ->getSwitcher();
+        $queryParameters = StaticLibrary::cutUrlQueryParameters($url);
+        $langSwitcher = $this->get('app.lang.switcher')
+            ->init($request)
+            ->setRoute($route)
+            ->setRouteParameters($routeParams)
+            ->setQueryParameters($queryParameters)
+            ->getSwitcher();
 
         return $this->render('front/regions/header.html.twig', [
             'user' => $user,
@@ -105,15 +106,13 @@ class CommonController extends Controller
 
         # @TODO: $footerItems
 
-        # @TODO: $languageSwitcher
-        $langSwitcher = null;
-//        $queryParameters = $this->get('app.library')->cutUrlQueryParameters($url);
-//        $langSwitcher = $this->get('app.lang.switcher')
-//            ->init($request)
-//            ->setRoute($route)
-//            ->setRouteParameters($routeParams)
-//            ->setQueryParameters($queryParameters)
-//            ->getSwitcher();
+        $queryParameters = StaticLibrary::cutUrlQueryParameters($url);
+        $langSwitcher = $this->get('app.lang.switcher')
+            ->init($request)
+            ->setRoute($route)
+            ->setRouteParameters($routeParams)
+            ->setQueryParameters($queryParameters)
+            ->getSwitcher();
 
         return $this->render('front/regions/footer.html.twig', [
             'user' => $user,
