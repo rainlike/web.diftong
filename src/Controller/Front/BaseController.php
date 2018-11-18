@@ -5,12 +5,6 @@ namespace App\Controller\Front;
 
 use Psr\Container\ContainerInterface as Container;
 
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
-use Symfony\Component\Routing\Exception\InvalidParameterException;
-use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
-
-use Symfony\Component\Translation\Exception\InvalidArgumentException;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -39,9 +33,6 @@ class BaseController extends Controller
      *
      * @param Request $request
      * @return RedirectResponse|Response|array
-     * @throws RouteNotFoundException
-     * @throws MissingMandatoryParametersException
-     * @throws InvalidParameterException|InvalidArgumentException
      * @Route("/",
      *         methods={"GET"},
      *         name="front_index_page"
