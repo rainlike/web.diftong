@@ -60,9 +60,9 @@ class CommonController extends Controller
         string $url
     ): Response
     {
-        # @TODO: check if null
         $user = $this->getUser();
 
+        # @TODO: menu
         # @TODO: $backLink -> check if it's own link
 //        $selfContainer = $this->get('app.self.container');
 //        $prevUrl = $selfContainer->previousUrl();
@@ -101,7 +101,6 @@ class CommonController extends Controller
         string $url
     ): Response
     {
-        # @TODO: check if null
         $user = $this->getUser();
 
         # @TODO: $footerItems
