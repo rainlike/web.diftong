@@ -77,6 +77,12 @@ services:
     arguments:
       $domain: '%domain%'
 
+  app.lang.switcher:
+    class: App\Service\LanguageSwitcher
+    autowire: true
+    autoconfigure: true
+    public: true
+
   # Helpers
   app.translation.helper:
     class: App\Helper\TranslationHelper

@@ -1,4 +1,14 @@
 <?php
+/**
+ * Seo
+ * Provides methods for generate and extract SEO data
+ *
+ * @package App\Service
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
 declare(strict_types=1);
 
 namespace App\Service;
@@ -14,14 +24,7 @@ use App\Entity\Seo as SeoEntity;
 use App\Utility\StaticStorage;
 
 /**
- * Class Seo
- *
- * @package App\Service
- * @version 1.0.0
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
- * @author Alexander Saveliev <alex@spbcrew.com>
- */
+ * Class Seo */
 class Seo
 {
     /** @var string */

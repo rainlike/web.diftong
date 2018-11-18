@@ -1,4 +1,14 @@
 <?php
+/**
+ * Yaml Parser
+ * It represents a wrapper around basic Symfony Yaml parser
+ *
+ * @package App\Service
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
 declare(strict_types=1);
 
 namespace App\Service;
@@ -6,12 +16,7 @@ namespace App\Service;
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
 
-/**
- * Class YmlParser
- *
- * @package App\Service
- * @author Alexander Saveliev <alex@spbcrew.com>
- */
+/** Class YmlParser */
 class YmlParser
 {
     /**
