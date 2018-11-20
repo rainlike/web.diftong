@@ -1,3 +1,20 @@
-body {
-    background-color: lightgray;
-}
+@charset "UTF-8";
+
+// Variables
+@import "variables";
+
+// Resetting
+@import "reset";
+
+// Vendors
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/mdi/scss/materialdesignicons";
+
+// Globals
+@import "global";
+
+// Mixins
+
+// Elements
+
+// Components

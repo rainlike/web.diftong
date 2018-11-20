@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+// Main prefix
+/* stylelint-disable-next-line value-keyword-case */
+$prefix: $APP_PREFIX;
+
+// Other main variables
+$zero: 0;
+
+// Default colors
+$color-white: #FFF; // rgb(255, 255, 255)
+$color-black: #000; // rgb(0, 0, 0)
+
+// Main colors
+$color-primary:   #3F51B5; // rgb(63, 81, 181)
+$color-secondary: #9E9E9E; // rgb(158, 158, 158)
+$color-info:      #2196F3; // rgb(33, 150, 243)
+$color-success:   #4CAF50; // rgb(76, 175, 80)
+$color-warning:   #FF9800; // rgb(255, 152, 0)
+$color-error:     #F44336; // rgb(244, 67, 54)
+$color-danger:    $color-error; // rgb(244, 67, 54)
+$color-bg:        #657383; // rgb(101, 115, 131)
+
+// Color variables
+$color-tone-amount: 5;
+$color-tone-step:   5;
+
+// Grid
+$columns: 12;
+
+// Sizes
+$size-zero:   0;
+$size-tiny:   3px;
+$size-mini:   5px;
+$size-small:  10px;
+$size-medium: 15px;
+$size-large:  20px;
+$size-huge:   25px;
+
+// Spaces
+$space-zero:  0;
+$space-small: 25%;
+$space-half:  50%;
+$space-large: 75%;
+$space-full:  100%;
+
+// Screens
+$screen-mobile:  544px;
+$screen-tablet:  768px;
+$screen-laptop:  992px;
+$screen-desktop: 1200px;
+$screen-iphone:  320px;
+$screen-ipad:    768px;
+
+// Buttons
+$button-hover-rank:  10;
+$button-active-rank: 15;
+
+// =================
+// Admin section
+// =================
+
+// Hovers
+$admin--hover-rank-main: 20;
+$admin--hover-rank-sub:  30;
+
+// Header variables
+$admin--header-height:              52px;
+$admin--header-hover-color:         $color-secondary;
+$admin--header-hover-bg-color-main: lighten($admin--header-hover-color, $admin--hover-rank-main);
+$admin--header-hover-bg-color-sub:  lighten($admin--header-hover-color, $admin--hover-rank-sub);
+
+// Avatar variants
+$admin--avatar-circle-oversize: 150px;
+
+// -----------------
+// Sidebar section
+// -----------------
+
+$admin--sidebar-hide-width: 0;
+$admin--sidebar-width:      250px;
+$admin--sidebar-color:      $color-white; // rgb(255, 255, 255)
+$admin--sidebar-bg-color:   $color-bg; // rgb(101, 115, 131)
+$admin--sidebar-duration:   1s;
+
+// -----------------
+// Header section
+// -----------------
+
+$admin--header-height: 53px;
+$admin--header-color:  $color-white; // rgb(255, 255, 255)
+
+// -----------------
+// Toolbar section
+// -----------------
+
+$admin--toolbar-bg-color:      $color-white; // rgb(255, 255, 255)
+$admin--toolbar-tablet-height: 70px;
+$admin--toolbar-laptop-height: 50px;
+
+// -----------------
+// Footer section
+// -----------------
+
+$admin--footer-height:   300px;
+$admin--footer-color:    $color-white; // rgb(255, 255, 255)
+$admin--footer-bg-color: $color-bg; // rgb(101, 115, 131)
+
+// =================
+// Front section
+// =================
+
+// =================
+// Switcher section
+// =================
+
+// Colors
+$switcher--bg-color:                   $color-primary;
+$switcher--checked-lever-bg-color:     desaturate(lighten($switcher--bg-color, $space-small), $space-small);
+$switcher--unchecked-bg-color:         #F1F1F1;
+$switcher--unchecked-lever-bg-color:   #818181;
+$switcher--input-disabled-solid-color: #BDBDBD;
+
+// =================
+// Logo section
+// =================
+
+$logo--sketch-size: 65px;
+
+// =================
+// Bootstrap section
+// =================
+
+// Prefix
+$bootstrap-prefix: "bs";
+
+// Colors for reset styles
+$bs--color-text:   #55595C; // rgb(85, 89, 92)
+$bs--color-border: #CCC; // rgb(204, 204, 204)
+
+// Variables for reset styles
+$bs--card-header-bg-color: lighten($color-secondary, 30);

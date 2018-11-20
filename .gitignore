@@ -9,6 +9,10 @@
 /libs/
 !/libs/.gitkeep
 
+# assets
+/assets/libs/
+!/assets/libs/.gitkeep
+
 # patches
 /patches/
 !/patches/.gitkeep

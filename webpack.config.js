@@ -110,7 +110,7 @@ module.exports = (env = process.env.APP_ENV) => {
                     include: /node_modules/,
                     loader: 'file',
                     options: {
-                        name: '[1].[ext]',
+                        name: '[1]',
                         regExp: /node_modules\/(.*)$/
                     }
                 },
@@ -144,10 +144,8 @@ module.exports = (env = process.env.APP_ENV) => {
                     }
                 },
                 map: (file) => {
-                    let ext = library.file.getExt(file.name);
-
+                    const ext = library.file.getExt(file.name);
                     file.name = 'web/' + ext + '/' + file.name;
-
                     return file;
                 }
             }),
