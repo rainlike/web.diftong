@@ -1,11 +1,12 @@
 /* eslint-disable */
 
 const webpack = require('webpack');
-const extractPlugin = require('extract-text-webpack-plugin');
-const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const manifestPlugin = require('webpack-manifest-plugin');
-const cleanPlugin = require('webpack-cleanup-plugin');
-const chunkHashPlugin = require('webpack-chunk-hash');
+const ExtractPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const CleanPlugin = require('webpack-cleanup-plugin');
+const ChunkHashPlugin = require('webpack-chunk-hash');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const path = require('path');
 const dotenv = require('dotenv').config();
@@ -85,7 +86,7 @@ module.exports = (env = process.env.APP_ENV) => {
                 {
                     test: /\.scss$/,
                     exclude: /node_modules/,
-                    use: extractPlugin.extract({
+                    use: ExtractPlugin.extract({
                         use: [
                             {
                                 loader: 'css',
@@ -129,13 +130,13 @@ module.exports = (env = process.env.APP_ENV) => {
                 'APP_PREFIX': JSON.stringify(process.env.APP_PREFIX),
                 'APP_ENV': JSON.stringify(process.env.APP_ENV)
             }),
-            new cleanPlugin({
+            new CleanPlugin({
                 exclude: ['mdi/**/*'],
             }),
-            new uglifyJsPlugin({
+            new UglifyJsPlugin({
                 sourceMap: true
             }),
-            new manifestPlugin({
+            new ManifestPlugin({
                 fileName: '../manifest.json',
                 publicPath: 'web/',
                 filter: (file) => {
@@ -149,7 +150,11 @@ module.exports = (env = process.env.APP_ENV) => {
                     return file;
                 }
             }),
-            new extractPlugin('css/[name].[chunkhash].css'),
+            new StyleLintPlugin({
+                files: '/styles',
+                failOnError: false
+            }),
+            new ExtractPlugin('css/[name].[chunkhash].css'),
             new webpack.ProvidePlugin({
                 APP_PREFIX: process.env.APP_PREFIX
             })

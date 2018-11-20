@@ -115,6 +115,7 @@
     "stylelint-order": "^1.0.0",
     "stylelint-scss": "^3.4.0",
     "stylelint-selector-bem-pattern": "^2.0.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "system": "^2.0.1",
     "ts-loader": "^5.3.0",
     "tslint": "^5.11.0",
