@@ -134,9 +134,6 @@ module.exports = (env = process.env.APP_ENV) => {
             new CleanPlugin({
                 exclude: ['mdi/**/*'],
             }),
-            // new UglifyJsPlugin({
-            //     sourceMap: true
-            // }),
             new ManifestPlugin({
                 fileName: '../manifest.json',
                 publicPath: 'web/',

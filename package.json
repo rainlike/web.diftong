@@ -22,9 +22,13 @@
     "**/*min.js",
     "**/*.scss"
   ],
+  "browserslist": [
+    "> 1%",
+    "last 4 versions"
+  ],
   "scripts": {
-    "build": "webpack",
-    "build:prod": "webpack --env=prod",
+    "build": "webpack --progress",
+    "build:prod": "webpack --env=prod --progress",
     "watch": "webpack --watch",
     "analyze": "webpack --json --profile > debug/webpack.json",
     "analyze:prod": "webpack --env=prod --json --profile > debug/webpack.json",

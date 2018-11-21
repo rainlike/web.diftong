@@ -33,7 +33,8 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
@@ -184,7 +185,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
@@ -209,7 +211,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 /**
@@ -7063,6 +7066,7 @@ template {
         */ }
   .mdi-rotate-45:before {
     -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
 
 .mdi-rotate-90 {
@@ -7084,6 +7088,7 @@ template {
         */ }
   .mdi-rotate-90:before {
     -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
 
 .mdi-rotate-135 {
@@ -7105,6 +7110,7 @@ template {
         */ }
   .mdi-rotate-135:before {
     -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
     transform: rotate(135deg); }
 
 .mdi-rotate-180 {
@@ -7126,6 +7132,7 @@ template {
         */ }
   .mdi-rotate-180:before {
     -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
     transform: rotate(180deg); }
 
 .mdi-rotate-225 {
@@ -7147,6 +7154,7 @@ template {
         */ }
   .mdi-rotate-225:before {
     -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
     transform: rotate(225deg); }
 
 .mdi-rotate-270 {
@@ -7168,6 +7176,7 @@ template {
         */ }
   .mdi-rotate-270:before {
     -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
     transform: rotate(270deg); }
 
 .mdi-rotate-315 {
@@ -7189,18 +7198,21 @@ template {
         */ }
   .mdi-rotate-315:before {
     -webkit-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
     transform: rotate(315deg); }
 
 .mdi-flip-h:before {
   -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+      transform: scaleX(-1);
   -webkit-filter: FlipH;
           filter: FlipH;
   -ms-filter: "FlipH"; }
 
 .mdi-flip-v:before {
   -webkit-transform: scaleY(-1);
-  transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+      transform: scaleY(-1);
   -webkit-filter: FlipV;
           filter: FlipV;
   -ms-filter: "FlipV"; }
