@@ -4,8 +4,8 @@ const dotenv = require('../node_modules/dotenv').config();
 /**
  * Get configs for env
  *
- * @param env String
- * @returns Object
+ * @param env {string}
+ * @return {object}
  * @private
  */
 function _get (env = process.env.APP_ENV) {
@@ -14,8 +14,16 @@ function _get (env = process.env.APP_ENV) {
     };
 
     const configs = {
-        dev: {source_maps: 'source-map'},
-        prod: {source_maps: 'nosources-source-map'}
+        dev: {
+            mode: 'development',
+            uglify_js: false,
+            source_maps: 'source-map'
+        },
+        prod: {
+            mode: 'production',
+            uglify_js: true,
+            source_maps: 'nosources-source-map'
+        }
     };
 
     return Object.assign(common, configs[env]);

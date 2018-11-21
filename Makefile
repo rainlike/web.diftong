@@ -72,11 +72,6 @@ lint.all:
 	$(MAKE) lint.ts
 	$(MAKE) lint.styles
 
-# Git
-.PHONY: git.pull
-git.push:
-	git push
-
 # Versions
 .PHONY: ver.self ver.packs
 ver.self:

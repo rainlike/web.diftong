@@ -15,9 +15,10 @@ const library = require('./assets/library');
 const env_configs = require('./config/env_configs');
 
 module.exports = (env = process.env.APP_ENV) => {
-    let configs = new env_configs.get(env);
+    const configs = new env_configs.get(env);
 
-    return {
+    let toExport = {
+        mode: configs.mode,
         context: __dirname + '/assets',
         entry: {
             app: './app'
@@ -133,9 +134,9 @@ module.exports = (env = process.env.APP_ENV) => {
             new CleanPlugin({
                 exclude: ['mdi/**/*'],
             }),
-            new UglifyJsPlugin({
-                sourceMap: true
-            }),
+            // new UglifyJsPlugin({
+            //     sourceMap: true
+            // }),
             new ManifestPlugin({
                 fileName: '../manifest.json',
                 publicPath: 'web/',
@@ -180,5 +181,15 @@ module.exports = (env = process.env.APP_ENV) => {
             port: 8080,
             inline: true
         }
+    };
+
+    if (configs.uglify_js) {
+        toExport.optimization = {
+            minimizer: [new UglifyJsPlugin({
+                sourceMap: true
+            })]
+        };
     }
+
+    return toExport;
 };

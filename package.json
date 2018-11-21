@@ -23,11 +23,16 @@
     "**/*.scss"
   ],
   "scripts": {
+    "build": "webpack",
+    "build:prod": "webpack --env=prod",
+    "watch": "webpack --watch",
+    "analyze": "webpack --json --profile > debug/webpack.json",
+    "analyze:prod": "webpack --env=prod --json --profile > debug/webpack.json",
+    "check": "npx npm-check",
     "encore:dev:serv": "encore dev-server",
     "encore:dev": "encore dev",
     "encore:watch": "encore dev --watch",
-    "encore:build": "encore production",
-    "check": "npx npm-check"
+    "encore:build": "encore production"
   },
   "dependencies": {
     "animate.css": "^3.7.0",

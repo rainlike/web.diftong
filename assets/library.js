@@ -6,7 +6,7 @@
  * Get extension from filename
  *
  * @param {string} fileName
- * @returns {string|*}
+ * @return {string|*}
  * @private
  */
 function _getExt(fileName) {
@@ -19,7 +19,7 @@ function _getExt(fileName) {
  * @param {string} value
  * @param {array} extensions
  * @param {boolean} hardDetection
- * @returns {boolean}
+ * @return {boolean}
  * @private
  */
 function _hasExt(value, extensions, hardDetection = true) {
@@ -58,6 +58,7 @@ module.exports.file = {
  * Check if HTML element is visible
  *
  * @param {HTMLElement} element
+ * @return {boolean}
  * @private
  */
 function _isVisible(element) {
@@ -75,7 +76,7 @@ function _isVisible(element) {
  *
  * @param {HTMLElement} element
  * @param {string} className
- * @returns {boolean}
+ * @return {boolean}
  * @private
  */
 function _hasClass(element, className) {
