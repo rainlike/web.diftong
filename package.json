@@ -28,6 +28,7 @@
     "watch": "webpack --watch",
     "analyze": "webpack --json --profile > debug/webpack.json",
     "analyze:prod": "webpack --env=prod --json --profile > debug/webpack.json",
+    "serv": "webpack-dev-server",
     "check": "npx npm-check",
     "encore:dev:serv": "encore dev-server",
     "encore:dev": "encore dev",
