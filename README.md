@@ -19,8 +19,13 @@ npm run watch - build all assets and watch
 npm run analyze - analyze Webpack script and save into build/ directory
 npm run analyze:prod - analyze Webpack script with production mode
 npm run check - current status of Npm modules
-npm run nucleus - generate style documentation via Nucleus and seve it to docs/nucleus directory
 npm run serv - run Webpack dev server on port :8080
+```
+
+documentation
+```
+npm run nucleus - generate style documentation via Nucleus and seve it to docs/nucleus directory
+make doc.style - generate style documentation through Makefile
 ```
 
 dev cache and permissions

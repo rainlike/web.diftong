@@ -72,6 +72,11 @@ lint.all:
 	$(MAKE) lint.ts
 	$(MAKE) lint.styles
 
+# Documentation
+.PHONY doc.style
+doc.style:
+	npm run nucleus
+
 # Versions
 .PHONY: ver.self ver.packs
 ver.self:
