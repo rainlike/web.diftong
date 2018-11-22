@@ -1,0 +1,11 @@
+{
+  "title": "Diftong",
+  "files": ["assets/styles/**.*scss"],
+  "target": "docs/styleguide",
+  "css": "",
+  "namespace": "app",
+  "verbose": 3,
+  "counterCSS": null,
+  "staticLipsum": false,
+  "placeholderService": false
+}
