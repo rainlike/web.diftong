@@ -1,69 +1,293 @@
 @charset "UTF-8";
 
+// ====================
 // Main prefix
+// ====================
 /* stylelint-disable-next-line value-keyword-case */
 $prefix: $APP_PREFIX;
 
-// Other main variables
-$zero: 0;
-
+// ====================
 // Default colors
+// ====================
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
 $color-white: #FFF; // rgb(255, 255, 255)
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
 $color-black: #000; // rgb(0, 0, 0)
 
+// ====================
 // Main colors
+// ====================
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
 $color-primary:   #3F51B5; // rgb(63, 81, 181)
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
 $color-secondary: #9E9E9E; // rgb(158, 158, 158)
-$color-info:      #2196F3; // rgb(33, 150, 243)
-$color-success:   #4CAF50; // rgb(76, 175, 80)
-$color-warning:   #FF9800; // rgb(255, 152, 0)
-$color-error:     #F44336; // rgb(244, 67, 54)
-$color-danger:    $color-error; // rgb(244, 67, 54)
-$color-bg:        #657383; // rgb(101, 115, 131)
+/**
+ * A info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-info: #2196F3; // rgb(33, 150, 243)
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-success: #4CAF50; // rgb(76, 175, 80)
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-warning: #FF9800; // rgb(255, 152, 0)
+/**
+ * A error color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-error: #F44336; // rgb(244, 67, 54)
+/**
+ * A danger color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-danger: #F44336; // rgb(244, 67, 54)
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+$color-bg: #657383; // rgb(101, 115, 131)
 
+// ====================
 // Color variables
+// ====================
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
 $color-tone-amount: 5;
-$color-tone-step:   5;
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+$color-tone-step: 5;
 
+// ====================
 // Grid
+// ====================
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
 $columns: 12;
 
+// ====================
 // Sizes
-$size-zero:   0;
-$size-tiny:   3px;
-$size-mini:   5px;
-$size-small:  10px;
+// ====================
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-zero: 0;
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-tiny: 3px;
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-mini: 5px;
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-small: 10px;
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
 $size-medium: 15px;
-$size-large:  20px;
-$size-huge:   25px;
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-large: 20px;
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+$size-huge: 25px;
 
+// ====================
 // Spaces
-$space-zero:  0;
+// ====================
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+$space-zero: 0;
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
 $space-small: 25%;
-$space-half:  50%;
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+$space-half: 50%;
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
 $space-large: 75%;
-$space-full:  100%;
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+$space-full: 100%;
 
+// ====================
 // Screens
-$screen-mobile:  544px;
-$screen-tablet:  768px;
-$screen-laptop:  992px;
+// ====================
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+$screen-mobile: 544px;
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+$screen-tablet: 768px;
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+$screen-laptop: 992px;
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
 $screen-desktop: 1200px;
-$screen-iphone:  320px;
-$screen-ipad:    768px;
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+$screen-iphone: 320px;
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+$screen-ipad: 768px;
 
+// ====================
 // Buttons
-$button-hover-rank:  10;
+// ====================
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+$button-hover-rank: 10;
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
 $button-active-rank: 15;
 
-// ==================
+// ====================
+// Other variables
+// ====================
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+$zero: 0;
+
+// ====================
 // Homepage section
-// ==================
+// ====================
 
-// ==================
+// ====================
 // Portal section
-// ==================
+// ====================
 
-// ==================
+// ====================
 // BackOffice section
-// ==================
+// ====================

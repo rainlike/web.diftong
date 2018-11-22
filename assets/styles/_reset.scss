@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
-// -----------------
+// ====================
 // Mdi section
-// -----------------
+// ====================
+/**
+ * @structure Mdi
+ * @section Global
+ * @description
+ *  Path for Mdi fonts set as `mdi/fonts/`.
+ */
 $mdi-font-path: "~mdi/fonts/";
 
-// -----------------
+// ====================
 // Viburnum section
-// -----------------
+// ====================
 $vi-grid--columns: $columns;
