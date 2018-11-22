@@ -1,7 +1,7 @@
 {
   "title": "Diftong",
   "files": ["assets/styles/**.*scss"],
-  "target": "docs/styleguide",
+  "target": "docs/nucleus",
   "css": "",
   "namespace": "app",
   "verbose": 3,
