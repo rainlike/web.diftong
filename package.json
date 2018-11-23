@@ -33,7 +33,7 @@
     "analyze": "webpack --json --profile > debug/webpack.json",
     "analyze:prod": "webpack --env=prod --json --profile > debug/webpack.json",
     "serv": "webpack-dev-server",
-    "nucleus": "npx nucleus --config config.nucleus.json",
+    "nucleus": "npx nucleus --config config/config.nucleus.json",
     "check": "npx npm-check",
     "encore:dev:serv": "encore dev-server",
     "encore:dev": "encore dev",

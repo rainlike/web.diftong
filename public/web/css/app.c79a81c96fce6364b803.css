@@ -1,4 +1,214 @@
 /* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A error color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A danger color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * @structure Mdi
+ * @section Global
+ * @description
+ *  Path for Mdi fonts set as `mdi/fonts/`.
+ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -7243,7 +7453,14 @@ template {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
 
+/**
+ * @structure Body
+ * @section Global
+ * @description
+ *  Global body height set as 100%.
+ */
 html {
-  height: 100%; }
+  height: 100%;
+  color: red; }
 
 /*# sourceMappingURL=app.c79a81c96fce6364b803.css.map*/
