@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Cross-browser transition solution.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @param $property property
+ * @param $duration duration
+ * @param $animation animation
+ * @param $delay calculated delay
+ * @example
+ *  @include app--non-select(all, 1s, ease, 0s);
+ *  @include app--non-select(width, .5s, linear, 10s);
+ */
+@mixin app--transition($property: all, $duration: 1s, $animation: ease, $delay: 0s) {
+  -webkit-transition: $property $duration $animation $delay;
+  -moz-transition:    $property $duration $animation $delay;
+  -o-transition:      $property $duration $animation $delay;
+  transition:         $property $duration $animation $delay;
+}
+
+/**
+ * Cross-browser non-selectable solution.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--non-select();
+ */
+@mixin app--non-select() {
+  -webkit-touch-callout: none; // iOS Safari
+  -webkit-user-select:   none; // Safari
+  -khtml-user-select:    none; // Konqueror HTML
+  -moz-user-select:      none; // Firefox
+  -ms-user-select:       none; // Internet Explorer/Edge
+  user-select:           none; // Non-prefixed version, currently supported by Chrome and Opera
+}
+
+/**
+ * Absolute size for property.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @param $property calculated property
+ * @param $value calculated value
+ * @example
+ *  @include app--absolute(width, 200px);
+ */
+@mixin app--absolute($property, $value) {
+  #{$property}:     #{$value};
+  min-#{$property}: #{$value};
+  max-#{$property}: #{$value};
+}
+
+/**
+ * Default shadow style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--shadow();
+ */
+@mixin app--shadow() {
+  box-shadow: 0 1px 10px transparentize($color-black, 0.5);
+}
+
+/**
+ * Default circle style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--circle();
+ */
+@mixin app--circle() {
+  border-radius: 100%;
+}

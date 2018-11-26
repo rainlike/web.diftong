@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Property subtraction.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $subtrahend subtraction value
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-sub(10%);
+ *  @include app--calc-sub(5px, width);
+ *  @include app--calc-sub(7em, height);
+ */
+@mixin app--calc-sub($subtrahend, $property: width) {
+  #{$property}: -webkit-calc(100% - #{$subtrahend});
+  #{$property}:    -moz-calc(100% - #{$subtrahend});
+  #{$property}:         calc(100% - #{$subtrahend});
+}
+
+/**
+ * Property addition.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $addend addend value
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-add(10%);
+ *  @include app--calc-add(5px, width);
+ *  @include app--calc-add(7em, height);
+ */
+@mixin app--calc-add($addend, $property: width) {
+  #{$property}: -webkit-calc(100% + #{$addend});
+  #{$property}:    -moz-calc(100% + #{$addend});
+  #{$property}:         calc(100% + #{$addend});
+}
