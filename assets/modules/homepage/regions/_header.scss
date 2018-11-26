@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * @structure Header
+ * @section Homepage
+ * @description
+ *  Style of header for Homepage.
+ * @markup
+ *  <header class="app-homepage__header">
+ */
+.#{$prefix}-homepage__header {
+  color: $color-info
+}

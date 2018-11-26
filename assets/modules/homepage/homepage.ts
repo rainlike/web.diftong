@@ -4,4 +4,4 @@
 import 'es5-shim';
 
 /** Import styles */
-import 'styles/app.scss';
+import './homepage.scss';

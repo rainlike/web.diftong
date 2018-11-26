@@ -21,7 +21,7 @@ module.exports = (env = process.env.APP_ENV) => {
         mode: configs.mode,
         context: __dirname + '/assets',
         entry: {
-            app: './app'
+            homepage: './modules/homepage/homepage'
         },
         output: {
             path: __dirname + '/public/web',
@@ -160,13 +160,19 @@ module.exports = (env = process.env.APP_ENV) => {
         resolve: {
             modules: [path.resolve(__dirname, 'assets'), 'node_modules'],
             extensions: ['.ts', '.js', '.json', '.scss'],
-            mainFiles: ['index']
+            mainFiles: ['index', 'main', 'base']
         },
         resolveLoader: {
             modules: ['node_modules'],
             extensions: ['.js', '.json'],
             mainFields: ['loader', 'main'],
             moduleExtensions: ['-loader', '*']
+        },
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+                name: 'common'
+            }
         },
         devtool: configs.source_maps,
         watchOptions: {
@@ -181,11 +187,9 @@ module.exports = (env = process.env.APP_ENV) => {
     };
 
     if (configs.uglify_js) {
-        toExport.optimization = {
-            minimizer: [new UglifyJsPlugin({
-                sourceMap: true
-            })]
-        };
+        toExport.optimization.minimizer = [new UglifyJsPlugin({
+            sourceMap: true
+        })];
     }
 
     return toExport;

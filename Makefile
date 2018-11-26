@@ -73,7 +73,7 @@ lint.all:
 	$(MAKE) lint.styles
 
 # Documentation
-.PHONY doc.style
+.PHONY: doc.style
 doc.style:
 	npm run nucleus
 

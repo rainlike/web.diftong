@@ -13,8 +13,8 @@ make sym.stop - stop dev server
 
 assets
 ```
-npm run build - build all assets
-npm run build:prod - build all assets for production
+npm run build - build all assets and generate Nucleus' documentation
+npm run build:prod - build all assets for production and generate Nucleus' documentation
 npm run watch - build all assets and watch
 npm run analyze - analyze Webpack script and save into build/ directory
 npm run analyze:prod - analyze Webpack script with production mode

@@ -27,8 +27,8 @@
     "last 4 versions"
   ],
   "scripts": {
-    "build": "webpack --progress",
-    "build:prod": "webpack --env=prod --progress",
+    "build": "webpack --progress && npx nucleus --config config/config.nucleus.json",
+    "build:prod": "webpack --env=prod --progress && npx nucleus --config config/config.nucleus.json",
     "watch": "webpack --watch",
     "analyze": "webpack --json --profile > debug/webpack.json",
     "analyze:prod": "webpack --env=prod --json --profile > debug/webpack.json",

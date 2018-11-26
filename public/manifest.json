@@ -1,4 +1,5 @@
 {
-  "web/js/app.js": "web/js/app.c79a81c96fce6364b803.js",
-  "web/css/app.css": "web/css/app.c79a81c96fce6364b803.css"
+  "web/js/common.js": "web/js/common.6f1455f5356574264fbd.js",
+  "web/js/homepage.js": "web/js/homepage.0ba3d0f200452ef631f1.js",
+  "web/css/homepage.css": "web/css/homepage.0ba3d0f200452ef631f1.css"
 }

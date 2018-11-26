@@ -63,19 +63,13 @@ $color-success: #4CAF50; // rgb(76, 175, 80)
  */
 $color-warning: #FF9800; // rgb(255, 152, 0)
 /**
- * A error color variable.
+ * A error and danger color variables.
  *
  * @color
  * @section Main Colors
  */
 $color-error: #F44336; // rgb(244, 67, 54)
-/**
- * A danger color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-danger: #F44336; // rgb(244, 67, 54)
+$color-danger: $color-error; // rgb(244, 67, 54)
 /**
  * A background color variable.
  *

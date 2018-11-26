@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+// ====================
+// Variables
+// ====================
+@import "variables";
+
+// ====================
+// Resetting
+// ====================
+@import "reset";
+
+// ====================
+// Vendors
+// ====================
+@import "../../../node_modules/normalize.css/normalize.css";
+@import "../../../node_modules/mdi/scss/materialdesignicons";
+
+// ====================
+// Globals
+// ====================
+@import "../../styles/global";
+
+// ====================
+// Mixins
+// ====================
+@import "../../styles/mixins";
+
+// ====================
+// Target styles
+// ====================
+/**
+ * @structure Body
+ * @section Homepage
+ * @description
+ *  Style of body for Homepage.
+ * @markup
+ *  <body class="app-homepage__body">
+ */
+.#{$prefix}-homepage__body {
+  display: flex;
+  flex-direction: column;
+}
+
+// ====================
+// Regions
+// ====================
+@import "regions/header";
+@import "regions/footer";
+
+// ====================
+// Elements
+// ====================
+
+// ====================
+// Components
+// ====================

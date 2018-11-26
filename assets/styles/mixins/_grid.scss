@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @example
+ *  @include app--flex-center();
+ */
+@mixin app--flex-center() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Simple grid column.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @example
+ *  @include app--grid-column(1);
+ *  @include app--grid-column(12);
+ *  @include app--grid-col(5);
+ */
+@mixin app--grid-column($span) {
+  width: ((100% / $columns) * $span);
+}
+@mixin app--grid-col($span) {
+  @include app--grid-column($span);
+}
+
+/**
+ * Simple grid offset.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @param $direction side of indent
+ * @example
+ *  @include app--grid-offset(1);
+ *  @include app--grid-offset(3, left);
+ *  @include app--grid-offset(5, right);
+ */
+@mixin app--grid-offset($span, $direction: left) {
+  @if $direction == left {
+    margin-left: ((100% / $columns) * $span);
+  } @else {
+    margin-right: ((100% / $columns) * $span);
+  }
+}

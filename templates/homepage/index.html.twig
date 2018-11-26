@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block body_class %}{% endblock %}
+{% block body_class %}{{ 'app-homepage__body' }}{% endblock %}
 
 {% block body %}
     {% block header %}
@@ -12,7 +12,9 @@
     {% endblock %}
 
     {% block main %}
-        <h1>{{ 'mainboard content here' }}</h1>
+        <main class="app-homepage__main">
+            <h1>{{ 'mainboard content here' }}</h1>
+        </main>
     {% endblock %}
 
     {% block footer %}

@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Mobile view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--mobile {
+  @media only screen and (min-width: $screen-mobile) {
+    @content;
+  }
+}
+
+/**
+ * Tablet view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--tablet {
+  @media only screen and (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
+/**
+ * Laptop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--laptop {
+  @media only screen and (min-width: $screen-laptop) {
+    @content;
+  }
+}
+
+/**
+ * Desktop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--desktop {
+  @media only screen and (min-width: $screen-desktop) {
+    @content;
+  }
+}
+
+/**
+ * iPhone view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--iphone {
+  @media only screen and (device-width: $screen-iphone) {
+    @content;
+  }
+}
+
+/**
+ * iPad view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--ipad {
+  @media only screen and (device-width: $screen-ipad) {
+    @content;
+  }
+}
+
+/**
+ * Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/**
+ * iPhone Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--iphone-retina {
+  @media only screen and (device-width: $screen-iphone) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/**
+ * iPad Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--ipad-retina {
+  @media only screen and (device-width: $screen-ipad) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+/**
+ * Non Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+@mixin app--non-retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}

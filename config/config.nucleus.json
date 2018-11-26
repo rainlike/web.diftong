@@ -1,9 +1,8 @@
 {
   "title": "Diftong",
-  "files": ["assets/styles/**.*scss"],
+  "files": ["assets/styles/**/*.scss", "assets/modules/**/*.scss"],
   "target": "docs/nucleus",
-  "css": "",
-  "namespace": "app",
+  "css": "public/web/css/*.css",
   "verbose": 3,
   "counterCSS": null,
   "staticLipsum": false,
