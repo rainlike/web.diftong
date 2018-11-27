@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+// ====================
+// Modules
+// ====================
+@import "../modules/homepage/homepage";
+
+// ====================
+// Resets
+// ====================
+.#{$prefix}-circle {
+  @extend .#{$prefix}-circle;
+  display:          inline-block;
+  height:           25px;
+  width:            25px;
+  background-color: $color-primary;
+}
+
+@import "../styles/elements/colors";
+.#{$prefix}-bg-color {
+  @each $name, $color in $colors {
+    &--#{$name} {
+      @extend .#{$prefix}-bg-color--#{$name};
+      display: inline-block;
+      height:  25px;
+      width:   100%;
+    }
+    @for $step from 1 through $color-tone-amount {
+      &__#{$name}--darken-#{$step} {
+        @extend .#{$prefix}-bg-color__#{$name}--darken-#{$step};
+        display: inline-block;
+        height:  25px;
+        width:   100%;
+      }
+      &__#{$name}--lighten-#{$step} {
+        @extend .#{$prefix}-bg-color__#{$name}--lighten-#{$step};
+        display: inline-block;
+        height:  25px;
+        width:   100%;
+      }
+    }
+  }
+}

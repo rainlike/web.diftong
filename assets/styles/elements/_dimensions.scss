@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+// ====================
+// Margins & Padding
+// ====================
+$sizes: (
+  "zero":   $size-zero,
+  "tiny":   $size-tiny,
+  "mini":   $size-mini,
+  "small":  $size-small,
+  "medium": $size-medium,
+  "large":  $size-large,
+  "huge":   $size-huge
+);
+
+$sides: (
+  "top", "right", "bottom", "left"
+);
+
+/**
+ * @atom Dimensions
+ * @section Margins
+ * @modifiers
+ *  .app-margin__{SIZE} an overall margin
+ *  .app-margin__top--{SIZE} a top margin
+ *  .app-margin__right--{SIZE} a right margin
+ *  .app-margin__bottom--{SIZE} a bottom margin
+ *  .app-margin__left--{SIZE} a left margin
+ */
+.#{$prefix}-margin {
+  @each $name, $size in $sizes {
+    &__#{$name} {
+      margin: $size;
+    }
+    @each $side in $sides {
+      &__#{$side}--#{$name} {
+        margin-#{$side}: $size;
+      }
+    }
+  }
+}
+
+/**
+ * @atom Dimensions
+ * @section Padding
+ * @modifiers
+ *  .app-padding__{SIZE} an overall padding
+ *  .app-padding__top--{SIZE} a top padding
+ *  .app-padding__right--{SIZE} a right padding
+ *  .app-padding__bottom--{SIZE} a bottom padding
+ *  .app-padding__left--{SIZE} a left padding
+ */
+.#{$prefix}-padding {
+  @each $name, $size in $sizes {
+    &__#{$name} {
+      margin: $size;
+    }
+    @each $side in $sides {
+      &__#{$side}--#{$name} {
+        padding-#{$side}: $size;
+      }
+    }
+  }
+}
+
+// ====================
+// Widths & Heights
+// ====================
+$spaces: (
+  "zero":  $space-zero,
+  "small": $space-small,
+  "half":  $space-half,
+  "large": $space-large,
+  "full":  $space-full
+);
+
+/**
+ * @atom Dimensions
+ * @section Width
+ * @modifiers
+ *  .app-width--zero a zero width
+ *  .app-width--small a small width
+ *  .app-width--half a half width
+ *  .app-width--large a large width
+ *  .app-width--full a full width
+ */
+.#{$prefix}-width {
+  @each $name, $space in $spaces {
+    &--#{$name} {
+      width: $space;
+    }
+  }
+}
+
+/**
+ * @atom Dimensions
+ * @section Height
+ * @modifiers
+ *  .app-height--zero a zero height
+ *  .app-height--small a small height
+ *  .app-height--half a half height
+ *  .app-height--large a large height
+ *  .app-height--full a full height
+ */
+.#{$prefix}-height {
+  @each $name, $space in $spaces {
+    &--#{$name} {
+      height: $space;
+    }
+  }
+}

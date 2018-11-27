@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+// ====================
+// Positions
+// ====================
+$positions: (
+  absolute, fixed, relative, static, inherit
+);
+
+/**
+ * @atom Positions
+ * @section Positions
+ * @modifiers
+ *  .app-position--absolute an absolute position
+ *  .app-position--fixed a fixed position
+ *  .app-position--relative a relative position
+ *  .app-position--static a static position
+ *  .app-position--inherit a inherit position
+ */
+.#{$prefix}-position {
+  @each $position in $positions {
+    &--#{$position} {
+      position: $position;
+    }
+  }
+}
+
+// ====================
+// Indents
+// ====================
+$sizes: (
+  "zero":   $size-zero,
+  "tiny":   $size-tiny,
+  "mini":   $size-mini,
+  "small":  $size-small,
+  "medium": $size-medium,
+  "large":  $size-large,
+  "huge":   $size-huge
+);
+
+$sides: (
+  "top", "right", "bottom", "left"
+);
+
+/**
+ * @atom Indents
+ * @section Positions
+ * @modifiers
+ *  .app-indent__top--{SIZE} top indent
+ *  .app-indent__right--{SIZE} right indent
+ *  .app-indent__bottom--{SIZE} bottom indent
+ *  .app-indent__left--{SIZE} left indent
+ */
+.#{$prefix}-indent {
+  @each $name, $size in $sizes {
+    @each $side in $sides {
+      &__#{$side}--#{$name} {
+        #{$side}: $size;
+      }
+    }
+  }
+}

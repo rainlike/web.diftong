@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+$btn-colors: (
+  "primary":   $color-primary,
+  "secondary": $color-secondary,
+  "info":      $color-info,
+  "success":   $color-success,
+  "warning":   $color-warning,
+  "error":     $color-error,
+  "danger":    $color-danger
+);
+
+@each $name, $color in $btn-colors {
+  .#{$prefix}-btn--#{$name} {
+    border-radius:    0;
+    outline:          none !important;
+    color:            $color-white;
+    background-color: $color;
+
+    &:hover {
+      outline:          none;
+      color:            $color-white;
+      background-color: darken($color, $button-hover-rank);
+    }
+
+    &:active {
+      outline:          none;
+      color:            $color-white;
+      background-color: darken($color, $button-active-rank);
+    }
+
+    &:visited {
+      outline: none;
+      color:   $color-white;
+    }
+  }
+}
+
+// Icon button
+.#{$prefix}-btn__icon {
+  padding: 0.1rem 0.3rem;
+}
+
+// Link style
+.#{$prefix}-btn__link {
+  margin:     0;
+  padding:    0;
+  border:     none;
+  background: none;
+  cursor:     pointer;
+}

@@ -2,7 +2,7 @@
   "title": "Diftong",
   "files": ["assets/styles/**/*.scss", "assets/modules/**/*.scss"],
   "target": "docs/nucleus",
-  "css": "public/web/css/*.css",
+  "css": "./nucleus.css",
   "verbose": 3,
   "counterCSS": null,
   "staticLipsum": false,

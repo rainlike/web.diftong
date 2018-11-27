@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+// ====================
+// Displays
+// ====================
+$displays: (
+  none, block, inline
+);
+
+/**
+ * @atom Displays
+ * @section Displays
+ * @modifiers
+ *  .app-display--none a none display
+ *  .app-display--block a block display
+ *  .app-display--inline a inline display
+ */
+.#{$prefix}-display {
+  @each $display in $displays {
+    &--#{$display} {
+      display: $display;
+    }
+  }
+}

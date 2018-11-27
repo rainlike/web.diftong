@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+// ====================
+// Circle
+// ====================
+/**
+ * @atom Circle
+ * @section Others
+ * @markup
+ *  <span class="app-circle"></span>
+ */
+.#{$prefix}-circle {
+  border-radius: $space-full;
+}

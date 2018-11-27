@@ -3,7 +3,9 @@ module.exports = {
     plugins: {
         'postcss-import': {},
         'postcss-cssnext': {},
-        'cssnano': {},
+        'cssnano': {
+            comments: { removeAll: true }
+        },
         'stylelint': {}
     }
 };

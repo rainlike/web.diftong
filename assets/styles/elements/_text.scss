@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+// ====================
+// Aligns
+// ====================
+$text-directions: (
+  left, center, right
+);
+
+/**
+ * @atom Aligns
+ * @section Aligns
+ * @modifiers
+ *  .app-align--left a left aligned text
+ *  .app-align--center a centered text
+ *  .app-align--right a right aligned text
+ * @markup
+ *  <div class="app-align--left">
+ *    A left aligned text
+ *  </div>
+ *  <div class="app-align--center">
+ *    A centered text
+ *  </div>
+ *  <div class="app-align--right">
+ *    A right aligned text
+ *  </div>
+ */
+.#{$prefix}-align {
+  @each $direction in $text-directions {
+    &--#{$direction} {
+      text-align: $direction;
+    }
+  }
+}
+
+// ====================
+// Text
+// ====================
+/**
+ * @atom Bold Text
+ * @section Text
+ * @markup
+ *  <span class="app-bold">
+ *    A bold text
+ *  </span>
+ */
+.#{$prefix}-bold {
+  font-weight: bold;
+}
+
+/**
+ * @atom Decoration Text
+ * @section Text
+ * @modifiers
+ *  .app-decor--none a non-decoration text
+ * @markup
+ *  <span class="app-decor--none">
+ *    A non-decorated text
+ *  </span>
+ */
+.#{$prefix}-decor {
+  &--none {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/**
+ * @atom Quote
+ * @section Text
+ * @markup
+ *  <span class="app-quote">
+ *    A quote
+ *  </span>
+ */
+.#{$prefix}-quote {
+  padding-left: $size-small;
+  border-left:  $size-tiny solid $color-black;
+  color:        $color-secondary;
+  &:hover {
+    color: $color-black;
+  }
+}
+
+// ====================
+// Cursor
+// ====================
+/**
+ * @atom Cursor
+ * @section Cursor
+ * @markup
+ *  <span class="app-pointer">
+ *    Pointed cursor
+ *  </span>
+ */
+.#{$prefix}-pointer {
+  cursor: pointer;
+}

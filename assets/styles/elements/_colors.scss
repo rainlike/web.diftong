@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+$colors: (
+  "primary":   $color-primary,
+  "secondary": $color-secondary,
+  "info":      $color-info,
+  "success":   $color-success,
+  "warning":   $color-warning,
+  "error":     $color-error,
+  "danger":    $color-danger
+);
+
+// ====================
+// Colors
+// ====================
+/**
+ * @atom Colors
+ * @section Colors
+ * @modifiers
+ *  .app-color--{COLOR} a base color
+ *  .app-color__{COLOR}--darken-1...5 range of darkens color set
+ *  .app-color__{COLOR}--lighten-1...5 range of lightens color set
+ * @markup
+ *  <span class="app-bg-color--primary"></span>
+ *  <span class="app-bg-color__primary--lighten-1"></span>
+ *  <span class="app-bg-color__primary--lighten-2"></span>
+ *  <span class="app-bg-color__primary--lighten-3"></span>
+ *  <span class="app-bg-color__primary--lighten-4"></span>
+ *  <span class="app-bg-color__primary--lighten-5"></span>
+ *  <span class="app-bg-color__primary--darken-1"></span>
+ *  <span class="app-bg-color__primary--darken-2"></span>
+ *  <span class="app-bg-color__primary--darken-3"></span>
+ *  <span class="app-bg-color__primary--darken-4"></span>
+ *  <span class="app-bg-color__primary--darken-5"></span>
+ *  <span class="app-bg-color--secondary"></span>
+ *  <span class="app-bg-color__secondary--lighten-1"></span>
+ *  <span class="app-bg-color__secondary--lighten-2"></span>
+ *  <span class="app-bg-color__secondary--lighten-3"></span>
+ *  <span class="app-bg-color__secondary--lighten-4"></span>
+ *  <span class="app-bg-color__secondary--lighten-5"></span>
+ *  <span class="app-bg-color__secondary--darken-1"></span>
+ *  <span class="app-bg-color__secondary--darken-2"></span>
+ *  <span class="app-bg-color__secondary--darken-3"></span>
+ *  <span class="app-bg-color__secondary--darken-4"></span>
+ *  <span class="app-bg-color__secondary--darken-5"></span>
+ *  <span class="app-bg-color--info"></span>
+ *  <span class="app-bg-color__info--lighten-1"></span>
+ *  <span class="app-bg-color__info--lighten-2"></span>
+ *  <span class="app-bg-color__info--lighten-3"></span>
+ *  <span class="app-bg-color__info--lighten-4"></span>
+ *  <span class="app-bg-color__info--lighten-5"></span>
+ *  <span class="app-bg-color__info--darken-1"></span>
+ *  <span class="app-bg-color__info--darken-2"></span>
+ *  <span class="app-bg-color__info--darken-3"></span>
+ *  <span class="app-bg-color__info--darken-4"></span>
+ *  <span class="app-bg-color__info--darken-5"></span>
+ *  <span class="app-bg-color--success"></span>
+ *  <span class="app-bg-color__success--lighten-1"></span>
+ *  <span class="app-bg-color__success--lighten-2"></span>
+ *  <span class="app-bg-color__success--lighten-3"></span>
+ *  <span class="app-bg-color__success--lighten-4"></span>
+ *  <span class="app-bg-color__success--lighten-5"></span>
+ *  <span class="app-bg-color__success--darken-1"></span>
+ *  <span class="app-bg-color__success--darken-2"></span>
+ *  <span class="app-bg-color__success--darken-3"></span>
+ *  <span class="app-bg-color__success--darken-4"></span>
+ *  <span class="app-bg-color__success--darken-5"></span>
+ *  <span class="app-bg-color--warning"></span>
+ *  <span class="app-bg-color__warning--lighten-1"></span>
+ *  <span class="app-bg-color__warning--lighten-2"></span>
+ *  <span class="app-bg-color__warning--lighten-3"></span>
+ *  <span class="app-bg-color__warning--lighten-4"></span>
+ *  <span class="app-bg-color__warning--lighten-5"></span>
+ *  <span class="app-bg-color__warning--darken-1"></span>
+ *  <span class="app-bg-color__warning--darken-2"></span>
+ *  <span class="app-bg-color__warning--darken-3"></span>
+ *  <span class="app-bg-color__warning--darken-4"></span>
+ *  <span class="app-bg-color__warning--darken-5"></span>
+ *  <span class="app-bg-color--error"></span>
+ *  <span class="app-bg-color__error--lighten-1"></span>
+ *  <span class="app-bg-color__error--lighten-2"></span>
+ *  <span class="app-bg-color__error--lighten-3"></span>
+ *  <span class="app-bg-color__error--lighten-4"></span>
+ *  <span class="app-bg-color__error--lighten-5"></span>
+ *  <span class="app-bg-color__error--darken-1"></span>
+ *  <span class="app-bg-color__error--darken-2"></span>
+ *  <span class="app-bg-color__error--darken-3"></span>
+ *  <span class="app-bg-color__error--darken-4"></span>
+ *  <span class="app-bg-color__error--darken-5"></span>
+ */
+.#{$prefix}-color {
+  @each $name, $color in $colors {
+    &--#{$name} {
+      color: $color;
+    }
+    @for $step from 1 through $color-tone-amount {
+      &__#{$name}--darken-#{$step} {
+        color: darken($color, $color-tone-step * $step);
+      }
+      &__#{$name}--lighten-#{$step} {
+        color: lighten($color, $color-tone-step * $step);
+      }
+    }
+  }
+}
+
+// ====================
+// Background colors
+// ====================
+/**
+ * @atom Background Colors
+ * @section Colors
+ * @modifiers
+ *  .app-bg-color--{COLOR} a base background color
+ *  .app-bg-color__{COLOR}--darken-1...5 range of darkens background color set
+ *  .app-bg-color__{COLOR}--lighten-1...5 range of lightens background color set
+ */
+.#{$prefix}-bg-color {
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+    @for $step from 1 through $color-tone-amount {
+      &__#{$name}--darken-#{$step} {
+        background-color: darken($color, $color-tone-step * $step);
+      }
+      &__#{$name}--lighten-#{$step} {
+        background-color: lighten($color, $color-tone-step * $step);
+      }
+    }
+  }
+}

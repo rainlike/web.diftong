@@ -36,6 +36,8 @@
  *  Style of body for Homepage.
  * @markup
  *  <body class="app-homepage__body">
+ *   ...
+ *  </body>
  */
 .#{$prefix}-homepage__body {
   display: flex;
@@ -51,6 +53,7 @@
 // ====================
 // Elements
 // ====================
+@import "../../styles/elements";
 
 // ====================
 // Components
