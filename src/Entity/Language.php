@@ -20,7 +20,7 @@ use App\Entity\Library\Interfaces\IBasic;
  * @ORM\Entity(repositoryClass="App\Repository\LanguageRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Language extends BasicEntity implements IBasic
+class Language extends BasicEntity implements IBasic
 {
     /**
      * @var string

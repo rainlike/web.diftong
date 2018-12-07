@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@import "variables";
+
+// ====================
+// Normalization
+// ====================
+/**
+ * @structure Nullify
+ * @section Normalization
+ * @description
+ *  Base nullification of blocks.
+ * @markup
+ *  <header class="app-nullify"></header>
+ *  <footer class="app-nullify"></footer>
+ */
+.#{$prefix}-nullify {
+  margin:         0;
+  padding:        0;
+  border:         0;
+  font:           inherit;
+  font-size:      100%;
+  vertical-align: baseline;
+}
+
+/**
+ * @structure Bordure
+ * @section Normalization
+ * @description
+ *  Base values for padding and margins for blocks.
+ * @markup
+ *  <header class="app-bordure"></header>
+ *  <div class="app-bordure"></div>
+ */
+.#{$prefix}-bordure {
+  margin:  0 auto;
+  padding: 0 40px;
+}

@@ -2,36 +2,18 @@
 
 {% block body_class %}{{ 'app-homepage__body' }}{% endblock %}
 
-{% block body %}
-    {% block header %}
-        {{ render(controller('App\\Controller\\HomepageController::renderHeader', {
-            'route': route,
-            'routeParams': route_params,
-            'url': app.request.uri
-        })) }}
-    {% endblock %}
+{% block main %}
+    <main class="app-homepage__main">
+        <h1>{{ 'mainboard content here' }}</h1>
+    </main>
+{% endblock %}
 
-    {% block main %}
-        <main class="app-homepage__main">
-            <h1>{{ 'mainboard content here' }}</h1>
-        </main>
-    {% endblock %}
-
-    {% block footer %}
-        {{ render(controller('App\\Controller\\HomepageController::renderFooter', {
-            'route': route,
-            'routeParams': route_params,
-            'url': app.request.uri
-        })) }}
-    {% endblock %}
-
-    {% block css %}
-        {% include 'homepage/_includes/css.html.twig' %}
-    {% endblock %}
-    {% block links %}
-        {% include 'homepage/_includes/links.html.twig' %}
-    {% endblock %}
-    {% block js %}
-        {% include 'homepage/_includes/js.html.twig' %}
-    {% endblock %}
+{% block css %}
+    {% include 'homepage/_includes/css.html.twig' %}
+{% endblock %}
+{% block links %}
+    {% include 'homepage/_includes/links.html.twig' %}
+{% endblock %}
+{% block js %}
+    {% include 'homepage/_includes/js.html.twig' %}
 {% endblock %}

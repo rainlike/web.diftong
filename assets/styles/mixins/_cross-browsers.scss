@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Cross-browser transition solution.
+ *
+ * @mixin Transition
+ * @section Cross-Browser Mixins
+ * @param $property property
+ * @param $duration duration
+ * @param $animation animation
+ * @param $delay calculated delay
+ * @example
+ *  @include app--non-select(all, 1s, ease, 0s);
+ *  @include app--non-select(width, .5s, linear, 10s);
+ */
+@mixin app--transition($property: all, $duration: 1s, $animation: ease, $delay: 0s) {
+  -webkit-transition: $property $duration $animation $delay;
+  -moz-transition:    $property $duration $animation $delay;
+  -o-transition:      $property $duration $animation $delay;
+  transition:         $property $duration $animation $delay;
+}
+
+/**
+ * Cross-browser non-selectable solution.
+ *
+ * @mixin Non-Select
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--non-select();
+ */
+@mixin app--non-select() {
+  -webkit-touch-callout: none; // iOS Safari
+  -webkit-user-select:   none; // Safari
+  -khtml-user-select:    none; // Konqueror HTML
+  -moz-user-select:      none; // Firefox
+  -ms-user-select:       none; // Internet Explorer/Edge
+  user-select:           none; // Non-prefixed version, currently supported by Chrome and Opera
+}
+
+/**
+ * Cross-browser box-sizing solution.
+ *
+ * @mixin Box-Sizing
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--box-sizing();
+ *  @include app--box-sizing(content-box);
+ */
+@mixin app--box-sizing($value: border-box) {
+  -webkit-box-sizing: $value; // Safari & Chrome
+  -moz-box-sizing:    $value; // Firefox
+  box-sizing:         $value;
+}

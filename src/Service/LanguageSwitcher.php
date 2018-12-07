@@ -1,6 +1,6 @@
 <?php
 /**
- * Language Switcher
+ * Language Switcher Service
  * Generate switcher between site languages
  *
  * @package App\Service
@@ -26,7 +26,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
-use App\Utility\StaticLibrary;
+use App\Service\Library;
 
 use App\Entity\Language;
 
@@ -217,7 +217,7 @@ class LanguageSwitcher
         if ($this->capitalize_mode) {
             foreach ($return as $key => $item) {
                 $name = $item['name'];
-                $return[$key]['name'] = StaticLibrary::upFirstChar($name);
+                $return[$key]['name'] = Library::upFirstChar($name);
             }
         }
 

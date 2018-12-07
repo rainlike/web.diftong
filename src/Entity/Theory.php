@@ -14,13 +14,14 @@ use Gedmo\Translatable\Translatable;
 use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\ISlug;
+use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Title\TranslatableRequired as TitleField;
 use App\Entity\Library\Traits\Content\TranslatableRequired as ContentField;
+use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
@@ -35,7 +36,7 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  * @ORM\Entity(repositoryClass="App\Repository\TheoryRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TheoryTranslation")
  */
-final class Theory extends BasicEntity implements Translatable, ISeoable, ITranslatable, ISlug
+class Theory extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug
 {
     use TitleField;
     use FullTitleField;

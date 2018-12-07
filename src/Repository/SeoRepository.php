@@ -11,7 +11,7 @@ use Doctrine\ORM\Query;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
-use App\Utility\StaticLibrary;
+use App\Service\Library;
 
 use App\Entity\Seo;
 
@@ -62,14 +62,14 @@ class SeoRepository extends ServiceEntityRepository implements IBasic
      * @param ISeoable $target
      * @return Query
      */
-    public function getSeoQuery(ISeoable $target)
+    public function getSeoQuery(ISeoable $target): Query
     {
         $qb = $this->createQueryBuilder('seo')
             ->select('seo')
             ->where('seo.targetId = :targetId')
             ->andWhere('seo.targetName = :targetName')
             ->setParameter('targetId', $target->getId())
-            ->setParameter('targetName', StaticLibrary::className($target));
+            ->setParameter('targetName', Library::className($target));
 
         return $qb->getQuery();
     }

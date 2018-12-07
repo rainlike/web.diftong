@@ -17,52 +17,22 @@ namespace App\Utility;
 class StaticStorage
 {
     /**
-     * Get index for SEO translations
+     * Get outside link for logo
      *
      * @return string
      */
-    public static function seoTransIndex(): string
+    public static function logoLink(): string
     {
-        return 'default';
+        return 'https://vectr.com/tmp/c3t1Ik6b6/c1vRf5AZjh.svg?width=400&height=200&select=c1vRf5AZjhpage0';
     }
 
     /**
-     * Get index for SEO translations of site name
+     * Get namespace prefix for entities
      *
      * @return string
      */
-    public static function seoTransSiteNameIndex(): string
+    public static function namespacePrefixEntity(): string
     {
-        return 'default.site_name';
-    }
-
-    /**
-     * Get index for SEO translations of title
-     *
-     * @return string
-     */
-    public static function seoTransTitleIndex(): string
-    {
-        return 'default.title';
-    }
-
-    /**
-     * Get index for SEO translations of description
-     *
-     * @return string
-     */
-    public static function seoTransDescriptionIndex(): string
-    {
-        return 'default.description';
-    }
-
-    /**
-     * Get index for SEO translations of keywords
-     *
-     * @return string
-     */
-    public static function seoTransKeywordsIndex(): string
-    {
-        return 'default.keywords';
+        return 'App\Entity\\';
     }
 }

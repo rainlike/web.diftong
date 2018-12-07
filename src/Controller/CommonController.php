@@ -6,9 +6,16 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Symfony\Component\Routing\Annotation\Route;
+
+use Symfony\Component\Translation\TranslatorInterface as Translator;
+
+use App\Service\Library;
+use App\Service\Logotype;
+use App\Service\LanguageSwitcher;
 
 /**
  * Class CommonController
@@ -37,5 +44,100 @@ class CommonController extends Controller
         $url = \str_replace($pathInfo, \rtrim($pathInfo, ' /'), $requestUri);
 
         return $this->redirect($url, 301);
+    }
+
+    /**
+     * Render header
+     *
+     * @param Request $request
+     * @param Translator $translator
+     * @param string $route
+     * @param array $routeParams
+     * @param string $url
+     * @param Library $library
+     * @param LanguageSwitcher $languageSwitcher
+     * @param Logotype $logotype
+     * @return Response
+     */
+    public function renderHeader(
+        Request $request,
+        Translator $translator,
+        string $route,
+        array $routeParams,
+        string $url,
+        Library $library,
+        LanguageSwitcher $languageSwitcher,
+        Logotype $logotype
+    ): Response
+    {
+        $user = $this->getUser();
+
+        # @TODO: menu
+        # @TODO: $backLink -> check if it's own link
+//        $selfContainer = $this->get('app.self.container');
+//        $prevUrl = $selfContainer->previousUrl();
+        $backLink = null;
+
+        $queryParameters = $library->cutUrlQueryParameters($url);
+        $langSwitcher = $languageSwitcher
+            ->init($request)
+            ->setRoute($route)
+            ->setRouteParameters($routeParams)
+            ->setQueryParameters($queryParameters)
+            ->getSwitcher();
+
+        $logo = $logotype->getVerboseLogo();
+
+        return $this->render('regions/header.html.twig', [
+            'user' => $user,
+            'logo' => $logo,
+            'language_switcher' => $langSwitcher,
+            'back_link' => $backLink
+        ]);
+    }
+
+    /**
+     * Render footer
+     *
+     * @param Request $request
+     * @param Translator $translator
+     * @param string $route
+     * @param array $routeParams
+     * @param string $url
+     * @param Library $library
+     * @param LanguageSwitcher $languageSwitcher
+     * @param Logotype $logotype
+     * @return Response
+     */
+    public function renderFooter(
+        Request $request,
+        Translator $translator,
+        string $route,
+        array $routeParams,
+        string $url,
+        Library $library,
+        LanguageSwitcher $languageSwitcher,
+        Logotype $logotype
+    ): Response
+    {
+        $user = $this->getUser();
+
+        # @TODO: $footerItems
+
+        $queryParameters = $library->cutUrlQueryParameters($url);
+        $langSwitcher = $languageSwitcher
+            ->init($request)
+            ->setRoute($route)
+            ->setRouteParameters($routeParams)
+            ->setQueryParameters($queryParameters)
+            ->getSwitcher();
+
+        $logo = $logotype->getSketch();
+
+        return $this->render('regions/footer.html.twig', [
+            'user' => $user,
+            'logo' => $logo,
+            'language_switcher' => $langSwitcher
+        ]);
     }
 }

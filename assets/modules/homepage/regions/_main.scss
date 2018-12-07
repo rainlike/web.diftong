@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "../variables";
+@import "../mixins";
 
 /**
  * @structure Main
@@ -8,10 +9,13 @@
  * @description
  *  Style of main for Homepage.</br>
  * @markup
- *  <main class="app-homepage__main">
- *   ...
- *  </main>
+ *  <main class="app-homepage__main"></main>
  */
 .#{$prefix}-homepage__main {
-  color: $color-primary
+  @include app--box-sizing();
+  @extend .#{$prefix}-bordure;
+  width:     $space-full;
+  max-width: $content-max-width;
+
+  background-color: #F8BB86; // @TODO: debug bg
 }

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Absolute size for property.
+ *
+ * @mixin
+ * @section Absolute Mixins
+ * @param $property calculated property
+ * @param $value calculated value
+ * @example
+ *  @include app--absolute(width, 200px);
+ */
+@mixin app--absolute($property, $value) {
+  #{$property}:     #{$value};
+  min-#{$property}: #{$value};
+  max-#{$property}: #{$value};
+}

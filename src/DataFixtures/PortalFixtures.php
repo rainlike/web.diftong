@@ -25,7 +25,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
     use TranslationMethods;
 
     /**
-     * List of Portals
+     * List of preset Portals
      * @var array
      */
     private static $portals = [

@@ -9,4 +9,4 @@ namespace App\Entity\Library\Interfaces;
  * @package App\Entity\Library\Interfaces
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-interface ISeoable extends IBasic {}
+interface ISeoable {}

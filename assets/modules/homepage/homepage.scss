@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // ====================
-// Variables
+// Variables & Mixins
 // ====================
 @import "variables";
+@import "mixins";
 
 // ====================
 // Resetting
@@ -20,6 +21,7 @@
 // Globals
 // ====================
 @import "../../styles/global";
+@import "../../styles/normalize";
 
 // ====================
 // Mixins
@@ -27,27 +29,11 @@
 @import "../../styles/mixins";
 
 // ====================
-// Target styles
-// ====================
-/**
- * @structure Body
- * @section Homepage
- * @description
- *  Style of body for Homepage.
- * @markup
- *  <body class="app-homepage__body">
- *   ...
- *  </body>
- */
-.#{$prefix}-homepage__body {
-  display: flex;
-  flex-direction: column;
-}
-
-// ====================
 // Regions
 // ====================
+@import "regions/body";
 @import "regions/header";
+@import "regions/main";
 @import "regions/footer";
 
 // ====================
@@ -58,3 +44,4 @@
 // ====================
 // Components
 // ====================
+@import "../../styles/components";

@@ -1,6 +1,6 @@
 <?php
 /**
- * Seo
+ * Seo Service
  * Provides methods for generate and extract SEO data
  *
  * @package App\Service
@@ -21,15 +21,9 @@ use App\Entity\Library\Interfaces\ISeoable;
 
 use App\Entity\Seo as SeoEntity;
 
-use App\Utility\StaticStorage;
-
-/**
- * Class Seo */
+/** Class Seo */
 class Seo
 {
-    /** @var string */
-    public const TARGET_CLASS_PREFIX = 'App\Controller\\';
-
     /** @var EntityManager */
     private $em;
 
@@ -75,21 +69,23 @@ class Seo
      * @param EntityManager $em
      * @param Translator $translator
      * @param string $domain
+     * @param string $siteName
      */
     public function __construct(
         EntityManager $em,
         Translator $translator,
-        string $domain
+        string $domain,
+        string $siteName
     ) {
         $this->em = $em;
         $this->translator = $translator;
 
         $this->domain = $domain;
+        $this->site_name = $siteName;
 
-        $this->site_name = $this->translator->trans(StaticStorage::seoTransSiteNameIndex(), [], 'seo');
-        $this->title = $this->translator->trans(StaticStorage::seoTransTitleIndex(), [], 'seo');
-        $this->description = $this->translator->trans(StaticStorage::seoTransDescriptionIndex(), [], 'seo');
-        $this->keywords = $this->translator->trans(StaticStorage::seoTransKeywordsIndex(), [], 'seo');
+        $this->title = $this->translator->trans('title', [], 'seo');
+        $this->description = $this->translator->trans('description', [], 'seo');
+        $this->keywords = $this->translator->trans('keywords', [], 'seo');
     }
 
     /**
@@ -129,6 +125,16 @@ class Seo
      * @return array
      */
     public function getSeo(ISeoable $target = null): array {}
+
+    /**
+     * Get text for logo attributes
+     *
+     * @return string
+     */
+    public function getLogoText()
+    {
+        return $this->translator->trans('logo_text', [], 'seo');
+    }
 
     /**
      * Calculate SEO attributes

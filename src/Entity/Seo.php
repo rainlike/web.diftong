@@ -33,7 +33,7 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\SeoTranslation")
  * @ORM\HasLifecycleCallbacks()
  */
-final class Seo extends BasicEntity implements Translatable, IBasic, ITranslatable
+class Seo extends BasicEntity implements Translatable, IBasic, ITranslatable
 {
     use TitleField;
     use DescriptionField;

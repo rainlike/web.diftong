@@ -20,8 +20,8 @@ $sides: (
 );
 
 /**
- * @atom Dimensions
- * @section Margins
+ * @atom Margins
+ * @section Dimensions
  * @modifiers
  *  .app-margin__{SIZE} an overall margin
  *  .app-margin__top--{SIZE} a top margin
@@ -43,8 +43,8 @@ $sides: (
 }
 
 /**
- * @atom Dimensions
- * @section Padding
+ * @atom Padding
+ * @section Dimensions
  * @modifiers
  *  .app-padding__{SIZE} an overall padding
  *  .app-padding__top--{SIZE} a top padding
@@ -77,8 +77,8 @@ $spaces: (
 );
 
 /**
- * @atom Dimensions
- * @section Width
+ * @atom Width
+ * @section Dimensions
  * @modifiers
  *  .app-width--zero a zero width
  *  .app-width--small a small width
@@ -95,8 +95,8 @@ $spaces: (
 }
 
 /**
- * @atom Dimensions
- * @section Height
+ * @atom Height
+ * @section Dimensions
  * @modifiers
  *  .app-height--zero a zero height
  *  .app-height--small a small height

@@ -20,7 +20,7 @@ trait TranslatableRequired
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="title", type="string", length=255, nullable=false, unique=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false, unique=false)
      * @Assert\NotBlank(
      *      message = "Title should not be blank."
      * )

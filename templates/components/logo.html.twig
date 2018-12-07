@@ -1,0 +1,11 @@
+<div class="app-homepage__header--logo">
+    {% if logo.type == constant('App\\Service\\Logotype::TYPE_PHRASE') %}
+        <h1>{{ logo.data }}</h1>
+    {% else %}
+        {% set src = logo.type == constant('App\\Service\\Logotype::TYPE_LINK')
+            ? logo.data
+            : asset(logo.data)
+        %}
+        <img src="{{ src }}" alt="{{ logo.alt }}" title="{{ logo.title }}"/>
+    {% endif %}
+</div>

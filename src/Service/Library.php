@@ -1,7 +1,7 @@
 <?php
 /**
- * Static Library
- * Provides useful static methods
+ * Library
+ * Provides useful methods
  *
  * @package App\Utility
  * @version 1.0.0
@@ -11,13 +11,50 @@
  */
 declare(strict_types=1);
 
-namespace App\Utility;
+namespace App\Service;
+
+use Symfony\Component\Debug\Exception\UndefinedMethodException;
+
+use Symfony\Component\Translation\TranslatorInterface as Translator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-/** Class StaticLibrary */
-class StaticLibrary
+use App\Utility\StaticStorage;
+
+/** Class Library */
+class Library
 {
+    /** @var Translator */
+    private $translator;
+
+    /**
+     * Library constructor
+     *
+     * @param Translator $translator
+     */
+    public function __construct(Translator $translator)
+    {
+        $this->translator = $translator;
+    }
+
+    /**
+     * Magic __call method
+     *
+     * @param string $method
+     * @param array $arguments
+     * @return mixed
+     * @throws UndefinedMethodException
+     */
+    public function __call($method, $arguments)
+    {
+        $isExists = \method_exists($this, $method);
+        if ($isExists) {
+            return self::$method(...$arguments);
+        }
+
+        throw new UndefinedMethodException(StaticCodes::EXCEPTION_UNDEFINED_METHOD_MESSAGE, new \ErrorException());
+    }
+
     /** STRING SECTION ************************************************************************************************/
 
     /**
@@ -692,6 +729,94 @@ class StaticLibrary
         return $parameters;
     }
 
+    /** DATE SECTION **************************************************************************************************/
+
+    /**
+     * Get duration date format
+     *
+     * @param \DateTime|null $date
+     * @param bool $capitalize
+     * @param string|null $locale
+     * @return string
+     */
+    public function durationDate(
+        ?\DateTime $date = null,
+        bool $capitalize = true,
+        ?string $locale = null
+    ): string
+    {
+        if ($date) {
+            $year = $date->format('Y');
+            $month = 'month.'.\strtolower($date->format('F'));
+
+            $month = $this->translator->trans($month, [], 'dates', $locale);
+            if ($capitalize) {
+                $month = \ucfirst($month);
+            }
+
+            $durationDate = $month.' '.$year;
+        } else {
+            $durationDate = $this->translator->trans('until_now', [], 'dates', $locale);
+        }
+
+        return $durationDate;
+    }
+
+    /**
+     * Get full duration date format
+     *
+     * @param \DateTime $dateFrom
+     * @param \DateTime|null $dateTo
+     * @param string $delimiter
+     * @param bool $lower
+     * @return string
+     */
+    public function fullDurationDate(
+        \DateTime $dateFrom,
+        ?\DateTime $dateTo = null,
+        string $delimiter = ' - ',
+        bool $lower = false
+    ): string
+    {
+        $durationFrom = $this->durationDate($dateFrom, $lower);
+        $durationTo = $this->durationDate($dateTo, $lower);
+
+        return $durationFrom.$delimiter.$durationTo;
+    }
+
+    /**
+     * Get date with translated month
+     *
+     * @param \DateTime $dateTime
+     * @param string $format
+     * @param bool $capitalize
+     * @param string|null $locale
+     * @return string
+     */
+    public function monthDate(
+        \DateTime $dateTime,
+        string $format = 'd F Y',
+        bool $capitalize = true,
+        ?string $locale = null
+    ): string
+    {
+        $transDate = $dateTime->format($format);
+
+        if (\strpos($format, 'F') !== false) {
+            $month = $dateTime->format('F');
+            $transMonthTemplate = 'month.'.\strtolower($month);
+            $transMonth = $this->translator->trans($transMonthTemplate, [], 'dates', $locale);
+
+            if ($capitalize) {
+                $transMonth = \ucfirst($transMonth);
+            }
+
+            $transDate = \str_replace($month, $transMonth, $transDate);
+        }
+
+        return $transDate;
+    }
+
     /** CLASS SECTION *************************************************************************************************/
 
     /**
@@ -723,5 +848,16 @@ class StaticLibrary
         $proxyStr = $saveSlash ? 'Proxies\__CG__' : 'Proxies\__CG__\\';
 
         return str_replace($proxyStr, '', $className);
+    }
+
+    /**
+     * Get path for entity by name
+     *
+     * @param string $name
+     * @return string
+     */
+    public static function entityPathByName(string $name): string
+    {
+        return StaticStorage::namespacePrefixEntity().\ucfirst($name);
     }
 }

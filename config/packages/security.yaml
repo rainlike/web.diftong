@@ -1,9 +1,8 @@
 security:
   # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
   providers:
-# @TODO: uncomment for FOS
-#    fos_userbundle:
-#      id: fos_user.user_provider.username
+    fos_userbundle:
+      id: fos_user.user_provider.username
     in_memory:
       memory:
         users:
@@ -17,23 +16,21 @@ security:
   firewalls:
     main:
       anonymous: true
-# @TODO: uncomment for FOS
-#      pattern: ^/
-#      form_login:
-#        provider:   fos_userbundle
-#        login_path: fos_user_security_login
-#        check_path: fos_user_security_check
-#        #csrf_provider: security.csrf.token_manager
-#      logout:
-#        path:   fos_user_security_logout
-#        target: front_index_page
+      pattern: ^/
+      form_login:
+        provider:   fos_userbundle
+        login_path: fos_user_security_login
+        check_path: fos_user_security_check
+        #csrf_provider: security.csrf.token_manager
+      logout:
+        path:   fos_user_security_logout
+        target: front_index_page
     dev:
       pattern:  ^/(_(profiler|wdt)|css|images|js)/
       security: false
 
-# @TODO: uncomment for FOS
-#  encoders:
-#    FOS\UserBundle\Model\UserInterface: sha512 # bcrypt
+  encoders:
+    FOS\UserBundle\Model\UserInterface: sha512 # bcrypt
 
   access_control:
     - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }

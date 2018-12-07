@@ -1,6 +1,5 @@
 # SEO defaults
-default:
-  site_name: "diftong.com"
-  title: "diftong.com"
-  description: ""
-  keywords: ""
+title: "title (en)"
+description: "description (en)"
+keywords: "keywords (en)"
+logo_text: "logo text (en)"

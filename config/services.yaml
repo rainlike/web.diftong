@@ -15,10 +15,25 @@ parameters:
   i18n_locales: [en,es,uk,ru,pl]
   user_email: '%env(USER_EMAIL)%'
   domain: '%env(DOMAIN)%'
+  site_name: '%env(SITE_NAME)%'
   server_ip: '%env(SERVER_IP)%'
   in_developing: true
   github_link: 'https://github.com/rainlike/web.diftong'
   configs_dir: '%kernel.project_dir%/config'
+  public_dir: '%kernel.project_dir%/public'
+
+# FOSUser Configuration
+# Read the documentation:
+# https://packagist.org/packages/friendsofsymfony/user-bundle#dev-master
+fos_user:
+  db_driver: orm
+  firewall_name: main
+  user_class: App\Entity\User
+  group:
+    group_class: App\Entity\UserGroup
+  from_email:
+    address: '%user_email%'
+    sender_name: 'Alexander Saveliev'
 
 # JMSI18nRoutingBundle Configuration
 # Read the documentation:
@@ -60,35 +75,46 @@ services:
   # Symfony standard services
   sym.finder:
     class: Symfony\Component\Finder\Finder
-    public: false
 
   # Services
-  app.yml.parser:
-    class: App\Service\YmlParser
+  App\Service\YmlParser:
     autowire: true
     autoconfigure: true
-    public: true
 
-  app.seo:
-    class: App\Service\Seo
+  App\Service\Library:
     autowire: true
     autoconfigure: true
-    public: true
+
+  App\Service\Seo:
+    autowire: true
+    autoconfigure: true
     arguments:
       $domain: '%domain%'
+      $siteName: '%site_name%'
 
-  app.lang.switcher:
-    class: App\Service\LanguageSwitcher
+  App\Service\Logotype:
     autowire: true
     autoconfigure: true
-    public: true
+    arguments:
+      $publicDir: '%public_dir%'
+      $siteName: '%site_name%'
+
+  App\Service\LanguageSwitcher:
+    autowire: true
+    autoconfigure: true
+
+  App\Service\Settings:
+    autowire: true
+    autoconfigure: true
+
+  App\Service\Transformer:
+    autowire: true
+    autoconfigure: true
 
   # Helpers
-  app.translation.helper:
-    class: App\Helper\TranslationHelper
+  App\Helper\TranslationHelper:
     autowire: true
     autoconfigure: true
-    public: true
 
   # Loggers
   # ...

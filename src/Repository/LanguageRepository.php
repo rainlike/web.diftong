@@ -126,17 +126,20 @@ class LanguageRepository extends ServiceEntityRepository implements IBasic
      * Get remaining locales except current
      *
      * @param string $locale
-     * @param bool $enabled
+     * @param bool $enabledOnly
      * @return array|null
      */
-    public function getRemainingLocales(string $locale, bool $enabled = true): ?array
+    public function getRemainingLocales(string $locale, bool $enabledOnly = true): ?array
     {
         $qb = $this->createQueryBuilder('language')
             ->select('language.locale')
             ->where('language.locale != :locale')
-            ->setParameter('locale', $locale)
-            ->andWhere('language.enabled = :enabled')
-            ->setParameter('enabled', $enabled);
+            ->setParameter('locale', $locale);
+
+        if ($enabledOnly) {
+            $qb->andWhere('language.enabled = :enabled_only')
+               ->setParameter('enabled_only', $enabledOnly);
+        }
 
         return $qb->getQuery()->getResult();
     }

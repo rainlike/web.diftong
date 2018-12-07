@@ -26,4 +26,22 @@ interface IEnabled
      * @return Query
      */
     public function getEnabledQuery(): Query;
+
+    /**
+     * Find enabled record
+     *
+     * @param string $targetField
+     * @param string $targetValue
+     * @return mixed|null
+     */
+    public function findEnabled(string $targetField, string $targetValue);
+
+    /**
+     * Get query for enabled record
+     *
+     * @param string $targetField
+     * @param string $targetValue
+     * @return Query
+     */
+    public function findEnabledQuery(string $targetField, string $targetValue): Query;
 }

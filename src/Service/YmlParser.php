@@ -1,6 +1,6 @@
 <?php
 /**
- * Yaml Parser
+ * Yaml Parser Proxy Service
  * It represents a wrapper around basic Symfony Yaml parser
  *
  * @package App\Service

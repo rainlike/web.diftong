@@ -1,0 +1,25 @@
+# app:db:rebuild
+db_rebuild:
+  question: "Це не дуже надійна операція. Рекомендується використовувати команду з Makefile - 'make db.rebuild'. Ви все ще бажаєте продовжувати?"
+  all_done: "Всі дії успішно завершені."
+  database_drop:
+    success: "DROP DATABASE - успішно виконано!"
+    fault: "DROP DATABASE - помилка! Закриття виконання команди!"
+  database_create:
+    success: "CREATE DATABASE - успішно виконано!"
+    fault: "CREATE DATABASE - помилка! Закриття виконання команди!"
+  schema_update:
+    success: "SCHEMA UPDATE - успішно виконано!"
+    fault: "SCHEMA UPDATE - помилка! Закриття виконання команди!"
+  fixtures_load:
+    success: "FIXTURES LOAD - успішно виконано!"
+    fault: "FIXTURES LOAD - помилка! Закриття виконання команди!"
+  migrations_version:
+    success: "MIGRATIONS ADD VERSIONS - успішно виконано!"
+    fault: "MIGRATIONS ADD VERSIONS - помилка! Закриття виконання команди!"
+  migrations_migrate:
+    success: "MIGRATIONS MIGRATE - успішно виконано!"
+    fault: "MIGRATIONS MIGRATE - помилка! Закриття виконання команди!"
+  cache_clear:
+    success: "CACHE CLEAR - успішно виконано!"
+    fault: "CACHE CLEAR - помилка! Закриття виконання команди!"

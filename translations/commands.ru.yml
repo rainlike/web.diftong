@@ -1,0 +1,25 @@
+# app:db:rebuild
+db_rebuild:
+  question: "Это не очень безопасная операция. Рекомендуется использовать команду из Makefile - 'make db.rebuild'. Вы все еще хотите продолжить?"
+  all_done: "Все действия успешно завершены."
+  database_drop:
+    success: "DROP DATABASE - успешно завершено!"
+    fault: "DROP DATABASE - провал! Закрытие выполнения команды!"
+  database_create:
+    success: "CREATE DATABASE - успешно завершено!"
+    fault: "CREATE DATABASE - провал! Закрытие выполнения команды!"
+  schema_update:
+    success: "SCHEMA UPDATE - успешно завершено!"
+    fault: "SCHEMA UPDATE - провал! Закрытие выполнения команды!"
+  fixtures_load:
+    success: "FIXTURES LOAD - успешно завершено!"
+    fault: "FIXTURES LOAD - провал! Закрытие выполнения команды!"
+  migrations_version:
+    success: "MIGRATIONS ADD VERSIONS - успешно завершено!"
+    fault: "MIGRATIONS ADD VERSIONS - провал! Закрытие выполнения команды!"
+  migrations_migrate:
+    success: "MIGRATIONS MIGRATE - успешно завершено!"
+    fault: "MIGRATIONS MIGRATE - провал! Закрытие выполнения команды!"
+  cache_clear:
+    success: "CACHE CLEAR - успешно завершено!"
+    fault: "CACHE CLEAR - провал! Закрытие выполнения команды!"

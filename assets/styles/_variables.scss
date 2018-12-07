@@ -25,7 +25,7 @@ $color-white: #FFF; // rgb(255, 255, 255)
 $color-black: #000; // rgb(0, 0, 0)
 
 // ====================
-// Main colors
+// Base colors
 // ====================
 /**
  * A primary color variable.
@@ -95,6 +95,17 @@ $color-tone-amount: 5;
  * @section Colors Variables
  */
 $color-tone-step: 5;
+
+// ====================
+// Content
+// ====================
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+$content-max-width: 1600px;
 
 // ====================
 // Grid

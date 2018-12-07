@@ -19,7 +19,7 @@ use App\Entity\Language;
 class LanguageFixtures extends Fixture implements OrderedFixtureInterface
 {
     /**
-     * List of Languages
+     * List of preset Languages
      * @var array
      */
     private static $languages = [

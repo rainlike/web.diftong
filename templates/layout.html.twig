@@ -10,12 +10,14 @@
         {% endblock %}
         {% block seo %}
             {# TODO: SEO service #}
-            <title>{% block title %}{{ 'default.title'|trans({}, 'seo') }}{% endblock %}</title>
-            <meta name="description" content="{% block description %}{{ 'default.description'|trans({}, 'seo') }}{% endblock %}">
-            <meta name="keywords" content="{% block keywords %}{{ 'default.keywords'|trans({}, 'seo') }}{% endblock %}">
+            <title>{% block title %}{{ 'title'|trans({}, 'seo') }}{% endblock %}</title>
+            <meta name="description" content="{% block description %}{{ 'description'|trans({}, 'seo') }}{% endblock %}">
+            <meta name="keywords" content="{% block keywords %}{{ 'keywords'|trans({}, 'seo') }}{% endblock %}">
         {% endblock %}
         {% block css %}{% endblock %}
-        {% block links %}{% endblock %}
+        {% block links %}
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        {% endblock %}
         {% block window %}
             <script>
                 window.app_locale = "{{ app.request.locale }}";
@@ -24,7 +26,25 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block header %}
+                {{ render(controller('App\\Controller\\CommonController::renderHeader', {
+                    'route': route,
+                    'routeParams': route_params,
+                    'url': app.request.uri
+                })) }}
+            {% endblock %}
+
+            {% block main %}{% endblock %}
+
+            {% block footer %}
+                {{ render(controller('App\\Controller\\CommonController::renderFooter', {
+                    'route': route,
+                    'routeParams': route_params,
+                    'url': app.request.uri
+                })) }}
+            {% endblock %}
+        {% endblock %}
         {% block js %}{% endblock %}
         {% block modal %}{% endblock %}
     </body>

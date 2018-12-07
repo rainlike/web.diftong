@@ -24,7 +24,7 @@ npm run serv - run Webpack dev server on port :8080
 
 documentation
 ```
-npm run nucleus - generate style documentation via Nucleus and seve it to docs/nucleus directory
+npm run nucleus - generate style documentation via Nucleus and save it to docs/nucleus directory
 make doc.style - generate style documentation through Makefile
 gulp nucleus - generate styles for Nucleus guide
 ```
@@ -39,6 +39,7 @@ make sym.perms - set free permissions on all dev directories
 database
 ```
 make db.rebuild - recreate curent db with preset fixtures
+bin/console app:db:rebuild - recreate curent db with preset fixtures through Symfony
 ```
 
 tests

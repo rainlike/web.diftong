@@ -10,7 +10,7 @@ use App\Entity\Library\Traits\Created as CreatedField;
 use App\Entity\Library\Traits\Updated as UpdatedField;
 use App\Entity\Library\Traits\Enabled as EnabledField;
 
-use App\Utility\StaticLibrary;
+use App\Service\Library;
 
 /**
  * Class BasicEntity
@@ -33,6 +33,6 @@ abstract class BasicEntity
      */
     public function getClassName(): string
     {
-        return StaticLibrary::className($this);
+        return Library::className($this);
     }
 }

@@ -14,6 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @package App\Entity\Library\Traits
  * @author Alexander Saveliev <alex@spbcrew.com>
+ * @ORM\HasLifecycleCallbacks()
  */
 trait Updated
 {
@@ -26,6 +27,17 @@ trait Updated
      * )
      */
     private $updated;
+
+    /**
+     * PreUpdate method
+     *
+     * @ORM\PreUpdate()
+     * @return void
+     */
+    public function preUpdate(): void
+    {
+        $this->setUpdated(new \DateTime());
+    }
 
     /**
      * Set updated

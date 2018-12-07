@@ -1,0 +1,25 @@
+# app:db:rebuild
+db_rebuild:
+  question: "This is not a very secure operation. It is most recommended to use a command from Makefile - 'make db.rebuild'. Do you still want to continue?"
+  all_done: "All actions completed successfully."
+  database_drop:
+    success: "DROP DATABASE - successfully completed!"
+    fault: "DROP DATABASE - fault! Closing execution of the command!"
+  database_create:
+    success: "CREATE DATABASE - successfully completed!"
+    fault: "CREATE DATABASE - fault! Closing execution of the command!"
+  schema_update:
+    success: "SCHEMA UPDATE - successfully completed!"
+    fault: "SCHEMA UPDATE - fault! Closing execution of the command!"
+  fixtures_load:
+    success: "FIXTURES LOAD - successfully completed!"
+    fault: "FIXTURES LOAD - fault! Closing execution of the command!"
+  migrations_version:
+    success: "MIGRATIONS ADD VERSIONS - successfully completed!"
+    fault: "MIGRATIONS ADD VERSIONS - fault! Closing execution of the command!"
+  migrations_migrate:
+    success: "MIGRATIONS MIGRATE - successfully completed!"
+    fault: "MIGRATIONS MIGRATE - fault! Closing execution of the command!"
+  cache_clear:
+    success: "CACHE CLEAR - successfully completed!"
+    fault: "CACHE CLEAR - fault! Closing execution of the command!"
