@@ -19,6 +19,8 @@ use Twig\Extension\AbstractExtension;
 
 use Twig\TwigFunction;
 
+use App\Entity\User;
+
 use App\Service\Settings;
 
 /** Class SettingExtension */
@@ -53,11 +55,12 @@ class SettingExtension extends AbstractExtension
      * Get enabled setting
      *
      * @param string $name
+     * @param User|null $user
      * @return mixed|null
      * @throws NonUniqueResultException
      */
-    public function getSetting(string $name)
+    public function getSetting(string $name, ?User $user = null)
     {
-        return $this->settings->getSetting($name);
+        return $this->settings->getSetting($name, $user);
     }
 }

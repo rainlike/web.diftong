@@ -23,6 +23,12 @@ use App\Entity\Library\Traits\Updated as UpdatedField;
  */
 class User extends BaseUser
 {
+    /**
+     * Mark of anonymous
+     * @var string
+     */
+    public const USER_ANON = 'anon.';
+
     use UpdatedField;
 
     /**
