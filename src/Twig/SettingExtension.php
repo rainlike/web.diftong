@@ -15,9 +15,8 @@ namespace App\Twig;
 
 use Doctrine\ORM\NonUniqueResultException;
 
-use Twig\Extension\AbstractExtension;
-
 use Twig\TwigFunction;
+use Twig\Extension\AbstractExtension;
 
 use App\Entity\User;
 
