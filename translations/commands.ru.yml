@@ -23,3 +23,8 @@ db_rebuild:
   cache_clear:
     success: "CACHE CLEAR - успешно завершено!"
     fault: "CACHE CLEAR - провал! Закрытие выполнения команды!"
+# app:setting:check
+setting_check:
+  user_not_found: "Не удалось найти пользователя с {{field}} '{{value}}'."
+  setting_not_found: "Setting '{{name}}' was not found."
+  setting_is_disabled: "ВНИМАНИЕ: эта настройка отключена!"

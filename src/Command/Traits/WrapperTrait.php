@@ -11,7 +11,7 @@
  */
 declare(strict_types=1);
 
-namespace App\Command\Helpers;
+namespace App\Command\Traits;
 
 use Symfony\Component\Console\Output\OutputInterface;
 

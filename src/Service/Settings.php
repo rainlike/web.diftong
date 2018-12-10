@@ -19,15 +19,12 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
-use App\Repository\Library\Interfaces\ISetting as ISettingRepository;
-
 use App\Entity\User;
 use App\Entity\ValueType;
 use App\Entity\SiteSetting;
 use App\Entity\UserSetting;
 
 use App\Repository\ValueTypeRepository;
-use App\Repository\UserSettingRepository;
 
 /** Class Settings */
 class Settings

@@ -11,8 +11,8 @@ parameters:
   app_env: '%env(APP_ENV)%'
   app_prefix: '%env(APP_PREFIX)%'
   default_locale: 'en'
-  app_locales: en|es|uk|ru|pl
-  i18n_locales: [en,es,uk,ru,pl]
+  app_locales: [en,es,uk,ru,pl]
+  app_piped_locales: en|es|uk|ru|pl
   user_email: '%env(USER_EMAIL)%'
   domain: '%env(DOMAIN)%'
   site_name: '%env(SITE_NAME)%'
@@ -41,7 +41,7 @@ fos_user:
 # Packagist: https://packagist.org/packages/jms/i18n-routing-bundle
 jms_i18n_routing:
   default_locale: '%default_locale%'
-  locales: '%i18n_locales%'
+  locales: '%app_locales%'
   strategy: prefix
 
 services:
@@ -121,6 +121,19 @@ services:
 
   # Twig Extensions
   # ...
+
+  # Console Commands
+  App\Command\DbRebuild:
+    arguments:
+      $locales: '%app_locales%'
+    tags:
+      - { name: 'console.command' }
+
+  App\Command\SettingList:
+    arguments:
+      $locales: '%app_locales%'
+    tags:
+      - { name: 'console.command' }
 
   # Vendor Services
   serv.mobile.detect:

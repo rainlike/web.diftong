@@ -16,6 +16,7 @@ namespace App\Command;
 use Symfony\Component\Console\Command\Command;
 
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputOption;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -26,11 +27,13 @@ use Symfony\Component\Console\Helper\ProgressBar;
 
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
-use App\Command\Helpers\WrapperTrait;
+use App\Command\Traits\LocaleTrait;
+use App\Command\Traits\WrapperTrait;
 
 /** Class DbRebuild */
 class DbRebuild extends Command
 {
+    use LocaleTrait;
     use WrapperTrait;
 
     /** @var int */
@@ -38,9 +41,6 @@ class DbRebuild extends Command
 
     /** @var string */
     private const TRANS_PREFIX = 'db_rebuild';
-
-    /** @var string */
-    public static $locale = 'en';
 
     /**
      * Lazy loading
@@ -58,12 +58,18 @@ class DbRebuild extends Command
      * DbRebuild constructor
      *
      * @param Translator $translator
+     * @param array $locales
      * @param bool $sure
      */
-    public function __construct(Translator $translator, bool $sure = false)
-    {
+    public function __construct(
+        Translator $translator,
+        array $locales,
+        bool $sure = false
+    ) {
         $this->sure = $sure;
         $this->translator = $translator;
+
+        self::$locales = $locales;
 
         parent::__construct();
     }
@@ -78,7 +84,29 @@ class DbRebuild extends Command
         $this
             ->setName('app:db:rebuild')
             ->setDescription('Rebuild data base.')
-            ->setHelp('This command rebuilds data base, loads fixtures and runs migrations');
+            ->setHelp('This command rebuilds data base, loads fixtures and runs migrations.')
+            ->addOption(
+                'locale',
+                'l',
+                InputOption::VALUE_REQUIRED,
+                'Output messages language.',
+                null
+            );
+    }
+
+    /**
+     * Initialize command
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return void
+     */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $localeOption = $input->getOption('locale');
+        if ($localeOption) {
+            self::setLocale($localeOption);
+        }
     }
 
     /**

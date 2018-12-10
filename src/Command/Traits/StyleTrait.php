@@ -1,7 +1,7 @@
 <?php
 /**
  * Style Trait
- * Trait for proxy of SymfonyStyle component
+ * Trait for proxy of SymfonyStyle console component
  *
  * @package App\Service
  * @version 1.0.0
@@ -11,7 +11,7 @@
  */
 declare(strict_types=1);
 
-namespace App\Command\Helpers;
+namespace App\Command\Traits;
 
 use Symfony\Component\Console\Style\SymfonyStyle;
 

@@ -26,8 +26,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
-use App\Service\Library;
-
 use App\Entity\Language;
 
 /** Class LanguageSwitcher */

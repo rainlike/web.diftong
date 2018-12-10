@@ -14,9 +14,9 @@ Declaration of uses in Class:
 * Doctrine vendors
 * major vendors
 * other vendors
-* target classes
-* related classes
-* services
 * abstracts
 * interfaces
 * traits
+* target classes
+* related classes
+* services

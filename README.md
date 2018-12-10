@@ -36,10 +36,19 @@ make sym.cache.perms - set free permissions on cache directory
 make sym.perms - set free permissions on all dev directories
 ```
 
+application settings
+```
+bin/console app:setting:check - check existing settings
+[-u|--user {username|id}] - check settings only for specified user
+[-s|--setting {name}] - check only specified setting
+[-l|--locale {locale}] - output messages locale
+```
+
 database
 ```
 make db.rebuild - recreate curent db with preset fixtures
 bin/console app:db:rebuild - recreate curent db with preset fixtures through Symfony
+[-l|--locale {locale}] - output messages locale
 ```
 
 tests
