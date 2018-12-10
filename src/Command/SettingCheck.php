@@ -34,8 +34,8 @@ use App\Entity\ValueType;
 use App\Entity\SiteSetting;
 use App\Entity\UserSetting;
 
-/** Class SettingList */
-class SettingList extends Command
+/** Class SettingCheck */
+class SettingCheck extends Command
 {
     use TableTrait;
     use LocaleTrait;
@@ -75,7 +75,7 @@ class SettingList extends Command
     private $do_return;
 
     /**
-     * SettingList constructor
+     * SettingCheck constructor
      *
      * @param EntityManager $em
      * @param Translator $translator

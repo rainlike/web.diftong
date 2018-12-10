@@ -129,7 +129,7 @@ services:
     tags:
       - { name: 'console.command' }
 
-  App\Command\SettingList:
+  App\Command\SettingCheck:
     arguments:
       $locales: '%app_locales%'
     tags:
