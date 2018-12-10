@@ -3,7 +3,7 @@
  * DbRebuild Command
  * Command for rebuild database
  *
- * @package App\Service
+ * @package App\Command
  * @version 1.0.0
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
@@ -27,8 +27,8 @@ use Symfony\Component\Console\Helper\ProgressBar;
 
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
-use App\Command\Traits\LocaleTrait;
-use App\Command\Traits\WrapperTrait;
+use App\Command\Library\Traits\LocaleTrait;
+use App\Command\Library\Traits\WrapperTrait;
 
 /** Class DbRebuild */
 class DbRebuild extends Command

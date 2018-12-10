@@ -6,7 +6,7 @@ namespace App\Entity\Library\Traits\Slug;
 /**
  * Trait Required
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Slug
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Required

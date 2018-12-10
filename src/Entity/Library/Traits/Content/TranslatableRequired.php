@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Trait TranslatableRequired
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Content
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait TranslatableRequired

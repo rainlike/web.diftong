@@ -12,7 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Trait Translatable
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Article
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Translatable

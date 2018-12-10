@@ -42,6 +42,9 @@ bin/console app:setting:check - check existing settings
 [-u|--user {username|id}] - check settings only for specified user
 [-s|--setting {name}] - check only specified setting
 [-l|--locale {locale}] - output messages locale
+bin/console app:setting:set {setting} {value} - set value to setting
+[-u|--user {username|id}] - set value for specified user setting
+[-l|--locale {locale}] - output messages locale
 ```
 
 database

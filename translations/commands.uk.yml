@@ -26,5 +26,12 @@ db_rebuild:
 # app:setting:check
 setting_check:
   user_not_found: "Не вдалося знайти користувача з {{field}} '{{value}}'."
+  setting_not_found: "Налаштування '{{name}}' не знайдено."
+  setting_is_disabled: "УВАГА: це налаштування вимкнено!"
+# app:setting:set
+setting_set:
+  required_not_set: "Як мінімум, один із необхідних аргументів не був встановлений."
   setting_not_found: "Setting '{{name}}' was not found."
   setting_is_disabled: "УВАГА: це налаштування вимкнено!"
+  success_set: "Значення було успішно встановлено."
+  error_set: "Виникла помилка. Значення не було встановлено."

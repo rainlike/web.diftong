@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Trait RequiredUnique
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Article
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait RequiredUnique

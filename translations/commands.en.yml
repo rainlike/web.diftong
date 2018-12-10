@@ -28,3 +28,10 @@ setting_check:
   user_not_found: "User with {{field}} '{{value}}' was not found."
   setting_not_found: "Setting '{{name}}' was not found."
   setting_is_disabled: "WARNING: this setting is disabled!"
+# app:setting:set
+setting_set:
+  required_not_set: "As least one of required arguments was not set."
+  setting_not_found: "Setting '{{name}}' was not found."
+  setting_is_disabled: "WARNING: this setting is disabled!"
+  success_set: "Value was set successfully."
+  error_set: "An error has occurred. The value has not been set."

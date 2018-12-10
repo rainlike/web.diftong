@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Trait NonRequired
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Title
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait NonRequired

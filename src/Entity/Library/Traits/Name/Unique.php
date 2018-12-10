@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Trait Unique
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Name
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Unique

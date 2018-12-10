@@ -135,6 +135,12 @@ services:
     tags:
       - { name: 'console.command' }
 
+  App\Command\SettingSet:
+    arguments:
+      $locales: '%app_locales%'
+    tags:
+      - { name: 'console.command' }
+
   # Vendor Services
   serv.mobile.detect:
     class: Detection\MobileDetect

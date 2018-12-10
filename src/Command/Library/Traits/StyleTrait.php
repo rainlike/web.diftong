@@ -3,7 +3,7 @@
  * Style Trait
  * Trait for proxy of SymfonyStyle console component
  *
- * @package App\Service
+ * @package App\Command\Library\Traits
  * @version 1.0.0
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
@@ -11,7 +11,7 @@
  */
 declare(strict_types=1);
 
-namespace App\Command\Traits;
+namespace App\Command\Library\Traits;
 
 use Symfony\Component\Console\Style\SymfonyStyle;
 

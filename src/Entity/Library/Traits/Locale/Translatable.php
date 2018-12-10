@@ -5,12 +5,10 @@ namespace App\Entity\Library\Traits\Locale;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
-use App\Entity\Library\Interfaces\ITranslatable;
-
 /**
  * Trait Translatable
  *
- * @package App\Entity\Library\Traits
+ * @package App\Entity\Library\Traits\Locale
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait Translatable

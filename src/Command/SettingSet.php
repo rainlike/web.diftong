@@ -1,7 +1,7 @@
 <?php
 /**
- * SettingCheck Command
- * Command for show list of settings
+ * SettingSet Command
+ * Command for set values for setting
  *
  * @package App\Command
  * @version 1.0.0
@@ -16,6 +16,7 @@ namespace App\Command;
 use Symfony\Component\Console\Command\Command;
 
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -26,7 +27,6 @@ use Doctrine\ORM\EntityManagerInterface as EntityManager;
 use App\Entity\Library\Interfaces\ISetting;
 use App\Command\Library\Interfaces\ICleanup;
 
-use App\Command\Library\Traits\TableTrait;
 use App\Command\Library\Traits\LocaleTrait;
 use App\Command\Library\Traits\WrapperTrait;
 
@@ -35,21 +35,20 @@ use App\Entity\ValueType;
 use App\Entity\SiteSetting;
 use App\Entity\UserSetting;
 
-/** Class SettingCheck */
-class SettingCheck extends Command implements ICleanup
+/** Class SettingSet */
+class SettingSet extends Command implements ICleanup
 {
-    use TableTrait;
     use LocaleTrait;
     use WrapperTrait;
 
     /** @var string */
-    private const TRANS_PREFIX = 'setting_check';
+    private const TRANS_PREFIX = 'setting_set';
 
     /**
      * Lazy loading
      * @var string
      */
-    protected static $defaultName = 'app:setting:check';
+    protected static $defaultName = 'app:setting:set';
 
     /** @var EntityManager */
     private $em;
@@ -58,16 +57,22 @@ class SettingCheck extends Command implements ICleanup
     private $translator;
 
     /**
-     * Specified user
-     * @var User
-     */
-    private $user;
-
-    /**
      * Specified setting
      * @var SiteSetting|UserSetting|ISetting
      */
     private $setting;
+
+    /**
+     * Specified value
+     * @var mixed
+     */
+    private $value;
+
+    /**
+     * Specified user
+     * @var User
+     */
+    private $user;
 
     /**
      * Whether needs to exit from the command
@@ -105,21 +110,25 @@ class SettingCheck extends Command implements ICleanup
     protected function configure(): void
     {
         $this
-            ->setName('app:setting:check')
+            ->setName('app:setting:set')
             ->setDescription('Show list of settings.')
             ->setHelp('This command shows list of settings.')
+            ->addArgument(
+                'setting',
+                InputArgument::REQUIRED,
+                'Setting name.',
+                null
+            )->addArgument(
+                'value',
+                InputArgument::REQUIRED,
+                'Setting value will be set.',
+                null
+            )
             ->addOption(
                 'user',
                 'u',
                 InputOption::VALUE_REQUIRED,
                 'Show settings for user.',
-                null
-            )
-            ->addOption(
-                'setting',
-                's',
-                InputOption::VALUE_REQUIRED,
-                'Show specified setting.',
                 null
             )->addOption(
                 'locale',
@@ -139,6 +148,24 @@ class SettingCheck extends Command implements ICleanup
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
+        $settingArgument = $input->getArgument('setting');
+        $valueArgument = $input->getArgument('value');
+
+        if (!$settingArgument || $valueArgument === null) {
+            $this->writeError(
+                $this->translator->trans(
+                    self::TRANS_PREFIX.'.required_not_set',
+                    [],
+                    'commands',
+                    self::$locale
+                ),
+                $output
+            );
+
+            $this->do_return = true;
+            return;
+        }
+
         $userOption = $input->getOption('user');
         if ($userOption) {
             $isId = \is_numeric($userOption);
@@ -167,34 +194,32 @@ class SettingCheck extends Command implements ICleanup
             $this->user = $user;
         }
 
-        $settingOption = $input->getOption('setting');
-        if ($settingOption) {
-            $valueType = $this->em->getRepository(ValueType::class)->findOneBy(['name' => $settingOption]);
+        $valueType = $this->em->getRepository(ValueType::class)->findOneBy(['name' => $settingArgument]);
 
-            if (!$valueType) {
-                $this->outputSettingNotFoundMessage($settingOption, $output);
+        if (!$valueType) {
+            $this->outputSettingNotFoundMessage($settingArgument, $output);
 
-                $this->do_return = true;
-                return;
-            }
-
-            /** @var ISetting $setting */
-            $setting = $this->user
-                ? $this->em->getRepository(UserSetting::class)->findOneBy([
-                    'type' => $valueType->getId(),
-                    'user' => $this->user->getId()
-                ])
-                : $this->em->getRepository(SiteSetting::class)->findOneBy(['type' => $valueType->getId()]);
-
-            if (!$setting) {
-                $this->outputSettingNotFoundMessage($settingOption, $output);
-
-                $this->do_return = true;
-                return;
-            }
-
-            $this->setting = $setting;
+            $this->do_return = true;
+            return;
         }
+
+        /** @var ISetting $setting */
+        $setting = $this->user
+            ? $this->em->getRepository(UserSetting::class)->findOneBy([
+                'type' => $valueType->getId(),
+                'user' => $this->user->getId()
+            ])
+            : $this->em->getRepository(SiteSetting::class)->findOneBy(['type' => $valueType->getId()]);
+
+        if (!$setting) {
+            $this->outputSettingNotFoundMessage($settingArgument, $output);
+
+            $this->do_return = true;
+            return;
+        }
+
+        $this->setting = $setting;
+        $this->value = $valueArgument;
 
         $localeOption = $input->getOption('locale');
         if ($localeOption) {
@@ -216,89 +241,35 @@ class SettingCheck extends Command implements ICleanup
             return;
         }
 
-        $table = $this->getTable($output, $this->getDefaultTableStyle());
-        $table->setHeaders($this->getHeader());
+        try {
+            $this->setting->setValue($this->transformToString($this->value));
 
-        if ($this->setting) {
-            if (!$this->setting->getEnabled() || !$this->setting->getType()->getEnabled()) {
-                $this->writeComment(
-                    $this->translator->trans(
-                        self::TRANS_PREFIX.'.setting_is_disabled',
-                        [],
-                        'commands',
-                        self::$locale
-                    ),
-                    $output
-                );
-            }
+            $this->em->persist($this->setting);
+            $this->em->flush();
 
-            $table->setRows([$this->generateRow($this->setting)]);
-        } else {
-            $settings = $this->user
-                ? $this->em->getRepository(UserSetting::class)->findBy(['user' => $this->user->getId()])
-                : $this->em->getRepository(SiteSetting::class)->findAll();
-
-            $rows = [];
-            foreach ($settings as $setting) {
-                $rows[] = $this->generateRow($setting);
-            }
-
-            $table->setRows($rows);
+            $this->writeInfo(
+                $this->translator->trans(self::TRANS_PREFIX.'.success_set', [], 'commands', self::$locale),
+                $output
+            );
+        } catch (\Exception $error) {
+            $this->writeError(
+                $this->translator->trans(self::TRANS_PREFIX.'.error_set', [], 'commands', self::$locale),
+                $output
+            );
         }
 
-        $table->render();
+        $this->cleanUp();
     }
 
     /**
-     * Generate single table row
+     * Transform value to string
      *
-     * @param SiteSetting|UserSetting|ISetting $setting
-     * @return array
+     * @param string|mixed $value
+     * @return string
      */
-    private function generateRow(ISetting $setting): array
+    private function transformToString($value): string
     {
-        /** @var SiteSetting|UserSetting|ISetting $setting */
-
-        $type = $setting->getType();
-
-        $type->setTranslatableLocale(self::$locale);
-        $this->em->refresh($type);
-
-        $row = [
-            'id' => $setting->getId(),
-            'type_name' => $type->getName(),
-            'type_type' => $type->getType(),
-            'type_region' => $type->getRegion(),
-            'type_priority' => $type->getPriority(),
-            'type_title' => $type->getTitle(),
-            'value' => $setting->getValue(),
-            'enabled' => $setting->getEnabled(),
-            'created' => $setting->getCreated()->format('Y-m-d'),
-            'updated' => $setting->getUpdated()->format('Y-m-d')
-        ];
-
-        return \array_values($row);
-    }
-
-    /**
-     * Get header columns
-     *
-     * @return array
-     */
-    private function getHeader(): array
-    {
-        return [
-            'id',
-            'name',
-            'type',
-            'region',
-            'priority',
-            'title',
-            'value',
-            'enabled',
-            'created',
-            'updated'
-        ];
+        return (string)$value;
     }
 
     /**
@@ -309,6 +280,7 @@ class SettingCheck extends Command implements ICleanup
     public function cleanUp(): void
     {
         $this->setting = null;
+        $this->value = null;
         $this->user = null;
     }
 
