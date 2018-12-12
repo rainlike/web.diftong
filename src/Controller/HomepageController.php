@@ -1,4 +1,14 @@
 <?php
+/**
+ * Homepage Controller
+ * Controller with homepage functional
+ *
+ * @package App\Controller
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -22,12 +32,7 @@ use Symfony\Component\Translation\TranslatorInterface as Translator;
 
 use App\Entity\Portal;
 
-/**
- * Class HomepageController
- *
- * @package App\Controller\Front
- * @author Alexander Saveliev <alex@spbcrew.com>
- */
+/** @package App\Controller */
 class HomepageController extends Controller
 {
     /**

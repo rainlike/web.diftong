@@ -8,22 +8,22 @@
  * @description
  *  Style of header for Homepage.
  * @markup
- *  <header class="app-homepage__header"></header>
+ *  <header class="app-homepage-header"></header>
  */
-.#{$prefix}-homepage__header {
+.#{$prefix}-homepage-header {
   @extend .#{$prefix}-nullify;
   position: relative;
   z-index:  999;
 
   background-color: #ABABAB; // @TODO: debug bg
 
-  &--topline {
+  &__topline {
     text-align: center;
 
     background-color: #495C68; // @TODO: debug bg
   }
 
-  &--layout {
+  &__layout {
     @include app--box-sizing();
     @extend .#{$prefix}-bordure;
     display:   flex;
@@ -33,7 +33,7 @@
     background-color: #8F8F8F; // @TODO: debug bg
   }
 
-  &--logo {
+  &__logo {
     display:     inline-block;
     flex-shrink: 0;
     flex-grow:   0;
@@ -42,7 +42,7 @@
     font-size:        -webkit-xxx-large;
   }
 
-  &--workspace {
+  &__workspace {
     display:         flex;
     flex-direction:  row;
     justify-content: space-between;
@@ -51,13 +51,13 @@
     background-color: #269ABC; // @TODO: debug bg
   }
 
-  &--quote {
+  &__quote {
     max-width: 1000px;
 
     background-color: #AE81FF; // @TODO: debug bg
   }
 
-  &--actions {
+  &__actions {
     display:        flex;
     flex-direction: column;
 

@@ -2115,7 +2115,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 }));
 
 
+/***/ }),
+
+/***/ "../node_modules/material-design-icons/index.js":
+/*!******************************************************!*\
+  !*** ../node_modules/material-design-icons/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__dirname) {module.exports = {
+  STATIC_PATH: __dirname,
+};
+
+/* WEBPACK VAR INJECTION */}.call(this, "/"))
+
 /***/ })
 
 }]);
-//# sourceMappingURL=common.6f1455f5356574264fbd.js.map
+//# sourceMappingURL=common.12b8084ac5a8fe4da528.js.map

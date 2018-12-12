@@ -1,7 +1,7 @@
 /* tslint:disable */
 
-/** Import JS vendors */
-import 'es5-shim';
+/** Importcommon */
+import '../../common';
 
 /** Import styles */
 import './homepage.scss';

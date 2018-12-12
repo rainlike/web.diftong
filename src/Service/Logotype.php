@@ -185,18 +185,20 @@ class Logotype
 
     /**
      * Get logo as phrase
-     * called in getLogo() method
+     * -- called in getLogo() method
      *
      * @return string
      */
     private function getPhraseLogo(): string
     {
+        $this->type = self::TYPE_PHRASE;
+
         return $this->site_name;
     }
 
     /**
      * Get path to image of logo
-     * called in getLogo() method
+     * -- called in getLogo() method
      *
      * @return string
      */
@@ -204,22 +206,26 @@ class Logotype
     {
         $fileExists = \file_exists($this->public_dir.'/'.self::LOGO_PATH);
         if (!$fileExists) {
-            $this->type = self::LINK_TYPE;
+            $this->type = self::TYPE_LINK;
 
             return StaticStorage::logoLink();
         }
+
+        $this->type = self::TYPE_IMAGE;
 
         return self::LOGO_PATH;
     }
 
     /**
      * Get outside link to logo
-     * called in getLogo() method
+     * -- called in getLogo() method
      *
      * @return string
      */
     private function getLinkLogo(): string
     {
+        $this->type = self::TYPE_LINK;
+
         return StaticStorage::logoLink();
     }
 

@@ -4,8 +4,12 @@
  * @structure Body
  * @section Global
  * @description
- *  Global body height set as 100%.
+ *  Sets styles for <html> tag.
  */
 html {
-  height: 100%;
+  height:      100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size:   14px;
+  font-weight: normal;
+  line-height: 20px;
 }

@@ -8,9 +8,9 @@
  * @description
  *  Style of body for Homepage.
  * @markup
- *  <body class="app-homepage__body"></body>
+ *  <body class="app-homepage-body"></body>
  */
-.#{$prefix}-homepage__body {
+.#{$prefix}-homepage-body {
   display: flex;
   flex-direction: column;
 }

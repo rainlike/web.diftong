@@ -8,9 +8,9 @@
  * @description
  *  Style of footer for Homepage.
  * @markup
- *  <footer class="app-homepage__footer"></footer>
+ *  <footer class="app-homepage-footer"></footer>
  */
-.#{$prefix}-homepage__footer {
+.#{$prefix}-homepage-footer {
   position: absolute;
   right:    0;
   bottom:   0;
@@ -18,7 +18,7 @@
 
   background-color: #C3E3B5; // @TODO: debug bg
 
-  &--layout {
+  &__layout {
     @include app--box-sizing();
     @extend .#{$prefix}-bordure;
     display:   flex;

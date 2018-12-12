@@ -1,4 +1,14 @@
 <?php
+/**
+ * Common Controller
+ * Controller which provides functionality for header and footer
+ *
+ * @package App\Controller
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
 declare(strict_types=1);
 
 namespace App\Controller;
@@ -17,12 +27,7 @@ use App\Service\Library;
 use App\Service\Logotype;
 use App\Service\LanguageSwitcher;
 
-/**
- * Class CommonController
- *
- * @package App\Controller
- * @author Alexander Saveliev <alex@spbcrew.com>
- */
+/** Class CommonController */
 class CommonController extends Controller
 {
     /**
@@ -86,7 +91,7 @@ class CommonController extends Controller
             ->setQueryParameters($queryParameters)
             ->getSwitcher();
 
-        $logo = $logotype->getVerboseLogo();
+        $logo = $logotype->getVerboseLogo('phrase');
 
         return $this->render('regions/header.html.twig', [
             'user' => $user,

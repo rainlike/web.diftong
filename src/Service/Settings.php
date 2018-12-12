@@ -111,7 +111,7 @@ class Settings
 
     /**
      * Get site setting
-     * called in getSetting() method
+     * -- called in getSetting() method
      *
      * @param string $name
      * @param bool $onlyEnabled
@@ -136,7 +136,7 @@ class Settings
 
     /**
      * Get user setting
-     * called in getSetting() method
+     * -- called in getSetting() method
      *
      * @param string $name
      * @param bool $onlyEnabled

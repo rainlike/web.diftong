@@ -9,7 +9,7 @@
             <meta name="viewport" content="initial-scale=1"/>
         {% endblock %}
         {% block seo %}
-            {# TODO: SEO service #}
+            {# @TODO: SEO service #}
             <title>{% block title %}{{ 'title'|trans({}, 'seo') }}{% endblock %}</title>
             <meta name="description" content="{% block description %}{{ 'description'|trans({}, 'seo') }}{% endblock %}">
             <meta name="keywords" content="{% block keywords %}{{ 'keywords'|trans({}, 'seo') }}{% endblock %}">
@@ -17,6 +17,8 @@
         {% block css %}{% endblock %}
         {% block links %}
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+            <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% endblock %}
         {% block window %}
             <script>

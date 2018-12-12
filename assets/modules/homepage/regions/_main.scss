@@ -9,9 +9,9 @@
  * @description
  *  Style of main for Homepage.</br>
  * @markup
- *  <main class="app-homepage__main"></main>
+ *  <main class="app-homepage-main"></main>
  */
-.#{$prefix}-homepage__main {
+.#{$prefix}-homepage-main {
   @include app--box-sizing();
   @extend .#{$prefix}-bordure;
   width:     $space-full;

@@ -1,16 +1,16 @@
-<header class="app-homepage__header">
+<header class="app-homepage-header">
     {% if _setting('global_show_topbar') %}
-        <section class="app-homepage__header--topline">{{ 'topline' }}</section>
+        <section class="app-homepage-header__topline">{{ 'topline' }}</section>
     {% endif %}
-    <section class="app-homepage__header--layout">
+    <section class="app-homepage-header__layout">
         {% include 'components/logo.html.twig' with {
             'logo': logo
         } only %}
-        <section class="app-homepage__header--workspace">
-            <blockquote class="app-homepage__header--quote">
+        <section class="app-homepage-header__workspace">
+            <blockquote class="app-homepage-header__quote">
                 {{ 'some interesting quote' }}
             </blockquote>
-            <div class="app-homepage__header--actions">
+            <div class="app-homepage-header__actions">
                 <button type="button" name="user">{{ 'U' }}</button>
                 <button type="button" name="lang">{{ 'L' }}</button>
                 <button type="button" name="search">{{ 'S' }}</button>
