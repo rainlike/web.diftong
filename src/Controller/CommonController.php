@@ -91,7 +91,7 @@ class CommonController extends Controller
             ->setQueryParameters($queryParameters)
             ->getSwitcher();
 
-        $logo = $logotype->getVerboseLogo('phrase');
+        $logo = $logotype->getVerboseLogo();
 
         return $this->render('regions/header.html.twig', [
             'user' => $user,

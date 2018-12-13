@@ -1,4 +1,7 @@
 <div class="app-homepage-header__logo">
+    {% if _setting('global_logo_as_link') %}
+        <a href="{{ path('homepage_index') }}">
+    {% endif %}
     {% if logo.type == constant('App\\Service\\Logotype::TYPE_PHRASE') %}
         <h1 class="app-homepage-header__logo--phrase">{{ logo.data }}</h1>
     {% else %}
@@ -6,6 +9,13 @@
             ? logo.data
             : asset(logo.data)
         %}
-        <img src="{{ src }}" alt="{{ logo.alt }}" title="{{ logo.title }}"/>
+        <img src="{{ src }}"
+             alt="{{ logo.alt }}"
+             title="{{ logo.title }}"
+             class="app-homepage-header__logo--image"
+        />
+    {% endif %}
+    {% if _setting('global_logo_as_link') %}
+        </a>
     {% endif %}
 </div>

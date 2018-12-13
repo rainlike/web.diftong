@@ -923,14 +923,6 @@
  * @section Other Variables
  */
 /**
- * Centered flex element.
- *
- * @mixin
- * @section Grid Mixins
- * @example
- *  @include app--flex-center();
- */
-/**
  * Simple grid column.
  *
  * @mixin
@@ -952,6 +944,219 @@
  *  @include app--grid-offset(1);
  *  @include app--grid-offset(3, left);
  *  @include app--grid-offset(5, right);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -16048,7 +16253,7 @@ template {
  * @structure Body
  * @section Global
  * @description
- *  Global body height set as 100%.
+ *  Sets styles for <html> tag.
  */
 html {
   height: 100%;
@@ -17012,14 +17217,6 @@ html {
  * @section Other Variables
  */
 /**
- * Centered flex element.
- *
- * @mixin
- * @section Grid Mixins
- * @example
- *  @include app--flex-center();
- */
-/**
  * Simple grid column.
  *
  * @mixin
@@ -17041,6 +17238,219 @@ html {
  *  @include app--grid-offset(1);
  *  @include app--grid-offset(3, left);
  *  @include app--grid-offset(5, right);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -18165,14 +18575,45 @@ html {
     max-width: 1600px;
     background-color: #8F8F8F; }
   .app-homepage-header__logo {
-    display: inline-block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     -webkit-box-flex: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
-    background-color: #F0AD4E;
-    font-size: -webkit-xxx-large; }
+    width: 250px;
+    height: 135px;
+    cursor: default; }
+    .app-homepage-header__logo a {
+      text-decoration: none;
+      cursor: pointer; }
+    .app-homepage-header__logo--phrase {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin: 0;
+      padding: 5px;
+      font-size: 65px;
+      color: #3F51B5; }
+      .app-homepage-header__logo--phrase:hover {
+        color: #3F51B5; }
+    .app-homepage-header__logo--image {
+      display: block;
+      width: 240px; }
   .app-homepage-header__workspace {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -19126,14 +19567,6 @@ html {
  * @section Other Variables
  */
 /**
- * Centered flex element.
- *
- * @mixin
- * @section Grid Mixins
- * @example
- *  @include app--flex-center();
- */
-/**
  * Simple grid column.
  *
  * @mixin
@@ -19155,6 +19588,219 @@ html {
  *  @include app--grid-offset(1);
  *  @include app--grid-offset(3, left);
  *  @include app--grid-offset(5, right);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
