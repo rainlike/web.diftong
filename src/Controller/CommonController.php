@@ -119,6 +119,21 @@ class CommonController extends Controller
     }
 
     /**
+     * Render sidebar
+     *
+     * @param Translator $translator
+     * @param Library $library
+     * @return Response
+     */
+    public function renderSidebar(
+        Translator $translator,
+        Library $library
+    ): Response
+    {
+        return $this->render('regions/sidebar.html.twig', []);
+    }
+
+    /**
      * Render footer
      *
      * @param Request $request

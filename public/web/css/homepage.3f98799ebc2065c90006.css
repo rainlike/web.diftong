@@ -33929,6 +33929,7 @@ html {
  * Main menu
  *
  * @molecule Menu
+ * @section Menu
  * @markup
  *  <nav class="app-menu">
  *    <p>menu item #1</p>
@@ -35999,6 +36000,7 @@ html {
  * Top line
  *
  * @molecule Topline
+ * @section Topline
  * @markup
  *  <section class="app-topline">top line</section>
  */
