@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Common clipboard element.
+ * This element contains key content.
+ *
+ * @structure Clipboard
+ * @section Common
+ */
+.#{$prefix}-clipboard {
+  width: 100%;
+}

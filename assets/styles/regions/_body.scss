@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Common styles for `body` element.
+ *
+ * @structure Body
+ * @section Common
+ */
+.#{$prefix}-body {
+  display:        flex;
+  flex-direction: column;
+}

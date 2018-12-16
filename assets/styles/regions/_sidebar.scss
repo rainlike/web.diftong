@@ -12,5 +12,8 @@
  *   <aside class="app-sidebar">Sidebar here</aside>
  */
 .#{$prefix}-sidebar {
-  color: $color-success;
+  width:     250px;
+  flex-grow: 0;
+
+  background-color: dimgray; // @TODO: debug bg
 }

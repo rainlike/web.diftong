@@ -27,7 +27,7 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="app-body">
         {% block body %}
             {% if _setting('global_show_topbar') %}
                 <section class="app-topline">{{ 'topline' }}</section>
@@ -41,21 +41,23 @@
                 })) }}
             {% endblock %}
 
-            <main class="{% block main_class %}{% endblock %}">
+            <main class="app-main">
                 {% block menu %}
                     {{ render(controller('App\\Controller\\CommonController::renderMenu')) }}
                 {% endblock %}
 
-                {% block main %}
-                    <section class="{% block clipboard_class %}{% endblock %}">
-                        {% block clipboard %}{% endblock %}
-                    </section>
+                <div class="app-main-content">
+                    {% block main %}
+                        <section class="app-clipboard {% block clipboard_class %}{% endblock %}">
+                            {% block clipboard %}{% endblock %}
+                        </section>
 
-                    {% block sidebar %}
-                        {{ render(controller('App\\Controller\\CommonController::renderSidebar')) }}
+                        {% block sidebar %}
+                            {{ render(controller('App\\Controller\\CommonController::renderSidebar')) }}
+                        {% endblock %}
                     {% endblock %}
-                {% endblock %}
-            </section>
+                </div>
+            </main>
 
             {% block footer %}
                 {{ render(controller('App\\Controller\\CommonController::renderFooter', {

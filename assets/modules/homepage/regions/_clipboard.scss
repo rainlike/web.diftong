@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Clipboard for Homepage.
+ *
+ * @structure Clipboard
+ * @section Homepage
+ */
+.#{$prefix}-homepage-clipboard {
+  background-color: bisque; // @TODO: debug bg
+}
