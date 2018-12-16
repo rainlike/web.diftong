@@ -29,6 +29,10 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% block body %}
+            {% if _setting('global_show_topbar') %}
+                <section class="app-topline">{{ 'topline' }}</section>
+            {% endif %}
+
             {% block header %}
                 {{ render(controller('App\\Controller\\CommonController::renderHeader', {
                     'route': route,
@@ -37,7 +41,21 @@
                 })) }}
             {% endblock %}
 
-            {% block main %}{% endblock %}
+            <main class="{% block main_class %}{% endblock %}">
+                {% block menu %}
+                    {{ render(controller('App\\Controller\\CommonController::renderMenu')) }}
+                {% endblock %}
+
+                {% block main %}
+                    <section class="{% block clipboard_class %}{% endblock %}">
+                        {% block clipboard %}{% endblock %}
+                    </section>
+
+                    {% block sidebar %}
+                        {{ render(controller('App\\Controller\\CommonController::renderSidebar')) }}
+                    {% endblock %}
+                {% endblock %}
+            </section>
 
             {% block footer %}
                 {{ render(controller('App\\Controller\\CommonController::renderFooter', {

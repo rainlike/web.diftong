@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Top line
+ *
+ * @molecule Topline
+ * @section Topline
+ * @markup
+ *  <section class="app-topline">top line</section>
+ */
+.#{$prefix}-topline {
+  text-align:       center;
+  background-color: $color-secondary;
+}

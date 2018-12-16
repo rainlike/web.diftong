@@ -1,16 +1,21 @@
 @charset "UTF-8";
 
 @import "../variables";
+@import "../mixins";
 
 /**
+ * Footer with logo as phrase and site map.
+ *
  * @structure Footer
- * @section Homepage
- * @description
- *  Style of footer for Homepage.
+ * @section Common
  * @markup
- *  <footer class="app-homepage-footer"></footer>
+ *   <footer class="app-footer">
+ *     <section class="app-footer__layout">
+ *       <h1>Footer content here.</h1>
+ *     </section>
+ *   </footer>
  */
-.#{$prefix}-homepage-footer {
+.#{$prefix}-footer {
   position: absolute;
   right:    0;
   bottom:   0;

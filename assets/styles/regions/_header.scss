@@ -1,25 +1,46 @@
 @charset "UTF-8";
 
 @import "../variables";
-@import "../helpers";
+@import "../mixins";
 
 /**
+ * Header with logo and action buttons.
+ *
  * @structure Header
- * @section Homepage
- * @description
- *  Style of header for Homepage.
+ * @section Common
  * @markup
- *  <header class="app-homepage-header"></header>
+ *  <header class="app-header">
+ *    <section class="app-header__layout">
+ *      <div class="app-header__logo">
+ *        <a href="#">
+ *          <img src="../../public/cdn/logo.svg"
+ *            alt="alt"
+ *            title="title"
+ *            class="app-header__logo--image"
+ *          />
+ *        </a>
+ *      </div>
+ *      <section class="app-header__workspace">
+ *        <article class="app-header__goal">Site goal here.</article>
+ *        <div class="app-header__actions">
+ *          <button type="button" name="user" class="app-header__button">
+ *            <span class="app-mdi"><i class="mdi mdi-account"></i></span>
+ *          </button>
+ *          <button type="button" name="lang" class="app-header__button">
+ *            <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+ *          </button>
+ *          <button type="button" name="search" class="app-header__button">
+ *            <span class="app-mdi"><i class="mdi mdi-magnify"></i></span>
+ *          </button>
+ *        </div>
+ *      </section>
+ *    </section>
+ *  </header>
  */
-.#{$prefix}-homepage-header {
+.#{$prefix}-header {
   @extend .#{$prefix}-nullify;
   position: relative;
   z-index:  999;
-
-  &__topline {
-    text-align:       center;
-    background-color: $color-secondary;
-  }
 
   &__layout {
     @include app--box-sizing();

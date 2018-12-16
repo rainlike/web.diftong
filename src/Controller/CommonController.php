@@ -104,6 +104,21 @@ class CommonController extends Controller
     }
 
     /**
+     * Render menu
+     *
+     * @param Translator $translator
+     * @param Library $library
+     * @return Response
+     */
+    public function renderMenu(
+        Translator $translator,
+        Library $library
+    ): Response
+    {
+        return $this->render('components/menu.html.twig', []);
+    }
+
+    /**
      * Render footer
      *
      * @param Request $request

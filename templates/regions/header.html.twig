@@ -1,31 +1,28 @@
-<header class="app-homepage-header">
-    {% if _setting('global_show_topbar') %}
-        <section class="app-homepage-header__topline">{{ 'topline' }}</section>
-    {% endif %}
-    <section class="app-homepage-header__layout">
+<header class="app-header">
+    <section class="app-header__layout">
         {% include 'components/logo.html.twig' with {
             'logo': logo
         } only %}
-        <section class="app-homepage-header__workspace">
-            <article class="app-homepage-header__goal">
+        <section class="app-header__workspace">
+            <article class="app-header__goal">
                 {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь есть все необходимое для того, чтобы изучать английский язык онлайн бесплатно.' }}
             </article>
-            <div class="app-homepage-header__actions">
+            <div class="app-header__actions">
                 <button type="button"
                         name="user"
-                        class="app-homepage-header__button"
+                        class="app-header__button"
                 >
                     <span class="app-mdi"><i class="mdi mdi-account"></i></span>
                 </button>
                 <button type="button"
                         name="lang"
-                        class="app-homepage-header__button"
+                        class="app-header__button"
                 >
                     <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
                 </button>
                 <button type="button"
                         name="search"
-                        class="app-homepage-header__button"
+                        class="app-header__button"
                 >
                     <span class="app-mdi"><i class="mdi mdi-magnify"></i></span>
                 </button>

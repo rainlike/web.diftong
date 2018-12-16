@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Main menu
+ *
+ * @molecule Menu
+ * @section Menu
+ * @markup
+ *  <nav class="app-menu">
+ *    <p>menu item #1</p>
+ *    <p>menu item #2</p>
+ *    <p>menu item #3</p>
+ *  </nav>
+ */
+.#{$prefix}-menu {
+  color: $color-info;
+}

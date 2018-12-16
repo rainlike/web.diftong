@@ -4,12 +4,12 @@
 @import "../helpers";
 
 /**
+ * Homepage `main` region.
+ *
  * @structure Main
  * @section Homepage
  * @description
- *  Style of main for Homepage.</br>
- * @markup
- *  <main class="app-homepage-main"></main>
+ *  Style of `main` region for Homepage.
  */
 .#{$prefix}-homepage-main {
   @include app--box-sizing();

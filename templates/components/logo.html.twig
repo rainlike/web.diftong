@@ -1,9 +1,9 @@
-<div class="app-homepage-header__logo">
+<div class="app-header__logo">
     {% if _setting('global_logo_as_link') %}
         <a href="{{ path('homepage_index') }}">
     {% endif %}
     {% if logo.type == constant('App\\Service\\Logotype::TYPE_PHRASE') %}
-        <h1 class="app-homepage-header__logo--phrase">{{ logo.data }}</h1>
+        <h1 class="app-header__logo--phrase">{{ logo.data }}</h1>
     {% else %}
         {% set src = logo.type == constant('App\\Service\\Logotype::TYPE_LINK')
             ? logo.data
@@ -12,7 +12,7 @@
         <img src="{{ src }}"
              alt="{{ logo.alt }}"
              title="{{ logo.title }}"
-             class="app-homepage-header__logo--image"
+             class="app-header__logo--image"
         />
     {% endif %}
     {% if _setting('global_logo_as_link') %}

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Sidebar with many useful elements.
+ *
+ * @structure Sidebar
+ * @section Common
+ * @markup
+ *   <aside class="app-sidebar">Sidebar here</aside>
+ */
+.#{$prefix}-sidebar {
+  color: $color-success;
+}

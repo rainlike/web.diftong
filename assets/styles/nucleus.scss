@@ -6,8 +6,17 @@
 @import "../modules/homepage/homepage";
 
 // ====================
+// Imports
+// ====================
+@import "../styles/elements/colors";
+
+// ====================
 // Resets
 // ====================
+.#{$prefix}-footer {
+  position: relative;
+}
+
 .#{$prefix}-circle {
   @extend .#{$prefix}-circle;
   display:          inline-block;
@@ -16,7 +25,6 @@
   background-color: $color-primary;
 }
 
-@import "../styles/elements/colors";
 .#{$prefix}-bg-color {
   @each $name, $color in $colors {
     &--#{$name} {
