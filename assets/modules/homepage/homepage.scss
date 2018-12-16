@@ -7,41 +7,12 @@
 @import "helpers";
 
 // ====================
-// Resetting
+// Common
 // ====================
-@import "reset";
-
-// ====================
-// Vendors
-// ====================
-@import "../../../node_modules/normalize.css/normalize.css";
-@import "../../../node_modules/mdi/scss/materialdesignicons";
-
-// ====================
-// Globals
-// ====================
-@import "../../styles/vendors";
-@import "../../styles/global";
-@import "../../styles/normalize";
-
-// ====================
-// Mixins
-// ====================
-@import "../../styles/mixins";
+@import "../../styles/common";
 
 // ====================
 // Regions
 // ====================
 @import "regions/body";
 @import "regions/main";
-@import "../../styles/regions";
-
-// ====================
-// Elements
-// ====================
-@import "../../styles/elements";
-
-// ====================
-// Components
-// ====================
-@import "../../styles/components";
