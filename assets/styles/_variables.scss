@@ -7,94 +7,19 @@
 $prefix: $APP_PREFIX;
 
 // ====================
-// Default colors
+// Colors
 // ====================
-/**
- * A white color variable.
- *
- * @color
- * @section Default Colors
- */
-$color-white: #FFF; // rgb(255, 255, 255)
-/**
- * A black color variable.
- *
- * @color
- * @section Default Colors
- */
-$color-black: #000; // rgb(0, 0, 0)
+@import "variables/colors";
 
 // ====================
-// Base colors
+// Buttons
 // ====================
-/**
- * A primary color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-primary:   #3F51B5; // rgb(63, 81, 181)
-/**
- * A secondary color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-secondary: #9E9E9E; // rgb(158, 158, 158)
-/**
- * A info color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-info: #2196F3; // rgb(33, 150, 243)
-/**
- * A success color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-success: #4CAF50; // rgb(76, 175, 80)
-/**
- * A warning color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-warning: #FF9800; // rgb(255, 152, 0)
-/**
- * A error and danger color variables.
- *
- * @color
- * @section Main Colors
- */
-$color-error: #F44336; // rgb(244, 67, 54)
-$color-danger: $color-error; // rgb(244, 67, 54)
-/**
- * A background color variable.
- *
- * @color
- * @section Main Colors
- */
-$color-bg: #657383; // rgb(101, 115, 131)
+@import "variables/buttons";
 
 // ====================
-// Color variables
+// Screens
 // ====================
-/**
- * Color tone amount variable
- *
- * @nuclide
- * @section Colors Variables
- */
-$color-tone-amount: 5;
-/**
- * Color tone step variable
- *
- * @nuclide
- * @section Colors Variables
- */
-$color-tone-step: 5;
+@import "variables/screens";
 
 // ====================
 // Content
@@ -211,70 +136,6 @@ $space-large: 75%;
 $space-full: 100%;
 
 // ====================
-// Screens
-// ====================
-/**
- * Mobile screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-mobile: 544px;
-/**
- * Tablet screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-tablet: 768px;
-/**
- * Laptop screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-laptop: 992px;
-/**
- * Desktop screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-desktop: 1200px;
-/**
- * iPhone screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-iphone: 320px;
-/**
- * iPad screen variable
- *
- * @nuclide
- * @section Screen Variables
- */
-$screen-ipad: 768px;
-
-// ====================
-// Buttons
-// ====================
-/**
- * Button hover rank variable
- *
- * @nuclide
- * @section Button Variables
- */
-$button-hover-rank: 10;
-/**
- * Button active rank variable
- *
- * @nuclide
- * @section Button Variables
- */
-$button-active-rank: 15;
-
-// ====================
 // Other variables
 // ====================
 /**
@@ -284,15 +145,3 @@ $button-active-rank: 15;
  * @section Other Variables
  */
 $zero: 0;
-
-// ====================
-// Homepage section
-// ====================
-
-// ====================
-// Portal section
-// ====================
-
-// ====================
-// BackOffice section
-// ====================

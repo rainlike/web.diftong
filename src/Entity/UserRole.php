@@ -47,8 +47,8 @@ class UserRole extends BasicEntity implements IBasic
      * @Assert\Length(
      *      min = 6,
      *      max = 100,
-     *      minMessage = "Name must be at least {{ limit }} characters long.",
-     *      maxMessage = "Name must be no longer than {{ limit }} characters."
+     *      minMessage = "Name should be at least {{ limit }} characters long.",
+     *      maxMessage = "Name should be no longer than {{ limit }} characters."
      * )
      */
     private $name;
@@ -59,8 +59,8 @@ class UserRole extends BasicEntity implements IBasic
      * @Assert\Length(
      *      min = 6,
      *      max = 100,
-     *      minMessage = "Alias must be at least {{ limit }} characters long.",
-     *      maxMessage = "Alias must be no longer than {{ limit }} characters."
+     *      minMessage = "Alias should be at least {{ limit }} characters long.",
+     *      maxMessage = "Alias should be no longer than {{ limit }} characters."
      * )
      */
     private $alias;

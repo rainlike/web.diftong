@@ -16,11 +16,9 @@
   bottom:   0;
   left:     0;
 
-  background-color: #C3E3B5; // @TODO: debug bg
-
   &__layout {
     @include app--box-sizing();
-    @extend .#{$prefix}-bordure;
+    @extend .#{$prefix}-trim;
     display:   flex;
     width:     $space-full;
     max-width: $content-max-width;

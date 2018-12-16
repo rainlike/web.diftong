@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "../variables";
+@import "../helpers";
 
 /**
  * @structure Header
@@ -15,22 +16,17 @@
   position: relative;
   z-index:  999;
 
-  background-color: #ABABAB; // @TODO: debug bg
-
   &__topline {
-    text-align: center;
-
-    background-color: #495C68; // @TODO: debug bg
+    text-align:       center;
+    background-color: $color-secondary;
   }
 
   &__layout {
     @include app--box-sizing();
-    @extend .#{$prefix}-bordure;
+    @extend .#{$prefix}-trim;
     display:   flex;
     width:     $space-full;
     max-width: $content-max-width;
-
-    background-color: #8F8F8F; // @TODO: debug bg
   }
 
   &__logo {
@@ -69,20 +65,28 @@
     flex-direction:  row;
     justify-content: space-between;
     flex-grow:       1;
-
-    background-color: #269ABC; // @TODO: debug bg
   }
 
-  &__quote {
-    max-width: 1000px;
-
-    background-color: #AE81FF; // @TODO: debug bg
+  &__goal {
+    width:        50%;
+    align-self:   center;
+    padding-left: 25px;
   }
 
   &__actions {
-    display:        flex;
-    flex-direction: column;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: space-between;
+  }
 
-    background-color: #A6E22E; // @TODO: debug bg
+  &__button {
+    @include app--button();
+    @include app--button-paint($color-primary);
+    flex-grow: 3;
+    padding:   0.1rem 0.7rem;
+
+    .#{$prefix}-mdi {
+      font-size: 30px;
+    }
   }
 }

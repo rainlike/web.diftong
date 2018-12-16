@@ -23,6 +23,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
+use App\Entity\Quote
+    ;
 use App\Service\Library;
 use App\Service\Logotype;
 use App\Service\LanguageSwitcher;

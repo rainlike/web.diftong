@@ -1,6 +1,6 @@
 /* tslint:disable */
 
-/** Importcommon */
+/** Import common */
 import '../../common';
 
 /** Import styles */

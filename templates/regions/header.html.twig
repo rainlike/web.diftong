@@ -7,13 +7,28 @@
             'logo': logo
         } only %}
         <section class="app-homepage-header__workspace">
-            <blockquote class="app-homepage-header__quote">
-                {{ 'some interesting quote' }}
-            </blockquote>
+            <article class="app-homepage-header__goal">
+                {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь есть все необходимое для того, чтобы изучать английский язык онлайн бесплатно.' }}
+            </article>
             <div class="app-homepage-header__actions">
-                <button type="button" name="user">{{ 'U' }}</button>
-                <button type="button" name="lang">{{ 'L' }}</button>
-                <button type="button" name="search">{{ 'S' }}</button>
+                <button type="button"
+                        name="user"
+                        class="app-homepage-header__button"
+                >
+                    <span class="app-mdi"><i class="mdi mdi-account"></i></span>
+                </button>
+                <button type="button"
+                        name="lang"
+                        class="app-homepage-header__button"
+                >
+                    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+                </button>
+                <button type="button"
+                        name="search"
+                        class="app-homepage-header__button"
+                >
+                    <span class="app-mdi"><i class="mdi mdi-magnify"></i></span>
+                </button>
             </div>
         </section>
     </section>

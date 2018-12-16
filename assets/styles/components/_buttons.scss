@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
-// @TODO: Nucleus docs
 @import "../variables";
+@import "../mixins";
 
-$btn-colors: (
+// ====================
+// Basic Buttons
+// ====================
+$colors: (
   "primary":   $color-primary,
   "secondary": $color-secondary,
   "info":      $color-info,
@@ -13,42 +16,85 @@ $btn-colors: (
   "danger":    $color-danger
 );
 
-@each $name, $color in $btn-colors {
-  .#{$prefix}-btn--#{$name} {
-    border-radius:    0;
-    outline:          none !important;
-    color:            $color-white;
-    background-color: $color;
-
-    &:hover {
-      outline:          none;
-      color:            $color-white;
-      background-color: darken($color, $button-hover-rank);
-    }
-
-    &:active {
-      outline:          none;
-      color:            $color-white;
-      background-color: darken($color, $button-active-rank);
-    }
-
-    &:visited {
-      outline: none;
-      color:   $color-white;
+/**
+ * @atom Basic Buttons
+ * @section Buttons
+ * @modifiers
+ *  .app-btn--primary a primary button
+ *  .app-btn--secondary a secondary button
+ *  .app-btn--info an info button
+ *  .app-btn--success a success button
+ *  .app-btn--warning a warning button
+ *  .app-btn--error a error button
+ *  .app-btn--danger a danger button
+ * @markup
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--primary">
+ *      Primary button
+ *    </button>
+ *    <button class="app-btn--primary" disabled>
+ *      Primary disabled
+ *    </button>
+ *  </div>
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--secondary">
+ *      Secondary button
+ *    </button>
+ *    <button class="app-btn--secondary" disabled>
+ *      Secondary disabled
+ *    </button>
+ *  </div>
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--info">
+ *      Info button
+ *    </button>
+ *    <button class="app-btn--info" disabled>
+ *      Info disabled
+ *    </button>
+ *  </div>
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--success">
+ *      Success button
+ *    </button>
+ *    <button class="app-btn--success" disabled>
+ *      Success disabled
+ *    </button>
+ *  </div>
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--warning">
+ *      Warning button
+ *    </button>
+ *    <button class="app-btn--warning" disabled>
+ *      Warning disabled
+ *    </button>
+ *  </div>
+ *  <div class="nucleus-btn-layout">
+ *    <button class="app-btn--error">
+ *      Error & danger button
+ *    </button>
+ *    <button class="app-btn--error" disabled>
+ *      Error & danger disabled
+ *    </button>
+ *  </div>
+ */
+.#{$prefix}-btn {
+  @each $name, $color in $colors {
+    &--#{$name} {
+      @include app--button();
+      @include app--button-paint($color);
     }
   }
 }
 
-// Icon button
+// ====================
+// Icon Button
+// ====================
+/**
+ * @atom Icon Buttons
+ * @section Buttons
+ * @modifiers
+ *  .app-btn__icon an icon button
+ */
 .#{$prefix}-btn__icon {
-  padding: 0.1rem 0.3rem;
-}
-
-// Link style
-.#{$prefix}-btn__link {
-  margin:     0;
-  padding:    0;
-  border:     none;
-  background: none;
-  cursor:     pointer;
+  padding: 0.1rem 0.7rem;
 }

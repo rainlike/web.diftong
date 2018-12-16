@@ -24,15 +24,15 @@
 }
 
 /**
- * @structure Bordure
+ * @structure Trim
  * @section Normalization
  * @description
  *  Base values for padding and margins for blocks.
  * @markup
- *  <header class="app-bordure"></header>
- *  <div class="app-bordure"></div>
+ *  <header class="app-trim"></header>
+ *  <div class="app-trim"></div>
  */
-.#{$prefix}-bordure {
+.#{$prefix}-trim {
   margin:  0 auto;
   padding: 0 40px;
 }

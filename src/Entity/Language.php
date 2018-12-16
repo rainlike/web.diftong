@@ -31,8 +31,8 @@ class Language extends BasicEntity implements IBasic
      * @Assert\Length(
      *      min = 2,
      *      max = 3,
-     *      minMessage = "Locale must be at least {{ limit }} characters long.",
-     *      maxMessage = "Locale must be no longer than {{ limit }} characters."
+     *      minMessage = "Locale should be at least {{ limit }} characters long.",
+     *      maxMessage = "Locale should be no longer than {{ limit }} characters."
      * )
      */
     private $locale;
@@ -46,8 +46,8 @@ class Language extends BasicEntity implements IBasic
      * @Assert\Length(
      *      min = 5,
      *      max = 7,
-     *      minMessage = "ICU must be at least {{ limit }} characters long.",
-     *      maxMessage = "ICU must be no longer than {{ limit }} characters."
+     *      minMessage = "ICU should be at least {{ limit }} characters long.",
+     *      maxMessage = "ICU should be no longer than {{ limit }} characters."
      * )
      */
     private $icu;
@@ -61,8 +61,8 @@ class Language extends BasicEntity implements IBasic
      * @Assert\Length(
      *      min = 5,
      *      max = 50,
-     *      minMessage = "Name must be at least {{ limit }} characters long.",
-     *      maxMessage = "Name must be no longer than {{ limit }} characters."
+     *      minMessage = "Name should be at least {{ limit }} characters long.",
+     *      maxMessage = "Name should be no longer than {{ limit }} characters."
      * )
      */
     private $name;

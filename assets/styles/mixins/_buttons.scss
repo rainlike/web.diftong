@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Basic style for button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @example
+ *  @include app--button();
+ */
+@mixin app--button() {
+  outline:         none;
+  border:          none;
+  overflow:        hidden;
+  margin:          0;
+  padding:         0.5rem 1.5rem;
+  border-radius:   0;
+  white-space:     nowrap;
+  text-decoration: none;
+  text-align:      center;
+  vertical-align:  middle;
+  cursor:          pointer;
+  user-select:     none;
+  touch-action:    manipulation;
+  -webkit-tap-highlight-color: transparent; // Remove gray highlight when tapping links in Mobile Safari
+}
+
+/**
+ * Painting of button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $bg-color background color
+ * @param $color content color
+ * @example
+ *  @include app--button();
+ *  @include app--button($color-white);
+ *  @include app--button(#4CAF50, #657383);
+ */
+@mixin app--button-paint($bg-color: $color-primary, $color: $color-black) {
+  color:            $color;
+  background-color: $bg-color;
+
+  &:hover {
+    color:            $color;
+    background-color: darken($bg-color, $button-hover-rank);
+  }
+
+  &:active {
+    color:            $color;
+    background-color: darken($bg-color, $button-active-rank);
+  }
+
+  &:visited {
+    color:   $color;
+  }
+
+  &:disabled {
+    color:            $color;
+    cursor:           not-allowed;
+    background-color: darken($bg-color, $button-active-rank);
+  }
+}

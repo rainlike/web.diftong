@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @import "../variables";
-@import "../mixins";
+@import "../helpers";
 
 /**
  * @structure Main
@@ -13,7 +13,7 @@
  */
 .#{$prefix}-homepage-main {
   @include app--box-sizing();
-  @extend .#{$prefix}-bordure;
+  @extend .#{$prefix}-trim;
   width:     $space-full;
   max-width: $content-max-width;
 

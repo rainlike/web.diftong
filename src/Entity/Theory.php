@@ -69,7 +69,7 @@ class Theory extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="formatted_content", type="text", nullable=false, unique=false)
+     * @ORM\Column(name="formatted_content", type="text", length=5000, nullable=false, unique=false)
      * @Assert\NotBlank(
      *      message="Formatted content should not be blank."
      * )

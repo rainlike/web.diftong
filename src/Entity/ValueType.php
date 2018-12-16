@@ -118,7 +118,7 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
      * )
      * @Assert\Length(
      *      max = 25,
-     *      maxMessage = "Type must be no longer than {{ limit }} characters."
+     *      maxMessage = "Type should be no longer than {{ limit }} characters."
      * )
      */
     private $type;
@@ -128,7 +128,7 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
      * @ORM\Column(name="region", type="string", length=25, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 25,
-     *      maxMessage = "Region must be no longer than {{ limit }} characters."
+     *      maxMessage = "Region should be no longer than {{ limit }} characters."
      * )
      */
     private $region;
@@ -138,7 +138,7 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
      * @ORM\Column(name="priority", type="string", length=25, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 25,
-     *      maxMessage = "Priority must be no longer than {{ limit }} characters."
+     *      maxMessage = "Priority should be no longer than {{ limit }} characters."
      * )
      */
     private $priority;

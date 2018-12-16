@@ -50,7 +50,7 @@ class Seo extends BasicEntity implements Translatable, IBasic, ITranslatable
     /**
      * @var string
      * @Gedmo\Translatable
-     * @ORM\Column(name="keywords", type="text", nullable=true, unique=false)
+     * @ORM\Column(name="keywords", type="text", length=1000, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 1000,
      *      maxMessage = "Keywords should be no longer than {{ limit }} characters."
