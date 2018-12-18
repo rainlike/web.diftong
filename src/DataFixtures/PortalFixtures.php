@@ -37,6 +37,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'title' => 'English',
             'caption' => '@CAPTION',
             'description' => '@DESCRIPTION',
+            'language' => 'language-en',
             'uri' => 'english',
             'enabled' => true,
             'translations' => [
@@ -64,6 +65,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'title' => 'Spanish',
             'caption' => '@CAPTION',
             'description' => '@DESCRIPTION',
+            'language' => 'language-es',
             'uri' => 'spanish',
             'enabled' => true,
             'translations' => [
@@ -91,6 +93,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'title' => 'Ukrainian',
             'caption' => '@CAPTION',
             'description' => '@DESCRIPTION',
+            'language' => 'language-uk',
             'uri' => 'ukrainian',
             'enabled' => false,
             'translations' => [
@@ -118,6 +121,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'title' => 'Russian',
             'caption' => '@CAPTION',
             'description' => '@DESCRIPTION',
+            'language' => 'language-ru',
             'uri' => 'russian',
             'enabled' => false,
             'translations' => [
@@ -145,6 +149,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'title' => 'Polish',
             'caption' => '@CAPTION',
             'description' => '@DESCRIPTION',
+            'language' => 'language-pl',
             'uri' => 'polish',
             'enabled' => false,
             'translations' => [
@@ -186,6 +191,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setTitle($portal['title']);
             $entity->setCaption($portal['caption']);
             $entity->setDescription($portal['description']);
+            $entity->setLanguage($this->getReference($portal['language']));
             $entity->setUri($portal['uri'] ?? null);
             $entity->setEnabled($portal['enabled']);
             $entity->setCreated($now);

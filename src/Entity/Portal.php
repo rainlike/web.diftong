@@ -21,13 +21,9 @@ use App\Entity\Library\Interfaces\ITranslatable;
 use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 
-use App\Entity\Library\Traits\Caption\TranslatableNonRequired as CaptionField;
-use App\Entity\Library\Traits\Title\TranslatableNonRequired as TitleField;
-use App\Entity\Library\Traits\Description\TranslatableNonRequired as DescriptionField;
-
-//use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
-//use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
-//use App\Entity\Library\Traits\Description\TranslatableRequired as DescriptionField;
+use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
+use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
+use App\Entity\Library\Traits\Description\TranslatableRequired as DescriptionField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
@@ -70,6 +66,12 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     private $slug;
 
     /**
+     * @ORM\OneToOne(targetEntity="Language")
+     * @ORM\JoinColumn(name="language", referencedColumnName="id")
+     */
+    private $language;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Theory", mappedBy="portal")
      */
@@ -105,6 +107,29 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     public function __toString(): string
     {
         return (string)$this->getId();
+    }
+
+    /**
+     * Set language
+     *
+     * @param Language|null $language
+     * @return self
+     */
+    public function setLanguage(?Language $language = null): self
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return Language|null
+     */
+    public function getLanguage(): ?Language
+    {
+        return $this->language;
     }
 
     /**
