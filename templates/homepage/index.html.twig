@@ -2,7 +2,14 @@
 
 {% block clipboard_class %}{{ 'app-homepage-clipboard' }}{% endblock %}
 {% block clipboard %}
-    {{ 'HOMEPAGE' }}
+    {% if portals %}
+        {% for portal in portals %}
+            <div>
+                <p>{{ portal.title|capitalize }}</p>
+                <p>{{ portal.caption|raw|nl2br }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 {% block css %}

@@ -19,7 +19,6 @@ trait Mapping
     private function mapping(string $key): ?string
     {
         $mapping = [
-            'full_title' => 'fullTitle',
             'formatted_content' => 'formattedContent'
         ];
 

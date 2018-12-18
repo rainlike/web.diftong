@@ -11,18 +11,20 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use App\Entity\Seo;
 use App\Entity\Theory;
 
-use App\DataFixtures\Library\Traits\Mapping as MappingMethods;
 use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class TheoryFixtures
+ * Fixtures for Theories
  *
  * @package App\DataFixtures
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 class TheoryFixtures extends Fixture implements OrderedFixtureInterface
 {
-    use MappingMethods;
     use TranslationMethods;
 
     /**
@@ -34,11 +36,11 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
             [
                 'index' => '1.grammar',
                 'title' => 'Grammar',
-                'full_title' => 'English grammar',
-                'uri' => '/grammar',
+                'caption' => 'English grammar',
+                'uri' => 'grammar',
                 'is_general' => true,
-                'content' => '@TODO',
-                'formatted_content' => '<b>@TODO</b>',
+                'content' => '@CONTENT',
+                'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => null,
@@ -51,24 +53,34 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                         'ru' => 'Грамматика',
                         'pl' => 'Gramatyka'
                     ],
-                    'full_title' => [
-                        'es' => 'Gramatica inglesa',
-                        'uk' => 'Граматика англійської мови',
-                        'ru' => 'Грамматика английского языка',
-                        'pl' => 'Gramatyka angielska'
+                    'caption' => [
+                        'es' => '@CAPTION (es)',
+                        'uk' => '@CAPTION (uk)',
+                        'ru' => '@CAPTION (ru)',
+                        'pl' => '@CAPTION (pl)'
                     ],
-                    'content' => [],
-                    'formatted_content' => []
+                    'content' => [
+                        'es' => '@CONTENT (es)',
+                        'uk' => '@CONTENT (uk)',
+                        'ru' => '@CONTENT (ru)',
+                        'pl' => '@CONTENT (pl)'
+                    ],
+                    'formatted_content' => [
+                        'es' => '@FORMATTED_CONTENT (es)',
+                        'uk' => '@FORMATTED_CONTENT (uk)',
+                        'ru' => '@FORMATTED_CONTENT (ru)',
+                        'pl' => '@FORMATTED_CONTENT (pl)'
+                    ]
                 ]
             ],
             [
                 'index' => '2.verb',
                 'title' => 'Verb',
-                'full_title' => null,
-                'uri' => '/verb',
+                'caption' => 'English verb',
+                'uri' => 'verb',
                 'is_general' => false,
-                'content' => '@TODO',
-                'formatted_content' => '<b>@TODO</b>',
+                'content' => '@CONTENT',
+                'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'theory-1.grammar',
@@ -81,32 +93,47 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                         'ru' => 'Глагол',
                         'pl' => 'Czasownik'
                     ],
-                    'full_title' => [],
-                    'content' => [],
-                    'formatted_content' => []
+                    'caption' => [
+                        'es' => '@CAPTION (es)',
+                        'uk' => '@CAPTION (uk)',
+                        'ru' => '@CAPTION (ru)',
+                        'pl' => '@CAPTION (pl)'
+                    ],
+                    'content' => [
+                        'es' => '@CONTENT (es)',
+                        'uk' => '@CONTENT (uk)',
+                        'ru' => '@CONTENT (ru)',
+                        'pl' => '@CONTENT (pl)'
+                    ],
+                    'formatted_content' => [
+                        'es' => '@FORMATTED_CONTENT (es)',
+                        'uk' => '@FORMATTED_CONTENT (uk)',
+                        'ru' => '@FORMATTED_CONTENT (ru)',
+                        'pl' => '@FORMATTED_CONTENT (pl)'
+                    ]
                 ],
                 'seo' => [
-                    'title' => 'Verb - title',
-                    'description' => 'Verb - description',
-                    'keywords' => 'Verb - keywords',
+                    'title' => '@TITLE',
+                    'description' => '@DESCRIPTION',
+                    'keywords' => '@KEYWORDS',
                     'translations' => [
                         'title' => [
-                            'es' => 'Verbo - title',
-                            'uk' => 'Дієслово - title',
-                            'ru' => 'Глагол - title',
-                            'pl' => 'Czasownik - title'
+                            'es' => '@TITLE (es)',
+                            'uk' => '@TITLE (uk)',
+                            'ru' => '@TITLE (ru)',
+                            'pl' => '@TITLE (pl)'
                         ],
                         'description' => [
-                            'es' => 'Verbo - description',
-                            'uk' => 'Дієслово - description',
-                            'ru' => 'Глагол - description',
-                            'pl' => 'Czasownik - description'
+                            'es' => '@DESCRIPTION (es)',
+                            'uk' => '@DESCRIPTION (uk)',
+                            'ru' => '@DESCRIPTION (ru)',
+                            'pl' => '@DESCRIPTION (pl)'
                         ],
                         'keywords' => [
-                            'es' => 'Verbo - keywords',
-                            'uk' => 'Дієслово - keywords',
-                            'ru' => 'Глагол - keywords',
-                            'pl' => 'Czasownik - keywords'
+                            'es' => '@KEYWORDS (es)',
+                            'uk' => '@KEYWORDS (uk)',
+                            'ru' => '@KEYWORDS (ru)',
+                            'pl' => '@KEYWORDS (pl)'
                         ],
                     ]
                 ]
@@ -114,11 +141,11 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
             [
                 'index' => '3.verbs-personal-non-verbal',
                 'title' => 'Personal and non-verbal forms of the verb',
-                'full_title' => '@TODO',
-                'uri' => '/verbs-personal-non-verbal',
+                'caption' => '@CAPTION',
+                'uri' => 'verbs-personal-non-verbal',
                 'is_general' => false,
-                'content' => '@TODO',
-                'formatted_content' => '<b>@TODO</b>',
+                'content' => '@CONTENT',
+                'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'theory-2.verb',
@@ -131,19 +158,34 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                         'ru' => 'Личные и неличные формы глагола',
                         'pl' => 'Osobiste i niewerbalne formy czasownika'
                     ],
-                    'full_title' => [],
-                    'content' => [],
-                    'formatted_content' => []
+                    'caption' => [
+                        'es' => '@CAPTION (es)',
+                        'uk' => '@CAPTION (uk)',
+                        'ru' => '@CAPTION (ru)',
+                        'pl' => '@CAPTION (pl)'
+                    ],
+                    'content' => [
+                        'es' => '@CONTENT (es)',
+                        'uk' => '@CONTENT (uk)',
+                        'ru' => '@CONTENT (ru)',
+                        'pl' => '@CONTENT (pl)'
+                    ],
+                    'formatted_content' => [
+                        'es' => '@FORMATTED_CONTENT (es)',
+                        'uk' => '@FORMATTED_CONTENT (uk)',
+                        'ru' => '@FORMATTED_CONTENT (ru)',
+                        'pl' => '@FORMATTED_CONTENT (pl)'
+                    ]
                 ]
             ],
             [
                 'index' => '2.noun',
                 'title' => 'Noun',
-                'full_title' => '@TODO',
-                'uri' => '/noun',
+                'caption' => '@CAPTION',
+                'uri' => 'noun',
                 'is_general' => false,
-                'content' => '@TODO',
-                'formatted_content' => '<b>@TODO</b>',
+                'content' => '@CONTENT',
+                'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
                 'portal' => 'portal-english',
                 'parent' => 'theory-1.grammar',
@@ -156,9 +198,24 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                         'ru' => 'существительное',
                         'pl' => 'Rzeczownik'
                     ],
-                    'full_title' => [],
-                    'content' => [],
-                    'formatted_content' => []
+                    'caption' => [
+                        'es' => '@CAPTION (es)',
+                        'uk' => '@CAPTION (uk)',
+                        'ru' => '@CAPTION (ru)',
+                        'pl' => '@CAPTION (pl)'
+                    ],
+                    'content' => [
+                        'es' => '@CONTENT (es)',
+                        'uk' => '@CONTENT (uk)',
+                        'ru' => '@CONTENT (ru)',
+                        'pl' => '@CONTENT (pl)'
+                    ],
+                    'formatted_content' => [
+                        'es' => '@FORMATTED_CONTENT (es)',
+                        'uk' => '@FORMATTED_CONTENT (uk)',
+                        'ru' => '@FORMATTED_CONTENT (ru)',
+                        'pl' => '@FORMATTED_CONTENT (pl)'
+                    ]
                 ]
             ]
         ],
@@ -181,8 +238,8 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
             foreach ($theoryList as $theory) {
                 $entity = new Theory();
                 $entity->setTitle($theory['title']);
-                $entity->setFullTitle($theory['full_title'] ?? null);
-                $entity->setUri($theory['uri']);
+                $entity->setCaption($theory['caption']);
+                $entity->setUri($theory['uri'] ?? null);
                 $entity->setIsGeneral($theory['is_general']);
                 $entity->setContent($theory['content']);
                 $entity->setFormattedContent($theory['formatted_content']);

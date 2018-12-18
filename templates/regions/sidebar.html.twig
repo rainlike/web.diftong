@@ -1,3 +1,8 @@
 <aside class="app-sidebar">
-    {{ 'sidebar' }}
+    {% if quote %}
+        <article class="app-sidebar-quote">
+            <blockquote>{{ quote.text }}</blockquote>
+            <span>{{ quote.author }}</span>
+        </article>
+    {% endif %}
 </aside>

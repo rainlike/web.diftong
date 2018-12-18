@@ -18,19 +18,28 @@ use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Entity\Library\Interfaces\ITranslatable;
 
-use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
+use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
-use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
+
+use App\Entity\Library\Traits\Caption\TranslatableNonRequired as CaptionField;
+use App\Entity\Library\Traits\Title\TranslatableNonRequired as TitleField;
+use App\Entity\Library\Traits\Description\TranslatableNonRequired as DescriptionField;
+
+//use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
+//use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
+//use App\Entity\Library\Traits\Description\TranslatableRequired as DescriptionField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class Portal
+ * Key entity of site, contains all relates Theory
  *
  * @package App\Entity
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\Table(name="app_portal")
  * @ORM\Entity(repositoryClass="App\Repository\PortalRepository")
@@ -38,10 +47,10 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  */
 class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug
 {
-    use NameField;
-    use TitleField;
-    use FullTitleField;
     use UriField;
+    use TitleField;
+    use CaptionField;
+    use DescriptionField;
     use LocaleField;
 
     use SlugMethods;

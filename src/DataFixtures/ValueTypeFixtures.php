@@ -10,7 +10,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 use App\Entity\ValueType;
 
-use App\DataFixtures\Library\Traits\Mapping as MappingMethods;
 use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
 
 /**
@@ -21,7 +20,6 @@ use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
  */
 class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
 {
-    use MappingMethods;
     use TranslationMethods;
 
     /**

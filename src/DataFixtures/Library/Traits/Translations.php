@@ -7,6 +7,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use App\Entity\Library\Interfaces\ITranslatable;
 
+use App\Service\Library;
+
 /**
  * Trait Translations
  *
@@ -23,15 +25,13 @@ trait Translations
      */
     private function saveTranslations(
         array $translations,
-        ITranslatable $entity,
+        ITranslatable &$entity,
         ObjectManager $manager
     ): void
     {
         foreach ($translations as $translationName => $targetTranslations) {
             foreach ($targetTranslations as $locale => $translation) {
-                $setterName = $this->mapping($translationName) ?: $translationName;
-
-                $setter = 'set'.\ucfirst($setterName);
+                $setter = 'set'.\ucfirst(Library::snakeToCamelCase($translationName));
 
                 $entity->setTranslatableLocale($locale);
                 $entity->$setter($translation);

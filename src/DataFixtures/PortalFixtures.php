@@ -10,18 +10,22 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 use App\Entity\Portal;
 
-use App\DataFixtures\Library\Traits\Mapping as MappingMethods;
 use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
+
+use App\Service\Library;
 
 /**
  * Class PortalFixtures
+ * Fixtures for Portals
  *
  * @package App\DataFixtures
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 class PortalFixtures extends Fixture implements OrderedFixtureInterface
 {
-    use MappingMethods;
     use TranslationMethods;
 
     /**
@@ -31,9 +35,9 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
     private static $portals = [
         [
             'title' => 'English',
-            'full_title' => '@TODO',
-            'name' => 'english',
-            'uri' => '/english',
+            'caption' => '@CAPTION',
+            'description' => '@DESCRIPTION',
+            'uri' => 'english',
             'enabled' => true,
             'translations' => [
                 'title' => [
@@ -42,19 +46,25 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Английский язык',
                     'pl' => 'Język angielski'
                 ],
-                'full_title' => [
-                    'es' => 'Ingles en linea',
-                    'uk' => 'Англійська мова онлайн',
-                    'ru' => 'Английский язык онлайн',
-                    'pl' => 'Język angielski online'
+                'caption' => [
+                    'es' => '@CAPTION (es)',
+                    'uk' => '@CAPTION (uk)',
+                    'ru' => '@CAPTION (ru)',
+                    'pl' => '@CAPTION (pl)'
+                ],
+                'description' => [
+                    'es' => '@DESCRIPTION (es)',
+                    'uk' => '@DESCRIPTION (uk)',
+                    'ru' => '@DESCRIPTION (ru)',
+                    'pl' => '@DESCRIPTION (pl)'
                 ]
             ]
         ],
         [
             'title' => 'Spanish',
-            'full_title' => '@TODO',
-            'name' => 'spanish',
-            'uri' => '/spanish',
+            'caption' => '@CAPTION',
+            'description' => '@DESCRIPTION',
+            'uri' => 'spanish',
             'enabled' => true,
             'translations' => [
                 'title' => [
@@ -63,14 +73,25 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Испанский язык',
                     'pl' => 'Język hiszpański'
                 ],
-                'full_title' => []
+                'caption' => [
+                    'es' => '@CAPTION (es)',
+                    'uk' => '@CAPTION (uk)',
+                    'ru' => '@CAPTION (ru)',
+                    'pl' => '@CAPTION (pl)'
+                ],
+                'description' => [
+                    'es' => '@DESCRIPTION (es)',
+                    'uk' => '@DESCRIPTION (uk)',
+                    'ru' => '@DESCRIPTION (ru)',
+                    'pl' => '@DESCRIPTION (pl)'
+                ]
             ]
         ],
         [
             'title' => 'Ukrainian',
-            'full_title' => '@TODO',
-            'name' => 'ukrainian',
-            'uri' => '/ukrainian',
+            'caption' => '@CAPTION',
+            'description' => '@DESCRIPTION',
+            'uri' => 'ukrainian',
             'enabled' => false,
             'translations' => [
                 'title' => [
@@ -79,14 +100,25 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Украинский язык',
                     'pl' => 'Język ukraiński'
                 ],
-                'full_title' => []
+                'caption' => [
+                    'es' => '@CAPTION (es)',
+                    'uk' => '@CAPTION (uk)',
+                    'ru' => '@CAPTION (ru)',
+                    'pl' => '@CAPTION (pl)'
+                ],
+                'description' => [
+                    'es' => '@DESCRIPTION (es)',
+                    'uk' => '@DESCRIPTION (uk)',
+                    'ru' => '@DESCRIPTION (ru)',
+                    'pl' => '@DESCRIPTION (pl)'
+                ]
             ]
         ],
         [
             'title' => 'Russian',
-            'full_title' => '@TODO',
-            'name' => 'russian',
-            'uri' => '/russian',
+            'caption' => '@CAPTION',
+            'description' => '@DESCRIPTION',
+            'uri' => 'russian',
             'enabled' => false,
             'translations' => [
                 'title' => [
@@ -95,14 +127,25 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Русский язык',
                     'pl' => 'Język rosyjski'
                 ],
-                'full_title' => []
+                'caption' => [
+                    'es' => '@CAPTION (es)',
+                    'uk' => '@CAPTION (uk)',
+                    'ru' => '@CAPTION (ru)',
+                    'pl' => '@CAPTION (pl)'
+                ],
+                'description' => [
+                    'es' => '@DESCRIPTION (es)',
+                    'uk' => '@DESCRIPTION (uk)',
+                    'ru' => '@DESCRIPTION (ru)',
+                    'pl' => '@DESCRIPTION (pl)'
+                ]
             ]
         ],
         [
             'title' => 'Polish',
-            'full_title' => '@TODO',
-            'name' => 'polish',
-            'uri' => '/polish',
+            'caption' => '@CAPTION',
+            'description' => '@DESCRIPTION',
+            'uri' => 'polish',
             'enabled' => false,
             'translations' => [
                 'title' => [
@@ -111,7 +154,18 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
                     'ru' => 'Польский язык',
                     'pl' => 'Język polski'
                 ],
-                'full_title' => []
+                'caption' => [
+                    'es' => '@CAPTION (es)',
+                    'uk' => '@CAPTION (uk)',
+                    'ru' => '@CAPTION (ru)',
+                    'pl' => '@CAPTION (pl)'
+                ],
+                'description' => [
+                    'es' => '@DESCRIPTION (es)',
+                    'uk' => '@DESCRIPTION (uk)',
+                    'ru' => '@DESCRIPTION (ru)',
+                    'pl' => '@DESCRIPTION (pl)'
+                ]
             ]
         ]
     ];
@@ -130,21 +184,21 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         foreach (self::$portals as $portal) {
             $entity = new Portal();
             $entity->setTitle($portal['title']);
-            $entity->setFullTitle($portal['full_title'] ?? null);
-            $entity->setName($portal['name']);
-            $entity->setUri($portal['uri']);
+            $entity->setCaption($portal['caption']);
+            $entity->setDescription($portal['description']);
+            $entity->setUri($portal['uri'] ?? null);
             $entity->setEnabled($portal['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);
 
             $manager->persist($entity);
 
-            $this->addReference('portal-'.$portal['name'], $entity);
+            $this->addReference('portal-'.Library::slug($portal['title']), $entity);
 
             $manager->flush();
 
             /** @var array $translations */
-            $translations = $portal['translations'];
+            $translations = $portal['translations'] ?? null;
             if ($translations) {
                 $this->saveTranslations($translations, $entity, $manager);
             }

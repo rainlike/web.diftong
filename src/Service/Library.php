@@ -105,7 +105,7 @@ class Library
                 break;
         }
 
-        return $result;
+        return \strtolower($result);
     }
 
     /**

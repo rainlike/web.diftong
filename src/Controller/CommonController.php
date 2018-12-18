@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -23,8 +25,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
-use App\Entity\Quote
-    ;
+use App\Entity\Quote;
 use App\Service\Library;
 use App\Service\Logotype;
 use App\Service\LanguageSwitcher;
@@ -122,15 +123,16 @@ class CommonController extends Controller
      * Render sidebar
      *
      * @param Translator $translator
-     * @param Library $library
      * @return Response
+     * @throws NonUniqueResultException
      */
-    public function renderSidebar(
-        Translator $translator,
-        Library $library
-    ): Response
+    public function renderSidebar(Translator $translator): Response
     {
-        return $this->render('regions/sidebar.html.twig', []);
+        $quote = $this->getDoctrine()->getRepository(Quote::class)->getRandom();
+
+        return $this->render('regions/sidebar.html.twig', [
+            'quote' => $quote
+        ]);
     }
 
     /**

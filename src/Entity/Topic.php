@@ -18,19 +18,23 @@ use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Entity\Library\Interfaces\ITranslatable;
 
-use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
+use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
+use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
 use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
-use App\Entity\Library\Traits\Title\FullTranslatableNonRequired as FullTitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
  * Class Topic
+ * Contains topics
  *
  * @package App\Entity
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\Table(name="app_topic")
  * @ORM\Entity(repositoryClass="App\Repository\TopicRepository")
@@ -39,7 +43,7 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
 class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug
 {
     use TitleField;
-    use FullTitleField;
+    use CaptionField;
     use UriField;
     use ContentField;
     use LocaleField;
