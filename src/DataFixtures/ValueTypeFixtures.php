@@ -92,7 +92,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             /** @var array $translations */
             $translations = $valueType['translations'] ?? null;
             if ($translations) {
-                $this->saveTranslations($translations, $entity, $manager);
+                $this->saveAllTranslations($translations, $entity, $manager);
             }
         }
     }

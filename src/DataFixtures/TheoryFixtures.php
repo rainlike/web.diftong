@@ -45,33 +45,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'portal' => 'portal-english',
                 'parent' => null,
                 'previous' => null,
-                'next' => null,
-                'translations' => [
-                    'title' => [
-                        'es' => 'Gramática',
-                        'uk' => 'Граматика',
-                        'ru' => 'Грамматика',
-                        'pl' => 'Gramatyka'
-                    ],
-                    'caption' => [
-                        'es' => '@CAPTION (es)',
-                        'uk' => '@CAPTION (uk)',
-                        'ru' => '@CAPTION (ru)',
-                        'pl' => '@CAPTION (pl)'
-                    ],
-                    'content' => [
-                        'es' => '@CONTENT (es)',
-                        'uk' => '@CONTENT (uk)',
-                        'ru' => '@CONTENT (ru)',
-                        'pl' => '@CONTENT (pl)'
-                    ],
-                    'formatted_content' => [
-                        'es' => '@FORMATTED_CONTENT (es)',
-                        'uk' => '@FORMATTED_CONTENT (uk)',
-                        'ru' => '@FORMATTED_CONTENT (ru)',
-                        'pl' => '@FORMATTED_CONTENT (pl)'
-                    ]
-                ]
+                'next' => null
             ],
             [
                 'index' => '2.verb',
@@ -86,32 +60,6 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'parent' => 'theory-1.grammar',
                 'previous' => null,
                 'next' => null,
-                'translations' => [
-                    'title' => [
-                        'es' => 'Verbo',
-                        'uk' => 'Дієслово',
-                        'ru' => 'Глагол',
-                        'pl' => 'Czasownik'
-                    ],
-                    'caption' => [
-                        'es' => '@CAPTION (es)',
-                        'uk' => '@CAPTION (uk)',
-                        'ru' => '@CAPTION (ru)',
-                        'pl' => '@CAPTION (pl)'
-                    ],
-                    'content' => [
-                        'es' => '@CONTENT (es)',
-                        'uk' => '@CONTENT (uk)',
-                        'ru' => '@CONTENT (ru)',
-                        'pl' => '@CONTENT (pl)'
-                    ],
-                    'formatted_content' => [
-                        'es' => '@FORMATTED_CONTENT (es)',
-                        'uk' => '@FORMATTED_CONTENT (uk)',
-                        'ru' => '@FORMATTED_CONTENT (ru)',
-                        'pl' => '@FORMATTED_CONTENT (pl)'
-                    ]
-                ],
                 'seo' => [
                     'title' => '@TITLE',
                     'description' => '@DESCRIPTION',
@@ -150,33 +98,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'portal' => 'portal-english',
                 'parent' => 'theory-2.verb',
                 'previous' => null,
-                'next' => null,
-                'translations' => [
-                    'title' => [
-                        'es' => 'Formas personales y no verbales del verbo',
-                        'uk' => 'Особисті і неособисті форми дієслова',
-                        'ru' => 'Личные и неличные формы глагола',
-                        'pl' => 'Osobiste i niewerbalne formy czasownika'
-                    ],
-                    'caption' => [
-                        'es' => '@CAPTION (es)',
-                        'uk' => '@CAPTION (uk)',
-                        'ru' => '@CAPTION (ru)',
-                        'pl' => '@CAPTION (pl)'
-                    ],
-                    'content' => [
-                        'es' => '@CONTENT (es)',
-                        'uk' => '@CONTENT (uk)',
-                        'ru' => '@CONTENT (ru)',
-                        'pl' => '@CONTENT (pl)'
-                    ],
-                    'formatted_content' => [
-                        'es' => '@FORMATTED_CONTENT (es)',
-                        'uk' => '@FORMATTED_CONTENT (uk)',
-                        'ru' => '@FORMATTED_CONTENT (ru)',
-                        'pl' => '@FORMATTED_CONTENT (pl)'
-                    ]
-                ]
+                'next' => null
             ],
             [
                 'index' => '2.noun',
@@ -190,33 +112,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'portal' => 'portal-english',
                 'parent' => 'theory-1.grammar',
                 'previous' => 'theory-2.verb',
-                'next' => null,
-                'translations' => [
-                    'title' => [
-                        'es' => 'Sustantivo',
-                        'uk' => 'Іменник',
-                        'ru' => 'существительное',
-                        'pl' => 'Rzeczownik'
-                    ],
-                    'caption' => [
-                        'es' => '@CAPTION (es)',
-                        'uk' => '@CAPTION (uk)',
-                        'ru' => '@CAPTION (ru)',
-                        'pl' => '@CAPTION (pl)'
-                    ],
-                    'content' => [
-                        'es' => '@CONTENT (es)',
-                        'uk' => '@CONTENT (uk)',
-                        'ru' => '@CONTENT (ru)',
-                        'pl' => '@CONTENT (pl)'
-                    ],
-                    'formatted_content' => [
-                        'es' => '@FORMATTED_CONTENT (es)',
-                        'uk' => '@FORMATTED_CONTENT (uk)',
-                        'ru' => '@FORMATTED_CONTENT (ru)',
-                        'pl' => '@FORMATTED_CONTENT (pl)'
-                    ]
-                ]
+                'next' => null
             ]
         ],
         'Pronounce' => [],
@@ -261,7 +157,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 /** @var array $translations */
                 $translations = $theory['translations'] ?? null;
                 if ($translations) {
-                    $this->saveTranslations($translations, $entity, $manager);
+                    $this->saveAllTranslations($translations, $entity, $manager);
                 }
 
                 /** @var array $seo */
@@ -283,7 +179,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                     /** @var array $seoTranslations */
                     $seoTranslations = $seo['translations'] ?? null;
                     if ($seoTranslations) {
-                        $this->saveTranslations($seoTranslations, $seoEntity, $manager);
+                        $this->saveAllTranslations($seoTranslations, $seoEntity, $manager);
                     }
                 }
             }
