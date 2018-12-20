@@ -10,5 +10,17 @@
  * @section Homepage
  */
 .#{$prefix}-homepage-clipboard {
-  background-color: bisque; // @TODO: debug bg
+  @include app--flex-center();
+}
+
+/**
+ * Layout for Homepage elements.
+ *
+ * @structure Layout
+ * @section Homepage
+ */
+.#{$prefix}-homepage__layer {
+  display:   flex;
+  flex-flow: row wrap;
+  width:     100%;
 }

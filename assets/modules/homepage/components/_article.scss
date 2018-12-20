@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Article on Homepage.
+ *
+ * @molecule Article
+ * @section Homepage
+ * @molecule Icon Buttons
+ * @markup
+ *  <article class="app-homepage-article">
+ *    <h3>About project</h3>
+ *    <p>
+ *      For anyone who wants to know English, we have created this site, completely dedicated to its study.
+ *    </p>
+ *  </article>
+ */
+.#{$prefix}-homepage-article {
+  padding:    $clipboard-indent;
+  text-align: center;
+
+  h3 {
+    font-size:   x-large;
+    font-weight: bold;
+  }
+}

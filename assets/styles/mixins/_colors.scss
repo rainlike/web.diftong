@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import "../variables";
+
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+@mixin app--lighten($color, $amount, $type: "color") {
+  $property: if($type == "color", color, background-color);
+  #{$property}: lighten($color, $amount);
+}
+
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+@mixin app--darken($color, $amount, $type: "color") {
+  $property: if($type == "color", color, background-color);
+  #{$property}: darken($color, $amount);
+}

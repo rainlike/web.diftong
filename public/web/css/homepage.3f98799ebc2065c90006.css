@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable-next-line value-keyword-case */
 /**
  * A white color variable.
@@ -112,6 +113,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -317,6 +330,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -414,6 +439,7 @@
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -426,6 +452,7 @@
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -546,6 +573,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -833,6 +872,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -1061,6 +1112,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -1272,6 +1335,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -1509,6 +1584,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -1722,6 +1809,259 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -1949,6 +2289,235 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -2170,6 +2739,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -2375,6 +2956,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -2470,6 +3063,7 @@
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -2482,6 +3076,7 @@
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -2602,6 +3197,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -2889,6 +3496,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -3117,6 +3736,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -3328,6 +3959,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -3565,6 +4208,18 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -3778,6 +4433,259 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -4005,6 +4913,235 @@
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -4224,6 +5361,18 @@
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -11773,6 +12922,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -12008,6 +13169,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -12228,6 +13401,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -12433,6 +13618,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -12528,6 +13725,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -12540,6 +13738,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -12660,6 +13859,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -12947,6 +14158,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -13175,6 +14398,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -13386,6 +14621,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -13623,6 +14870,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -13836,6 +15095,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -14061,6 +15573,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -14439,6 +16180,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -14644,6 +16397,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -14739,6 +16504,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -14751,6 +16517,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -14871,6 +16638,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -15158,6 +16937,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -15386,6 +17177,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -15597,6 +17400,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -15834,6 +17649,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -16047,6 +17874,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -16272,6 +18352,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -16518,6 +18827,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -16723,6 +19044,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -16818,6 +19151,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -16830,6 +19164,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -16950,6 +19285,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -17237,6 +19584,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -17465,6 +19824,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -17676,6 +20047,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -17913,6 +20296,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -18126,6 +20521,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -18351,6 +20999,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -18584,6 +21461,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -18789,6 +21678,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -18884,6 +21785,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -18896,6 +21798,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -19016,6 +21919,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -19303,6 +22218,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -19531,6 +22458,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -19742,6 +22681,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -19979,6 +22930,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -20192,6 +23155,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -20419,6 +23635,235 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -20533,11 +23978,11 @@ html {
  *   <aside class="app-sidebar">Sidebar here</aside>
  */
 .app-sidebar {
-  width: 250px;
+  width: 350px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  background-color: dimgray; }
+  background-color: #8959A8; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -20655,6 +24100,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -20860,6 +24317,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -20955,6 +24424,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -20967,6 +24437,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -21087,6 +24558,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -21374,6 +24857,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -21602,6 +25097,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -21813,6 +25320,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -22050,6 +25569,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -22263,6 +25794,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -22488,6 +26272,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -22607,20 +26620,15 @@ html {
  *     </section>
  *   </footer>
  */
-.app-footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0; }
-  .app-footer__layout {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    max-width: 1600px;
-    background-color: #5CB860; }
+.app-footer__layout {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  background-color: #5CB860; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -22736,6 +26744,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -22958,6 +26978,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -23445,6 +27477,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -23766,6 +27810,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -24518,6 +28574,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -24802,6 +28870,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -25016,6 +29096,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -25221,6 +29313,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -25316,6 +29420,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -25328,6 +29433,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -25448,6 +29554,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -25735,6 +29853,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -25963,6 +30093,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -26174,6 +30316,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -26411,6 +30565,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -26624,6 +30790,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -26849,6 +31268,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -27380,6 +32028,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -27585,6 +32245,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -27680,6 +32352,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -27692,6 +32365,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -27812,6 +32486,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -28099,6 +32785,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -28327,6 +33025,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -28538,6 +33248,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -28775,6 +33497,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -28988,6 +33722,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -29213,6 +34200,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -29333,7 +34549,8 @@ html {
  *  </nav>
  */
 .app-menu {
-  color: #2196F3; }
+  height: 2.4em;
+  background-color: #3F51B5; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -29451,6 +34668,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -29656,6 +34885,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -29751,6 +34992,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -29763,6 +35005,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -29883,6 +35126,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -30170,6 +35425,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -30398,6 +35665,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -30609,6 +35888,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -30846,6 +36137,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -31059,6 +36362,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -31284,6 +36840,235 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -31519,6 +37304,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -31724,6 +37521,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -31819,6 +37628,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
@@ -31831,6 +37641,7 @@ html {
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
@@ -31951,6 +37762,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -32238,6 +38061,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -32466,6 +38301,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -32677,6 +38524,18 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -32914,6 +38773,18 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -33127,6 +38998,259 @@ html {
  *
  * @nuclide
  * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
  */
 /**
  * Max width of content workspace
@@ -33354,6 +39478,235 @@ html {
  * @section Screen Variables
  */
 /**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
  * Max width of content workspace
  *
  * @nuclide
@@ -33466,6 +39819,5350 @@ html {
  * @section Homepage
  */
 .app-homepage-clipboard {
-  background-color: bisque; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+/**
+ * Layout for Homepage elements.
+ *
+ * @structure Layout
+ * @section Homepage
+ */
+.app-homepage__layer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 100%; }
+
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Property subtraction.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-sub(10%);
+ *  @include app--calc-sub(5px, width);
+ *  @include app--calc-sub(7em, height);
+ */
+/**
+ * Property addition.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $addend addend value
+ * @param $basis basis of calculation
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-add(10%);
+ *  @include app--calc-add(5px, width);
+ *  @include app--calc-add(7em, height);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mobile view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Tablet view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Laptop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Desktop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPhone view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPad view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPhone Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPad Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Non Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Simple grid column.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @example
+ *  @include app--grid-column(1);
+ *  @include app--grid-column(12);
+ *  @include app--grid-col(5);
+ */
+/**
+ * Simple grid offset.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @param $direction side of indent
+ * @example
+ *  @include app--grid-offset(1);
+ *  @include app--grid-offset(3, left);
+ *  @include app--grid-offset(5, right);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-center();
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Cross-browser transition solution.
+ *
+ * @mixin Transition
+ * @section Cross-Browser Mixins
+ * @param $property property
+ * @param $duration duration
+ * @param $animation animation
+ * @param $delay calculated delay
+ * @example
+ *  @include app--non-select(all, 1s, ease, 0s);
+ *  @include app--non-select(width, .5s, linear, 10s);
+ */
+/**
+ * Cross-browser non-selectable solution.
+ *
+ * @mixin Non-Select
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--non-select();
+ */
+/**
+ * Cross-browser box-sizing solution.
+ *
+ * @mixin Box-Sizing
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--box-sizing();
+ *  @include app--box-sizing(content-box);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Absolute size for property.
+ *
+ * @mixin
+ * @section Absolute Mixins
+ * @param $property calculated property
+ * @param $value calculated value
+ * @example
+ *  @include app--absolute(width, 200px);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Basic style for button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @example
+ *  @include app--button();
+ */
+/**
+ * Painting of button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $bg-color background color
+ * @param $color content color
+ * @example
+ *  @include app--button();
+ *  @include app--button($color-white);
+ *  @include app--button(#4CAF50, #657383);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Default shadow style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--shadow();
+ */
+/**
+ * Default circle style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--circle();
+ */
+/**
+ * Portal-Card on Homepage.
+ *
+ * @molecule Portal-Card
+ * @section Homepage
+ * @molecule Icon Buttons
+ * @markup
+ *  <div class="app-homepage-portal-card">
+ *    <a href="#">
+ *      <p class="app-homepage-portal-card__title">{{ Español }}</p>
+ *      <p class="app-homepage-portal-card__caption">
+ *        {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь есть все необходимое для того, чтобы изучать английский язык онлайн бесплатно.' }}
+ *      </p>
+ *    </a>
+ *  </div>
+ */
+.app-homepage-portal-card {
+  width: calc(50% - 30px);
+  background-color: #ffd699;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 5px solid #FF9800;
+  cursor: pointer; }
+  .app-homepage-portal-card :hover,
+  .app-homepage-portal-card :active {
+    background-color: #ffad33; }
+  .app-homepage-portal-card a {
+    text-decoration: none;
+    color: #000; }
+  .app-homepage-portal-card__title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold; }
+  .app-homepage-portal-card__caption {
+    text-align: center; }
+
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Property subtraction.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-sub(10%);
+ *  @include app--calc-sub(5px, width);
+ *  @include app--calc-sub(7em, height);
+ */
+/**
+ * Property addition.
+ *
+ * @mixin
+ * @section Calculation Mixins
+ * @param $addend addend value
+ * @param $basis basis of calculation
+ * @param $property calculated property
+ * @example
+ *  @include app--calc-add(10%);
+ *  @include app--calc-add(5px, width);
+ *  @include app--calc-add(7em, height);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mobile view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Tablet view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Laptop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Desktop view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPhone view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPad view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPhone Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * iPad Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/**
+ * Non Retina view solution
+ *
+ * @mixin
+ * @section Media Mixins
+ * @example
+ *  @include app--mobile {...}
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Simple grid column.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @example
+ *  @include app--grid-column(1);
+ *  @include app--grid-column(12);
+ *  @include app--grid-col(5);
+ */
+/**
+ * Simple grid offset.
+ *
+ * @mixin
+ * @section Grid Mixins
+ * @param $span count of columns
+ * @param $direction side of indent
+ * @example
+ *  @include app--grid-offset(1);
+ *  @include app--grid-offset(3, left);
+ *  @include app--grid-offset(5, right);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Centered flex element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-center();
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Cross-browser transition solution.
+ *
+ * @mixin Transition
+ * @section Cross-Browser Mixins
+ * @param $property property
+ * @param $duration duration
+ * @param $animation animation
+ * @param $delay calculated delay
+ * @example
+ *  @include app--non-select(all, 1s, ease, 0s);
+ *  @include app--non-select(width, .5s, linear, 10s);
+ */
+/**
+ * Cross-browser non-selectable solution.
+ *
+ * @mixin Non-Select
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--non-select();
+ */
+/**
+ * Cross-browser box-sizing solution.
+ *
+ * @mixin Box-Sizing
+ * @section Cross-Browser Mixins
+ * @example
+ *  @include app--box-sizing();
+ *  @include app--box-sizing(content-box);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Absolute size for property.
+ *
+ * @mixin
+ * @section Absolute Mixins
+ * @param $property calculated property
+ * @param $value calculated value
+ * @example
+ *  @include app--absolute(width, 200px);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Mixin for lighting of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the lightness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--lighten($color-primary, 20%);
+ *  @include app--lighten(#4CAF50, 20%);
+ */
+/**
+ * Mixin for obfuscation of color.
+ *
+ * @mixin
+ * @section Color Mixins
+ * @param $property target color
+ * @param $amount the amount to increase the darkness by
+ * @param $type should be only color or bg
+ * @example
+ *  @include app--darken($color-primary, 20%);
+ *  @include app--darken(#4CAF50, 20%);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Basic style for button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @example
+ *  @include app--button();
+ */
+/**
+ * Painting of button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $bg-color background color
+ * @param $color content color
+ * @example
+ *  @include app--button();
+ *  @include app--button($color-white);
+ *  @include app--button(#4CAF50, #657383);
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/* stylelint-disable-next-line value-keyword-case */
+/**
+ * A white color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A black color variable.
+ *
+ * @color
+ * @section Default Colors
+ */
+/**
+ * A primary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A secondary color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An info color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A success color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A warning color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * An error and danger color variables.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * A background color variable.
+ *
+ * @color
+ * @section Main Colors
+ */
+/**
+ * Color tone amount variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Color tone step variable
+ *
+ * @nuclide
+ * @section Colors Variables
+ */
+/**
+ * Button hover rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Button active rank variable
+ *
+ * @nuclide
+ * @section Button Variables
+ */
+/**
+ * Mobile screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Tablet screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Laptop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Desktop screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPhone screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * iPad screen variable
+ *
+ * @nuclide
+ * @section Screen Variables
+ */
+/**
+ * Basic indent for Clipboard
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Absolute position of footer
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+/**
+ * Max width of content workspace
+ *
+ * @nuclide
+ * @section Content Variables
+ */
+/**
+ * Number of columns
+ *
+ * @nuclide
+ * @section Grid Variables
+ */
+/**
+ * Zero size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Tiny size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Mini size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Small size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Medium size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Large size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Huge size variable
+ *
+ * @nuclide
+ * @section Size Variables
+ */
+/**
+ * Zero space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Small space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Half space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Large space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Full space variable
+ *
+ * @nuclide
+ * @section Space Variables
+ */
+/**
+ * Zero' variable
+ *
+ * @nuclide
+ * @section Other Variables
+ */
+/**
+ * Default shadow style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--shadow();
+ */
+/**
+ * Default circle style.
+ *
+ * @mixin
+ * @section Misc Mixins
+ * @example
+ *  @include app--circle();
+ */
+/**
+ * Article on Homepage.
+ *
+ * @molecule Article
+ * @section Homepage
+ * @molecule Icon Buttons
+ * @markup
+ *  <article class="app-homepage-article">
+ *    <h3>О проекте</h3>
+ *    <p>
+ *      Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению.' }}
+ *    </p>
+ *  </article>
+ */
+.app-homepage-article {
+  padding: 15px;
+  text-align: center; }
+  .app-homepage-article h3 {
+    font-size: x-large;
+    font-weight: bold; }
 
 /*# sourceMappingURL=homepage.3f98799ebc2065c90006.css.map*/

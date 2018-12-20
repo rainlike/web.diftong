@@ -8,16 +8,17 @@
  * @mixin
  * @section Calculation Mixins
  * @param $subtrahend subtraction value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-sub(10%);
  *  @include app--calc-sub(5px, width);
  *  @include app--calc-sub(7em, height);
  */
-@mixin app--calc-sub($subtrahend, $property: width) {
-  #{$property}: -webkit-calc(100% - #{$subtrahend});
-  #{$property}:    -moz-calc(100% - #{$subtrahend});
-  #{$property}:         calc(100% - #{$subtrahend});
+@mixin app--calc-sub($subtrahend, $basis: 100%, $property: width) {
+  #{$property}: -webkit-calc(#{$basis} - #{$subtrahend});
+  #{$property}:    -moz-calc(#{$basis} - #{$subtrahend});
+  #{$property}:         calc(#{$basis} - #{$subtrahend});
 }
 
 /**
@@ -26,14 +27,15 @@
  * @mixin
  * @section Calculation Mixins
  * @param $addend addend value
+ * @param $basis basis of calculation
  * @param $property calculated property
  * @example
  *  @include app--calc-add(10%);
  *  @include app--calc-add(5px, width);
  *  @include app--calc-add(7em, height);
  */
-@mixin app--calc-add($addend, $property: width) {
-  #{$property}: -webkit-calc(100% + #{$addend});
-  #{$property}:    -moz-calc(100% + #{$addend});
-  #{$property}:         calc(100% + #{$addend});
+@mixin app--calc-add($addend, $basis: 100%, $property: width) {
+  #{$property}: -webkit-calc(#{$basis} + #{$addend});
+  #{$property}:    -moz-calc(#{$basis} + #{$addend});
+  #{$property}:         calc(#{$basis} + #{$addend});
 }

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Portal-Card on Homepage.
+ *
+ * @molecule Portal-Card
+ * @section Homepage
+ * @molecule Icon Buttons
+ * @markup
+ *  <div class="app-homepage-portal-card">
+ *    <a href="#">
+ *      <p class="app-homepage-portal-card__title">{{ Español }}</p>
+ *      <p class="app-homepage-portal-card__caption">
+ *        For anyone who wants to know English, we have created this site, completely dedicated to its study. It has everything you need to learn English online for free.
+ *      </p>
+ *    </a>
+ *  </div>
+ */
+.#{$prefix}-homepage-portal-card {
+  @include app--calc-sub($clipboard-indent * 2, 50%);
+  @include app--lighten($color-warning, 30%, "bg");
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  margin:         $clipboard-indent;
+  box-sizing:     border-box;
+  border:         5px solid $color-warning;
+  cursor:         pointer;
+
+  :hover,
+  :active {
+    @include app--lighten($color-warning, 10%, "bg");
+  }
+
+  a {
+    text-decoration: none;
+    color:           $color-black;
+  }
+
+  &__title {
+    text-align:  center;
+    font-size:   xx-large;
+    font-weight: bold;
+  }
+
+  &__caption {
+    text-align: center;
+  }
+}
