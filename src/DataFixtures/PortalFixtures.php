@@ -36,6 +36,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         [
             'title' => 'English',
             'caption' => '@CAPTION',
+            'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
             'language' => 'language-en',
             'uri' => 'english',
@@ -44,6 +45,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         [
             'title' => 'Spanish',
             'caption' => '@CAPTION',
+            'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
             'language' => 'language-es',
             'uri' => 'spanish',
@@ -60,6 +62,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         [
             'title' => 'Russian',
             'caption' => '@CAPTION',
+            'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
             'language' => 'language-ru',
             'uri' => 'russian',
@@ -68,6 +71,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         [
             'title' => 'Polish',
             'caption' => '@CAPTION',
+            'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
             'language' => 'language-pl',
             'uri' => 'polish',
@@ -90,6 +94,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             $entity = new Portal();
             $entity->setTitle($portal['title']);
             $entity->setCaption($portal['caption']);
+            $entity->setPreview($portal['preview']);
             $entity->setDescription($portal['description']);
             $entity->setLanguage($this->getReference($portal['language']));
             $entity->setUri($portal['uri'] ?? null);

@@ -22,6 +22,7 @@ use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 
 use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
+use App\Entity\Library\Traits\Preview\TranslatableRequired as PreviewField;
 use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 use App\Entity\Library\Traits\Description\TranslatableRequired as DescriptionField;
 
@@ -46,6 +47,7 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     use UriField;
     use TitleField;
     use CaptionField;
+    use PreviewField;
     use DescriptionField;
     use LocaleField;
 
