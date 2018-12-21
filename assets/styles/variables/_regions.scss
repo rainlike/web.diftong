@@ -4,12 +4,20 @@
 // Clipboard
 // ====================
 /**
- * Basic indent for Clipboard
+ * Basic vertical indent for Clipboard elements
  *
  * @nuclide
  * @section Regions Variables
  */
-$clipboard-indent: 15px;
+$clipboard-indent-vertical: 25px;
+
+/**
+ * Basic horizontal indent for Clipboard elements
+ *
+ * @nuclide
+ * @section Regions Variables
+ */
+$clipboard-indent-horizontal: 15px;
 
 // ====================
 // Footer

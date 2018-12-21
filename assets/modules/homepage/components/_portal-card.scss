@@ -8,7 +8,6 @@
  *
  * @molecule Portal-Card
  * @section Homepage
- * @molecule Icon Buttons
  * @markup
  *  <div class="app-homepage-portal-card">
  *    <a href="#">
@@ -20,12 +19,12 @@
  *  </div>
  */
 .#{$prefix}-homepage-portal-card {
-  @include app--calc-sub($clipboard-indent * 2, 50%);
+  @include app--calc-sub($clipboard-indent-horizontal * 2, 50%);
   @include app--lighten($color-warning, 30%, "bg");
   display:        flex;
   flex-direction: column;
   align-items:    center;
-  margin:         $clipboard-indent;
+  margin:         $clipboard-indent-vertical $clipboard-indent-horizontal;
   box-sizing:     border-box;
   border:         5px solid $color-warning;
   cursor:         pointer;

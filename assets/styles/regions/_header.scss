@@ -107,7 +107,9 @@
     padding:   0.1rem 0.7rem;
 
     .#{$prefix}-mdi {
-      font-size: 30px;
+      .mdi {
+        font-size: 30px;
+      }
     }
   }
 }

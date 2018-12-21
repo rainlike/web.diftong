@@ -40,16 +40,16 @@
  *  @include app--button(#4CAF50, #657383);
  */
 @mixin app--button-paint($bg-color: $color-primary, $color: $color-black) {
-  color:            $color;
+  color: $color;
   background-color: $bg-color;
 
   &:hover {
-    color:            $color;
+    color: $color;
     background-color: darken($bg-color, $button-hover-rank);
   }
 
   &:active {
-    color:            $color;
+    color: $color;
     background-color: darken($bg-color, $button-active-rank);
   }
 
@@ -58,8 +58,8 @@
   }
 
   &:disabled {
-    color:            $color;
-    cursor:           not-allowed;
+    color:  $color;
+    cursor: not-allowed;
     background-color: darken($bg-color, $button-active-rank);
   }
 }

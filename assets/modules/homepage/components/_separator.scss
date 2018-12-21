@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Separator of Homepage elements.
+ *
+ * @molecule Separator
+ * @section Homepage
+ * @markup
+ *  <hr class="app-homepage-separator"/>
+ */
+.#{$prefix}-homepage-separator {
+  width:  100%;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba($color-black, 0), rgba($color-black, 0.75), rgba($color-black, 0));
+}

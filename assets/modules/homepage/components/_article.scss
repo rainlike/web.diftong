@@ -8,7 +8,6 @@
  *
  * @molecule Article
  * @section Homepage
- * @molecule Icon Buttons
  * @markup
  *  <article class="app-homepage-article">
  *    <h3>About project</h3>
@@ -18,7 +17,7 @@
  *  </article>
  */
 .#{$prefix}-homepage-article {
-  padding:    $clipboard-indent;
+  padding:    10px 45px;
   text-align: center;
 
   h3 {

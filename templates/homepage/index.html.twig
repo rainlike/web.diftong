@@ -11,19 +11,43 @@
             {% endfor %}
         </section>
     {% endif %}
-    <section class="app-homepage__layer">
-        <article class="app-homepage-article">
-            <h3>{{ 'О проекте'|trans }}</h3>
-            <p>
-                {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь вы найдете все необходимое для того, чтобы улучшить ваши знания и навыки владения английским языком. Изучайте английский язык вместе с нами, общайтесь и задавайте вопросы на форуме, проверяйте и развивайте ваши знания с помощью интерактивных онлайн тестов и игр. Для лучшего понимания теоретических основ английского языка, к вашим услугам наиболее полное и доступное изложение грамматики английского языка, фонетики, а также особенностей английской лексики. Рекомендации по лучшим методикам изучения ждут вас в разделе статей, посвященных теме изучения английского языка. Развивайте практические навыки владения английским языком через чтение анекдотов, топиков и английских песен. Пополняйте ваш словарный запас идиомами английского языка и пословицами. Если вы хотите изучать английский язык с помощью профессиональных преподавателей, ищите информацию о них в разделах курсы и репетиторы английского языка.'|trans|raw|nl2br }}
-            </p>
+
+    <hr class="app-homepage-separator"/>
+
+    <section class="app-homepage__layer app-homepage-infograph__layer">
+        <article class="app-homepage-infograph">
+            <span class="app-mdi"><i class="mdi mdi-translate"></i></span>
+            <span class="app-homepage-infograph__title">{{ 'infograph.x.title'|trans({}, 'homepage')|upper }}</span>
+            <hr/>
+            <p class="app-homepage-infograph__text">{{ 'infograph.x.text'|trans({}, 'homepage') }}</p>
+        </article>
+        <article class="app-homepage-infograph">
+            <span class="app-mdi"><i class="mdi mdi-lightbulb-outline"></i></span>
+            <span class="app-homepage-infograph__title">{{ 'infograph.y.title'|trans({}, 'homepage')|upper }}</span>
+            <hr/>
+            <p class="app-homepage-infograph__text">{{ 'infograph.y.text'|trans({}, 'homepage') }}</p>
+        </article>
+        <article class="app-homepage-infograph">
+            <span class="app-mdi"><i class="mdi mdi-ear-hearing"></i></span>
+            <span class="app-homepage-infograph__title">{{ 'infograph.z.title'|trans({}, 'homepage')|upper }}</span>
+            <hr/>
+            <p class="app-homepage-infograph__text">{{ 'infograph.z.text'|trans({}, 'homepage') }}</p>
         </article>
     </section>
+
+    <hr class="app-homepage-separator"/>
+
     <section class="app-homepage__layer">
         <article class="app-homepage-article">
-            <h3>{{ 'Наши цели'|trans }}</h3>
+            <h3>{{ 'article.about_us.title'|trans({}, 'homepage') }}</h3>
             <p>
-                {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь вы найдете все необходимое для того, чтобы улучшить ваши знания и навыки владения английским языком. Изучайте английский язык вместе с нами, общайтесь и задавайте вопросы на форуме, проверяйте и развивайте ваши знания с помощью интерактивных онлайн тестов и игр. Для лучшего понимания теоретических основ английского языка, к вашим услугам наиболее полное и доступное изложение грамматики английского языка, фонетики, а также особенностей английской лексики. Рекомендации по лучшим методикам изучения ждут вас в разделе статей, посвященных теме изучения английского языка. Развивайте практические навыки владения английским языком через чтение анекдотов, топиков и английских песен. Пополняйте ваш словарный запас идиомами английского языка и пословицами. Если вы хотите изучать английский язык с помощью профессиональных преподавателей, ищите информацию о них в разделах курсы и репетиторы английского языка.'|trans|raw|nl2br }}
+                {{ 'article.about_us.text'|trans({}, 'homepage') }}
+            </p>
+        </article>
+        <article class="app-homepage-article">
+            <h3>{{ 'article.our_goals.title'|trans({}, 'homepage') }}</h3>
+            <p>
+                {{ 'article.our_goals.text'|trans({}, 'homepage') }}
             </p>
         </article>
     </section>

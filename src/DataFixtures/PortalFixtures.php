@@ -54,6 +54,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
         [
             'title' => 'Ukrainian',
             'caption' => '@CAPTION',
+            'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
             'language' => 'language-uk',
             'uri' => 'ukrainian',

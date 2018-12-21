@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Infograph on Homepage.
+ *
+ * @molecule Infograph
+ * @section Homepage
+ * @markup
+ *  <article class="app-homepage-infograph">
+ *    <span class="app-mdi"><i class="mdi mdi-ear-hearing"></i></span>
+ *    <span class="app-homepage-infograph__title">Быстро</span>
+ *    <hr/>
+ *    <p class="app-homepage-infograph__text">Около 93% наших репетиторов звонят клиенту в тот же день.</p>
+ *  </article>
+ */
+.#{$prefix}-homepage-infograph {
+  &__layer {
+    flex-direction: row;
+    flex-wrap:      nowrap;
+  }
+
+  display:         flex;
+  flex-direction:  column;
+  justify-content: flex-start;
+  align-items:     center;
+  flex-grow:       1;
+  width:           calc(100% / 3);
+  padding:         15px 45px;
+
+  .#{$prefix}-mdi {
+    margin: 25px 0;
+
+    .mdi {
+      font-size: 75px;
+      color:     $color-warning;
+
+    }
+  }
+
+  &__title {
+    font-size:      larger;
+    font-weight:    bold;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  hr {
+    width:  50%;
+    border: 2px solid $color-warning;
+  }
+}
