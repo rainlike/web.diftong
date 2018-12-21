@@ -1917,7 +1917,7 @@
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -1929,7 +1929,7 @@
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -4541,7 +4541,7 @@
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -4553,7 +4553,7 @@
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -15203,7 +15203,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -15215,7 +15215,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -17982,7 +17982,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -17994,7 +17994,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -20629,7 +20629,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -20641,7 +20641,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -23263,7 +23263,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -23275,7 +23275,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -25902,7 +25902,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -25914,7 +25914,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -30898,7 +30898,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -30910,7 +30910,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -33830,7 +33830,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -33842,7 +33842,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -36470,7 +36470,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -36482,7 +36482,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -39106,7 +39106,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -39118,7 +39118,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -41767,7 +41767,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -41779,7 +41779,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -42482,9 +42482,9 @@ html {
  * @markup
  *  <div class="app-homepage-portal-card">
  *    <a href="#">
- *      <p class="app-homepage-portal-card__title">{{ Español }}</p>
- *      <p class="app-homepage-portal-card__caption">
- *        {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь есть все необходимое для того, чтобы изучать английский язык онлайн бесплатно.' }}
+ *      <p class="app-homepage-portal-card__title">Español</p>
+ *      <p class="app-homepage-portal-card__preview">
+ *        For anyone who wants to know English, we have created this site, completely dedicated to its study. It has everything you need to learn English online for free.
  *      </p>
  *    </a>
  *  </div>
@@ -42517,7 +42517,7 @@ html {
     text-align: center;
     font-size: xx-large;
     font-weight: bold; }
-  .app-homepage-portal-card__caption {
+  .app-homepage-portal-card__preview {
     text-align: center; }
 
 /* stylelint-disable-next-line value-keyword-case */
@@ -44438,7 +44438,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the lightness by
  * @param $type should be only color or bg
  * @example
@@ -44450,7 +44450,7 @@ html {
  *
  * @mixin
  * @section Color Mixins
- * @param $property target color
+ * @param $color target color
  * @param $amount the amount to increase the darkness by
  * @param $type should be only color or bg
  * @example
@@ -45152,9 +45152,9 @@ html {
  * @molecule Icon Buttons
  * @markup
  *  <article class="app-homepage-article">
- *    <h3>О проекте</h3>
+ *    <h3>About project</h3>
  *    <p>
- *      Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению.' }}
+ *      For anyone who wants to know English, we have created this site, completely dedicated to its study.
  *    </p>
  *  </article>
  */
