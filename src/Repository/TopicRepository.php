@@ -9,9 +9,11 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Topic;
 
+use App\Repository\Library\Interfaces\ILast;
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISeoable;
 
+use App\Repository\Library\Traits\Last as LastMethods;
 use App\Repository\Library\Traits\Enabled as EnabledMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
 
@@ -25,8 +27,9 @@ use App\Repository\Library\Traits\Seoable as SeoableMethods;
  * @method Topic[]    findAll()
  * @method Topic[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TopicRepository extends ServiceEntityRepository implements IBasic, ISeoable
+class TopicRepository extends ServiceEntityRepository implements IBasic, ISeoable, ILast
 {
+    use LastMethods;
     use EnabledMethods;
     use SeoableMethods;
 

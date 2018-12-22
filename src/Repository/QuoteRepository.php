@@ -11,9 +11,11 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Quote;
 
+use App\Repository\Library\Traits\Random as RandomMethods;
 use App\Repository\Library\Traits\Enabled as EnabledMethods;
 
 use App\Repository\Library\Interfaces\IBasic;
+use App\Repository\Library\Interfaces\IRandom;
 
 /**
  * Class QuoteRepository
@@ -25,8 +27,9 @@ use App\Repository\Library\Interfaces\IBasic;
  * @method Quote[]    findAll()
  * @method Quote[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class QuoteRepository extends ServiceEntityRepository implements IBasic
+class QuoteRepository extends ServiceEntityRepository implements IBasic, IRandom
 {
+    use RandomMethods;
     use EnabledMethods;
 
     /**
@@ -37,34 +40,5 @@ class QuoteRepository extends ServiceEntityRepository implements IBasic
     public function __construct(Registry $registry)
     {
         parent::__construct($registry, Quote::class);
-    }
-
-    /**
-     * Get random quote record
-     *
-     * @return Quote|null
-     * @throws NonUniqueResultException
-     */
-    public function getRandom(): ?Quote
-    {
-        $dbIds = $this->createQueryBuilder('quote')
-            ->select('quote.id')
-            ->where('quote.enabled = :condition')
-            ->setParameter('condition', true)
-            ->getQuery()
-            ->getResult();
-
-        $ids = \array_column($dbIds, 'id');
-        \shuffle($ids);
-        $randomId = \end($ids);
-
-        $randomRecord = $this->createQueryBuilder('quote')
-            ->select('quote')
-            ->where('quote.id = :random_id')
-            ->setParameter('random_id', $randomId)
-            ->getQuery()
-            ->getOneOrNullResult();
-
-        return $randomRecord;
     }
 }

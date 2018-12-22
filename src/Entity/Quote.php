@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\IBasic;
+use App\Entity\Library\Interfaces\IRandomly;
 
 /**
  * Class Quote
@@ -20,7 +21,7 @@ use App\Entity\Library\Interfaces\IBasic;
  * @ORM\Entity(repositoryClass="App\Repository\QuoteRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Quote extends BasicEntity implements IBasic
+class Quote extends BasicEntity implements IBasic, IRandomly
 {
     /**
      * @var string

@@ -26,6 +26,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Translation\TranslatorInterface as Translator;
 
 use App\Entity\Quote;
+use App\Entity\Topic;
+
 use App\Service\Library;
 use App\Service\Logotype;
 use App\Service\LanguageSwitcher;
@@ -129,9 +131,11 @@ class CommonController extends Controller
     public function renderSidebar(Translator $translator): Response
     {
         $quote = $this->getDoctrine()->getRepository(Quote::class)->getRandom();
+        $topic = $this->getDoctrine()->getRepository(Topic::class)->getLast();
 
         return $this->render('regions/sidebar.html.twig', [
-            'quote' => $quote
+            'quote' => $quote,
+            'topic' => $topic
         ]);
     }
 

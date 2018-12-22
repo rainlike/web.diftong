@@ -1,7 +1,7 @@
 <?php
 /**
  * ILast Interface
- * Marks repositories which should has methods for getting SEO
+ * Marks repositories which should has method getting random record
  *
  * @package App\Repository\Library\Interfaces
  * @version 1.0.0
@@ -13,5 +13,15 @@ declare(strict_types=1);
 
 namespace App\Repository\Library\Interfaces;
 
-/** Interface ISeoable */
-interface ISeoable {}
+use App\Entity\Library\Interfaces\IRandomly;
+
+/** Interface IRandom */
+interface IRandom
+{
+    /**
+     * Get random record
+     *
+     * @return IRandomly|null
+     */
+    public function getRandom();
+}
