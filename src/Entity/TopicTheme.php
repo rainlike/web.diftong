@@ -16,39 +16,34 @@ use App\Entity\Library\BasicEntity;
 use App\Entity\Library\Interfaces\ISlug;
 use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
-use App\Entity\Library\Interfaces\ILastable;
 use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\Unique as UriField;
-use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
 use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
+use App\Entity\Library\Traits\Description\TranslatableNonRequired as DescriptionField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
 
-use App\Entity\TopicTheme as Theme;
-
 /**
- * Class Topic
- * Contains topics
+ * Class TopicTheme
+ * Contains topic's themes
  *
  * @package App\Entity
  * @version 1.0.0
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
- * @ORM\Table(name="app_topic")
- * @ORM\Entity(repositoryClass="App\Repository\TopicRepository")
- * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicTranslation")
+ * @ORM\Table(name="app_topic_theme")
+ * @ORM\Entity(repositoryClass="App\Repository\TopicThemeRepository")
+ * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicThemeTranslation")
  */
-class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug, ILastable
+class TopicTheme extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug
 {
     use TitleField;
-    use CaptionField;
+    use DescriptionField;
     use UriField;
-    use ContentField;
     use LocaleField;
 
     use SlugMethods;
@@ -68,29 +63,15 @@ class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITran
     private $slug;
 
     /**
-     * @var Portal
-     * @ORM\ManyToOne(targetEntity="Portal", inversedBy="topics")
-     * @ORM\JoinColumn(name="portal", referencedColumnName="id", nullable=false, unique=false)
-     * @Assert\NotBlank(
-     *      message = "Portal should not be blank."
-     * )
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Topic", mappedBy="theme")
      */
-    private $portal;
-
-    /**
-     * @var Theme
-     * @ORM\ManyToOne(targetEntity="TopicTheme", inversedBy="topics")
-     * @ORM\JoinColumn(name="topic_theme", referencedColumnName="id", nullable=false, unique=false)
-     * @Assert\NotBlank(
-     *      message = "Theme should not be blank."
-     * )
-     */
-    private $theme;
+    private $topics;
 
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(
-     *     targetEntity="App\Entity\Translations\TopicTranslation",
+     *     targetEntity="App\Entity\Translations\TopicThemeTranslation",
      *     mappedBy="object",
      *     cascade={"persist", "remove"}
      * )
@@ -102,6 +83,7 @@ class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITran
      */
     public function __construct()
     {
+        $this->topics = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
 
@@ -112,50 +94,36 @@ class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITran
     }
 
     /**
-     * Set portal
+     * Add topic
      *
-     * @param Portal $portal
+     * @param Topic $topic
      * @return self
      */
-    public function setPortal(Portal $portal): self
+    public function addTopic(Topic $topic): self
     {
-        $this->portal = $portal;
-        $portal->addTopic($this);
+        $this->topics[] = $topic;
 
         return $this;
     }
 
     /**
-     * Get portal
+     * Remove topic
      *
-     * @return Portal|null
+     * @param Topic $topic
+     * @return void
      */
-    public function getPortal(): ?Portal
+    public function removeTopic(Topic $topic): void
     {
-        return $this->portal;
+        $this->topics->removeElement($topic);
     }
 
     /**
-     * Set theme
+     * Get topics
      *
-     * @param Theme $theme
-     * @return self
+     * @return ArrayCollection|null
      */
-    public function setTheme(Theme $theme): self
+    public function getTopics(): ?ArrayCollection
     {
-        $this->theme = $theme;
-        $theme->addTopic($this);
-
-        return $this;
-    }
-
-    /**
-     * Get theme
-     *
-     * @return Theme|null
-     */
-    public function getTheme(): ?Theme
-    {
-        return $this->theme;
+        return $this->topics;
     }
 }

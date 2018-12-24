@@ -1,7 +1,7 @@
 /* tslint:disable */
 
 /** Import common */
-import '../../common';
+import '../../app';
 
 /** Import styles */
 import './homepage.scss';

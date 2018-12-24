@@ -176,7 +176,7 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
      */
     public function addTopic(Topic $topic): self
     {
-        $this->theories[] = $topic;
+        $this->topics[] = $topic;
 
         return $this;
     }
@@ -189,7 +189,7 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
      */
     public function removeTopic(Topic $topic): void
     {
-        $this->theories->removeElement($topic);
+        $this->topics->removeElement($topic);
     }
 
     /**
