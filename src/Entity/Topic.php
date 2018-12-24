@@ -22,7 +22,6 @@ use App\Entity\Library\Interfaces\ITranslatable;
 use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
 use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
@@ -46,7 +45,6 @@ use App\Entity\TopicTheme as Theme;
 class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug, ILastable
 {
     use TitleField;
-    use CaptionField;
     use UriField;
     use ContentField;
     use LocaleField;
@@ -80,7 +78,7 @@ class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITran
     /**
      * @var Theme
      * @ORM\ManyToOne(targetEntity="TopicTheme", inversedBy="topics")
-     * @ORM\JoinColumn(name="topic_theme", referencedColumnName="id", nullable=false, unique=false)
+     * @ORM\JoinColumn(name="theme", referencedColumnName="id", nullable=false, unique=false)
      * @Assert\NotBlank(
      *      message = "Theme should not be blank."
      * )
