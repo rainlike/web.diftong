@@ -130,12 +130,22 @@ class CommonController extends Controller
      */
     public function renderSidebar(Translator $translator): Response
     {
+        $topicsCount = $this->container->getParameter('sidebar.topics.count');
+
         $quote = $this->getDoctrine()->getRepository(Quote::class)->getRandom();
-        $topic = $this->getDoctrine()->getRepository(Topic::class)->getLast();
+        $topics = $this->getDoctrine()->getRepository(Topic::class)->getLasts($topicsCount);
+
+        $topics2 = [
+            $topics[0],
+            $topics[0],
+            $topics[0],
+            $topics[0],
+            $topics[0]
+        ];
 
         return $this->render('regions/sidebar.html.twig', [
             'quote' => $quote,
-            'topic' => $topic
+            'topics' => $topics2
         ]);
     }
 

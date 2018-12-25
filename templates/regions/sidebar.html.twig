@@ -5,4 +5,44 @@
             <span class="app-sidebar-quote__author">{{ quote.author }}</span>
         </article>
     {% endif %}
+    {% if topics %}
+        <hr class="app-homepage-separator">
+        <section class="app-sidebar-topics">
+            <h3 class="app-sidebar-topics__headline">
+                <a href="#">
+                    {{ 'topic.last_topics'|trans({}, 'sidebar') }}
+                    <span class="app-mdi"><i class="mdi mdi-arrow-right-thick"></i></span>
+                </a>
+            </h3>
+            {% for topic in topics %}
+                <div class="app-sidebar-topic">
+                    <h4 class="app-sidebar-topic__title">
+                        <a href="#">
+                            {{ topic.title }}
+                        </a>
+                    </h4>
+                    <ul class="app-sidebar-topic__list">
+                        <li>
+                            <span class="app-sidebar-topic__list-item">
+                                {{ 'topic.date'|trans({}, 'sidebar')~': ' }}
+                            </span>
+                            <span>{{ topic.created|date('d-m-Y') }}</span>
+                        </li>
+                        <li>
+                            <span class="app-sidebar-topic__list-item">
+                                {{ 'topic.theme'|trans({}, 'sidebar')~': ' }}
+                            </span>
+                            <span>{{ topic.theme.title }}</span>
+                        </li>
+                        <li>
+                            <span class="app-sidebar-topic__list-item">
+                                {{ 'topic.portal'|trans({}, 'sidebar')~': ' }}
+                            </span>
+                            <span>{{ topic.portal.title|lower }}</span>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </section>
+    {% endif %}
 </aside>

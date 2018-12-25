@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "variables";
+
 /**
  * @structure Body
  * @section Global
@@ -12,4 +14,20 @@ html {
   font-size:   14px;
   font-weight: normal;
   line-height: 20px;
+}
+
+/**
+ * @atom Link
+ * @section Global
+ * @markup
+ *  <a href="#">a link</span>
+ */
+a {
+  color: $color-black;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
 }

@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace App\Repository\Library\Interfaces;
 
 use Doctrine\ORM\Query;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\Interfaces\ILastable;
 
@@ -33,4 +34,20 @@ interface ILast
      * @return Query
      */
     public function getLastQuery(): Query;
+
+    /**
+     * Get lasts records
+     *
+     * @param int $count
+     * @return array|ArrayCollection
+     */
+    public function getLasts(int $count);
+
+    /**
+     * Get query for getting lasts records
+     *
+     * @param int $count
+     * @return Query
+     */
+    public function getLastsQuery(int $count): Query;
 }

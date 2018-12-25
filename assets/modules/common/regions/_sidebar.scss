@@ -9,13 +9,22 @@
  * @structure Sidebar
  * @section Common
  * @markup
- *   <aside class="app-sidebar">Sidebar here</aside>
+ *  <aside class="app-sidebar">
+ *    <article class="app-sidebar-quote">
+ *      <blockquote>Once I get on a puzzle, I can't get off.</blockquote>
+ *      <span class="app-sidebar-quote__author">Richard Phillips Feynman</span>
+ *    </article>
+ *  </aside>
  */
 .#{$prefix}-sidebar {
   @include app--box-sizing();
   width:     350px;
   flex-grow: 0;
   padding:   15px 0 0 15px;
+
+  & > *:not(:first-child) {
+    margin-top: 15px;
+  }
 
   &-quote {
     @include app--box-sizing();
@@ -32,6 +41,31 @@
       text-align: right;
       font-size:  small;
       color:      $color-secondary
+    }
+  }
+
+  &-topics {
+    &__headline {
+      margin:    0 0 15px;
+      font-size: large;
+    }
+  }
+
+  &-topic {
+    margin-top: 5px;
+
+    &__title {
+      margin: 0;
+    }
+
+    &__list {
+      margin:  0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &__list-item {
+      color: $color-secondary;
     }
   }
 }

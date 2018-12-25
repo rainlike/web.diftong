@@ -55,7 +55,7 @@ class TwigExtension extends AbstractExtension
      */
     public function hasParameter(string $parameter): bool
     {
-        return $this->container->has($parameter);
+        return $this->container->hasParameter($parameter);
     }
 
     /**
@@ -66,8 +66,8 @@ class TwigExtension extends AbstractExtension
      */
     public function getParameter(string $parameter)
     {
-        return $this->container->has($parameter)
-            ? $this->container->get($parameter)
+        return $this->container->hasParameter($parameter)
+            ? $this->container->getParameter($parameter)
             : null;
     }
 }

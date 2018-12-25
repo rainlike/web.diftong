@@ -20,9 +20,9 @@ use App\Entity\Library\Interfaces\ILastable;
 use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\Unique as UriField;
+use App\Entity\Library\Traits\Title\Required as TitleField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
-use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
@@ -40,14 +40,12 @@ use App\Entity\TopicTheme as Theme;
  * @author Alexander Saveliev <alex@spbcrew.com>
  * @ORM\Table(name="app_topic")
  * @ORM\Entity(repositoryClass="App\Repository\TopicRepository")
- * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicTranslation")
  */
-class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug, ILastable
+class Topic extends BasicEntity implements IBasic, ISeoable, ISlug, ILastable
 {
     use TitleField;
     use UriField;
     use ContentField;
-    use LocaleField;
 
     use SlugMethods;
     use TranslationMethods;
@@ -84,24 +82,6 @@ class Topic extends BasicEntity implements Translatable, IBasic, ISeoable, ITran
      * )
      */
     private $theme;
-
-    /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(
-     *     targetEntity="App\Entity\Translations\TopicTranslation",
-     *     mappedBy="object",
-     *     cascade={"persist", "remove"}
-     * )
-     */
-    private $translations;
-
-    /**
-     * Topic constructor
-     */
-    public function __construct()
-    {
-        $this->translations = new ArrayCollection();
-    }
 
     /** @return string */
     public function __toString(): string

@@ -10,8 +10,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 use App\Entity\Topic;
 
-use App\DataFixtures\Library\Traits\Translations as TranslationMethods;
-
 use App\Service\Library;
 
 /**
@@ -22,8 +20,6 @@ use App\Service\Library;
  */
 class TopicFixtures extends Fixture implements OrderedFixtureInterface
 {
-    use TranslationMethods;
-
     /**
      * List of preset topics
      * @var array
@@ -65,12 +61,6 @@ class TopicFixtures extends Fixture implements OrderedFixtureInterface
             $this->addReference('topic-'.Library::slug($topic['title']), $entity);
 
             $manager->flush();
-
-            /** @var array $translations */
-            $translations = $portal['translations'] ?? null;
-            if ($translations) {
-                $this->saveAllTranslations($translations, $entity, $manager);
-            }
         }
     }
 

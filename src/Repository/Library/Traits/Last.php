@@ -18,6 +18,8 @@ use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 use App\Entity\Library\Interfaces\ILastable;
 
 /** Trait Last */
@@ -43,7 +45,34 @@ trait Last
     {
         /** @var QueryBuilder $qb */
         $qb = $this->createQueryBuilder('target')
-            ->setMaxResults( 1 )
+            ->setMaxResults(1)
+            ->orderBy('target.id', 'DESC');
+
+        return $qb->getQuery();
+    }
+
+    /**
+     * Get lasts records
+     *
+     * @param int $count
+     * @return array|ArrayCollection
+     */
+    public function getLasts(int $count)
+    {
+        return $this->getLastsQuery($count)->getResult();
+    }
+
+    /**
+     * Get query for getting lasts records
+     *
+     * @param int $count
+     * @return Query
+     */
+    public function getLastsQuery(int $count): Query
+    {
+        /** @var QueryBuilder $qb */
+        $qb = $this->createQueryBuilder('target')
+            ->setMaxResults($count)
             ->orderBy('target.id', 'DESC');
 
         return $qb->getQuery();
