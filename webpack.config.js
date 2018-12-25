@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const ExtractPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanPlugin = require('webpack-cleanup-plugin');
@@ -21,7 +22,10 @@ module.exports = (env = process.env.APP_ENV) => {
         mode: configs.mode,
         context: __dirname + '/assets',
         entry: {
-            homepage: './modules/homepage/homepage'
+            common: './modules/common/common',
+            homepage: './modules/homepage/homepage',
+            portal: './modules/portal/portal',
+            backoffice: './modules/backoffice/backoffice'
         },
         output: {
             path: __dirname + '/public/web',

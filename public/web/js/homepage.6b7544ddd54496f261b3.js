@@ -155,24 +155,6 @@ var app_homepage =
 /************************************************************************/
 /******/ ({
 
-/***/ "./common.ts":
-/*!*******************!*\
-  !*** ./common.ts ***!
-  \*******************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var es5_shim__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! es5-shim */ "../node_modules/es5-shim/es5-shim.js");
-/* harmony import */ var es5_shim__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(es5_shim__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var material_design_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! material-design-icons */ "../node_modules/material-design-icons/index.js");
-/* harmony import */ var material_design_icons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(material_design_icons__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-/***/ }),
-
 /***/ "./modules/homepage/homepage.scss":
 /*!****************************************!*\
   !*** ./modules/homepage/homepage.scss ***!
@@ -193,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../common */ "./common.ts");
+/* harmony import */ var _vendors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../vendors */ "./vendors.ts");
 /* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage.scss */ "./modules/homepage/homepage.scss");
 /* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_homepage_scss__WEBPACK_IMPORTED_MODULE_1__);
 
@@ -202,4 +184,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 /******/ });
-//# sourceMappingURL=homepage.3f98799ebc2065c90006.js.map
+//# sourceMappingURL=homepage.6b7544ddd54496f261b3.js.map

@@ -7,7 +7,7 @@ const library = require('./assets/library');
 plugins.sass.compiler = require('node-sass');
 
 gulp.task('nucleus', () => {
-    const srcFile = './assets/styles/nucleus.scss';
+    const srcFile = './assets/nucleus.scss';
     const distFile = 'nucleus.css';
     const distPath = './docs/nucleus/';
 

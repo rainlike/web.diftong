@@ -4,4 +4,4 @@
 import '../../vendors';
 
 /** Import styles */
-import './homepage.scss';
+import './backoffice.scss';

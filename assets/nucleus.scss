@@ -3,13 +3,13 @@
 // ====================
 // Modules
 // ====================
-@import "common";
-@import "../modules/homepage/homepage";
+@import "modules/common/common";
+@import "modules/homepage/homepage";
 
 // ====================
 // Imports
 // ====================
-@import "../styles/elements/colors";
+@import "modules/common/elements/colors";
 
 // ====================
 // Resets

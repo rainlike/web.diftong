@@ -2130,7 +2130,53 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
+/***/ }),
+
+/***/ "./modules/common/common.scss":
+/*!************************************!*\
+  !*** ./modules/common/common.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./modules/common/common.ts":
+/*!**********************************!*\
+  !*** ./modules/common/common.ts ***!
+  \**********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vendors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../vendors */ "./vendors.ts");
+/* harmony import */ var _common_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common.scss */ "./modules/common/common.scss");
+/* harmony import */ var _common_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_common_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+/***/ }),
+
+/***/ "./vendors.ts":
+/*!********************!*\
+  !*** ./vendors.ts ***!
+  \********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var es5_shim__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! es5-shim */ "../node_modules/es5-shim/es5-shim.js");
+/* harmony import */ var es5_shim__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(es5_shim__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var material_design_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! material-design-icons */ "../node_modules/material-design-icons/index.js");
+/* harmony import */ var material_design_icons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(material_design_icons__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
 /***/ })
 
 }]);
-//# sourceMappingURL=common.12b8084ac5a8fe4da528.js.map
+//# sourceMappingURL=common.e6da7192f666a68c4795.js.map

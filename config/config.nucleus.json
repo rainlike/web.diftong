@@ -1,6 +1,6 @@
 {
   "title": "Diftong",
-  "files": ["assets/styles/**/*.scss", "assets/modules/**/*.scss"],
+  "files": ["assets/modules/**/*.scss"],
   "target": "docs/nucleus",
   "css": "./nucleus.css",
   "verbose": 3,
