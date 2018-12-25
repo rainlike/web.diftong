@@ -135,17 +135,9 @@ class CommonController extends Controller
         $quote = $this->getDoctrine()->getRepository(Quote::class)->getRandom();
         $topics = $this->getDoctrine()->getRepository(Topic::class)->getLasts($topicsCount);
 
-        $topics2 = [
-            $topics[0],
-            $topics[0],
-            $topics[0],
-            $topics[0],
-            $topics[0]
-        ];
-
         return $this->render('regions/sidebar.html.twig', [
             'quote' => $quote,
-            'topics' => $topics2
+            'topics' => $topics
         ]);
     }
 
