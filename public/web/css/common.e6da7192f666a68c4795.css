@@ -21701,11 +21701,26 @@ html {
  *   <aside class="app-sidebar">Sidebar here</aside>
  */
 .app-sidebar {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   width: 350px;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  background-color: #8959A8; }
+  padding: 15px 0 0 15px; }
+  .app-sidebar-quote {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 3px solid #000;
+    padding-left: 10px; }
+    .app-sidebar-quote blockquote {
+      margin: 0;
+      font-size: larger; }
+    .app-sidebar-quote__author {
+      display: block;
+      text-align: right;
+      font-size: small;
+      color: #9E9E9E; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**

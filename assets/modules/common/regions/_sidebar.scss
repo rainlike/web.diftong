@@ -12,8 +12,26 @@
  *   <aside class="app-sidebar">Sidebar here</aside>
  */
 .#{$prefix}-sidebar {
+  @include app--box-sizing();
   width:     350px;
   flex-grow: 0;
+  padding:   15px 0 0 15px;
 
-  background-color: #8959A8; // @TODO: debug bg
+  &-quote {
+    @include app--box-sizing();
+    border-left:  3px solid $color-black;
+    padding-left: 10px;
+
+    blockquote {
+      margin:    0;
+      font-size: larger;
+    }
+
+    &__author {
+      display:    block;
+      text-align: right;
+      font-size:  small;
+      color:      $color-secondary
+    }
+  }
 }
