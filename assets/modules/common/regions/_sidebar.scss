@@ -14,6 +14,20 @@
  *      <blockquote>Once I get on a puzzle, I can't get off.</blockquote>
  *      <span class="app-sidebar-quote__author">Richard Phillips Feynman</span>
  *    </article>
+ *    <hr class="app-homepage-separator"/>
+ *    <section class="app-sidebar-topics">
+ *      <h3 class="app-sidebar-topics__headline">
+ *        <a href="#">Last_topics <span class="app-mdi"><i class="mdi mdi-arrow-right-thick"></i></span></a>
+ *      </h3>
+ *      <div class="app-sidebar-topic">
+ *        <h4 class="app-sidebar-topic__title"><a href="#">About me</a></h4>
+ *        <ul class="app-sidebar-topic__list">
+ *          <li><span class="app-sidebar-topic__list-item">date: </span><span>26-12-2018</span></li>
+ *          <li><span class="app-sidebar-topic__list-item">theme: </span><span>My life</span></li>
+ *          <li><span class="app-sidebar-topic__list-item">portal: </span><span>english</span></li>
+ *        </ul>
+ *      </div>
+ *    </section>
  *  </aside>
  */
 .#{$prefix}-sidebar {

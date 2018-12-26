@@ -16,6 +16,18 @@
  *  </nav>
  */
 .#{$prefix}-menu {
-  height: 2.4em;
-  background-color: $color-primary;
+  display:         flex;
+  flex-direction:  row;
+  justify-content: flex-start;
+  align-items:     center;
+  height:     2.4em;
+  margin:     10px 0 0 15px;
+  box-sizing: border-box;
+
+  &__separator {
+    height:       $size-large;
+    margin-left:  $size-mini;
+    margin-right: $size-mini;
+    border-left:  1px solid $color-secondary;
+  }
 }

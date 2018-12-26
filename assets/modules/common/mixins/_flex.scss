@@ -3,16 +3,31 @@
 @import "../variables";
 
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
  */
-@mixin app--flex-center() {
+@mixin app--flex-col-center() {
   display:         flex;
   flex-direction:  column;
+  justify-content: center;
+  align-items:     center;
+}
+
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
+ */
+@mixin app--flex-row-center() {
+  display:         flex;
+  flex-direction:  row;
   justify-content: center;
   align-items:     center;
 }

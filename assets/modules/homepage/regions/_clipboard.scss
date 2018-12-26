@@ -10,7 +10,7 @@
  * @section Homepage
  */
 .#{$prefix}-homepage-clipboard {
-  @include app--flex-center();
+  @include app--flex-col-center();
 }
 
 /**

@@ -1244,12 +1244,20 @@
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -3934,12 +3942,20 @@
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -14916,12 +14932,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -17761,12 +17785,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -20474,12 +20506,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -23174,12 +23214,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -24630,6 +24678,20 @@ a {
  *      <blockquote>Once I get on a puzzle, I can't get off.</blockquote>
  *      <span class="app-sidebar-quote__author">Richard Phillips Feynman</span>
  *    </article>
+ *    <hr class="app-homepage-separator"/>
+ *    <section class="app-sidebar-topics">
+ *      <h3 class="app-sidebar-topics__headline">
+ *        <a href="#">Last_topics <span class="app-mdi"><i class="mdi mdi-arrow-right-thick"></i></span></a>
+ *      </h3>
+ *      <div class="app-sidebar-topic">
+ *        <h4 class="app-sidebar-topic__title"><a href="#">About me</a></h4>
+ *        <ul class="app-sidebar-topic__list">
+ *          <li><span class="app-sidebar-topic__list-item">date: </span><span>26-12-2018</span></li>
+ *          <li><span class="app-sidebar-topic__list-item">theme: </span><span>My life</span></li>
+ *          <li><span class="app-sidebar-topic__list-item">portal: </span><span>english</span></li>
+ *        </ul>
+ *      </div>
+ *    </section>
  *  </aside>
  */
 .app-sidebar {
@@ -25914,12 +25976,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -31012,12 +31082,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -34010,12 +34088,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -35468,8 +35554,28 @@ a {
  *  </nav>
  */
 .app-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 2.4em;
-  background-color: #3F51B5; }
+  margin: 10px 0 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .app-menu__separator {
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-left: 1px solid #9E9E9E; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -36716,12 +36822,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -39418,12 +39532,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -42146,12 +42268,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -44882,12 +45012,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -47592,12 +47730,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -50336,12 +50482,20 @@ a {
  * @section Other Variables
  */
 /**
- * Centered flex element.
+ * Centered flex column element.
  *
  * @mixin
  * @section Grid Flex
  * @example
- *  @include app--flex-center();
+ *  @include app--flex-col-center();
+ */
+/**
+ * Centered flex row element.
+ *
+ * @mixin
+ * @section Grid Flex
+ * @example
+ *  @include app--flex-row-center();
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**

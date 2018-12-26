@@ -58,6 +58,70 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
                     'pl' => 'Logo górnego panelu jako link'
                 ]
             ]
+        ],
+        [
+            'name' => 'menu_show_phonetics',
+            'title' => 'Show phonetics section in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'region' => ValueType::REGION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => '',
+                    'uk' => '',
+                    'ru' => '',
+                    'pl' => ''
+                ]
+            ]
+        ],
+        [
+            'name' => 'menu_show_lexis',
+            'title' => 'Show lexis section in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'region' => ValueType::REGION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => '',
+                    'uk' => '',
+                    'ru' => '',
+                    'pl' => ''
+                ]
+            ]
+        ],
+        [
+            'name' => 'menu_show_articles',
+            'title' => 'Show articles in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'region' => ValueType::REGION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => '',
+                    'uk' => '',
+                    'ru' => '',
+                    'pl' => ''
+                ]
+            ]
+        ],
+        [
+            'name' => 'menu_show_lyrics',
+            'title' => 'Show lyrics in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'region' => ValueType::REGION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => '',
+                    'uk' => '',
+                    'ru' => '',
+                    'pl' => ''
+                ]
+            ]
         ]
     ];
 

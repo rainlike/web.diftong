@@ -103,6 +103,14 @@ services:
     autowire: true
     autoconfigure: true
 
+  App\Service\Menu:
+    autowire: true
+    autoconfigure: true
+
+  App\Service\Breadcrumbs:
+    autowire: true
+    autoconfigure: true
+
   App\Service\Settings:
     autowire: true
     autoconfigure: true
