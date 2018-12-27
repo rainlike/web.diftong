@@ -1,30 +1,14 @@
 <nav class="app-menu">
-    <span>{{ '<' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Грамматика' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Фонетика' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Лексика' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Статьи' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Топики' }}</span>
-    <span class="app-menu__separator"></span>
-    <span>{{ 'Тексты песен' }}</span>
+    {% if menu.back_link is defined %}
+        <a href="{{ menu.back_link }}" class="app-menu__item">{{ '<' }}</a>
+        <span class="app-menu__separator"></span>
+    {% endif %}
+    {% for menuItem in menu.items %}
+        <a href="{{ menuItem.link }}" class="app-menu__item">
+            {{ menuItem.name }}
+        </a>
+        {% if not loop.last %}
+            <span class="app-menu__separator"></span>
+        {% endif %}
+    {% endfor %}
 </nav>
-
-{#<nav class="rl-navigation rl-flex rl-margin__top--small mdl-cell--12-col">#}
-    {#{% if menu.back_link is defined %}#}
-        {#<a href="{{ menu.back_link }}" class="rl-navigation__item">{{ '<' }}</a>#}
-        {#<span class="rl-navigation__separator"></span>#}
-    {#{% endif %}#}
-    {#{% for menuItem in menu.items %}#}
-        {#<a href="{{ menuItem.link }}" class="rl-navigation__item">#}
-            {#{{ menuItem.name }}#}
-        {#</a>#}
-        {#{% if not loop.last %}#}
-            {#<span class="rl-navigation__separator"></span>#}
-        {#{% endif %}#}
-    {#{% endfor %}#}
-{#</nav>#}

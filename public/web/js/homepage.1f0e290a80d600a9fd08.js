@@ -1,4 +1,4 @@
-var app_portal =
+var app_homepage =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -57,7 +57,7 @@ var app_portal =
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"portal": 0
+/******/ 		"homepage": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,17 +148,17 @@ var app_portal =
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./modules/portal/portal.ts","common"]);
+/******/ 	deferredModules.push(["./modules/homepage/homepage.ts","common"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./modules/portal/portal.scss":
-/*!************************************!*\
-  !*** ./modules/portal/portal.scss ***!
-  \************************************/
+/***/ "./modules/homepage/homepage.scss":
+/*!****************************************!*\
+  !*** ./modules/homepage/homepage.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -166,22 +166,23 @@ var app_portal =
 
 /***/ }),
 
-/***/ "./modules/portal/portal.ts":
-/*!**********************************!*\
-  !*** ./modules/portal/portal.ts ***!
-  \**********************************/
+/***/ "./modules/homepage/homepage.ts":
+/*!**************************************!*\
+  !*** ./modules/homepage/homepage.ts ***!
+  \**************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../vendors */ "./vendors.ts");
-/* harmony import */ var _portal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portal.scss */ "./modules/portal/portal.scss");
-/* harmony import */ var _portal_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_portal_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage.scss */ "./modules/homepage/homepage.scss");
+/* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_homepage_scss__WEBPACK_IMPORTED_MODULE_1__);
 
 
+console.warn('homepage');
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=portal.e18058dc395d9ad6a686.js.map
+//# sourceMappingURL=homepage.1f0e290a80d600a9fd08.js.map

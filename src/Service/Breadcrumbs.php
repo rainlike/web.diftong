@@ -1,7 +1,7 @@
 <?php
 /**
  * Breadcrumbs Service
- * @TODO: description
+ * Service for generates breadcrumbs
  *
  * @package App\Service
  * @version 1.0.0

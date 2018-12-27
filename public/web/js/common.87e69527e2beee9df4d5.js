@@ -2157,6 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_common_scss__WEBPACK_IMPORTED_MODULE_1__);
 
 
+console.warn('common');
 
 /***/ }),
 
@@ -2179,4 +2180,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 }]);
-//# sourceMappingURL=common.e6da7192f666a68c4795.js.map
+//# sourceMappingURL=common.87e69527e2beee9df4d5.js.map

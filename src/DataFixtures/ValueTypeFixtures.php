@@ -122,6 +122,22 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
                     'pl' => ''
                 ]
             ]
+        ],
+        [
+            'name' => 'header_flat_actions',
+            'title' => 'Flat styles for icons of actions in header',
+            'type' => ValueType::TYPE_BOOL,
+            'region' => ValueType::REGION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => '',
+                    'uk' => '',
+                    'ru' => '',
+                    'pl' => ''
+                ]
+            ]
         ]
     ];
 

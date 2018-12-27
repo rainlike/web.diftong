@@ -1,4 +1,4 @@
-var app_homepage =
+var app_portal =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -57,7 +57,7 @@ var app_homepage =
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"homepage": 0
+/******/ 		"portal": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,17 +148,17 @@ var app_homepage =
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./modules/homepage/homepage.ts","common"]);
+/******/ 	deferredModules.push(["./modules/portal/portal.ts","common"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./modules/homepage/homepage.scss":
-/*!****************************************!*\
-  !*** ./modules/homepage/homepage.scss ***!
-  \****************************************/
+/***/ "./modules/portal/portal.scss":
+/*!************************************!*\
+  !*** ./modules/portal/portal.scss ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -166,22 +166,23 @@ var app_homepage =
 
 /***/ }),
 
-/***/ "./modules/homepage/homepage.ts":
-/*!**************************************!*\
-  !*** ./modules/homepage/homepage.ts ***!
-  \**************************************/
+/***/ "./modules/portal/portal.ts":
+/*!**********************************!*\
+  !*** ./modules/portal/portal.ts ***!
+  \**********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../vendors */ "./vendors.ts");
-/* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./homepage.scss */ "./modules/homepage/homepage.scss");
-/* harmony import */ var _homepage_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_homepage_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _portal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portal.scss */ "./modules/portal/portal.scss");
+/* harmony import */ var _portal_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_portal_scss__WEBPACK_IMPORTED_MODULE_1__);
 
 
+console.warn('portal');
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=homepage.6b7544ddd54496f261b3.js.map
+//# sourceMappingURL=portal.f71e6aa7e70e23f27c29.js.map

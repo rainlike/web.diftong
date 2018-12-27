@@ -28,6 +28,7 @@ use Symfony\Component\Translation\TranslatorInterface as Translator;
 use App\Entity\Quote;
 use App\Entity\Topic;
 
+use App\Service\Menu;
 use App\Service\Library;
 use App\Service\Logotype;
 use App\Service\LanguageSwitcher;
@@ -60,7 +61,6 @@ class CommonController extends Controller
      * Render header
      *
      * @param Request $request
-     * @param Translator $translator
      * @param string $route
      * @param array $routeParams
      * @param string $url
@@ -71,7 +71,6 @@ class CommonController extends Controller
      */
     public function renderHeader(
         Request $request,
-        Translator $translator,
         string $route,
         array $routeParams,
         string $url,
@@ -82,10 +81,6 @@ class CommonController extends Controller
     {
         $user = $this->getUser();
 
-        # @TODO: menu
-        # @TODO: $backLink -> check if it's own link
-//        $selfContainer = $this->get('app.self.container');
-//        $prevUrl = $selfContainer->previousUrl();
         $backLink = null;
 
         $queryParameters = $library->cutUrlQueryParameters($url);
@@ -109,26 +104,32 @@ class CommonController extends Controller
     /**
      * Render menu
      *
-     * @param Translator $translator
-     * @param Library $library
+     * @param Request $request
+     * @param Menu $menuSrv
      * @return Response
      */
     public function renderMenu(
-        Translator $translator,
-        Library $library
+        Request $request,
+        Menu $menuSrv
     ): Response
     {
-        return $this->render('components/menu.html.twig', []);
+        $menu = $menuSrv
+            ->init($request)
+            ->setBackLinkMod()
+            ->getMenu();
+
+        return $this->render('components/menu.html.twig', [
+            'menu' => $menu
+        ]);
     }
 
     /**
      * Render sidebar
      *
-     * @param Translator $translator
      * @return Response
      * @throws NonUniqueResultException
      */
-    public function renderSidebar(Translator $translator): Response
+    public function renderSidebar(): Response
     {
         $topicsCount = $this->container->getParameter('sidebar.topics.count');
 
@@ -145,7 +146,6 @@ class CommonController extends Controller
      * Render footer
      *
      * @param Request $request
-     * @param Translator $translator
      * @param string $route
      * @param array $routeParams
      * @param string $url
@@ -156,7 +156,6 @@ class CommonController extends Controller
      */
     public function renderFooter(
         Request $request,
-        Translator $translator,
         string $route,
         array $routeParams,
         string $url,
