@@ -31,7 +31,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'global_show_topbar',
             'title' => 'Show topbar',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_USER,
             'enabled' => true,
             'translations' => [
@@ -47,7 +47,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'global_logo_as_link',
             'title' => 'Header logo as link',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -63,7 +63,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_phonetics',
             'title' => 'Show phonetics section in menu',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -79,7 +79,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_lexis',
             'title' => 'Show lexis section in menu',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -95,7 +95,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_articles',
             'title' => 'Show articles in menu',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -111,7 +111,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_lyrics',
             'title' => 'Show lyrics in menu',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -127,7 +127,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'header_flat_actions',
             'title' => 'Flat styles for icons of actions in header',
             'type' => ValueType::TYPE_BOOL,
-            'region' => ValueType::REGION_GLOBAL,
+            'section' => ValueType::SECTION_GLOBAL,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -157,7 +157,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setName($valueType['name']);
             $entity->setTitle($valueType['title']);
             $entity->setType($valueType['type']);
-            $entity->setRegion($valueType['region']);
+            $entity->setSection($valueType['section']);
             $entity->setPriority($valueType['priority']);
             $entity->setEnabled($valueType['enabled']);
             $entity->setCreated($now);

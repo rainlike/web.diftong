@@ -75,24 +75,30 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
     public const TYPE_DATE = 'date';
 
     /**
-     * Possible regions
+     * Possible sections
      * @var array
      */
-    public const REGIONS = [
-        self::REGION_GLOBAL,
-        self::REGION_HOMEPAGE,
-        self::REGION_DEBUG,
-        self::REGION_OTHER
+    public const SECTIONS = [
+        self::SECTION_GLOBAL,
+        self::SECTION_HOMEPAGE,
+        self::SECTION_PORTAL,
+        self::SECTION_BACKOFFICE,
+        self::SECTION_ADMIN,
+        self::SECTION_DEBUG,
+        self::SECTION_OTHER
     ];
 
     /**
-     * Constants of possible regions
+     * Constants of possible sections
      * @var string
      */
-    public const REGION_GLOBAL = 'global';
-    public const REGION_HOMEPAGE = 'homepage';
-    public const REGION_DEBUG = 'debug';
-    public const REGION_OTHER = 'other';
+    public const SECTION_GLOBAL = 'global';
+    public const SECTION_HOMEPAGE = 'homepage';
+    public const SECTION_PORTAL = 'portal';
+    public const SECTION_BACKOFFICE = 'backoffice';
+    public const SECTION_ADMIN = 'admin';
+    public const SECTION_DEBUG = 'debug';
+    public const SECTION_OTHER = 'other';
 
     /**
      * Possible priorities
@@ -125,13 +131,13 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
 
     /**
      * @var string
-     * @ORM\Column(name="region", type="string", length=25, nullable=true, unique=false)
+     * @ORM\Column(name="section", type="string", length=25, nullable=true, unique=false)
      * @Assert\Length(
      *      max = 25,
-     *      maxMessage = "Region should be no longer than {{ limit }} characters."
+     *      maxMessage = "Section should be no longer than {{ limit }} characters."
      * )
      */
-    private $region;
+    private $section;
 
     /**
      * @var string
@@ -194,26 +200,26 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
     }
 
     /**
-     * Set region
+     * Set section
      *
-     * @param string|null $region
+     * @param string|null $section
      * @return self
      */
-    public function setRegion(?string $region = null): self
+    public function setSection(?string $section = null): self
     {
-        $this->region = $region;
+        $this->section = $section;
 
         return $this;
     }
 
     /**
-     * Get region
+     * Get section
      *
      * @return string|null
      */
-    public function getRegion(): ?string
+    public function getSection(): ?string
     {
-        return $this->region;
+        return $this->section;
     }
 
     /**
