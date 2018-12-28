@@ -2231,9 +2231,21 @@
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -4929,9 +4941,21 @@
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -15919,9 +15943,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -16500,45 +16536,76 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .app-header__button {
-    outline: none;
-    border: none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0;
-    white-space: nowrap;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    -ms-touch-action: manipulation;
-        touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+
+/**
+ * Buttons on header
+ *
+ * @atom Buttons
+ * @section Header
+ * @modifiers
+ *  .app-header__button--flat a flat button
+ * @markup
+ *  <button type="button" class="app-header__button">
+ *    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+ *  </button>
+ *  <button type="button" class="app-header__button--flat">
+ *    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+ *  </button>
+ */
+.app-header__button {
+  outline: none;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  color: #000;
+  background-color: #3F51B5;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  padding: 0.1rem 0.7rem; }
+  .app-header__button:hover {
     color: #000;
-    background-color: #3F51B5;
-    -webkit-box-flex: 3;
-        -ms-flex-positive: 3;
-            flex-grow: 3;
-    padding: 0.1rem 0.7rem; }
-    .app-header__button:hover {
-      color: #000;
-      background-color: #32408f; }
-    .app-header__button:active {
-      color: #000;
-      background-color: #2b387c; }
-    .app-header__button:visited {
-      color: #000; }
-    .app-header__button:disabled {
-      color: #000;
+    background-color: #32408f; }
+  .app-header__button:active {
+    color: #000;
+    background-color: #2b387c; }
+  .app-header__button:visited {
+    color: #000; }
+  .app-header__button:disabled {
+    color: #000;
+    cursor: not-allowed;
+    background-color: #2b387c; }
+  .app-header__button .app-mdi .mdi {
+    font-size: 30px; }
+  .app-header__button--flat {
+    color: #3F51B5;
+    background-color: #FFF; }
+    .app-header__button--flat:hover {
+      color: #32408f;
+      background-color: #FFF; }
+    .app-header__button--flat:active {
+      color: #2b387c;
+      background-color: #FFF; }
+    .app-header__button--flat:visited {
+      color: #3F51B5; }
+    .app-header__button--flat:disabled {
+      color: #2b387c;
       cursor: not-allowed;
-      background-color: #2b387c; }
-    .app-header__button .app-mdi .mdi {
-      font-size: 30px; }
+      background-color: #FFF; }
 
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -18772,9 +18839,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -21493,9 +21572,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -24201,9 +24292,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -26963,9 +27066,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -32069,9 +32184,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -35075,9 +35202,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -37809,9 +37948,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -40519,9 +40670,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -43255,9 +43418,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -45999,9 +46174,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -48717,9 +48904,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**
@@ -51469,9 +51668,21 @@ a {
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
+ */
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
  */
 /* stylelint-disable-next-line value-keyword-case */
 /**

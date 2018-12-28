@@ -43,7 +43,7 @@ class TwigExtension extends AbstractExtension
     {
         return array(
             new TwigFunction('_hasParameter', array($this, 'hasParameter')),
-            new TwigFunction('_getParameter', array($this, 'getParameter')),
+            new TwigFunction('_getParameter', array($this, 'getParameter'))
         );
     }
 

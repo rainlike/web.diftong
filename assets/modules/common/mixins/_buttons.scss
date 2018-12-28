@@ -35,9 +35,9 @@
  * @param $bg-color background color
  * @param $color content color
  * @example
- *  @include app--button();
- *  @include app--button($color-white);
- *  @include app--button(#4CAF50, #657383);
+ *  @include app--button-paint();
+ *  @include app--button-paint($color-white);
+ *  @include app--button-paint(#4CAF50, #657383);
  */
 @mixin app--button-paint($bg-color: $color-primary, $color: $color-black) {
   color: $color;
@@ -61,5 +61,42 @@
     color:  $color;
     cursor: not-allowed;
     background-color: darken($bg-color, $button-active-rank);
+  }
+}
+
+/**
+ * Painting of flat button.
+ *
+ * @mixin
+ * @section Buttons Mixins
+ * @param $color content color
+ * @param $bg-color background color
+ * @example
+ *  @include app--button-paint-flat();
+ *  @include app--button-paint-flat($color-white);
+ *  @include app--button-paint-flat(#4CAF50, #657383);
+ */
+@mixin app--button-paint-flat($color: $color-primary, $bg-color: $color-white) {
+  color: $color;
+  background-color: $bg-color;
+
+  &:hover {
+    color: darken($color, $button-hover-rank);
+    background-color: $bg-color;
+  }
+
+  &:active {
+    color: darken($color, $button-active-rank);
+    background-color: $bg-color;
+  }
+
+  &:visited {
+    color: $color;
+  }
+
+  &:disabled {
+    color:  darken($color, $button-active-rank);
+    cursor: not-allowed;
+    background-color:  $bg-color;
   }
 }

@@ -68,10 +68,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => '',
-                    'uk' => '',
-                    'ru' => '',
-                    'pl' => ''
+                    'es' => 'Mostrar sección de fonética en el menú',
+                    'uk' => 'Показати розділ фонетики в меню',
+                    'ru' => 'Показать раздел фонетики в меню',
+                    'pl' => 'Pokaż sekcję fonetyki w menu'
                 ]
             ]
         ],
@@ -84,10 +84,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => '',
-                    'uk' => '',
-                    'ru' => '',
-                    'pl' => ''
+                    'es' => 'Mostrar sección de vocabulario en el menú',
+                    'uk' => 'Показати розділ лексики в меню',
+                    'ru' => 'Показать раздел лексики в меню',
+                    'pl' => 'Pokaż sekcję leksykalną w menu'
                 ]
             ]
         ],
@@ -100,10 +100,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => '',
-                    'uk' => '',
-                    'ru' => '',
-                    'pl' => ''
+                    'es' => 'Mostrar articulos en menu',
+                    'uk' => 'Показати статті в меню',
+                    'ru' => 'Показать статьи в меню',
+                    'pl' => 'Pokaż artykuły w menu'
                 ]
             ]
         ],
@@ -116,10 +116,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => '',
-                    'uk' => '',
-                    'ru' => '',
-                    'pl' => ''
+                    'es' => 'Mostrar letras en el menú',
+                    'uk' => 'Показати тексти пісень в меню',
+                    'ru' => 'Показать тексты песен в меню',
+                    'pl' => 'Pokaż teksty w menu'
                 ]
             ]
         ],
@@ -132,10 +132,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => '',
-                    'uk' => '',
-                    'ru' => '',
-                    'pl' => ''
+                    'es' => 'Estilos planos para iconos de acciones en cabecera',
+                    'uk' => 'Плоскі стилі для піктограм дій у заголовку',
+                    'ru' => 'Плоские стили для иконок действий в заголовке',
+                    'pl' => 'Style płaskie dla ikon akcji w nagłówku'
                 ]
             ]
         ]

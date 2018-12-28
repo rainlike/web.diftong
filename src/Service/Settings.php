@@ -127,6 +127,9 @@ class Settings
         }
 
         $setting = $settingRepository->getSettingRecord($name, $onlyEnabled);
+        if (!$setting) {
+            return null;
+        }
 
         $value = $setting->getValue();
         $type = $setting->getType()->getType();

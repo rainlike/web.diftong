@@ -99,17 +99,36 @@
     flex-direction:  column;
     justify-content: space-between;
   }
+}
 
-  &__button {
-    @include app--button();
-    @include app--button-paint($color-primary);
-    flex-grow: 3;
-    padding:   0.1rem 0.7rem;
+/**
+ * Buttons on header
+ *
+ * @atom Buttons
+ * @section Header
+ * @modifiers
+ *  .app-header__button--flat a flat button
+ * @markup
+ *  <button type="button" class="app-header__button">
+ *    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+ *  </button>
+ *  <button type="button" class="app-header__button--flat">
+ *    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+ *  </button>
+ */
+.#{$prefix}-header__button {
+  @include app--button();
+  @include app--button-paint($color-primary);
+  flex-grow: 3;
+  padding:   0.1rem 0.7rem;
 
-    .#{$prefix}-mdi {
-      .mdi {
-        font-size: 30px;
-      }
+  .#{$prefix}-mdi {
+    .mdi {
+      font-size: 30px;
     }
+  }
+
+  &--flat {
+    @include app--button-paint-flat($color-primary);
   }
 }

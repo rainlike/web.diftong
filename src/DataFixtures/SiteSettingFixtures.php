@@ -30,6 +30,10 @@ class SiteSettingFixtures extends Fixture implements OrderedFixtureInterface
         [
             'type' => 'global_logo_as_link',
             'value' => 1
+        ],
+        [
+            'type' => 'header_flat_actions',
+            'value' => 1
         ]
     ];
 
