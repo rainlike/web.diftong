@@ -15,7 +15,7 @@ namespace App\Controller;
 
 use Doctrine\ORM\NonUniqueResultException;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +34,7 @@ use App\Service\Logotype;
 use App\Service\LanguageSwitcher;
 
 /** Class CommonController */
-class CommonController extends Controller
+class CommonController extends AbstractController
 {
     /**
      * Redirect URLs with a trailing slash
@@ -131,7 +131,7 @@ class CommonController extends Controller
      */
     public function renderSidebar(): Response
     {
-        $topicsCount = $this->container->getParameter('sidebar.topics.count');
+        $topicsCount = $this->getParameter('sidebar.topics.count');
 
         $quote = $this->getDoctrine()->getRepository(Quote::class)->getRandom();
         $topics = $this->getDoctrine()->getRepository(Topic::class)->getLasts($topicsCount);

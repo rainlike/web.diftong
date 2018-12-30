@@ -15,7 +15,7 @@ namespace App\Controller;
 
 use Psr\Container\ContainerInterface as Container;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +33,7 @@ use Symfony\Component\Translation\TranslatorInterface as Translator;
 use App\Entity\Portal;
 
 /** @package App\Controller */
-class HomepageController extends Controller
+class HomepageController extends AbstractController
 {
     /**
      * Render Homepage

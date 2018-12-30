@@ -1,7 +1,8 @@
 # environment
 *.*~
 *___jb_tmp___
-.env
+.env.local
+.env.*.local
 .idea
 .web-server-pid
 
