@@ -150,6 +150,15 @@ class Menu
         return [
             [
                 'name' => $this->translator->trans(
+                    'items.portals',
+                    [],
+                    self::TRANSLATION_DOMAIN,
+                    $this->locale
+                ),
+                'link' => '#'
+            ],
+            [
+                'name' => $this->translator->trans(
                     'items.grammar',
                     [],
                     self::TRANSLATION_DOMAIN,
