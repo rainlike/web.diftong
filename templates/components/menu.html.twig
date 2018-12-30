@@ -1,5 +1,5 @@
 <nav class="app-menu">
-    {% if menu.back_link is defined %}
+    {% if menu.back_link is defined and menu.back_link %}
         <a href="{{ menu.back_link }}" class="app-menu__item">{{ '<' }}</a>
         <span class="app-menu__separator"></span>
     {% endif %}
