@@ -21,43 +21,43 @@
     "stof/doctrine-extensions-bundle": "^1.3",
     "suncat/mobile-detect-bundle": "^1.1",
     "symfony/apache-pack": "^1.0",
-    "symfony/asset": "^4.1",
-    "symfony/console": "^4.1",
-    "symfony/expression-language": "^4.1",
-    "symfony/finder": "^4.1",
+    "symfony/asset": "4.2.*",
+    "symfony/console": "4.2.*",
+    "symfony/expression-language": "4.2.*",
+    "symfony/finder": "4.2.*",
     "symfony/flex": "^1.1",
-    "symfony/form": "^4.1",
-    "symfony/framework-bundle": "^4.1",
+    "symfony/form": "4.2.*",
+    "symfony/framework-bundle": "4.2.*",
     "symfony/monolog-bundle": "^3.1",
     "symfony/orm-pack": "^1.0",
-    "symfony/process": "^4.1",
-    "symfony/security": "^4.1",
-    "symfony/security-bundle": "^4.1",
-    "symfony/serializer": "^4.1",
+    "symfony/process": "4.2.*",
+    "symfony/security": "4.2.*",
+    "symfony/security-bundle": "4.2.*",
+    "symfony/serializer": "4.2.*",
     "symfony/serializer-pack": "^1.0",
     "symfony/swiftmailer-bundle": "^3.1",
-    "symfony/templating": "^4.1",
-    "symfony/twig-bundle": "^4.1",
-    "symfony/validator": "^4.1",
-    "symfony/web-link": "^4.1",
+    "symfony/templating": "4.2.*",
+    "symfony/twig-bundle": "4.2.*",
+    "symfony/validator": "4.2.*",
+    "symfony/web-link": "4.2.*",
     "symfony/webpack-encore-pack": "^1.0",
-    "symfony/yaml": "^4.1",
+    "symfony/yaml": "4.2.*",
     "twig/extensions": "^1.5"
   },
   "require-dev": {
     "mockery/mockery": "^1.2",
-    "symfony/browser-kit": "^4.1",
-    "symfony/css-selector": "^4.1",
-    "symfony/debug-bundle": "^4.1",
+    "symfony/browser-kit": "4.2.*",
+    "symfony/css-selector": "4.2.*",
+    "symfony/debug-bundle": "4.2.*",
     "symfony/debug-pack": "^1.0",
-    "symfony/dotenv": "^4.1",
+    "symfony/dotenv": "4.2.*",
     "symfony/maker-bundle": "^1.0",
-    "symfony/phpunit-bridge": "^4.1",
+    "symfony/phpunit-bridge": "4.2.*",
     "symfony/profiler-pack": "^1.0",
     "symfony/requirements-checker": "^1.1",
     "symfony/test-pack": "^1.0",
     "symfony/thanks": "^1.1",
-    "symfony/web-server-bundle": "^4.1"
+    "symfony/web-server-bundle": "4.2.*"
   },
   "config": {
     "preferred-install": {
@@ -103,7 +103,7 @@
     "symfony": {
       "id": "01C12ECEVRTDJ953219SFTVCPT",
       "allow-contrib": true,
-      "require": "4.1.*"
+      "require": "4.2.*"
     }
   }
 }
