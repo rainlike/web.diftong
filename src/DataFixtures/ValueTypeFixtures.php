@@ -68,7 +68,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => 'Mostrar sección de fonética en el menú',
+                    'es' => 'Mostrar sección de gramática en el menú',
                     'uk' => 'Показувати розділ граматики в меню',
                     'ru' => 'Показать раздел грамматики в меню',
                     'pl' => 'Pokaż sekcję gramatyki w menu'

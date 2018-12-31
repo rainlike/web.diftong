@@ -1,5 +1,5 @@
 <div class="app-homepage-portal-card">
-    <a href="#">
+    <a href="{{ path('portal_show', {'name': portal.slug}) }}">
         <p class="app-homepage-portal-card__title">{{ portal.title|capitalize }}</p>
         <p class="app-homepage-portal-card__preview">
             {{ 'Для всех, кто хочет знать английский язык мы создали этот сайт, полностью посвященный его изучению. Здесь есть все необходимое для того, чтобы изучать английский язык онлайн бесплатно.' }}
