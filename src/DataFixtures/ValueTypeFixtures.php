@@ -61,6 +61,22 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
         ],
         [
             'name' => 'menu_show_phonetics',
+            'title' => 'Show grammar section in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_GLOBAL,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar sección de fonética en el menú',
+                    'uk' => 'Показувати розділ граматики в меню',
+                    'ru' => 'Показать раздел грамматики в меню',
+                    'pl' => 'Pokaż sekcję gramatyki w menu'
+                ]
+            ]
+        ],
+        [
+            'name' => 'menu_show_phonetics',
             'title' => 'Show phonetics section in menu',
             'type' => ValueType::TYPE_BOOL,
             'section' => ValueType::SECTION_GLOBAL,
