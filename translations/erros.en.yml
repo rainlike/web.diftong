@@ -1,0 +1,5 @@
+# Front messages
+front:
+  base: "Unfortunately, an unexpected error occurred."
+  404: "Unfortunately, the page you requested was not found."
+  403: "Unfortunately, you do not have access to this page."

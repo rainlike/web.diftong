@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Error page
+ *
+ * @molecule Error Page
+ * @markup
+ *  <section class="app-error-page__wrapper">
+ *    <div class="app-error-page__logo">
+ *      <a href="#">
+ *        <img src="../../public/cdn/logo.svg"
+ *          alt="alt"
+ *          title="title"
+ *          class="app-error-page__logo--image"
+ *        />
+ *      </a>
+ *    </div>
+ *    <p class="app-error-page__message">
+ *      Unfortunately, the page you requested was not found.
+ *    </p>
+ *    <p class="app-error-page__info-wrapper">
+ *      <span class="app-error-page__bracket">[</span>
+ *      <span class="app-error-page__info">404 | Not Found</span>
+ *      <span class="app-error-page__bracket">]</span>
+ *    </p>
+ *    <div class="app-error-page__links">
+ *      <a href="#">Homepage</a>
+ *    </div>
+ *  </section>
+ */
+.#{$prefix}-error-page {
+  justify-content: center;
+  align-items:     center;
+  min-height:      100%;
+  margin:          0;
+
+  &__wrapper {
+    @include app--flex-col-center();
+  }
+
+  &__logo {
+    @include app--flex-col-center();
+    flex-shrink: 0;
+    flex-grow:   0;
+    width:       250px;
+    height:      135px;
+    cursor:      default;
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &--phrase {
+      @include app--non-select();
+      margin:    0;
+      padding:   5px;
+      font-size: 65px;
+      color:     $color-primary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    &--image {
+      display: block;
+      width:   240px;
+    }
+  }
+
+  &__message {
+    margin: 0;
+  }
+
+  &__info {
+    font-size: large;
+  }
+
+  &__bracket {
+    font-size: xx-large;
+    color:     $color-secondary;
+  }
+
+  &__links {
+    width:   50%;
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-evenly;
+
+    a {
+      padding: 3px;
+      border:  1px solid $color-black;
+
+      &:hover {
+        border: 1px solid $color-primary;
+      }
+    }
+  }
+}

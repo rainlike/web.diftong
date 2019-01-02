@@ -10,9 +10,22 @@
  * @section Menu
  * @markup
  *  <nav class="app-menu">
- *    <p>menu item #1</p>
- *    <p>menu item #2</p>
- *    <p>menu item #3</p>
+ *    <a href="#" class="app-menu__item"><</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Portals</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Grammar</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Phonetics</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Lexis</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Articles</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Topics</a>
+ *    <span class="app-menu__separator"></span>
+ *    <a href="#" class="app-menu__item">Lyrics</a>
+ *    <span class="app-menu__separator"></span>
  *  </nav>
  */
 .#{$prefix}-menu {

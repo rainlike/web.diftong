@@ -52,3 +52,6 @@ language:
       uk: "укр"
       ru: "рус"
       pl: "pol"
+# Routes
+route:
+  homepage: "Домашняя страница"

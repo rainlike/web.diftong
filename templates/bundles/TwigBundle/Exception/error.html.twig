@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link type="text/css" rel="stylesheet" href="{{ asset('web/css/common.css') }}" media="all"/>
+{% endblock %}
+
+{% block body_class %}app-error-page{% endblock %}
+
+{% block body %}
+    <section class="app-error-page__wrapper">
+        {% set error_literal = (status_code == 403 or status_code == 404) ? status_code : 'base' %}
+        {% set error_trans_text = 'front.'~error_literal %}
+        {% set referer = app.request.headers.get('referer') %}
+
+        {% set logo = _verboseLogo() %}
+
+        <div class="app-error-page__logo">
+            {% if _setting('global_logo_as_link') %}
+                <a href="{{ path('homepage_index') }}">
+            {% endif %}
+            {% if logo.type == constant('App\\Service\\Logotype::TYPE_PHRASE') %}
+                <h1 class="app-error-page__logo--phrase">{{ logo.data }}</h1>
+            {% else %}
+                {% set src = logo.type == constant('App\\Service\\Logotype::TYPE_LINK')
+                    ? logo.data
+                    : asset(logo.data)
+                %}
+                <img src="{{ src }}"
+                     alt="{{ logo.alt }}"
+                     title="{{ logo.title }}"
+                     class="app-error-page__logo--image"
+                />
+            {% endif %}
+            {% if _setting('global_logo_as_link') %}
+                </a>
+            {% endif %}
+        </div>
+        <p class="app-error-page__message">
+            {{ error_trans_text|trans({}, 'erros') }}
+        </p>
+        <p class="app-error-page__info-wrapper">
+            <span class="app-error-page__bracket">{{ '[' }}</span>
+            <span class="app-error-page__info">{{ status_code ~ ' | ' ~ status_text }}</span>
+            <span class="app-error-page__bracket">{{ ']' }}</span>
+        </p>
+        <div class="app-error-page__links">
+            <a href="{{ path('homepage_index') }}">
+                {{ 'route.homepage'|trans|capitalize }}
+            </a>
+            {% if referer %}
+                <a href="{{ referer }}">
+                    {{ 'base.back'|trans|capitalize }}
+                </a>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script src="{{ asset('web/js/common.js') }}"></script>
+{% endblock %}
