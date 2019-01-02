@@ -1,1 +1,16 @@
-{{ portal.title|capitalize }}
+{% extends 'layout.html.twig' %}
+
+{% block clipboard_class %}{{ 'app-homepage-clipboard' }}{% endblock %}
+{% block clipboard %}
+    {{ portal.title|capitalize }}
+{% endblock %}
+
+{% block css %}
+    {% include 'portal/_includes/css.html.twig' %}
+{% endblock %}
+{% block links %}
+    {% include 'portal/_includes/links.html.twig' %}
+{% endblock %}
+{% block js %}
+    {% include 'portal/_includes/js.html.twig' %}
+{% endblock %}
