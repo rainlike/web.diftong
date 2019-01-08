@@ -15,7 +15,7 @@ use App\Service\Library;
 
 use App\Entity\Seo;
 
-use App\Repository\Library\Traits\Enabled as EnabledMethods;
+use App\Repository\Library\Traits\Basic as BasicMethods;
 
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Repository\Library\Interfaces\IBasic;
@@ -32,7 +32,7 @@ use App\Repository\Library\Interfaces\IBasic;
  */
 class SeoRepository extends ServiceEntityRepository implements IBasic
 {
-    use EnabledMethods;
+    use BasicMethods;
 
     /**
      * SeoRepository constructor

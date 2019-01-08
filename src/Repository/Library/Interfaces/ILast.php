@@ -1,7 +1,7 @@
 <?php
 /**
  * ILast Interface
- * Marks repositories which should has method for getting the last record
+ * Marks repositories which should have method for getting the last record
  *
  * @package App\Repository\Library\Interfaces
  * @version 1.0.0

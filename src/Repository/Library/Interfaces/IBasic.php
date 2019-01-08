@@ -9,7 +9,7 @@ namespace App\Repository\Library\Interfaces;
  * @package App\Repository\Library\Interfaces
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-interface IBasic extends IEnabled
+interface IBasic extends IEnabled, IColumns
 {
     /**
      * Magic __call method

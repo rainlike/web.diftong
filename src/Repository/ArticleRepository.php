@@ -7,36 +7,39 @@ use Symfony\Bridge\Doctrine\RegistryInterface as Registry;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
-use App\Entity\TopicTheme;
+use App\Entity\Article;
 
+use App\Repository\Library\Interfaces\ILast;
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISeoable;
 
+use App\Repository\Library\Traits\Last as LastMethods;
 use App\Repository\Library\Traits\Basic as BasicMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
 
 /**
- * Class TopicThemeRepository
+ * Class ArticleRepository
  *
  * @package App\Repository
  * @author Alexander Saveliev <alex@spbcrew.com>
- * @method TopicTheme|null find($id, $lockMode = null, $lockVersion = null)
- * @method TopicTheme|null findOneBy(array $criteria, array $orderBy = null)
- * @method TopicTheme[]    findAll()
- * @method TopicTheme[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Article|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Article|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Article[]    findAll()
+ * @method Article[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TopicThemeRepository extends ServiceEntityRepository implements IBasic, ISeoable
+class ArticleRepository extends ServiceEntityRepository implements IBasic, ISeoable, ILast
 {
+    use LastMethods;
     use BasicMethods;
     use SeoableMethods;
 
     /**
-     * TopicThemeRepository constructor
+     * ArticleRepository constructor
      *
      * @param Registry $registry
      */
     public function __construct(Registry $registry)
     {
-        parent::__construct($registry, TopicTheme::class);
+        parent::__construct($registry, Article::class);
     }
 }

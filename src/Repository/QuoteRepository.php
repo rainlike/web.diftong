@@ -11,8 +11,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Quote;
 
+use App\Repository\Library\Traits\Basic as BasicMethods;
 use App\Repository\Library\Traits\Random as RandomMethods;
-use App\Repository\Library\Traits\Enabled as EnabledMethods;
 
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\IRandom;
@@ -29,8 +29,8 @@ use App\Repository\Library\Interfaces\IRandom;
  */
 class QuoteRepository extends ServiceEntityRepository implements IBasic, IRandom
 {
+    use BasicMethods;
     use RandomMethods;
-    use EnabledMethods;
 
     /**
      * QuoteRepository constructor

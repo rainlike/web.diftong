@@ -39,6 +39,18 @@ $text-directions: (
 // Text
 // ====================
 /**
+ * @atom Title
+ * @section Text
+ * @markup
+ *  <h1 class="app-title">
+ *    English language
+ *  </h1>
+ */
+.#{$prefix}-title {
+  font-size: xx-large;
+}
+
+/**
  * @atom Bold Text
  * @section Text
  * @markup
@@ -83,6 +95,37 @@ $text-directions: (
   color:        $color-secondary;
   &:hover {
     color: $color-black;
+  }
+}
+
+/**
+ * @atom Paragraph
+ * @section Text
+ * @modifiers
+ *  .app-paragraph--redline paragraph with redline
+ *  .app-paragraph--large paragraph with increased letters
+ * @markup
+ *  <p class="app-paragraph">
+ *    Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи.
+ *  </p>
+ *  <p class="app-paragraph--redline">
+ *    Служебные глаголы не имеют самостоятельного значения.</br>
+ *    Они используются только для построения сложных форм глагола или составных сказуемых.</br>
+ *    В составных сказуемых спрягаются именно служебные глаголы.
+ *  </p>
+ *  <p class="app-paragraph--large">
+ *    Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи.
+ *  </p>
+ */
+.#{$prefix}-paragraph {
+  font-size: unset;
+
+  &--redline {
+    text-indent: 25px;
+  }
+
+  &--large {
+    font-size: larger;
   }
 }
 

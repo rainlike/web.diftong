@@ -66,7 +66,7 @@ class Seo extends BasicEntity implements Translatable, IBasic, ITranslatable
      * )
      * @Assert\Range(
      *      min = 1,
-     *      minMessage = "STarget id can not be less than {{ limit }}%.",
+     *      minMessage = "Target id can not be less than {{ limit }}%.",
      *      invalidMessage = "Target id should be a valid number."
      * )
      */

@@ -11,7 +11,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 use App\Entity\Language;
 
-use App\Repository\Library\Traits\Enabled as EnabledMethods;
+use App\Repository\Library\Traits\Basic as BasicMethods;
 
 use App\Repository\Library\Interfaces\IBasic;
 
@@ -27,7 +27,7 @@ use App\Repository\Library\Interfaces\IBasic;
  */
 class LanguageRepository extends ServiceEntityRepository implements IBasic
 {
-    use EnabledMethods;
+    use BasicMethods;
 
     /**
      * LanguageRepository constructor

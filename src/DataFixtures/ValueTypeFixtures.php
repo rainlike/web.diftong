@@ -60,7 +60,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
-            'name' => 'menu_show_phonetics',
+            'name' => 'menu_show_grammar',
             'title' => 'Show grammar section in menu',
             'type' => ValueType::TYPE_BOOL,
             'section' => ValueType::SECTION_GLOBAL,

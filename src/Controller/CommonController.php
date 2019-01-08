@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Symfony\Component\Routing\Annotation\Route;
 
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use App\Entity\Quote;
 use App\Entity\Topic;

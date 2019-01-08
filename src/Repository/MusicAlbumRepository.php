@@ -7,33 +7,33 @@ use Symfony\Bridge\Doctrine\RegistryInterface as Registry;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
-use App\Entity\ValueType;
+use App\Entity\MusicAlbum;
 
 use App\Repository\Library\Interfaces\IBasic;
 
 use App\Repository\Library\Traits\Basic as BasicMethods;
 
 /**
- * Class ValueTypeRepository
+ * Class MusicAlbumRepository
  *
  * @package App\Repository
  * @author Alexander Saveliev <alex@spbcrew.com>
- * @method ValueType|null find($id, $lockMode = null, $lockVersion = null)
- * @method ValueType|null findOneBy(array $criteria, array $orderBy = null)
- * @method ValueType[]    findAll()
- * @method ValueType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method MusicAlbum|null find($id, $lockMode = null, $lockVersion = null)
+ * @method MusicAlbum|null findOneBy(array $criteria, array $orderBy = null)
+ * @method MusicAlbum[]    findAll()
+ * @method MusicAlbum[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ValueTypeRepository extends ServiceEntityRepository implements IBasic
+class MusicAlbumRepository extends ServiceEntityRepository implements IBasic
 {
     use BasicMethods;
 
     /**
-     * ValueTypeRepository constructor
+     * MusicAlbumRepository constructor
      *
      * @param Registry $registry
      */
     public function __construct(Registry $registry)
     {
-        parent::__construct($registry, ValueType::class);
+        parent::__construct($registry, MusicAlbum::class);
     }
 }

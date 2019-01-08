@@ -16,7 +16,7 @@ use App\Entity\SiteSetting;
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISetting;
 
-use App\Repository\Library\Traits\Enabled as EnabledMethods;
+use App\Repository\Library\Traits\Basic as BasicMethods;
 
 /**
  * Class SiteSettingRepository
@@ -30,7 +30,7 @@ use App\Repository\Library\Traits\Enabled as EnabledMethods;
  */
 class SiteSettingRepository extends ServiceEntityRepository implements IBasic, ISetting
 {
-    use EnabledMethods;
+    use BasicMethods;
 
     /**
      * SiteSettingRepository constructor

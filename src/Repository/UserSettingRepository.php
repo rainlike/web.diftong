@@ -17,7 +17,7 @@ use App\Entity\UserSetting;
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISetting;
 
-use App\Repository\Library\Traits\Enabled as EnabledMethods;
+use App\Repository\Library\Traits\Basic as BasicMethods;
 
 /**
  * Class UserSettingRepository
@@ -31,7 +31,7 @@ use App\Repository\Library\Traits\Enabled as EnabledMethods;
  */
 class UserSettingRepository extends ServiceEntityRepository implements IBasic, ISetting
 {
-    use EnabledMethods;
+    use BasicMethods;
 
     /**
      * UserSettingRepository constructor

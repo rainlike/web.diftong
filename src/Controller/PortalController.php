@@ -30,9 +30,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
+use App\Entity\Topic;
+use App\Entity\Lyric;
 use App\Entity\Portal;
+use App\Entity\Theory;
+use App\Entity\Article;
 
 /** @package App\Controller */
 class PortalController extends AbstractController
@@ -41,6 +45,7 @@ class PortalController extends AbstractController
      * Render main page of Portal
      *
      * @param Request $request
+     * @param Translator $translator
      * @param string $name
      * @return RedirectResponse|Response|array
      * @Route("/{name}",
@@ -49,12 +54,22 @@ class PortalController extends AbstractController
      * )
      * @Template()
      */
-    public function show(Request $request, string $name)
-    {
+    public function show(
+        Request $request,
+        Translator $translator,
+        string $name
+    ) {
         $portal = $this->getDoctrine()->getRepository(Portal::class)->findOneBy(['slug' => $name]);
         if (!$portal) {
-            throw new NotFoundHttpException('Page not found');
+            throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }
+
+        $generalTheories = $this->getDoctrine()->getRepository(Theory::class)
+            ->getGeneralTheories($portal->getId());
+        $topics = $this->getDoctrine()->getRepository(Topic::class)
+            ->getGeneralTheories($portal->getId());
+
+        var_dump($generalTheories);exit;
 
         return [
             'portal' => $portal

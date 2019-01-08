@@ -1,16 +1,9 @@
-{% extends 'layout.html.twig' %}
+{% extends 'portal/layout.html.twig' %}
 
-{% block clipboard_class %}{{ 'app-homepage-clipboard' }}{% endblock %}
 {% block clipboard %}
-    {{ portal.title|capitalize }}
+    <h1 class="app-portal-title">{{ portal.title|capitalize }}</h1>
+    <p class="app-paragraph">
+        {{ 'Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи, а также построения английских предложений. (@DESCRIPTION)' }}
+    </p>
 {% endblock %}
 
-{% block css %}
-    {% include 'portal/_includes/css.html.twig' %}
-{% endblock %}
-{% block links %}
-    {% include 'portal/_includes/links.html.twig' %}
-{% endblock %}
-{% block js %}
-    {% include 'portal/_includes/js.html.twig' %}
-{% endblock %}

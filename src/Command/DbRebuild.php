@@ -25,7 +25,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 use Symfony\Component\Console\Helper\ProgressBar;
 
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use App\Command\Library\Traits\LocaleTrait;
 use App\Command\Library\Traits\WrapperTrait;

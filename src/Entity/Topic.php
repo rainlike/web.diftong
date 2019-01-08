@@ -6,10 +6,8 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 use Gedmo\Mapping\Annotation as Gedmo;
-use Gedmo\Translatable\Translatable;
 
 use App\Entity\Library\BasicEntity;
 
@@ -17,15 +15,12 @@ use App\Entity\Library\Interfaces\ISlug;
 use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Entity\Library\Interfaces\ILastable;
-use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\Unique as UriField;
 use App\Entity\Library\Traits\Title\Required as TitleField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
-use App\Entity\Library\Traits\Locale\Translatable as LocaleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
-use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 use App\Entity\TopicTheme as Theme;
 
@@ -48,7 +43,6 @@ class Topic extends BasicEntity implements IBasic, ISeoable, ISlug, ILastable
     use ContentField;
 
     use SlugMethods;
-    use TranslationMethods;
 
     /**
      * @Gedmo\Slug(fields={"title"})

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Clipboard for Portal.
+ *
+ * @structure Clipboard
+ * @section Portal
+ */
+.#{$prefix}-portal-clipboard {
+  @include app--flex-col-center();
+}

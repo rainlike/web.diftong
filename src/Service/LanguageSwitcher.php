@@ -20,7 +20,7 @@ use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
 use Symfony\Component\Routing\RouterInterface as Router;
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use Symfony\Component\HttpFoundation\Request;
 

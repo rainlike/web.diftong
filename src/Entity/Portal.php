@@ -81,6 +81,12 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
 
     /**
      * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="portal")
+     */
+    private $articles;
+
+    /**
+     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Topic", mappedBy="portal")
      */
     private $topics;
@@ -101,6 +107,7 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     public function __construct()
     {
         $this->theories = new ArrayCollection();
+        $this->articles = new ArrayCollection();
         $this->topics = new ArrayCollection();
         $this->translations = new ArrayCollection();
     }
@@ -166,6 +173,40 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     public function getTheories(): ?ArrayCollection
     {
         return $this->theories;
+    }
+
+    /**
+     * Add article
+     *
+     * @param Article $article
+     * @return self
+     */
+    public function addArticle(Article $article): self
+    {
+        $this->articles[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param Article $article
+     * @return void
+     */
+    public function removeArticle(Article $article): void
+    {
+        $this->articles->removeElement($article);
+    }
+
+    /**
+     * Get articles
+     *
+     * @return ArrayCollection|null
+     */
+    public function getArticles(): ?ArrayCollection
+    {
+        return $this->articles;
     }
 
     /**

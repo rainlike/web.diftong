@@ -15,7 +15,7 @@ namespace App\Service;
 
 use Symfony\Component\Debug\Exception\UndefinedMethodException;
 
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 

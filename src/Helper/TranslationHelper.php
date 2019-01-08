@@ -5,7 +5,7 @@ namespace App\Helper;
 
 use Symfony\Component\Translation\Exception\InvalidArgumentException;
 
-use Symfony\Component\Translation\TranslatorInterface as Translator;
+use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
