@@ -52,6 +52,7 @@ class TopicThemeFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setTitle($theme['title']);
             $entity->setDescription($theme['description']);
             $entity->setUri($theme['uri']);
+
             $entity->setEnabled(true);
             $entity->setCreated($now);
             $entity->setUpdated($now);

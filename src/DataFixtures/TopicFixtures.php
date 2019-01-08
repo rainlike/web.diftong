@@ -50,9 +50,11 @@ class TopicFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setTitle($topic['title']);
             $entity->setContent($topic['content']);
             $entity->setUri($topic['uri']);
+
             $entity->setEnabled(true);
             $entity->setCreated($now);
             $entity->setUpdated($now);
+
             $entity->setTheme($this->getReference('topic-theme-'.$topic['theme']));
             $entity->setPortal($this->getReference('portal-'.$topic['portal']));
 

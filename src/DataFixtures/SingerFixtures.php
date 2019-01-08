@@ -10,8 +10,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 use App\Entity\Singer;
 
-use App\Service\Library;
-
 /**
  * Class SingerFixtures
  *
@@ -24,7 +22,12 @@ class SingerFixtures extends Fixture implements OrderedFixtureInterface
      * List of preset singers
      * @var array
      */
-    private static $singers = [];
+    private static $singers = [
+        [
+            'name' => 'the Beatles',
+            'uri' => 'the-beatles'
+        ]
+    ];
 
     /**
      * Load fixtures
@@ -35,7 +38,23 @@ class SingerFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager): void
     {
-        // @TODO: ...
+        $now = new \DateTime();
+
+        foreach (self::$singers as $singer) {
+            $entity = new Singer();
+            $entity->setName($singer['name']);
+            $entity->setUri($singer['uri']);
+
+            $entity->setEnabled(true);
+            $entity->setCreated($now);
+            $entity->setUpdated($now);
+
+            $manager->persist($entity);
+
+            $this->addReference('singer-'.\str_replace('_', '-', $singer['uri']), $entity);
+        }
+
+        $manager->flush();
     }
 
     /**
@@ -45,6 +64,6 @@ class SingerFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
-        return 3;
+        return 1;
     }
 }

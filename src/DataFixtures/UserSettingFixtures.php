@@ -49,12 +49,15 @@ class UserSettingFixtures extends Fixture implements OrderedFixtureInterface
         foreach (self::$settings as $userName => $userSettings) {
             foreach ($userSettings as $setting) {
                 $entity = new UserSetting();
+                $entity->setValue((string)$setting['value']);
+
                 $entity->setType($this->getReference('value_type-'.$setting['type']));
                 $entity->setUser($this->getReference('user-'.$userName));
-                $entity->setValue((string)$setting['value']);
+
                 $entity->setEnabled(true);
                 $entity->setCreated($now);
                 $entity->setUpdated($now);
+
                 $manager->persist($entity);
 
                 $this->addReference('user_setting-'.$userName.'_'.$setting['type'], $entity);

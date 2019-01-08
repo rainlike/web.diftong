@@ -50,9 +50,11 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setEmail($data['email']);
             $entity->setPlainPassword($data['password']);
             $entity->setRoles($data['roles']);
+
             $entity->setEnabled($data['enabled']);
             $entity->setRegistered($now);
             $entity->setUpdated($now);
+
             $manager->persist($entity);
 
             $this->addReference('user-'.$name, $entity);

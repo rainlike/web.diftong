@@ -175,6 +175,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setType($valueType['type']);
             $entity->setSection($valueType['section']);
             $entity->setPriority($valueType['priority']);
+
             $entity->setEnabled($valueType['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);

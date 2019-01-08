@@ -70,7 +70,7 @@ class Lyric extends BasicEntity implements IBasic
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="Language", inversedBy="lyrics")
-     * @ORM\JoinTable(name="lyrics_languages")
+     * @ORM\JoinTable(name="app_lyrics_languages")
      */
     private $languages;
 

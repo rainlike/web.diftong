@@ -50,12 +50,15 @@ class SiteSettingFixtures extends Fixture implements OrderedFixtureInterface
 
         foreach (self::$settings as $setting) {
             $entity = new SiteSetting();
-            $entity->setType($this->getReference('value_type-'.$setting['type']));
             $entity->setValue((string)$setting['value']);
+
             $entity->setEnabled(true);
             $entity->setCreated($now);
             $entity->setUpdated($now);
+
             $manager->persist($entity);
+
+            $entity->setType($this->getReference('value_type-'.$setting['type']));
 
             $this->addReference('site_setting-'.$setting['type'], $entity);
         }

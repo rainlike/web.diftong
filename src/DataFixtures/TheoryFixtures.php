@@ -139,12 +139,14 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 $entity->setIsGeneral($theory['is_general']);
                 $entity->setContent($theory['content']);
                 $entity->setFormattedContent($theory['formatted_content']);
-                $entity->setEnabled($theory['enabled']);
-                $entity->setCreated($now);
-                $entity->setUpdated($now);
+
                 $entity->setParent($theory['parent'] ? $this->getReference($theory['parent']) : null);
                 $entity->setPrevious($theory['previous'] ? $this->getReference($theory['previous']) : null);
                 $entity->setNext($theory['next'] ? $this->getReference($theory['next']) : null);
+
+                $entity->setEnabled($theory['enabled']);
+                $entity->setCreated($now);
+                $entity->setUpdated($now);
 
                 $entity->setPortal($this->getReference($theory['portal']));
 
@@ -167,11 +169,13 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                     $seoEntity->setTitle($seo['title']);
                     $seoEntity->setDescription($seo['description']);
                     $seoEntity->setKeywords($seo['keywords']);
-                    $seoEntity->setEnabled(true);
                     $seoEntity->setAutoGenerate(true);
+
+                    $seoEntity->setTarget($entity);
+
+                    $seoEntity->setEnabled(true);
                     $seoEntity->setCreated($now);
                     $seoEntity->setUpdated($now);
-                    $seoEntity->setTarget($entity);
 
                     $manager->persist($seoEntity);
                     $manager->flush();

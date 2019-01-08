@@ -38,7 +38,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'caption' => '@CAPTION',
             'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
-            'language' => 'language-en',
+            'language' => 'en',
             'uri' => 'english',
             'enabled' => true
         ],
@@ -47,7 +47,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'caption' => '@CAPTION',
             'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
-            'language' => 'language-es',
+            'language' => 'es',
             'uri' => 'spanish',
             'enabled' => true
         ],
@@ -56,7 +56,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'caption' => '@CAPTION',
             'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
-            'language' => 'language-uk',
+            'language' => 'uk',
             'uri' => 'ukrainian',
             'enabled' => false
         ],
@@ -65,7 +65,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'caption' => '@CAPTION',
             'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
-            'language' => 'language-ru',
+            'language' => 'ru',
             'uri' => 'russian',
             'enabled' => false
         ],
@@ -74,7 +74,7 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             'caption' => '@CAPTION',
             'preview' => '@PREVIEW',
             'description' => '@DESCRIPTION',
-            'language' => 'language-pl',
+            'language' => 'pl',
             'uri' => 'polish',
             'enabled' => false
         ]
@@ -97,8 +97,10 @@ class PortalFixtures extends Fixture implements OrderedFixtureInterface
             $entity->setCaption($portal['caption']);
             $entity->setPreview($portal['preview']);
             $entity->setDescription($portal['description']);
-            $entity->setLanguage($this->getReference($portal['language']));
             $entity->setUri($portal['uri'] ?? null);
+
+            $entity->setLanguage($this->getReference('language-'.\strtolower($portal['language'])));
+
             $entity->setEnabled($portal['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);

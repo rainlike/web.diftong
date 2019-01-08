@@ -13,7 +13,7 @@ use App\Entity\Library\BasicEntity;
 use App\Entity\Library\Interfaces\IBasic;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
-use App\Entity\Library\Traits\Title\RequiredUnique as NameField;
+use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
 
 /**
  * Class MusicAlbum

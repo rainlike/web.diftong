@@ -47,9 +47,11 @@ class UserRoleFixtures extends Fixture implements OrderedFixtureInterface
         foreach (self::$roles as $role) {
             $entity = new UserRole();
             $entity->setName($role['name']);
+
             $entity->setEnabled($role['enabled']);
             $entity->setCreated($now);
             $entity->setUpdated($now);
+
             $manager->persist($entity);
 
             $this->addReference('user_role-'.\strtolower($role['name']), $entity);

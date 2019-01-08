@@ -52,9 +52,11 @@ class QuoteFixtures extends Fixture implements OrderedFixtureInterface
             $entity = new Quote();
             $entity->setText($quote['text']);
             $entity->setAuthor($quote['author']);
+
             $entity->setEnabled(true);
             $entity->setCreated($now);
             $entity->setUpdated($now);
+
             $manager->persist($entity);
         }
 
