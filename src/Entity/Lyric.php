@@ -12,6 +12,7 @@ use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\IBasic;
 
+use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Name\RequiredUnique as NameField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 
@@ -31,6 +32,7 @@ class Lyric extends BasicEntity implements IBasic
 {
     use NameField;
     use ContentField;
+    use UriField;
 
     /**
      * @var string

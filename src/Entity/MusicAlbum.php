@@ -11,8 +11,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use App\Entity\Library\BasicEntity;
 
 use App\Entity\Library\Interfaces\IBasic;
-use App\Entity\Library\Interfaces\ISeoable;
-use App\Entity\Library\Interfaces\ILastable;
 
 use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Title\RequiredUnique as NameField;
@@ -29,7 +27,7 @@ use App\Entity\Library\Traits\Title\RequiredUnique as NameField;
  * @ORM\Table(name="app_music_album")
  * @ORM\Entity(repositoryClass="App\Repository\MusicAlbumRepository")
  */
-class MusicAlbum extends BasicEntity implements IBasic, ISeoable, ILastable
+class MusicAlbum extends BasicEntity implements IBasic
 {
     use NameField;
     use UriField;

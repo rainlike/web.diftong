@@ -15,7 +15,7 @@ use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
 use App\Entity\Library\Interfaces\ILastable;
 
-use App\Entity\Library\Traits\Uri\Unique as UriField;
+use App\Entity\Library\Traits\Uri\RequiredUnique as UriField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 use App\Entity\Library\Traits\Title\RequiredUnique as TitleField;
 use App\Entity\Library\Traits\Description\NonRequired as DescriptionField;
