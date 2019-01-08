@@ -8,23 +8,23 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
-use App\Entity\Singer;
+use App\Entity\Article;
 
 use App\Service\Library;
 
 /**
- * Class SingerFixtures
+ * Class ArticleFixtures
  *
  * @package App\DataFixtures
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
-class SingerFixtures extends Fixture implements OrderedFixtureInterface
+class ArticleFixtures extends Fixture implements OrderedFixtureInterface
 {
     /**
-     * List of preset singers
+     * List of preset articles
      * @var array
      */
-    private static $singers = [];
+    private static $articles = [];
 
     /**
      * Load fixtures
