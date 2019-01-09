@@ -15,6 +15,9 @@ namespace App\Controller;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\ORM\NonUniqueResultException;
+
 use Psr\Container\ContainerInterface as Container;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,6 +51,8 @@ class PortalController extends AbstractController
      * @param Translator $translator
      * @param string $name
      * @return RedirectResponse|Response|array
+     * @throws DBALException
+     * @throws NonUniqueResultException
      * @Route("/{name}",
      *         methods={"GET"},
      *         name="portal_show"
@@ -64,15 +69,21 @@ class PortalController extends AbstractController
             throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }
 
-        $generalTheories = $this->getDoctrine()->getRepository(Theory::class)
+        $theories = $this->getDoctrine()->getRepository(Theory::class)
             ->getGeneralTheories($portal->getId());
-        $topics = $this->getDoctrine()->getRepository(Topic::class)
-            ->getGeneralTheories($portal->getId());
-
-        var_dump($generalTheories);exit;
+        $hasTopics = $this->getDoctrine()->getRepository(Topic::class)
+            ->existForPortal($portal->getId());
+        $hasArticles = $this->getDoctrine()->getRepository(Article::class)
+            ->existForPortal($portal->getId());
+        $hasLyrics = $this->getDoctrine()->getRepository(Lyric::class)
+            ->existForPortal($portal->getId());
 
         return [
-            'portal' => $portal
+            'portal' => $portal,
+            'theories' => $theories,
+            'hasTopics' => $hasTopics,
+            'hasArticles' => $hasArticles,
+            'hasLyrics' => $hasLyrics
         ];
     }
 }

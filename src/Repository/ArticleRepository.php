@@ -12,10 +12,12 @@ use App\Entity\Article;
 use App\Repository\Library\Interfaces\ILast;
 use App\Repository\Library\Interfaces\IBasic;
 use App\Repository\Library\Interfaces\ISeoable;
+use App\Repository\Library\Interfaces\IExistForPortal;
 
 use App\Repository\Library\Traits\Last as LastMethods;
 use App\Repository\Library\Traits\Basic as BasicMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
+use App\Repository\Library\Traits\ExistForPortal as ExistForPortalMethods;
 
 /**
  * Class ArticleRepository
@@ -32,6 +34,7 @@ class ArticleRepository extends ServiceEntityRepository implements IBasic, ISeoa
     use LastMethods;
     use BasicMethods;
     use SeoableMethods;
+    use ExistForPortalMethods;
 
     /**
      * ArticleRepository constructor
