@@ -71,6 +71,31 @@ class PortalController extends AbstractController
 
         $theories = $this->getDoctrine()->getRepository(Theory::class)
             ->getGeneralTheories($portal->getId());
+
+        $theories = [
+            [
+                'id' => 1,
+                'title' => 'Grammar',
+                'caption' => 'English grammar',
+                'uri' => 'grammar',
+                'slug' => 'grammar'
+            ],
+            [
+                'id' => 1,
+                'title' => 'Grammar',
+                'caption' => 'English grammar',
+                'uri' => 'grammar',
+                'slug' => 'grammar'
+            ],
+            [
+                'id' => 1,
+                'title' => 'Grammar',
+                'caption' => 'English grammar',
+                'uri' => 'grammar',
+                'slug' => 'grammar'
+            ]
+        ];
+
         $hasTopics = $this->getDoctrine()->getRepository(Topic::class)
             ->existForPortal($portal->getId());
         $hasArticles = $this->getDoctrine()->getRepository(Article::class)

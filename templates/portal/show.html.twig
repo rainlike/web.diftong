@@ -2,8 +2,59 @@
 
 {% block clipboard %}
     <h1 class="app-portal-title">{{ portal.title|capitalize }}</h1>
-    <p class="app-paragraph">
-        {{ 'Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи, а также построения английских предложений. (@DESCRIPTION)' }}
-    </p>
+    <section class="app-portal-description">
+        <p class="app-paragraph">
+            {{ 'Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи, а также построения английских предложений. (@DESCRIPTION)' }}
+        </p>
+    </section>
+    {% if theories or hasTopics or hasArticles or hasLyrics %}
+        <section class="app-portal__layer">
+            {% if theories %}
+                {% for theory in theories %}
+                    <div class="app-portal-category-card">
+                        <a href="#">
+                            <p class="app-portal-category-card__title">{{ theory.title }}</p>
+                            <p class="app-portal-category-card__caption">{{ theory.caption }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% if hasTopics %}
+                <div class="app-portal-category-card app-portal-category-card__sub">
+                    <a href="#">
+                        <p class="app-portal-category-card__title">
+                            {{ 'category.topics.self'|trans({}, 'portal') }}
+                        </p>
+                        <p class="app-portal-category-card__caption">
+                            {{ 'category.topics.caption'|trans({}, 'portal') }}
+                        </p>
+                    </a>
+                </div>
+            {% endif %}
+            {% if hasArticles %}
+                <div class="app-portal-category-card app-portal-category-card__sub">
+                    <a href="#">
+                        <p class="app-portal-category-card__title">
+                            {{ 'category.articles.self'|trans({}, 'portal') }}
+                        </p>
+                        <p class="app-portal-category-card__caption">
+                            {{ 'category.articles.caption'|trans({}, 'portal') }}
+                        </p>
+                    </a>
+                </div>
+            {% endif %}
+            {% if hasLyrics %}
+                <div class="app-portal-category-card app-portal-category-card__sub">
+                    <a href="#">
+                        <p class="app-portal-category-card__title">
+                            {{ 'category.lyrics.self'|trans({}, 'portal') }}
+                        </p>
+                        <p class="app-portal-category-card__caption">
+                            {{ 'category.lyrics.caption'|trans({}, 'portal') }}
+                        </p>
+                    </a>
+                </div>
+            {% endif %}
+        </section>
+    {% endif %}
 {% endblock %}
-

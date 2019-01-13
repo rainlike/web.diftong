@@ -68,6 +68,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
             ->select([
                 'theory.id',
                 'theory.title',
+                'theory.caption',
                 'theory.uri',
                 'theory.slug'
             ])

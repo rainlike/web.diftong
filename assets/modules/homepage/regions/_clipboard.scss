@@ -14,14 +14,11 @@
 }
 
 /**
- * Layout for Homepage elements.
+ * Layer for Homepage blocks.
  *
- * @structure Layout
+ * @structure Layer
  * @section Homepage
  */
 .#{$prefix}-homepage__layer {
-  display:   flex;
-  flex-flow: row wrap;
-  width:     100%;
-  margin:    $clipboard-indent-vertical 0;
+  @include app--layer();
 }

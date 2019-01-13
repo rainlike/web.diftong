@@ -29,8 +29,8 @@
   border:         5px solid $color-warning;
   cursor:         pointer;
 
-  :hover,
-  :active {
+  &:hover,
+  &:active {
     @include app--lighten($color-warning, 10%, "bg");
   }
 

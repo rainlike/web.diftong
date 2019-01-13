@@ -1,0 +1,11 @@
+# Portal
+category:
+  topics:
+    self: "Topics"
+    caption: "Topics @CAPTION"
+  articles:
+    self: "Articles"
+    caption: "Articles @CAPTION"
+  lyrics:
+    self: "Lyrics"
+    caption: "Lyrics @CAPTION"

@@ -1,0 +1,11 @@
+# Portal
+category:
+  topics:
+    self: "Топіки"
+    caption: "Топіки @CAPTION"
+  articles:
+    self: "Статті"
+    caption: "Статті @CAPTION"
+  lyrics:
+    self: "Тексти пісень"
+    caption: "Тексти пісень @CAPTION"

@@ -12,3 +12,13 @@
 .#{$prefix}-portal-clipboard {
   @include app--flex-col-center();
 }
+
+/**
+ * Layer for Portal blocks.
+ *
+ * @structure Layer
+ * @section Portal
+ */
+.#{$prefix}-portal__layer {
+  @include app--layer();
+}

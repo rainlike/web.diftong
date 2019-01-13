@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Card of Portal' categories.
+ *
+ * @molecule Category-Card
+ * @section Portal
+ * @modifiers
+ *  .app-portal-category-card__sub sub-category
+ * @markup
+ *  <div class="app-portal-category-card">
+ *    <a href="#">
+ *      <p class="app-portal-category-card__title">Grammar</p>
+ *      <p class="app-portal-category-card__caption">English grammar</p>
+ *    </a>
+ *  </div>
+ *  <div class="app-portal-category-card app-portal-category-card__sub">
+ *    <a href="#">
+ *      <p class="app-portal-category-card__title">Grammar</p>
+ *      <p class="app-portal-category-card__caption">English grammar</p>
+ *    </a>
+ *  </div>
+ */
+.#{$prefix}-portal-category-card {
+  @include app--calc-sub($clipboard-indent-horizontal * 2, 33%);
+  @include app--lighten($color-warning, 30%, "bg");
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  margin:         15px;
+  box-sizing:     border-box;
+  border:         3px solid $color-warning;
+  cursor:         pointer;
+
+  &__sub {
+    @include app--calc-sub($clipboard-indent-horizontal * 2, 30%);
+    @include app--lighten($color-warning, 35%, "bg");
+    border: 2px solid $color-warning;
+  }
+
+  &:hover,
+  &:active {
+    @include app--lighten($color-warning, 10%, "bg");
+  }
+
+  a {
+    color: $color-black;
+    text-decoration: none;
+  }
+
+  &__title {
+    text-align:    center;
+    margin-bottom: 10px;
+    font-size:     x-large;
+    font-weight:   bold;
+  }
+
+  &__caption {
+    text-align: center;
+    margin:     10px 0;
+    font-size:  small;
+    font-style: italic;
+  }
+}

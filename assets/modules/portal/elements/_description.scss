@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Description of Portal.
+ *
+ * @molecule Description
+ * @section Portal
+ * @markup
+ *  <section class="app-portal-description">
+ *    Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи, а также построения английских предложений.
+ *  </section>
+ */
+.#{$prefix}-portal-description {
+  padding:    0 25px;
+  text-align: center;
+}
