@@ -44,10 +44,10 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
-            'name' => 'global_logo_as_link',
+            'name' => 'header_logo_as_link',
             'title' => 'Header logo as link',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_HEADER,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -60,10 +60,42 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
+            'name' => 'header_show_actions',
+            'title' => 'Show actions buttons in header',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_HEADER,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar botones de acciones en el encabezado',
+                    'uk' => 'Показувати кнопки дій у заголовку',
+                    'ru' => 'Показать кнопки действий в заголовке',
+                    'pl' => 'Pokaż przyciski działań w nagłówku'
+                ]
+            ]
+        ],
+        [
+            'name' => 'header_flat_actions',
+            'title' => 'Flat styles for icons of actions in header',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_HEADER,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Estilos planos para iconos de acciones en cabecera',
+                    'uk' => 'Плоскі стилі для піктограм дій у заголовку',
+                    'ru' => 'Плоские стили для иконок действий в заголовке',
+                    'pl' => 'Style płaskie dla ikon akcji w nagłówku'
+                ]
+            ]
+        ],
+        [
             'name' => 'menu_show_grammar',
             'title' => 'Show grammar section in menu',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_MENU,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -79,7 +111,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_phonetics',
             'title' => 'Show phonetics section in menu',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_MENU,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -95,7 +127,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_lexis',
             'title' => 'Show lexis section in menu',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_MENU,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -111,7 +143,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_articles',
             'title' => 'Show articles in menu',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_MENU,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -127,7 +159,7 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'name' => 'menu_show_lyrics',
             'title' => 'Show lyrics in menu',
             'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
+            'section' => ValueType::SECTION_MENU,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
@@ -136,22 +168,6 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
                     'uk' => 'Показати тексти пісень в меню',
                     'ru' => 'Показать тексты песен в меню',
                     'pl' => 'Pokaż teksty w menu'
-                ]
-            ]
-        ],
-        [
-            'name' => 'header_flat_actions',
-            'title' => 'Flat styles for icons of actions in header',
-            'type' => ValueType::TYPE_BOOL,
-            'section' => ValueType::SECTION_GLOBAL,
-            'priority' => ValueType::PRIORITY_SITE,
-            'enabled' => true,
-            'translations' => [
-                'title' => [
-                    'es' => 'Estilos planos para iconos de acciones en cabecera',
-                    'uk' => 'Плоскі стилі для піктограм дій у заголовку',
-                    'ru' => 'Плоские стили для иконок действий в заголовке',
-                    'pl' => 'Style płaskie dla ikon akcji w nagłówku'
                 ]
             ]
         ]

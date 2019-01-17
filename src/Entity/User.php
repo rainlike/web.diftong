@@ -6,6 +6,7 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use FOS\UserBundle\Model\User as BaseUser;
@@ -137,9 +138,9 @@ class User extends BaseUser
     /**
      * Get settings
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getSettings(): ?ArrayCollection
+    public function getSettings()
     {
         return $this->settings;
     }

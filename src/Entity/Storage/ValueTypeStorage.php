@@ -24,7 +24,19 @@ class ValueTypeStorage
      * Name of value for setting logo as link
      * @var string
      */
-    public const GLOBAL_LOGO_AS_LINK = 'global_logo_as_link';
+    public const HEADER_LOGO_AS_LINK = 'header_logo_as_link';
+
+    /**
+     * Name of value for showing buttons in header
+     * @var string
+     */
+    public const HEADER_SHOW_ACTIONS = 'header_show_actions';
+
+    /**
+     * Name of value for styling buttons in header
+     * @var string
+     */
+    public const HEADER_FLAT_ACTIONS = 'header_flat_actions';
 
     /**
      * Name of value for showing grammar in menu
@@ -55,10 +67,4 @@ class ValueTypeStorage
      * @var string
      */
     public const MENU_SHOW_LYRICS = 'menu_show_lyrics';
-
-    /**
-     * Name of value for styling buttons in header
-     * @var string
-     */
-    public const HEADER_FLAT_ACTIONS = 'header_flat_actions';
 }

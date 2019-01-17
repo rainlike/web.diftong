@@ -74,6 +74,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
             ])
             ->where('theory.portal = :portal_id')
             ->andWhere('theory.isGeneral = :is_general')
+            ->andWhere('theory.parent IS NULL')
             ->setParameter('portal_id', $portalId)
             ->setParameter('is_general', true);
 
@@ -83,5 +84,75 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
         }
 
         return $qb->getQuery();
+    }
+
+    /**
+     * Get table of contents for portal
+     *
+     * @param int $portalId
+     * @param bool $enabledOnly
+     * @return array|null
+     */
+    public function getPortalTheoriesTree(int $portalId, bool $enabledOnly = true): ?array
+    {
+        $generalTheories = $this->getGeneralTheories($portalId, $enabledOnly);
+
+        foreach ($generalTheories as $key => $generalTheory) {
+            $generalTheories[$key]['children'] = $this->getAllChildren($generalTheory['id'], $enabledOnly);
+        }
+
+        return $generalTheories;
+    }
+
+    /**
+     * Get all theory' children
+     *
+     * @param int $parentId
+     * @param bool $enabledOnly
+     * @return array|null
+     */
+    private function getAllChildren(int $parentId, bool $enabledOnly = true): ?array
+    {
+        $children = $this->getChildren($parentId, $enabledOnly);
+
+        if ($children) {
+            foreach ($children as $key => $child) {
+                $children[$key]['children'] = $child['id']
+                    ? $this->getAllChildren($child['id'], $enabledOnly)
+                    : null;
+            }
+        }
+
+        return $children;
+    }
+
+    /**
+     * Get first line children of theory
+     *
+     * @param int $parentId
+     * @param bool $enabledOnly
+     * @return array|null
+     */
+    private function getChildren(int $parentId, bool $enabledOnly = true): ?array
+    {
+        $qb = $this->createQueryBuilder('theory')
+            ->select([
+                'theory.id',
+                'theory.title',
+                'theory.caption',
+                'theory.uri',
+                'theory.slug'
+            ])
+            ->where('theory.parent = :parent_id')
+            ->setParameter('parent_id', $parentId);
+
+        if ($enabledOnly) {
+            $qb->andWhere('theory.enabled = :enabled_only')
+                ->setParameter('enabled_only', $enabledOnly);
+        }
+
+        $children = $qb->getQuery()->getArrayResult();
+
+        return $children ?: null;
     }
 }

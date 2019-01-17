@@ -7,19 +7,21 @@
             {{ 'Онлайн справочник грамматики английского языка с подробным изложением особенностей употребления частей речи, а также построения английских предложений. (@DESCRIPTION)' }}
         </p>
     </section>
-    {% if theories or hasTopics or hasArticles or hasLyrics %}
+    {% if general_theories %}
         <section class="app-portal__layer">
-            {% if theories %}
-                {% for theory in theories %}
-                    <div class="app-portal-category-card">
-                        <a href="#">
-                            <p class="app-portal-category-card__title">{{ theory.title }}</p>
-                            <p class="app-portal-category-card__caption">{{ theory.caption }}</p>
-                        </a>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            {% if hasTopics %}
+            {% for general_theory in general_theories %}
+                <div class="app-portal-category-card">
+                    <a href="#">
+                        <p class="app-portal-category-card__title">{{ general_theory.title }}</p>
+                        <p class="app-portal-category-card__caption">{{ general_theory.caption }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </section>
+    {% endif %}
+    {% if has_topics or has_articles or has_lyrics %}
+        <section class="app-portal__layer">
+            {% if has_topics %}
                 <div class="app-portal-category-card app-portal-category-card__sub">
                     <a href="#">
                         <p class="app-portal-category-card__title">
@@ -31,7 +33,7 @@
                     </a>
                 </div>
             {% endif %}
-            {% if hasArticles %}
+            {% if has_articles %}
                 <div class="app-portal-category-card app-portal-category-card__sub">
                     <a href="#">
                         <p class="app-portal-category-card__title">
@@ -43,7 +45,7 @@
                     </a>
                 </div>
             {% endif %}
-            {% if hasLyrics %}
+            {% if has_lyrics %}
                 <div class="app-portal-category-card app-portal-category-card__sub">
                     <a href="#">
                         <p class="app-portal-category-card__title">
@@ -55,6 +57,13 @@
                     </a>
                 </div>
             {% endif %}
+        </section>
+    {% endif %}
+    {% if table_of_content %}
+        <section class="app-portal__layer">
+            {% include 'portal/components/table-of-content.html.twig' with {
+                'items': table_of_content
+            } only %}
         </section>
     {% endif %}
 {% endblock %}

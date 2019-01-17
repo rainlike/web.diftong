@@ -1,5 +1,5 @@
 <div class="app-header__logo">
-    {% if _setting('global_logo_as_link') %}
+    {% if _setting('header_logo_as_link') %}
         <a href="{{ path('homepage_index') }}">
     {% endif %}
     {% if logo.type == constant('App\\Service\\Logotype::TYPE_PHRASE') %}
@@ -15,7 +15,7 @@
              class="app-header__logo--image"
         />
     {% endif %}
-    {% if _setting('global_logo_as_link') %}
+    {% if _setting('header_logo_as_link') %}
         </a>
     {% endif %}
 </div>

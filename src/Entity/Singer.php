@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\BasicEntity;
@@ -81,9 +82,9 @@ class Singer extends BasicEntity implements IBasic
     /**
      * Get albums
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getAlbums(): ?ArrayCollection
+    public function getAlbums()
     {
         return $this->albums;
     }
@@ -115,9 +116,9 @@ class Singer extends BasicEntity implements IBasic
     /**
      * Get lyrics
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getLyrics(): ?ArrayCollection
+    public function getLyrics()
     {
         return $this->lyrics;
     }

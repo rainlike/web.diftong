@@ -1,0 +1,13 @@
+{% macro ulli(items) %}
+    <ul>
+        {% for item in items %}
+            <li>
+                <a href="#">{{item.title}}</a>
+                {% if item.children %}
+                    {% import _self as self %}
+                    {{ self.ulli(item.children) }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

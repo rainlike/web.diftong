@@ -69,32 +69,11 @@ class PortalController extends AbstractController
             throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }
 
-        $theories = $this->getDoctrine()->getRepository(Theory::class)
+        $generalTheories = $this->getDoctrine()->getRepository(Theory::class)
             ->getGeneralTheories($portal->getId());
 
-        $theories = [
-            [
-                'id' => 1,
-                'title' => 'Grammar',
-                'caption' => 'English grammar',
-                'uri' => 'grammar',
-                'slug' => 'grammar'
-            ],
-            [
-                'id' => 1,
-                'title' => 'Grammar',
-                'caption' => 'English grammar',
-                'uri' => 'grammar',
-                'slug' => 'grammar'
-            ],
-            [
-                'id' => 1,
-                'title' => 'Grammar',
-                'caption' => 'English grammar',
-                'uri' => 'grammar',
-                'slug' => 'grammar'
-            ]
-        ];
+        $tableOfContent = $this->getDoctrine()->getRepository(Theory::class)
+            ->getPortalTheoriesTree($portal->getId());
 
         $hasTopics = $this->getDoctrine()->getRepository(Topic::class)
             ->existForPortal($portal->getId());
@@ -105,10 +84,11 @@ class PortalController extends AbstractController
 
         return [
             'portal' => $portal,
-            'theories' => $theories,
-            'hasTopics' => $hasTopics,
-            'hasArticles' => $hasArticles,
-            'hasLyrics' => $hasLyrics
+            'general_theories' => $generalTheories,
+            'has_topics' => $hasTopics,
+            'has_articles' => $hasArticles,
+            'has_lyrics' => $hasLyrics,
+            'table_of_content' => $tableOfContent
         ];
     }
 }

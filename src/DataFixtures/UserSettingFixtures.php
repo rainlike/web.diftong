@@ -29,7 +29,35 @@ class UserSettingFixtures extends Fixture implements OrderedFixtureInterface
                 'value' => 1
             ],
             [
-                'type' => 'global_logo_as_link',
+                'type' => 'header_logo_as_link',
+                'value' => 1
+            ],
+            [
+                'type' => 'header_show_actions',
+                'value' => 1
+            ],
+            [
+                'type' => 'header_flat_actions',
+                'value' => 1
+            ],
+            [
+                'type' => 'menu_show_grammar',
+                'value' => 1
+            ],
+            [
+                'type' => 'menu_show_phonetics',
+                'value' => 1
+            ],
+            [
+                'type' => 'menu_show_lexis',
+                'value' => 1
+            ],
+            [
+                'type' => 'menu_show_articles',
+                'value' => 1
+            ],
+            [
+                'type' => 'menu_show_lyrics',
                 'value' => 1
             ]
         ]

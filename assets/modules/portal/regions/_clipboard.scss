@@ -20,5 +20,10 @@
  * @section Portal
  */
 .#{$prefix}-portal__layer {
-  @include app--layer();
+  //@include app--layer();
+  display:         flex;
+  flex-flow:       row wrap;
+  justify-content: center;
+  width:  100%;
+  margin-bottom: 10px;
 }

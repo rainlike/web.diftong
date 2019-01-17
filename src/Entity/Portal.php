@@ -6,6 +6,7 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -168,9 +169,9 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     /**
      * Get theories
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getTheories(): ?ArrayCollection
+    public function getTheories()
     {
         return $this->theories;
     }
@@ -202,9 +203,9 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     /**
      * Get articles
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getArticles(): ?ArrayCollection
+    public function getArticles()
     {
         return $this->articles;
     }
@@ -236,9 +237,9 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     /**
      * Get topics
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getTopics(): ?ArrayCollection
+    public function getTopics()
     {
         return $this->topics;
     }

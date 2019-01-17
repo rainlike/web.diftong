@@ -1,0 +1,12 @@
+{% import 'macroses/tree.html.twig' as macros %}
+
+{% if items %}
+    <nav class="app-portal-table-of-content">
+        {% for general_item in items %}
+            {% if general_item.children is defined %}
+                <h3 class="app-portal-table-of-content__category">{{ general_item.title }}</h3>
+                {{ macros.ulli(general_item.children) }}
+            {% endif %}
+        {% endfor %}
+    </nav>
+{% endif %}

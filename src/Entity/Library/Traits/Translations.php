@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Library\Traits;
 
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\Interfaces\ITranslation;
@@ -45,9 +46,9 @@ trait Translations
     /**
      * Get translations
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getTranslations(): ?ArrayCollection
+    public function getTranslations()
     {
         return $this->translations;
     }

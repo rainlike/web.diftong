@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Library\Interfaces;
 
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\Traits\Locale\Translatable;
@@ -34,9 +35,9 @@ interface ITranslatable extends IBasic
     /**
      * Get translations
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getTranslations(): ?ArrayCollection;
+    public function getTranslations();
 
     /**
      * Set translatable locale

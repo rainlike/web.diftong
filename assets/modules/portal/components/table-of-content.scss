@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Table of content for portal theories.
+ *
+ * @molecule Table of Content
+ * @section Portal
+ * @markup
+ *  <nav class="app-portal-table-of-content">
+ *    <h3 class="app-portal-table-of-content__category">Grammar</h3>
+ *    <ul>
+ *      <li>
+ *        <a href="#">Verb</a>
+ *        <ul>
+ *          <li>
+ *            <a href="#">Personal and non-verbal forms of the verb</a>
+ *          </li>
+ *        </ul>
+ *      </li>
+ *      <li>
+ *        <a href="#">Noun</a>
+ *      </li>
+ *    </ul>
+ *  </nav>
+ */
+.#{$prefix}-portal-table-of-content {
+  width:  100%;
+  margin: 0 15px;
+
+  &__category {
+    margin-bottom: 0.7em;
+    font-size:     x-large;
+    font-weight:   bold;
+
+    & + ul > li:not(:first-child) {
+      margin-top: 0.5em;
+    }
+
+    & + ul > li > a {
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+    list-style-type: none;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 0.2em;
+  }
+}

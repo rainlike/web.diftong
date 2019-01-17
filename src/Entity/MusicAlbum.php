@@ -6,6 +6,7 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Entity\Library\BasicEntity;
@@ -149,9 +150,9 @@ class MusicAlbum extends BasicEntity implements IBasic
     /**
      * Get lyrics
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getLyrics(): ?ArrayCollection
+    public function getLyrics()
     {
         return $this->lyrics;
     }

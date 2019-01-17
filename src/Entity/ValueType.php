@@ -16,6 +16,7 @@ namespace App\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -80,6 +81,9 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
      */
     public const SECTIONS = [
         self::SECTION_GLOBAL,
+        self::SECTION_HEADER,
+        self::SECTION_FOOTER,
+        self::SECTION_MENU,
         self::SECTION_HOMEPAGE,
         self::SECTION_PORTAL,
         self::SECTION_BACKOFFICE,
@@ -93,6 +97,9 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
      * @var string
      */
     public const SECTION_GLOBAL = 'global';
+    public const SECTION_HEADER = 'header';
+    public const SECTION_FOOTER = 'footer';
+    public const SECTION_MENU = 'menu';
     public const SECTION_HOMEPAGE = 'homepage';
     public const SECTION_PORTAL = 'portal';
     public const SECTION_BACKOFFICE = 'backoffice';
@@ -272,9 +279,9 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
     /**
      * Get site_settings
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getSiteSettings(): ?ArrayCollection
+    public function getSiteSettings()
     {
         return $this->site_settings;
     }
@@ -306,9 +313,9 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
     /**
      * Get user_settings
      *
-     * @return ArrayCollection|null
+     * @return ArrayCollection|PersistentCollection|null
      */
-    public function getUserSettings(): ?ArrayCollection
+    public function getUserSettings()
     {
         return $this->user_settings;
     }
