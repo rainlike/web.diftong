@@ -1,6 +1,6 @@
 <?php
 /**
- * Library
+ * Library Service
  * Provides useful methods
  *
  * @package App\Utility
@@ -13,17 +13,19 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Symfony\Component\Debug\Exception\UndefinedMethodException;
-
 use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Utility\StaticStorage;
 
+use App\Service\Library\Magic\MagicCallable as MagicCallMethod;
+
 /** Class Library */
 class Library
 {
+    use MagicCallMethod;
+
     /** @var Translator */
     private $translator;
 
@@ -35,24 +37,6 @@ class Library
     public function __construct(Translator $translator)
     {
         $this->translator = $translator;
-    }
-
-    /**
-     * Magic __call method
-     *
-     * @param string $method
-     * @param array $arguments
-     * @return mixed
-     * @throws UndefinedMethodException
-     */
-    public function __call($method, $arguments)
-    {
-        $isExists = \method_exists($this, $method);
-        if ($isExists) {
-            return self::$method(...$arguments);
-        }
-
-        throw new UndefinedMethodException(StaticCodes::EXCEPTION_UNDEFINED_METHOD_MESSAGE, new \ErrorException());
     }
 
     /** STRING SECTION ************************************************************************************************/

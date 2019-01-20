@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use Symfony\Component\Debug\Exception\UndefinedMethodException;
-
-use App\Utility\StaticCodes;
+use App\Service\Library\Magic\MagicCallable as MagicCallMethod;
 
 /** Class Transformer */
 class Transformer
 {
+    use MagicCallMethod;
+
     /**
      * Possible types to be transformed
      * @var array
@@ -45,24 +45,6 @@ class Transformer
     public const TYPE_STRING = 'string';
     public const TYPE_ARRAY = 'array';
     public const TYPE_DATE = 'date';
-
-    /**
-     * Magic __call method
-     *
-     * @param string $method
-     * @param array $arguments
-     * @return mixed
-     * @throws UndefinedMethodException
-     */
-    public function __call($method, $arguments)
-    {
-        $isExists = \method_exists($this, $method);
-        if ($isExists) {
-            return self::$method(...$arguments);
-        }
-
-        throw new UndefinedMethodException(StaticCodes::EXCEPTION_UNDEFINED_METHOD_MESSAGE, new \ErrorException());
-    }
 
     /**
      * Transform to preset type

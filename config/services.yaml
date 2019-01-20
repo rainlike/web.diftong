@@ -119,6 +119,13 @@ services:
     autowire: true
     autoconfigure: true
 
+  App\Service\Transliterator:
+    autowire: true
+    autoconfigure: true
+    arguments:
+      $layout: 'Any-Latin'
+      $asciiLayout: 'Latin-ASCII'
+
   # Helpers
   App\Helper\TranslationHelper:
     autowire: true

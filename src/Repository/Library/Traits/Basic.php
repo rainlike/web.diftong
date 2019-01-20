@@ -9,12 +9,16 @@
  * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
+declare(strict_types=1);
 
 namespace App\Repository\Library\Traits;
+
+use App\Repository\Library\Magic\MagicCallable;
 
 /** Trait Basic */
 trait Basic
 {
     use Enabled;
     use Columns;
+    use MagicCallable;
 }

@@ -14,7 +14,6 @@ use App\Repository\Library\Interfaces\ISeoable;
 
 use App\Repository\Library\Traits\Basic as BasicMethods;
 use App\Repository\Library\Traits\Seoable as SeoableMethods;
-use App\Repository\Library\Traits\MagicCallable as MagicCallableMethod;
 
 /**
  * Class PortalRepository
@@ -30,7 +29,6 @@ class PortalRepository extends ServiceEntityRepository implements IBasic, ISeoab
 {
     use BasicMethods;
     use SeoableMethods;
-    use MagicCallableMethod;
 
     /**
      * PortalRepository constructor

@@ -1,7 +1,18 @@
 <?php
+/**
+ * MagicCallable Trait
+ * Provides magic __call() method for Repositories
+ * It allows to use `xQuery` methods through methods without `Query` word
+ *
+ * @package App\Repository\Library\Traits
+ * @version 1.0.0
+ * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @author Alexander Saveliev <alex@spbcrew.com>
+ */
 declare(strict_types=1);
 
-namespace App\Repository\Library\Traits;
+namespace App\Repository\Library\Magic;
 
 use Symfony\Component\Debug\Exception\UndefinedMethodException;
 
@@ -10,7 +21,7 @@ use App\Utility\StaticCodes;
 /**
  * Trait MagicCallable
  *
- * @package App\Repository\Library\Traits
+ * @package App\Repository\Library\Magic
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 trait MagicCallable
@@ -38,10 +49,13 @@ trait MagicCallable
         }
 
         $queryMethod = $method.'Query';
-        if ($queryMethod) {
+        if (\method_exists($this, $queryMethod)) {
             return $this->$queryMethod(...$arguments)->getResult();
         }
 
-        throw new UndefinedMethodException(StaticCodes::EXCEPTION_UNDEFINED_METHOD_MESSAGE, new \ErrorException());
+        throw new UndefinedMethodException(
+            StaticCodes::EXCEPTION_UNDEFINED_METHOD_MESSAGE,
+            new \ErrorException()
+        );
     }
 }
