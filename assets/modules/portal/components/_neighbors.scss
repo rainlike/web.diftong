@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Theory's neighbors.
+ *
+ * @molecule Neighbors
+ * @section Theory
+ * @markup
+ *  <div class="app-theory-neighbors">
+ *    <div class="app-theory-neighbors__item">
+ *      <a href="#">
+ *        <span class="app-mdi"><i class="mdi mdi-chevron-left"></i></span>
+ *        previous neighbor
+ *      </a>
+ *    </div>
+ *    <div class="app-theory-neighbors__item">
+ *      <a href="#">
+ *        next neighbor
+ *        <span class="app-mdi"><i class="mdi mdi-chevron-right"></i></span>
+ *      </a>
+ *    </div>
+ *  </div>
+ */
+.#{$prefix}-theory-neighbors {
+  display:         flex;
+  flex-direction:  row;
+  justify-content: space-between;
+  width:      100%;
+  min-height: 20px;
+
+  &__item {
+    width:      50%;
+    text-align: center;
+
+    a {
+      color: $color-secondary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Symfony\Bridge\Doctrine\RegistryInterface as Registry;
 
 use Doctrine\ORM\Query;
@@ -77,6 +79,58 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
             ->andWhere('theory.parent IS NULL')
             ->setParameter('portal_id', $portalId)
             ->setParameter('is_general', true);
+
+        if ($enabledOnly) {
+            $qb->andWhere('theory.enabled = :enabled_only')
+                ->setParameter('enabled_only', $enabledOnly);
+        }
+
+        return $qb->getQuery();
+    }
+
+    /**
+     * Get Theory by URI for Portal (optionally)
+     *
+     * @param string $uri
+     * @param bool $enabledOnly
+     * @param null|string $portalUri
+     * @return Theory|null
+     * @throws NonUniqueResultException
+     */
+    public function getTheoryByUri(
+        string $uri,
+        bool $enabledOnly = true,
+        ?string $portalUri = null
+    ): ?Theory
+    {
+        return $this->getTheoryByUriQuery($uri, $enabledOnly, $portalUri)
+            ->getOneOrNullResult();
+    }
+
+    /**
+     * Get query got getting theory by slug for Portal (optionally)
+     *
+     * @param string $uri
+     * @param bool $enabledOnly
+     * @param null|string $portalUri
+     * @return Query
+     */
+    public function getTheoryByUriQuery(
+        string $uri,
+        bool $enabledOnly = true,
+        ?string $portalUri = null
+    ): Query
+    {
+        $qb = $this->createQueryBuilder('theory')
+            ->select('theory')
+            ->where('theory.uri = :theory_uri OR theory.slug = :theory_uri')
+            ->setParameter('theory_uri', $uri);
+
+        if ($portalUri) {
+            $qb->join('theory.portal', 'portal')
+                ->andWhere('portal.uri = :portal_uri OR portal.slug = :portal_uri')
+                ->setParameter('portal_uri', $portalUri);
+        }
 
         if ($enabledOnly) {
             $qb->andWhere('theory.enabled = :enabled_only')

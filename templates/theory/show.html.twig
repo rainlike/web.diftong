@@ -1,0 +1,34 @@
+{% extends 'portal/layout.html.twig' %}
+
+{% block clipboard %}
+    <h1 class="app-theory-title">{{ theory.caption|capitalize }}</h1>
+    <div class="app-theory-neighbors">
+        <div class="app-theory-neighbors__item">
+            {% if previous %}
+                <a href="{{ path('theory_show', {
+                       'portal_uri': portal_uri,
+                       'uri': previous.uri
+                   }) }}">
+                    <span class="app-mdi"><i class="mdi mdi-chevron-left"></i></span>
+                    {{ previous.caption }}
+                </a>
+            {% endif %}
+        </div>
+        <div class="app-theory-neighbors__item">
+            {% if next %}
+                <a href="{{ path('theory_show', {
+                    'portal_uri': portal_uri,
+                    'uri': next.uri
+                }) }}">
+                    {{ next.caption }}
+                    <span class="app-mdi"><i class="mdi mdi-chevron-right"></i></span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="app-theory-content__layer">
+        <section class="app-theory-content">
+            {{ theory.formattedContent|raw|nl2br }}
+        </section>
+    </div>
+{% endblock %}

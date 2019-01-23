@@ -34,7 +34,7 @@
   @include app--box-sizing();
   width:     350px;
   flex-grow: 0;
-  padding:   15px 0 0 15px;
+  margin:    15px 0 0 15px;
 
   & > *:not(:first-child) {
     margin-top: 15px;

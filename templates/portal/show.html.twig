@@ -11,7 +11,10 @@
         <section class="app-portal__layer">
             {% for general_theory in general_theories %}
                 <div class="app-portal-category-card">
-                    <a href="#">
+                    <a href="{{ path('theory_show', {
+                        'portal_name': portal.slug,
+                        'name': general_theory.slug
+                    }) }}">
                         <p class="app-portal-category-card__title">{{ general_theory.title }}</p>
                         <p class="app-portal-category-card__caption">{{ general_theory.caption }}</p>
                     </a>
@@ -62,6 +65,7 @@
     {% if table_of_content %}
         <section class="app-portal__layer">
             {% include 'portal/components/table-of-content.html.twig' with {
+                'portal_name': portal.slug,
                 'items': table_of_content
             } only %}
         </section>

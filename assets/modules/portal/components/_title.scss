@@ -12,31 +12,27 @@
  *  <h1 class="app-portal-title">English language</h1>
  */
 .#{$prefix}-portal-title {
+  @include app--portal-title();
   display:     inline-block;
   position:    relative;
   line-height: 0;
   font-size:   xx-large;
   text-align:  center;
+}
 
-  &:before,
-  &:after {
-    content:  "";
-    position: absolute;
-    top:      0;
-    height:   1px;
-    width:    50px;
-    border:   0;
-  }
-
-  &:before {
-    right:        100%;
-    margin-right: 10px;
-    background-image: linear-gradient(to right, rgba($color-black, 0), rgba($color-black, 0.75));
-  }
-
-  &:after {
-    left:        100%;
-    margin-left: 10px;
-    background-image: linear-gradient(to right, rgba($color-black, 0.75), rgba($color-black, 0));
-  }
+/**
+ * Title for Theory's pages.
+ *
+ * @molecule Title
+ * @section Theory
+ * @markup
+ *  <h1 class="app-theory-title">English verb</h1>
+ */
+.#{$prefix}-theory-title {
+  @include app--portal-title();
+  display:     inline-block;
+  position:    relative;
+  line-height: 0;
+  font-size:   x-large;
+  text-align:  center;
 }

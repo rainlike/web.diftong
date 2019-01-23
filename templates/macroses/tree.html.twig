@@ -1,11 +1,14 @@
-{% macro ulli(items) %}
+{% macro table_of_content(theories, portal_name) %}
     <ul>
-        {% for item in items %}
+        {% for theory in theories %}
             <li>
-                <a href="#">{{item.title}}</a>
-                {% if item.children %}
+                <a href="{{ path('theory_show', {
+                    'portal_name': portal_name,
+                    'name': theory.slug
+                }) }}">{{theory.title}}</a>
+                {% if theory.children %}
                     {% import _self as self %}
-                    {{ self.ulli(item.children) }}
+                    {{ self.table_of_content(theory.children, portal_name) }}
                 {% endif %}
             </li>
         {% endfor %}

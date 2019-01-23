@@ -28,6 +28,7 @@ use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 use App\Entity\Library\Traits\Description\TranslatableRequired as DescriptionField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\UltimateUri as UltimateUriMethod;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
@@ -53,6 +54,7 @@ class Portal extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     use LocaleField;
 
     use SlugMethods;
+    use UltimateUriMethod;
     use TranslationMethods;
 
     /**

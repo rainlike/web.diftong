@@ -15,6 +15,8 @@ namespace App\Controller;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Psr\Container\ContainerInterface as Container;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -42,10 +44,11 @@ class TheoryController extends AbstractController
      *
      * @param Request $request
      * @param Translator $translator
-     * @param string $portal_name
-     * @param string $slug
+     * @param string $portal_uri
+     * @param string $uri
      * @return RedirectResponse|Response|array
-     * @Route("/{portal_name}/{slug}",
+     * @throws NonUniqueResultException
+     * @Route("/{portal_uri}/{uri}",
      *         methods={"GET"},
      *         name="theory_show"
      * )
@@ -54,9 +57,37 @@ class TheoryController extends AbstractController
     public function show(
         Request $request,
         Translator $translator,
-        string $portal_name,
-        string $slug
+        string $portal_uri,
+        string $uri
     ) {
-        return [];
+        $repository = $this->getDoctrine()->getRepository(Theory::class);
+
+        $theory = $repository->getTheoryByUri($uri, true, $portal_uri);
+        if (!$theory) {
+            throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
+        }
+
+        $next = $theory->getNext();
+        $nextTheory = $next
+            ? [
+                'caption' => $next->getCaption(),
+                'uri' => $next->getUltimateUri()
+            ]
+            : null;
+
+        $previous = $theory->getPrevious();
+        $previousTheory = $previous
+            ? [
+                'caption' => $previous->getCaption(),
+                'uri' => $previous->getUltimateUri()
+            ]
+            : null;
+
+        return [
+            'theory' => $theory,
+            'previous' => $previousTheory,
+            'next' => $nextTheory,
+            'portal_uri' => $portal_uri
+        ];
     }
 }

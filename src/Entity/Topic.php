@@ -21,6 +21,7 @@ use App\Entity\Library\Traits\Title\Required as TitleField;
 use App\Entity\Library\Traits\Content\Required as ContentField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\UltimateUri as UltimateUriMethod;
 
 use App\Entity\TopicTheme as Theme;
 
@@ -43,6 +44,7 @@ class Topic extends BasicEntity implements IBasic, ISeoable, ISlug, ILastable
     use ContentField;
 
     use SlugMethods;
+    use UltimateUriMethod;
 
     /**
      * @Gedmo\Slug(fields={"title"})

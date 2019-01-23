@@ -26,6 +26,7 @@ use App\Entity\Library\Traits\Caption\TranslatableRequired as CaptionField;
 use App\Entity\Library\Traits\Title\TranslatableRequiredUnique as TitleField;
 
 use App\Entity\Library\Traits\Slug\Required as SlugMethods;
+use App\Entity\Library\Traits\UltimateUri as UltimateUriMethod;
 use App\Entity\Library\Traits\Translations as TranslationMethods;
 
 /**
@@ -50,6 +51,7 @@ class Theory extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     use LocaleField;
 
     use SlugMethods;
+    use UltimateUriMethod;
     use TranslationMethods;
 
     /**
@@ -86,13 +88,13 @@ class Theory extends BasicEntity implements Translatable, IBasic, ISeoable, ITra
     private $formattedContent;
 
     /**
-     * @ORM\OneToOne(targetEntity="Theory")
+     * @ORM\OneToOne(targetEntity="Theory", fetch="LAZY")
      * @ORM\JoinColumn(name="previous_id", referencedColumnName="id", nullable=true, unique=false)
      */
     private $previous;
 
     /**
-     * @ORM\OneToOne(targetEntity="Theory")
+     * @ORM\OneToOne(targetEntity="Theory", fetch="LAZY")
      * @ORM\JoinColumn(name="next_id", referencedColumnName="id", nullable=true, unique=false)
      */
     private $next;

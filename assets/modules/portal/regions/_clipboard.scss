@@ -10,7 +10,9 @@
  * @section Portal
  */
 .#{$prefix}-portal-clipboard {
-  @include app--flex-col-center();
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
 }
 
 /**
@@ -20,10 +22,29 @@
  * @section Portal
  */
 .#{$prefix}-portal__layer {
-  //@include app--layer();
   display:         flex;
   flex-flow:       row wrap;
   justify-content: center;
-  width:  100%;
-  margin-bottom: 10px;
+  width:           100%;
+  margin-bottom:   10px;
+}
+
+/**
+ * Layer of Theory' content.
+ *
+ * @structure Layer
+ * @section Theory
+ */
+.#{$prefix}-theory-content__layer {
+  width: 100%;
+}
+
+/**
+ * Wrapper for Theory' content.
+ *
+ * @structure Layer
+ * @section Theory
+ */
+.#{$prefix}-theory-content {
+  padding: 25px;
 }
