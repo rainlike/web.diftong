@@ -16,6 +16,7 @@ namespace App\Twig;
 use Doctrine\ORM\PersistentCollection;
 
 use Twig\TwigFilter;
+use Twig\TwigFunction;
 use Twig\Extension\AbstractExtension;
 
 use App\Service\Library;
@@ -45,6 +46,18 @@ class EntityExtension extends AbstractExtension
     {
         return array(
             new TwigFilter('_collectionToString', array($this, 'transformCollectionToString'))
+        );
+    }
+
+    /**
+     * Functions for Twig
+     *
+     * @return array|\Twig_Function[]
+     */
+    public function getFunctions()
+    {
+        return array(
+            new TwigFunction('_ultimateUri', array($this, 'getUltimateUri'))
         );
     }
 
@@ -87,5 +100,27 @@ class EntityExtension extends AbstractExtension
         }
 
         return $result;
+    }
+
+    /**
+     * Get ultimate URI
+     *
+     * @param mixed $entity
+     * @return string|null
+     */
+    public function getUltimateUri($entity): ?string
+    {
+        if (\method_exists($entity, 'getUltimateUri') && $entity->getUltimateUri()) {
+            return $entity->getUltimateUri();
+        }
+
+        if (\method_exists($entity, 'getUri') && $entity->getUri()) {
+            return $entity->getUri();
+        }
+
+        if (\method_exists($entity, 'getSlug') && $entity->getSlug()) {
+            return $entity->getSlug();
+        }
+        return null;
     }
 }

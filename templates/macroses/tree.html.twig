@@ -3,8 +3,8 @@
         {% for theory in theories %}
             <li>
                 <a href="{{ path('theory_show', {
-                    'portal_name': portal_name,
-                    'name': theory.slug
+                    'portal_uri': portal_name,
+                    'uri': theory.slug
                 }) }}">{{theory.title}}</a>
                 {% if theory.children %}
                     {% import _self as self %}

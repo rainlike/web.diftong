@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../helpers";
+
+/**
+ * Breadcrumbs for Theory page.
+ *
+ * @molecule Breadcrumbs
+ * @section Theory
+ * @markup
+ *  <nav class="app-theory-breadcrumbs">
+ *    <a href="#">English</a>
+ *    > <a href="#">Grammar</a>
+ *    > <a href="#">Verb</a>
+ *    > <a href="#">Personal and non-verbal forms of the verb</a>
+ *  </nav>
+ */
+.#{$prefix}-theory-breadcrumbs {
+  width:   100%;
+  padding: 15px 0 0;
+  color:   $color-secondary;
+
+  a {
+    color: $color-secondary;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

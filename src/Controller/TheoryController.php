@@ -34,6 +34,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
+use App\Service\Breadcrumbs;
+
 use App\Entity\Theory;
 
 /** @package App\Controller */
@@ -44,6 +46,7 @@ class TheoryController extends AbstractController
      *
      * @param Request $request
      * @param Translator $translator
+     * @param Breadcrumbs $breadcrumbsSrv
      * @param string $portal_uri
      * @param string $uri
      * @return RedirectResponse|Response|array
@@ -57,15 +60,18 @@ class TheoryController extends AbstractController
     public function show(
         Request $request,
         Translator $translator,
+        Breadcrumbs $breadcrumbsSrv,
         string $portal_uri,
         string $uri
     ) {
         $repository = $this->getDoctrine()->getRepository(Theory::class);
 
-        $theory = $repository->getTheoryByUri($uri, true, $portal_uri);
+        $theory = $repository->findByUltimateUri($uri, true, $portal_uri);
         if (!$theory) {
             throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }
+
+        $breadcrumbs = $breadcrumbsSrv->getBreadcrumbs($theory->getId(), true);
 
         $next = $theory->getNext();
         $nextTheory = $next
@@ -87,6 +93,7 @@ class TheoryController extends AbstractController
             'theory' => $theory,
             'previous' => $previousTheory,
             'next' => $nextTheory,
+            'breadcrumbs' => $breadcrumbs,
             'portal_uri' => $portal_uri
         ];
     }

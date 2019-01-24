@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace App\Repository\Library\Traits;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 
@@ -26,11 +28,12 @@ trait Columns
      *
      * @param int $id
      * @param array $columns
-     * @return array|null|mixed
+     * @return array|null
+     * @throws NonUniqueResultException
      */
     public function getColumns(int $id, array $columns): ?array
     {
-        return $this->getColumnsQuery($id, $columns)->getResult();
+        return $this->getColumnsQuery($id, $columns)->getOneOrNullResult();
     }
 
     /**

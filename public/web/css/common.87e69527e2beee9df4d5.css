@@ -23249,7 +23249,7 @@ a {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  margin: 15px 0 0 15px; }
+  padding: 15px 0 0 15px; }
   .app-sidebar > *:not(:first-child) {
     margin-top: 15px; }
   .app-sidebar-quote {
@@ -34895,7 +34895,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   height: 2.4em;
-  margin: 10px 0 0 15px;
+  padding: 10px 15px 0 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
   .app-menu__separator {

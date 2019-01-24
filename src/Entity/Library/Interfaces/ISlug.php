@@ -25,11 +25,4 @@ interface ISlug
      * @return string|null
      */
     public function getSlug(): ?string;
-
-    /**
-     * Get ultimate URI
-     *
-     * @return string|null
-     */
-    public function getUltimateUri(): ?string;
 }

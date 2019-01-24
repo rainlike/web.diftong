@@ -23,7 +23,7 @@ interface IColumns
      *
      * @param int $id
      * @param array $columns
-     * @return array|null|mixed
+     * @return array|null
      */
     public function getColumns(int $id, array $columns): ?array;
 

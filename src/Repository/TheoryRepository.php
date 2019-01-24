@@ -89,7 +89,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
     }
 
     /**
-     * Get Theory by URI for Portal (optionally)
+     * Find Theory by ultimate URI for Portal (optionally)
      *
      * @param string $uri
      * @param bool $enabledOnly
@@ -97,25 +97,25 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @return Theory|null
      * @throws NonUniqueResultException
      */
-    public function getTheoryByUri(
+    public function findByUltimateUri(
         string $uri,
         bool $enabledOnly = true,
         ?string $portalUri = null
     ): ?Theory
     {
-        return $this->getTheoryByUriQuery($uri, $enabledOnly, $portalUri)
+        return $this->findByUltimateUriQuery($uri, $enabledOnly, $portalUri)
             ->getOneOrNullResult();
     }
 
     /**
-     * Get query got getting theory by slug for Portal (optionally)
+     * Get query got finding Theory by ultimate URI for Portal (optionally)
      *
      * @param string $uri
      * @param bool $enabledOnly
      * @param null|string $portalUri
      * @return Query
      */
-    public function getTheoryByUriQuery(
+    public function findByUltimateUriQuery(
         string $uri,
         bool $enabledOnly = true,
         ?string $portalUri = null
@@ -138,6 +138,53 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
         }
 
         return $qb->getQuery();
+    }
+
+    /**
+     * Get all theory' parents
+     * !recursion alert
+     *
+     * @param int $id
+     * @param array $parents
+     * @return array|null
+     * @throws NonUniqueResultException
+     */
+    public function getParents(int $id, array $parents = []): ?array
+    {
+        $parent = $this->getParent($id);
+
+        if ($parent) {
+            $parents[] = $parent;
+            return $this->getParents($parent['id'], $parents);
+        }
+
+        return $parents ?: null;
+    }
+
+    /**
+     * Get parent of theory
+     *
+     * @param int $id
+     * @return array|null
+     * @throws NonUniqueResultException
+     */
+    public function getParent(int $id): ?array
+    {
+        $qb = $this->createQueryBuilder('theory')
+            ->select([
+                'parent.id',
+                'parent.title',
+                'parent.caption',
+                'parent.uri',
+                'parent.slug',
+                'parent.enabled'
+            ])
+            ->join('theory.parent', 'parent')
+            ->where('parent.id = theory.parent')
+            ->andWhere('theory.id = :theory_id')
+            ->setParameter('theory_id', $id);
+
+        return $qb->getQuery()->getOneOrNullResult();
     }
 
     /**

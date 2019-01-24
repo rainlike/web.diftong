@@ -17,6 +17,7 @@ use App\Entity\Library\BasicEntity;
 use App\Entity\Library\Interfaces\ISlug;
 use App\Entity\Library\Interfaces\IBasic;
 use App\Entity\Library\Interfaces\ISeoable;
+use App\Entity\Library\Interfaces\IUltimateUri;
 use App\Entity\Library\Interfaces\ITranslatable;
 
 use App\Entity\Library\Traits\Uri\Unique as UriField;
@@ -41,7 +42,13 @@ use App\Entity\Library\Traits\Translations as TranslationMethods;
  * @ORM\Entity(repositoryClass="App\Repository\TopicThemeRepository")
  * @Gedmo\TranslationEntity(class="App\Entity\Translations\TopicThemeTranslation")
  */
-class TopicTheme extends BasicEntity implements Translatable, IBasic, ISeoable, ITranslatable, ISlug
+class TopicTheme extends BasicEntity implements
+    Translatable,
+    IBasic,
+    ISeoable,
+    ITranslatable,
+    ISlug,
+    IUltimateUri
 {
     use TitleField;
     use DescriptionField;

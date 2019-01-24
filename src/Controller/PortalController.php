@@ -49,11 +49,11 @@ class PortalController extends AbstractController
      *
      * @param Request $request
      * @param Translator $translator
-     * @param string $name
+     * @param string $uri
      * @return RedirectResponse|Response|array
      * @throws DBALException
      * @throws NonUniqueResultException
-     * @Route("/{name}",
+     * @Route("/{uri}",
      *         methods={"GET"},
      *         name="portal_show"
      * )
@@ -62,9 +62,11 @@ class PortalController extends AbstractController
     public function show(
         Request $request,
         Translator $translator,
-        string $name
+        string $uri
     ) {
-        $portal = $this->getDoctrine()->getRepository(Portal::class)->findOneBy(['slug' => $name]);
+        $repository = $this->getDoctrine()->getRepository(Portal::class);
+
+        $portal = $repository->findByUltimateUri($uri, true);
         if (!$portal) {
             throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }

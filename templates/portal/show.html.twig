@@ -12,8 +12,8 @@
             {% for general_theory in general_theories %}
                 <div class="app-portal-category-card">
                     <a href="{{ path('theory_show', {
-                        'portal_name': portal.slug,
-                        'name': general_theory.slug
+                        'portal_uri': portal.slug,
+                        'uri': general_theory.slug
                     }) }}">
                         <p class="app-portal-category-card__title">{{ general_theory.title }}</p>
                         <p class="app-portal-category-card__caption">{{ general_theory.caption }}</p>

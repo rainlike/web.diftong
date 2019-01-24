@@ -1,0 +1,6 @@
+<nav class="app-theory-breadcrumbs">
+    {% for breadcrumb in breadcrumbs %}
+        <a href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a>
+        {% if not loop.last %}{{ '>' }}{% endif %}
+    {% endfor %}
+</nav>
