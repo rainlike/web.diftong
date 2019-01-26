@@ -56,7 +56,15 @@ class SiteSettingFixtures extends Fixture implements OrderedFixtureInterface
             'value' => 1
         ],
         [
+            'type' => 'menu_show_topics',
+            'value' => 1
+        ],
+        [
             'type' => 'menu_show_lyrics',
+            'value' => 1
+        ],
+        [
+            'type' => 'theory_show_bottom_breadcrumbs',
             'value' => 1
         ]
     ];

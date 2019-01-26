@@ -63,8 +63,20 @@ class ValueTypeStorage
     public const MENU_SHOW_ARTICLES = 'menu_show_articles';
 
     /**
+     * Name of value for showing topics in menu
+     * @var string
+     */
+    public const MENU_SHOW_TOPICS = 'menu_show_topics';
+
+    /**
      * Name of value for showing lyrics in menu
      * @var string
      */
     public const MENU_SHOW_LYRICS = 'menu_show_lyrics';
+
+    /**
+     * Name of value for showing bottom breadcrumbs on the theory page
+     * @var string
+     */
+    public const THEORY_SHOW_BOTTOM_BREADCRUMBS = 'menu_show_lyrics';
 }

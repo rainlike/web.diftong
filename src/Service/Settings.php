@@ -62,6 +62,14 @@ class Settings
     }
 
     /**
+     * Settings destructor
+     */
+    public function __destruct()
+    {
+        $this->resetUser();
+    }
+
+    /**
      * Set user
      *
      * @param User $user

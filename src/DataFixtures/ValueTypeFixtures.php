@@ -156,6 +156,22 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
+            'name' => 'menu_show_topics',
+            'title' => 'Show topics in menu',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_MENU,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar las temas en menu',
+                    'uk' => 'Показати топікі в меню',
+                    'ru' => 'Показать топики в меню',
+                    'pl' => 'Pokaż tematy w menu'
+                ]
+            ]
+        ],
+        [
             'name' => 'menu_show_lyrics',
             'title' => 'Show lyrics in menu',
             'type' => ValueType::TYPE_BOOL,
@@ -168,6 +184,22 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
                     'uk' => 'Показати тексти пісень в меню',
                     'ru' => 'Показать тексты песен в меню',
                     'pl' => 'Pokaż teksty w menu'
+                ]
+            ]
+        ],
+        [
+            'name' => 'theory_show_bottom_breadcrumbs',
+            'title' => 'Show breadcrumbs at the bottom of theory page',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_THEORY,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar las migas de pan en la parte inferior de la página de la teoría',
+                    'uk' => 'Показати хлібні крихти внизу сторінки теорії',
+                    'ru' => 'Показать хлебные крошки внизу страницы теории',
+                    'pl' => 'Pokaż okruszki chleba na dole strony teorii'
                 ]
             ]
         ]

@@ -142,7 +142,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
 
     /**
      * Get all theory' parents
-     * !recursion alert
+     * ! recursion alert
      *
      * @param int $id
      * @param array $parents

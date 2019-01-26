@@ -36,4 +36,10 @@
             {{ theory.formattedContent|raw|nl2br }}
         </section>
     </div>
+
+    {% if breadcrumbs and _setting('theory_show_bottom_breadcrumbs') %}
+        {% include 'portal/components/breadcrumbs.html.twig' with {
+            'breadcrumbs': breadcrumbs
+        } only %}
+    {% endif %}
 {% endblock %}

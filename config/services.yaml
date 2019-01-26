@@ -19,7 +19,7 @@ parameters:
   server_ip: '%env(SERVER_IP)%'
   in_developing: true
   github_link: 'https://github.com/rainlike/web.diftong'
-  configs_dir: '%kernel.project_dir%/config'
+  config_dir: '%kernel.project_dir%/config'
   public_dir: '%kernel.project_dir%/public'
 
 # FOSUser Configuration
@@ -106,6 +106,8 @@ services:
   App\Service\Menu:
     autowire: true
     autoconfigure: true
+    arguments:
+      $configDir: '%config_dir%'
 
   App\Service\Breadcrumbs:
     autowire: true

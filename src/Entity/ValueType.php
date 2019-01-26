@@ -86,6 +86,7 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
         self::SECTION_MENU,
         self::SECTION_HOMEPAGE,
         self::SECTION_PORTAL,
+        self::SECTION_THEORY,
         self::SECTION_BACKOFFICE,
         self::SECTION_ADMIN,
         self::SECTION_DEBUG,
@@ -102,6 +103,7 @@ class ValueType extends BasicEntity implements Translatable, IBasic, ITranslatab
     public const SECTION_MENU = 'menu';
     public const SECTION_HOMEPAGE = 'homepage';
     public const SECTION_PORTAL = 'portal';
+    public const SECTION_THEORY = 'theory';
     public const SECTION_BACKOFFICE = 'backoffice';
     public const SECTION_ADMIN = 'admin';
     public const SECTION_DEBUG = 'debug';

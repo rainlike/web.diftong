@@ -13,10 +13,16 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use Doctrine\ORM\NonUniqueResultException;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 use Symfony\Contracts\Translation\TranslatorInterface as Translator;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface as Router;
+
+use App\Service\YmlParser as Parser;
+use App\Service\Settings as SettingSrv;
 
 /** Class Menu */
 class Menu
@@ -24,8 +30,26 @@ class Menu
     /** @var RequestStack */
     private $request_stack;
 
+    /** @var Router */
+    private $router;
+
     /** @var Translator */
     private $translator;
+
+    /** @var Parser */
+    private $parser;
+
+    /** @var SettingSrv */
+    private $setting_srv;
+
+    /** @var string */
+    private $config_dir;
+
+    /**
+     * Name of file with configs
+     * @var string
+     */
+    public const CONFIGS_FILE = 'menu.yml';
 
     /**
      * Domain for translations
@@ -39,7 +63,13 @@ class Menu
     /** @var string */
     private $locale;
 
-        /**
+    /**
+     * Content of configuration file
+     * @var array
+     */
+    private $content;
+
+    /**
      * Available mods for Menu
      * @var bool
      */
@@ -50,14 +80,29 @@ class Menu
      * Menu constructor
      *
      * @param RequestStack $requestStack
+     * @param Router $router
      * @param Translator $translator
+     * @param Parser $parser
+     * @param SettingSrv $settingSrv
+     * @param string $configDir
      */
     public function __construct(
         RequestStack $requestStack,
-        Translator $translator
+        Router $router,
+        Translator $translator,
+        Parser $parser,
+        SettingSrv $settingSrv,
+        string $configDir
     ) {
         $this->request_stack = $requestStack;
+        $this->router = $router;
         $this->translator = $translator;
+        $this->parser = $parser;
+        $this->setting_srv = $settingSrv;
+
+        $this->config_dir = $configDir;
+
+        $this->setContent();
     }
 
     /**
@@ -117,12 +162,13 @@ class Menu
      * Generate menu
      *
      * @return array
+     * @throws NonUniqueResultException
      */
     public function getMenu(): array
     {
         $menu = [];
 
-        $menu['items'] = $this->mock();
+        $menu['items'] = $this->generateItems();
 
         if ($this->back_link_mod) {
             $menu['back_link'] = $this->getBackLink();
@@ -142,75 +188,54 @@ class Menu
     }
 
     /**
-     * @TODO: mock
+     * Generate items for menu
+     *
      * @return array
+     * @throws NonUniqueResultException
      */
-    private function mock(): array
+    private function generateItems(): array
     {
-        return [
-            [
-                'name' => $this->translator->trans(
-                    'items.portals',
+        $items = [];
+
+        foreach ($this->content as $itemConfig) {
+            $availableToUse = true;
+            $hasSetting = $itemConfig['setting'] && $itemConfig['setting'] !== null;
+
+            if ($hasSetting && $itemConfig['setting']['use']) {
+                $availableToUse = $this->setting_srv->getSetting($itemConfig['setting']['name']);
+            }
+
+            if (!$hasSetting || $availableToUse) {
+                $item = [];
+
+                $item['name'] = $this->translator->trans(
+                    $itemConfig['name']['key'],
                     [],
-                    self::TRANSLATION_DOMAIN,
+                    $itemConfig['name']['domain'] ?? self::TRANSLATION_DOMAIN,
                     $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.grammar',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.phonetics',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.lexis',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.articles',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.topics',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ],
-            [
-                'name' => $this->translator->trans(
-                    'items.lyrics',
-                    [],
-                    self::TRANSLATION_DOMAIN,
-                    $this->locale
-                ),
-                'link' => '#'
-            ]
-        ];
+                );
+                $item['link'] = $this->router->generate(
+                    $itemConfig['route']['name'],
+                    $itemConfig['route']['params']
+                );
+
+                $items[] = $item;
+            }
+        }
+
+        return $items;
+    }
+
+    /**
+     * Set content from configuration file to the local storage
+     *
+     * @return void
+     */
+    private function setContent(): void
+    {
+        $filePath = $this->config_dir.'/app/'.self::CONFIGS_FILE;
+        $fileContent = $this->parser->parse(\file_get_contents($filePath));
+
+        $this->content = $fileContent;
     }
 }

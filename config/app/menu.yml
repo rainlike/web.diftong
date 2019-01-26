@@ -1,0 +1,68 @@
+-
+  name:
+    key: 'items.portals'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting: ~
+-
+  name:
+    key: 'items.grammar'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_grammar'
+    use: true
+-
+  name:
+    key: 'items.phonetics'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_phonetics'
+    use: true
+-
+  name:
+    key: 'items.lexis'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_lexis'
+    use: true
+-
+  name:
+    key: 'items.articles'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_articles'
+    use: true
+-
+  name:
+    key: 'items.topics'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_topics'
+    use: true
+-
+  name:
+    key: 'items.lyrics'
+    domain: 'menu'
+  route:
+    name: 'homepage_index'
+    params: []
+  setting:
+    name: 'menu_show_lyrics'
+    use: true
