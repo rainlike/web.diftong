@@ -52,10 +52,7 @@ class PortalRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @return Portal|null
      * @throws NonUniqueResultException
      */
-    public function findByUltimateUri(
-        string $uri,
-        bool $enabledOnly = true
-    ): ?Portal
+    public function findByUltimateUri(string $uri, bool $enabledOnly = true): ?Portal
     {
         return $this->findByUltimateUriQuery($uri, $enabledOnly)
             ->getOneOrNullResult();
@@ -68,10 +65,7 @@ class PortalRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @param bool $enabledOnly
      * @return Query
      */
-    public function findByUltimateUriQuery(
-        string $uri,
-        bool $enabledOnly = true
-    ): Query
+    public function findByUltimateUriQuery(string $uri, bool $enabledOnly = true): Query
     {
         $qb = $this->createQueryBuilder('portal')
             ->select('portal')

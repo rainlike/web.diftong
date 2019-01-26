@@ -121,6 +121,7 @@ class EntityExtension extends AbstractExtension
         if (\method_exists($entity, 'getSlug') && $entity->getSlug()) {
             return $entity->getSlug();
         }
+
         return null;
     }
 }

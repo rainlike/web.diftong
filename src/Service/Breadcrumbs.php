@@ -19,7 +19,6 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface as Router;
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
-use App\Entity\Portal;
 use App\Entity\Theory;
 
 /** Class Breadcrumbs */
