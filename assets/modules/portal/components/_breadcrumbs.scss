@@ -8,6 +8,8 @@
  *
  * @molecule Breadcrumbs
  * @section Theory
+ * @modifiers
+ *  .app-theory-breadcrumbs__bottom bottom breadcrumbs
  * @markup
  *  <nav class="app-theory-breadcrumbs">
  *    <a href="#">English</a>
@@ -27,5 +29,9 @@
     &:hover {
       color: $color-primary;
     }
+  }
+
+  &__bottom {
+    padding-bottom: 15px;
   }
 }

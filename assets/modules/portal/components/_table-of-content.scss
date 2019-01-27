@@ -30,6 +30,10 @@
   width:  100%;
   margin: 0;
 
+  &__current {
+    font-weight: bold;
+  }
+
   &__category {
     margin-bottom: 0.7em;
     font-size:     x-large;

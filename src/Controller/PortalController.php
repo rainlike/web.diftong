@@ -72,10 +72,10 @@ class PortalController extends AbstractController
         }
 
         $generalTheories = $this->getDoctrine()->getRepository(Theory::class)
-            ->getGeneralTheories($portal->getId());
+            ->getGenerals($portal->getId());
 
         $tableOfContent = $this->getDoctrine()->getRepository(Theory::class)
-            ->getPortalTheoriesTree($portal->getId());
+            ->getPortalTree($portal->getId());
 
         $hasTopics = $this->getDoctrine()->getRepository(Topic::class)
             ->existForPortal($portal->getId());

@@ -38,7 +38,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'title' => 'Grammar',
                 'caption' => 'English grammar',
                 'uri' => 'grammar',
-                'is_general' => true,
+                'general' => true,
                 'content' => '@CONTENT',
                 'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
@@ -52,7 +52,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'title' => 'Verb',
                 'caption' => 'English verb',
                 'uri' => 'verb',
-                'is_general' => false,
+                'general' => false,
                 'content' => '@CONTENT',
                 'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
@@ -91,7 +91,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'title' => 'Personal and non-verbal forms of the verb',
                 'caption' => '@CAPTION',
                 'uri' => 'verbs-personal-non-verbal',
-                'is_general' => false,
+                'general' => false,
                 'content' => '@CONTENT',
                 'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
@@ -105,7 +105,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 'title' => 'Noun',
                 'caption' => '@CAPTION',
                 'uri' => 'noun',
-                'is_general' => false,
+                'general' => false,
                 'content' => '@CONTENT',
                 'formatted_content' => '<b>@FORMATTED_CONTENT</b>',
                 'enabled' => true,
@@ -136,7 +136,7 @@ class TheoryFixtures extends Fixture implements OrderedFixtureInterface
                 $entity->setTitle($theory['title']);
                 $entity->setCaption($theory['caption']);
                 $entity->setUri($theory['uri'] ?? null);
-                $entity->setIsGeneral($theory['is_general']);
+                $entity->setGeneral($theory['general']);
                 $entity->setContent($theory['content']);
                 $entity->setFormattedContent($theory['formatted_content']);
 

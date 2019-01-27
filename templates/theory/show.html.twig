@@ -31,15 +31,26 @@
             {% endif %}
         </div>
     </div>
-    <div class="app-theory-content__layer">
+    <div class="app-theory__layer">
         <section class="app-theory-content">
             {{ theory.formattedContent|raw|nl2br }}
         </section>
     </div>
-
+    {% if table_of_content %}
+        <hr class="app-separator">
+        <section class="app-theory__layer">
+            <h3 class="app-portal-table-of-content__category">{{ table_of_content_title }}</h3>
+            {% include 'theory/components/table-of-content.html.twig' with {
+                'portal_uri': portal_uri,
+                'theories': table_of_content,
+                'current_id': theory.id
+            } only %}
+        </section>
+    {% endif %}
     {% if breadcrumbs and _setting('theory_show_bottom_breadcrumbs') %}
         {% include 'portal/components/breadcrumbs.html.twig' with {
-            'breadcrumbs': breadcrumbs
+            'breadcrumbs': breadcrumbs,
+            'bottom': true
         } only %}
     {% endif %}
 {% endblock %}

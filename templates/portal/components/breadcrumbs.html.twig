@@ -1,4 +1,9 @@
-<nav class="app-theory-breadcrumbs">
+{% set classes = bottom is not defined or bottom is null
+    ? 'app-theory-breadcrumbs'
+    : 'app-theory-breadcrumbs app-theory-breadcrumbs__bottom'
+%}
+
+<nav class="{{ classes }}">
     {% for breadcrumb in breadcrumbs %}
         <a href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a>
         {% if not loop.last %}{{ '>' }}{% endif %}

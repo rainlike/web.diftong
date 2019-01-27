@@ -65,8 +65,8 @@
     {% if table_of_content %}
         <section class="app-portal__layer">
             {% include 'portal/components/table-of-content.html.twig' with {
-                'portal_name': portal.slug,
-                'items': table_of_content
+                'portal_uri': portal.getUltimateUri,
+                'theories': table_of_content
             } only %}
         </section>
     {% endif %}

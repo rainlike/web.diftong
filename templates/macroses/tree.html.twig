@@ -1,14 +1,20 @@
-{% macro table_of_content(theories, portal_name) %}
+{% macro table_of_content(portal_uri, theories, current_id) %}
+    {% set current_id = current_id is not defined or current_id is null ? null : current_id %}
     <ul>
         {% for theory in theories %}
             <li>
-                <a href="{{ path('theory_show', {
-                    'portal_uri': portal_name,
-                    'uri': theory.slug
-                }) }}">{{theory.title}}</a>
+                {% if current_id and theory.id == current_id %}
+                    <span class="app-portal-table-of-content__current">{{ theory.title }}</span>
+                    <span class="app-mdi"><i class="mdi mdi-arrow-left-thick"></i></span>
+                {% else %}
+                    <a href="{{ path('theory_show', {
+                        'portal_uri': portal_uri,
+                        'uri': theory.slug
+                    }) }}">{{ theory.title }}</a>
+                {% endif %}
                 {% if theory.children %}
                     {% import _self as self %}
-                    {{ self.table_of_content(theory.children, portal_name) }}
+                    {{ self.table_of_content(portal_uri, theory.children, current_id) }}
                 {% endif %}
             </li>
         {% endfor %}

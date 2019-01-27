@@ -76,9 +76,9 @@ class Theory extends BasicEntity implements
 
     /**
      * @var bool
-     * @ORM\Column(name="is_general", type="boolean", nullable=true, unique=false)
+     * @ORM\Column(name="general", type="boolean", nullable=true, unique=false)
      */
-    private $isGeneral;
+    private $general;
 
     /**
      * @var string
@@ -155,26 +155,26 @@ class Theory extends BasicEntity implements
     }
 
     /**
-     * Set isGeneral
+     * Set general
      *
-     * @param bool $isGeneral
+     * @param bool $general
      * @return self
      */
-    public function setIsGeneral(bool $isGeneral = true): self
+    public function setGeneral(bool $general = true): self
     {
-        $this->isGeneral = $isGeneral;
+        $this->general = $general;
 
         return $this;
     }
 
     /**
-     * Get isGeneral
+     * Get general
      *
      * @return bool|null
      */
-    public function getIsGeneral(): ?bool
+    public function getGeneral(): ?bool
     {
-        return $this->isGeneral;
+        return $this->general;
     }
 
     /**
@@ -328,5 +328,17 @@ class Theory extends BasicEntity implements
     public function getChildren()
     {
         return $this->children;
+    }
+
+    /**
+     * Check if theory is pre-general
+     *
+     * @return bool
+     */
+    public function isPreGeneral(): bool
+    {
+        $parent = $this->getParent();
+
+        return $parent && $parent->getGeneral();
     }
 }

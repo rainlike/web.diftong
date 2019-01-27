@@ -1,0 +1,21 @@
+{% import 'macroses/tree.html.twig' as macros %}
+
+{% set current_id = current_id is not defined or current_id is null ? null : current_id %}
+
+{% if theories %}
+    <nav class="app-portal-table-of-content">
+        {% for theory in theories %}
+            {% if theory.children is defined %}
+                {% if current_id and theory.id == current_id %}
+                    <span class="app-portal-table-of-content__current">{{ theory.title }}</span>
+                {% else %}
+                    <a href="{{ path('theory_show', {
+                        'portal_uri': portal_uri,
+                        'uri': theory.slug
+                    }) }}">{{ theory.title }}</a>
+                {% endif %}
+                {{ macros.table_of_content(portal_uri, theory.children, current_id) }}
+            {% endif %}
+        {% endfor %}
+    </nav>
+{% endif %}

@@ -89,12 +89,26 @@ class TheoryController extends AbstractController
             ]
             : null;
 
+        $tableOfContent = null;
+        $tableOfContentTitle = null;
+        if ($theory->isPreGeneral()) {
+            $tableOfContent = $repository->getAllChildren($theory->getId());
+            $tableOfContentTitle = $theory->getCaption();
+        } else {
+            $preGeneralTheory = $this->getDoctrine()->getRepository(Theory::class)
+                ->getPreGeneralParent($theory->getId());
+            $tableOfContent = $repository->getAllChildren($preGeneralTheory['id']);
+            $tableOfContentTitle = $preGeneralTheory['caption'];
+        }
+
         return [
             'theory' => $theory,
+            'portal_uri' => $portal_uri,
             'previous' => $previousTheory,
             'next' => $nextTheory,
             'breadcrumbs' => $breadcrumbs,
-            'portal_uri' => $portal_uri
+            'table_of_content' => $tableOfContent,
+            'table_of_content_title' => $tableOfContentTitle
         ];
     }
 }

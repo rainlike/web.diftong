@@ -8,6 +8,7 @@ use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Bridge\Doctrine\RegistryInterface as Registry;
 
 use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -52,9 +53,9 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @param bool $enabledOnly
      * @return array|ArrayCollection|mixed
      */
-    public function getGeneralTheories(int $portalId, bool $enabledOnly = true)
+    public function getGenerals(int $portalId, bool $enabledOnly = true)
     {
-        return $this->getGeneralTheoriesQuery($portalId, $enabledOnly)->getResult();
+        return $this->getGeneralsQuery($portalId, $enabledOnly)->getResult();
     }
 
     /**
@@ -64,7 +65,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @param bool $enabledOnly
      * @return Query
      */
-    public function getGeneralTheoriesQuery(int $portalId, bool $enabledOnly = true): Query
+    public function getGeneralsQuery(int $portalId, bool $enabledOnly = true): Query
     {
         $qb = $this->createQueryBuilder('theory')
             ->select([
@@ -75,7 +76,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
                 'theory.slug'
             ])
             ->where('theory.portal = :portal_id')
-            ->andWhere('theory.isGeneral = :is_general')
+            ->andWhere('theory.general = :is_general')
             ->andWhere('theory.parent IS NULL')
             ->setParameter('portal_id', $portalId)
             ->setParameter('is_general', true);
@@ -170,21 +171,103 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
      */
     public function getParent(int $id): ?array
     {
-        $qb = $this->createQueryBuilder('theory')
+        return $this->getParentQuery($id)->getOneOrNullResult();
+    }
+
+    /**
+     * Get query for parent of theory
+     *
+     * @param int $id
+     * @return Query
+     */
+    public function getParentQuery(int $id): Query
+    {
+        return $this->getParentQueryBuilder($id)->getQuery();
+    }
+
+    /**
+     * Get query builder for parent of theory
+     *
+     * @param int $id
+     * @return QueryBuilder
+     */
+    public function getParentQueryBuilder(int $id): QueryBuilder
+    {
+        return $this->createQueryBuilder('theory')
             ->select([
                 'parent.id',
                 'parent.title',
                 'parent.caption',
                 'parent.uri',
                 'parent.slug',
+                'parent.general',
                 'parent.enabled'
             ])
             ->join('theory.parent', 'parent')
             ->where('parent.id = theory.parent')
             ->andWhere('theory.id = :theory_id')
             ->setParameter('theory_id', $id);
+    }
 
-        return $qb->getQuery()->getOneOrNullResult();
+    /**
+     * Get general parent of theory
+     * ! recursion alert
+     *
+     * @param int $id
+     * @param bool $enabledOnly
+     * @return array|null
+     * @throws NonUniqueResultException
+     */
+    public function getGeneralParent(int $id, bool $enabledOnly = true): ?array
+    {
+        $parent = $this->getParent($id);
+
+        if (!$parent['general']) {
+            return $this->getGeneralParent($parent['id'], $enabledOnly);
+        }
+
+        return !$enabledOnly || ($enabledOnly && $parent['enabled'])
+            ? $parent
+            : null;
+    }
+
+    /**
+     * Get pre-general parent of theory
+     *
+     * @param int $id
+     * @param bool $enabledOnly
+     * @return array|null
+     * @throws NonUniqueResultException
+     */
+    public function getPreGeneralParent(int $id, bool $enabledOnly = true): ?array
+    {
+        $parents = $this->getParents($id);
+
+        if ($parents && \count($parents) > 1) {
+            foreach ($parents as $key => $parent) {
+                if ($parent['general']) {
+                    $preParent = $parents[$key - 1];
+
+                    return !$enabledOnly || ($enabledOnly && $parent['enabled'])
+                        ? $preParent
+                        : null;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Get table of contents for theory
+     *
+     * @param int $id
+     * @param bool $enabledOnly
+     * @return array|null
+     */
+    public function getTree(int $id, bool $enabledOnly = true): ?array
+    {
+        return $this->getAllChildren($id, $enabledOnly);
     }
 
     /**
@@ -194,9 +277,9 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
      * @param bool $enabledOnly
      * @return array|null
      */
-    public function getPortalTheoriesTree(int $portalId, bool $enabledOnly = true): ?array
+    public function getPortalTree(int $portalId, bool $enabledOnly = true): ?array
     {
-        $generalTheories = $this->getGeneralTheories($portalId, $enabledOnly);
+        $generalTheories = $this->getGenerals($portalId, $enabledOnly);
 
         foreach ($generalTheories as $key => $generalTheory) {
             $generalTheories[$key]['children'] = $this->getAllChildren($generalTheory['id'], $enabledOnly);
@@ -207,6 +290,7 @@ class TheoryRepository extends ServiceEntityRepository implements IBasic, ISeoab
 
     /**
      * Get all theory' children
+     * ! recursion alert
      *
      * @param int $parentId
      * @param bool $enabledOnly

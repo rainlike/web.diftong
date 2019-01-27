@@ -50233,7 +50233,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 15px 0; }
+  padding: 0 15px; }
 
 /**
  * Layer for Portal blocks.
@@ -50256,12 +50256,12 @@ a {
   margin-bottom: 10px; }
 
 /**
- * Layer of Theory' content.
+ * Layer of Theory.
  *
  * @structure Layer
  * @section Theory
  */
-.app-theory-content__layer {
+.app-theory__layer {
   width: 100%; }
 
 /**
@@ -63132,6 +63132,8 @@ a {
 .app-portal-table-of-content {
   width: 100%;
   margin: 0; }
+  .app-portal-table-of-content__current {
+    font-weight: bold; }
   .app-portal-table-of-content__category {
     margin-bottom: 0.7em;
     font-size: x-large;
@@ -69538,6 +69540,8 @@ a {
  *
  * @molecule Breadcrumbs
  * @section Theory
+ * @modifiers
+ *  .app-theory-breadcrumbs__bottom bottom breadcrumbs
  * @markup
  *  <nav class="app-theory-breadcrumbs">
  *    <a href="#">English</a>
@@ -69554,5 +69558,7 @@ a {
     color: #9E9E9E; }
     .app-theory-breadcrumbs a:hover {
       color: #3F51B5; }
+  .app-theory-breadcrumbs__bottom {
+    padding-bottom: 15px; }
 
 /*# sourceMappingURL=portal.f71e6aa7e70e23f27c29.css.map*/

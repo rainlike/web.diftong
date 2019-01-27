@@ -1,11 +1,11 @@
 {% import 'macroses/tree.html.twig' as macros %}
 
-{% if items %}
+{% if theories %}
     <nav class="app-portal-table-of-content">
-        {% for general_item in items %}
-            {% if general_item.children is defined %}
-                <h3 class="app-portal-table-of-content__category">{{ general_item.title }}</h3>
-                {{ macros.table_of_content(general_item.children, portal_name) }}
+        {% for general_theory in theories %}
+            {% if general_theory.children is defined %}
+                <h3 class="app-portal-table-of-content__category">{{ general_theory.title }}</h3>
+                {{ macros.table_of_content(portal_uri, general_theory.children, null) }}
             {% endif %}
         {% endfor %}
     </nav>
