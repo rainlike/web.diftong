@@ -9,29 +9,13 @@
             </article>
             <div class="app-header__actions">
                 {% if _setting('header_show_user_action') %}
-                    <button type="button"
-                            name="user"
-                            class="{{ _class(constant('App\\Twig\\StyleExtension::CLASS_HEADER_BUTTON')) }}"
-                    >
-                        <span class="app-mdi"><i class="mdi mdi-account"></i></span>
-                    </button>
+                    {% include 'components/header_actions/user.html.twig' %}
                 {% endif %}
-                {#{% include 'components/language_switcher.html.twig' with {#}
-                    {#'switcher': language_switcher#}
-                {#} only %}#}
-                <button type="button"
-                        name="lang"
-                        class="{{ _class(constant('App\\Twig\\StyleExtension::CLASS_HEADER_BUTTON')) }}"
-                >
-                    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
-                </button>
+                {% include 'components/header_actions/language_switcher.html.twig' with {
+                    'switcher': language_switcher
+                } only %}
                 {% if _setting('header_show_search_action') %}
-                    <button type="button"
-                            name="search"
-                            class="{{ _class(constant('App\\Twig\\StyleExtension::CLASS_HEADER_BUTTON')) }}"
-                    >
-                        <span class="app-mdi"><i class="mdi mdi-magnify"></i></span>
-                    </button>
+                    {% include 'components/header_actions/search.html.twig' %}
                 {% endif %}
             </div>
         </section>

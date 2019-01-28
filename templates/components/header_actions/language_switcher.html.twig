@@ -1,0 +1,9 @@
+{#{% include 'components/language_switcher.html.twig' with {#}
+    {#'switcher': language_switcher#}
+{#} only %}#}
+<button type="button"
+        name="lang"
+        class="{{ _class(constant('App\\Twig\\StyleExtension::CLASS_HEADER_BUTTON')) }}"
+>
+    <span class="app-mdi"><i class="mdi mdi-flag"></i></span>
+</button>
