@@ -60,18 +60,34 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
-            'name' => 'header_show_actions',
-            'title' => 'Show actions buttons in header',
+            'name' => 'header_show_user_action',
+            'title' => 'Show user action in header',
             'type' => ValueType::TYPE_BOOL,
             'section' => ValueType::SECTION_HEADER,
             'priority' => ValueType::PRIORITY_SITE,
             'enabled' => true,
             'translations' => [
                 'title' => [
-                    'es' => 'Mostrar botones de acciones en el encabezado',
-                    'uk' => 'Показувати кнопки дій у заголовку',
-                    'ru' => 'Показать кнопки действий в заголовке',
-                    'pl' => 'Pokaż przyciski działań w nagłówku'
+                    'es' => 'Mostrar la acción del usuario en el encabezado.',
+                    'uk' => 'Показувати кнопку користувача у верхній панелі',
+                    'ru' => 'Показывать кнопку пользователя в верхней панели',
+                    'pl' => 'Pokaż przycisk użytkownika na górnym pasku'
+                ]
+            ]
+        ],
+        [
+            'name' => 'header_show_search_action',
+            'title' => 'Show search action in header',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_HEADER,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar acción de búsqueda en el encabezado',
+                    'uk' => 'Показувати кнопку пошуку у верхній панелі',
+                    'ru' => 'Показывать кнопку поиска в верхней панели',
+                    'pl' => 'Pokaż przycisk wyszukiwania na górnym pasku'
                 ]
             ]
         ],
@@ -85,9 +101,9 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             'translations' => [
                 'title' => [
                     'es' => 'Estilos planos para iconos de acciones en cabecera',
-                    'uk' => 'Плоскі стилі для піктограм дій у заголовку',
-                    'ru' => 'Плоские стили для иконок действий в заголовке',
-                    'pl' => 'Style płaskie dla ikon akcji w nagłówku'
+                    'uk' => 'Плоскі стилі для іконок дій у верхній панелі',
+                    'ru' => 'Плоские стили для иконок действий в верхней панели',
+                    'pl' => 'Style płaskie dla ikon akcji na górnym pasku'
                 ]
             ]
         ],

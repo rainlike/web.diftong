@@ -33,7 +33,11 @@ class UserSettingFixtures extends Fixture implements OrderedFixtureInterface
                 'value' => 1
             ],
             [
-                'type' => 'header_show_actions',
+                'type' => 'header_show_search_action',
+                'value' => 1
+            ],
+            [
+                'type' => 'header_show_user_action',
                 'value' => 1
             ],
             [

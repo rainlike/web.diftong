@@ -27,10 +27,16 @@ class ValueTypeStorage
     public const HEADER_LOGO_AS_LINK = 'header_logo_as_link';
 
     /**
-     * Name of value for showing buttons in header
+     * Name of value for showing user action button in header
      * @var string
      */
-    public const HEADER_SHOW_ACTIONS = 'header_show_actions';
+    public const HEADER_SHOW_USER_ACTION = 'header_show_user_action';
+
+    /**
+     * Name of value for showing search action button in header
+     * @var string
+     */
+    public const HEADER_SHOW_SEARCH_ACTION = 'header_show_search_action';
 
     /**
      * Name of value for styling buttons in header
