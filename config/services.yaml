@@ -19,6 +19,7 @@ parameters:
   server_ip: '%env(SERVER_IP)%'
   in_developing: true
   github_link: 'https://github.com/rainlike/web.diftong'
+  logs_dir: '%kernel.project_dir%/var/log'
   config_dir: '%kernel.project_dir%/config'
   public_dir: '%kernel.project_dir%/public'
 
@@ -127,6 +128,12 @@ services:
     arguments:
       $layout: 'Any-Latin'
       $asciiLayout: 'Latin-ASCII'
+
+  App\Service\Logger:
+    autowire: true
+    autoconfigure: true
+    arguments:
+      $logsDirectory: '%logs_dir%'
 
   # Helpers
   App\Helper\TranslationHelper:

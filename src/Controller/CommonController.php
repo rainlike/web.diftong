@@ -107,6 +107,7 @@ class CommonController extends AbstractController
      * @param Request $request
      * @param Menu $menuSrv
      * @return Response
+     * @throws NonUniqueResultException
      */
     public function renderMenu(
         Request $request,

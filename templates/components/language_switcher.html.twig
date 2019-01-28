@@ -1,0 +1,19 @@
+{% macro item(item, loop) %}
+    <a href="{{ item.link }}" class="app-language_switcher__item app-link--base">
+        {{ item.name }}
+    </a>
+    {% if not loop.last %}
+        <span class="app-language_switcher__separator"></span>
+    {% endif %}
+{% endmacro %}
+
+{% import _self as swithcer %}
+
+{% if version is defined %}
+    {% if version == 'in_developing' %}
+        <div class="app-language_switcher--in_developing">
+            {% for language in switcher.items %}{{ swithcer.item(language, loop) }}{% endfor %}
+        </div>
+    {% endif %}
+{% else %}
+{% endif %}

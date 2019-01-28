@@ -19,6 +19,8 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
+use App\Service\Logger;
+
 use App\Entity\User;
 use App\Entity\ValueType;
 use App\Entity\SiteSetting;
@@ -38,6 +40,15 @@ class Settings
     /** @var Transformer */
     private $transformer;
 
+    /** @var Logger */
+    private $logger;
+
+    /**
+     * Name of log file for this service
+     * @var string
+     */
+    public const LOG_FILE_NAME = 'settings.log';
+
     /**
      * Was set User
      * @var User
@@ -50,15 +61,20 @@ class Settings
      * @param TokenStorage $token_storage
      * @param EntityManager $em
      * @param Transformer $transformer
+     * @param Logger $logger
      */
     public function __construct(
         TokenStorage $token_storage,
         EntityManager $em,
-        Transformer $transformer
+        Transformer $transformer,
+        Logger $logger
     ) {
         $this->token_storage = $token_storage;
         $this->em = $em;
         $this->transformer = $transformer;
+        $this->logger = $logger;
+
+        $this->presetLogger();
     }
 
     /**
@@ -105,6 +121,10 @@ class Settings
             ? $repository->findEnabled('name', $name)
             : $repository->find(['name' => $name]);
         if (!$valueType) {
+            /** @TODO: use Notifier here */
+            $logMessage = 'Value type was not found.';
+            $this->logger->logMessage($logMessage, Logger::TYPE_WARNING);
+
             return null;
         }
 
@@ -136,6 +156,10 @@ class Settings
 
         $setting = $settingRepository->getSettingRecord($name, $onlyEnabled);
         if (!$setting) {
+            /** @TODO: use Notifier here */
+            $logMessage = 'Site setting was not found.';
+            $this->logger->logMessage($logMessage, Logger::TYPE_WARNING);
+
             return null;
         }
 
@@ -170,11 +194,28 @@ class Settings
 
         /** @var User $user */
         $setting = $settingRepository->getSettingRecord($name, $user, $onlyEnabled);
+        if (!$setting) {
+            /** @TODO: use Notifier here */
+            $logMessage = 'User setting was not found.';
+            $this->logger->logMessage($logMessage, Logger::TYPE_WARNING);
+
+            return null;
+        }
 
         $value = $setting->getValue();
         $type = $setting->getType()->getType();
 
         return $this->transformer->transform($value, $type);
+    }
+
+    /**
+     * Preset Logger settings
+     *
+     * @return void
+     */
+    private function presetLogger(): void
+    {
+        $this->logger->setFileName(self::LOG_FILE_NAME);
     }
 
     /**
