@@ -54,11 +54,14 @@
 {% endblock %}
 
 {% block css %}
+    {{ parent() }}
     {% include 'homepage/_includes/css.html.twig' %}
 {% endblock %}
 {% block links %}
+    {{ parent() }}
     {% include 'homepage/_includes/links.html.twig' %}
 {% endblock %}
 {% block js %}
+    {{ parent() }}
     {% include 'homepage/_includes/js.html.twig' %}
 {% endblock %}

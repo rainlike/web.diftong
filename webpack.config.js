@@ -8,6 +8,8 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanPlugin = require('webpack-cleanup-plugin');
 const ChunkHashPlugin = require('webpack-chunk-hash');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+// const { VueLoaderPlugin } = require('vue-loader');
 
 const path = require('path');
 const dotenv = require('dotenv').config();
@@ -40,6 +42,10 @@ module.exports = (env = process.env.APP_ENV) => {
         module:{
             rules: [
                 {
+                    test: /\.vue$/,
+                    loader: 'vue-loader'
+                },
+                {
                     test: /\.ts$/,
                     enforce: 'pre',
                     loader: 'tslint',
@@ -64,7 +70,7 @@ module.exports = (env = process.env.APP_ENV) => {
                     ]
                 },
                 {
-                    test: /\.js$/,
+                    test: /\.(js|vue)$/,
                     exclude: /node_modules/,
                     enforce: 'pre',
                     loader: 'eslint',
@@ -159,12 +165,16 @@ module.exports = (env = process.env.APP_ENV) => {
             new ExtractPlugin('css/[name].[chunkhash].css'),
             new webpack.ProvidePlugin({
                 APP_PREFIX: process.env.APP_PREFIX
-            })
+            }),
+            new VueLoaderPlugin()
         ],
         resolve: {
             modules: [path.resolve(__dirname, 'assets'), 'node_modules'],
-            extensions: ['.ts', '.js', '.json', '.scss'],
-            mainFiles: ['index', 'main', 'base']
+            extensions: ['.ts', '.js', '.vue', '.json', '.scss'],
+            mainFiles: ['index', 'main', 'base'],
+            alias: {
+                vue$: 'vue/dist/vue.esm.js'
+            }
         },
         resolveLoader: {
             modules: ['node_modules'],
@@ -175,7 +185,7 @@ module.exports = (env = process.env.APP_ENV) => {
         optimization: {
             splitChunks: {
                 chunks: 'all',
-                name: 'common'
+                name: 'chunks'
             }
         },
         devtool: configs.source_maps,

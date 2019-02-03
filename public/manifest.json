@@ -1,10 +1,11 @@
 {
-  "web/js/backoffice.js": "web/js/backoffice.148b84c9775929b47a53.js",
-  "web/css/backoffice.css": "web/css/backoffice.148b84c9775929b47a53.css",
-  "web/js/common.js": "web/js/common.87e69527e2beee9df4d5.js",
-  "web/css/common.css": "web/css/common.87e69527e2beee9df4d5.css",
-  "web/js/homepage.js": "web/js/homepage.1f0e290a80d600a9fd08.js",
-  "web/css/homepage.css": "web/css/homepage.1f0e290a80d600a9fd08.css",
-  "web/js/portal.js": "web/js/portal.f71e6aa7e70e23f27c29.js",
-  "web/css/portal.css": "web/css/portal.f71e6aa7e70e23f27c29.css"
+  "web/js/backoffice.js": "web/js/backoffice.af84a227f6ea10fd1741.js",
+  "web/css/backoffice.css": "web/css/backoffice.af84a227f6ea10fd1741.css",
+  "web/js/chunks.js": "web/js/chunks.11a2da0b84a340e82b8c.js",
+  "web/js/common.js": "web/js/common.a1a176f3f51aac58fe20.js",
+  "web/css/common.css": "web/css/common.a1a176f3f51aac58fe20.css",
+  "web/js/homepage.js": "web/js/homepage.1ae0c40f186d96242d42.js",
+  "web/css/homepage.css": "web/css/homepage.1ae0c40f186d96242d42.css",
+  "web/js/portal.js": "web/js/portal.518d7263a04d2878c40b.js",
+  "web/css/portal.css": "web/css/portal.518d7263a04d2878c40b.css"
 }

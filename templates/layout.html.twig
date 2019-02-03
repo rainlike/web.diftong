@@ -14,7 +14,9 @@
             <meta name="description" content="{% block description %}{{ 'description'|trans({}, 'seo') }}{% endblock %}">
             <meta name="keywords" content="{% block keywords %}{{ 'keywords'|trans({}, 'seo') }}{% endblock %}">
         {% endblock %}
-        {% block css %}{% endblock %}
+        {% block css %}
+            <link type="text/css" rel="stylesheet" href="{{ asset('web/css/common.css') }}" media="all"/>
+        {% endblock %}
         {% block links %}
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
             <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" rel="stylesheet">
@@ -28,6 +30,9 @@
     </head>
 
     <body class="app-body {% block body_class %}{% endblock %}">
+        <div id="app">
+            <example></example>
+        </div>
         {% block body %}
             {% if _setting('global_show_topbar') %}
                 <section class="app-topline">{{ 'topline' }}</section>
@@ -67,7 +72,10 @@
                 })) }}
             {% endblock %}
         {% endblock %}
-        {% block js %}{% endblock %}
+        {% block js %}
+            <script src="{{ asset('web/js/chunks.js') }}"></script>
+            <script src="{{ asset('web/js/common.js') }}"></script>
+        {% endblock %}
         {% block modal %}{% endblock %}
     </body>
 </html>

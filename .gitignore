@@ -58,3 +58,5 @@ docs/nucleus/
 # public
 /public/bundles/
 /public/cdn/
+/public/web/js/*
+/public/web/css/*

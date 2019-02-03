@@ -45,12 +45,18 @@ test.utility:
 	bin/phpunit --group utility
 
 # Linting
-.PHONY: lint.all lint.js lint.ts lint.scripts lint.style
+.PHONY: lint.all lint.js lint.vue lint.ts lint.scripts lint.style
 lint.js:
 ifeq (${OUT}, true)
 	npx eslint --format compact --output-file var/log/eslint.log assets/**/*.js
 else
 	npx eslint --format codeframe assets/**/*.js
+endif
+lint.vue:
+ifeq (${OUT}, true)
+	npx eslint --config .eslintrc.vue.json --format compact --output-file var/log/eslint-vue.log assets/**/*.vue
+else
+	npx eslint --config .eslintrc.vue.json --format codeframe assets/**/*.vue
 endif
 lint.ts:
 ifeq (${OUT}, true)
@@ -60,6 +66,7 @@ else
 endif
 lint.scripts:
 	$(MAKE) lint.js
+	$(MAKE) lint.vue
 	$(MAKE) lint.ts
 lint.style:
 ifeq (${OUT}, true)

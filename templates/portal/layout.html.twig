@@ -3,11 +3,14 @@
 {% block clipboard_class %}{{ 'app-portal-clipboard' }}{% endblock %}
 
 {% block css %}
+    {{ parent() }}
     {% include 'portal/_includes/css.html.twig' %}
 {% endblock %}
 {% block links %}
+    {{ parent() }}
     {% include 'portal/_includes/links.html.twig' %}
 {% endblock %}
 {% block js %}
+    {{ parent() }}
     {% include 'portal/_includes/js.html.twig' %}
 {% endblock %}
