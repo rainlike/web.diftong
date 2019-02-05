@@ -1,10 +1,8 @@
 import Vue from 'vue';
-import Example from './Example';
+import LanguageSwitcher from './LanguageSwitcher';
 
-/**
- * Create a fresh Vue Application instance
- */
+/** Create a fresh Vue Application instance */
 new Vue({
     el: '#app',
-    components: {Example}
+    components: {LanguageSwitcher}
 });
