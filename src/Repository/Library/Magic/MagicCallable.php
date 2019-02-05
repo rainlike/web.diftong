@@ -42,8 +42,8 @@ trait MagicCallable
         }
 
         if (0 === \strpos($method, 'findBy')
-            || 0 === strpos($method, 'findOneBy')
-            || 0 === strpos($method, 'countBy')
+            || 0 === \strpos($method, 'findOneBy')
+            || 0 === \strpos($method, 'countBy')
         ) {
             return parent::__call($method, $arguments);
         }

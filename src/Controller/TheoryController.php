@@ -91,7 +91,7 @@ class TheoryController extends AbstractController
 
         $tableOfContent = null;
         $tableOfContentTitle = null;
-        if ($theory->isPreGeneral()) {
+        if ($theory->getGeneral() || $theory->isPreGeneral()) {
             $tableOfContent = $repository->getAllChildren($theory->getId());
             $tableOfContentTitle = $theory->getCaption();
         } else {
