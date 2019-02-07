@@ -48,11 +48,11 @@ class Breadcrumbs
      * Get breadcrumbs for Theory
      *
      * @param int $id
-     * @param bool $reverse
+     * @param bool $toParent
      * @return array|null
      * @throws NonUniqueResultException
      */
-    public function getBreadcrumbs(int $id, bool $reverse = false): ?array
+    public function getBreadcrumbs(int $id, bool $toParent = false): ?array
     {
         $repository = $this->em->getRepository(Theory::class);
 
@@ -95,8 +95,8 @@ class Breadcrumbs
         ];
         $breadcrumbs[] = $portalBreadcrumb;
 
-        return $reverse
-            ? \array_reverse($breadcrumbs)
-            : $breadcrumbs;
+        return $toParent
+            ? $breadcrumbs
+            : \array_reverse($breadcrumbs);
     }
 }

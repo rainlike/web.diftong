@@ -71,7 +71,7 @@ class TheoryController extends AbstractController
             throw new NotFoundHttpException($translator->trans('front.404', [], 'errors'));
         }
 
-        $breadcrumbs = $breadcrumbsSrv->getBreadcrumbs($theory->getId(), true);
+        $breadcrumbs = $breadcrumbsSrv->getBreadcrumbs($theory->getId());
 
         $next = $theory->getNext();
         $nextTheory = $next
