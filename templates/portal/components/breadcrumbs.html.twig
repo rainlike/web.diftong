@@ -5,7 +5,13 @@
 
 <nav class="{{ classes }}">
     {% for breadcrumb in breadcrumbs %}
-        <a href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a>
+
+        {% if disable_last is defined and disable_last and loop.last %}
+            <span>{{ breadcrumb.title }}</span>
+        {% else %}
+            <a href="{{ breadcrumb.link }}">{{ breadcrumb.title }}</a>
+        {% endif %}
+
         {% if not loop.last %}{{ '>' }}{% endif %}
     {% endfor %}
 </nav>

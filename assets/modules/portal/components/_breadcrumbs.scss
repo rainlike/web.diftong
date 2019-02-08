@@ -15,7 +15,7 @@
  *    <a href="#">English</a>
  *    > <a href="#">Grammar</a>
  *    > <a href="#">Verb</a>
- *    > <a href="#">Personal and non-verbal forms of the verb</a>
+ *    > <span>Personal and non-verbal forms of the verb</span>
  *  </nav>
  */
 .#{$prefix}-theory-breadcrumbs {
@@ -29,6 +29,11 @@
     &:hover {
       color: $color-primary;
     }
+  }
+
+  span {
+    color: $color-black;
+    font-weight: bold;
   }
 
   &__bottom {

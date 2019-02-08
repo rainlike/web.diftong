@@ -20,6 +20,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface as Router;
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
 
 use App\Entity\Theory;
+use App\Entity\Portal;
 
 /** Class Breadcrumbs */
 class Breadcrumbs
@@ -49,10 +50,11 @@ class Breadcrumbs
      *
      * @param int $id
      * @param bool $toParent
+     * @param bool $withCurrent
      * @return array|null
      * @throws NonUniqueResultException
      */
-    public function getBreadcrumbs(int $id, bool $toParent = false): ?array
+    public function getBreadcrumbs(int $id, bool $withCurrent = false, bool $toParent = false): ?array
     {
         $repository = $this->em->getRepository(Theory::class);
 
@@ -62,8 +64,23 @@ class Breadcrumbs
         }
 
         $portal = $theory->getPortal();
+        $portalUltimateUri = $portal->getUltimateUri();
 
         $breadcrumbs = [];
+
+        if ($withCurrent) {
+            $currentBreadcrumb = [];
+            $currentBreadcrumb['title'] = $theory->getTitle();
+            $currentBreadcrumb['link'] = $this->router->generate(
+                'theory_show',
+                [
+                    'uri' => $theory->getUltimateUri(),
+                    'portal_uri' => $portalUltimateUri
+                ]
+            );
+
+            $breadcrumbs[] = $currentBreadcrumb;
+        }
 
         $parents = $repository->getParents($id);
         if ($parents) {
@@ -78,7 +95,7 @@ class Breadcrumbs
                     'theory_show',
                     [
                         'uri' => $repository->find($parent['id'])->getUltimateUri(),
-                        'portal_uri' => $portal->getUltimateUri()
+                        'portal_uri' => $portalUltimateUri
                     ]
                 );
 
@@ -90,7 +107,7 @@ class Breadcrumbs
             'title' => $portal->getTitle(),
             'link' => $this->router->generate(
                 'portal_show',
-                ['uri' => $portal->getUltimateUri()]
+                ['uri' => $portalUltimateUri]
             )
         ];
         $breadcrumbs[] = $portalBreadcrumb;
@@ -98,5 +115,34 @@ class Breadcrumbs
         return $toParent
             ? $breadcrumbs
             : \array_reverse($breadcrumbs);
+    }
+
+    /**
+     * Transform Theory/Portal entity to breadcrumb item
+     *
+     * @param Portal|Theory $target
+     * @return array|null
+     */
+    public function transformToBreadcrumb($target): ?array
+    {
+        if (!($target instanceof Portal) || !($target instanceof Theory)) {
+            return null;
+        }
+
+        $isPortal = $target instanceof Portal;
+
+        $breadcrumb = [];
+        $breadcrumb['title'] = $target->getTitle();
+
+        $linkParams = $isPortal
+            ? ['uri' => $target->getUltimateUri()]
+            : [
+                'uri' => $target->getUltimateUri(),
+                'portal_uri' => $target->getPortal()->getUltimateUri()
+            ];
+
+        $breadcrumb['link'] = $this->router->generate('theory_show', $linkParams);
+
+        return $breadcrumb;
     }
 }

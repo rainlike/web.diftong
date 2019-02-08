@@ -3,7 +3,7 @@
 {% block clipboard %}
     {% if breadcrumbs %}
         {% include 'portal/components/breadcrumbs.html.twig' with {
-            'breadcrumbs': breadcrumbs
+            'breadcrumbs': breadcrumbs|slice(0, breadcrumbs|length - 1)
         } only %}
     {% endif %}
     <h1 class="app-theory-title">{{ theory.caption|capitalize }}</h1>
@@ -50,6 +50,7 @@
     {% if breadcrumbs and _setting('theory_show_bottom_breadcrumbs') %}
         {% include 'portal/components/breadcrumbs.html.twig' with {
             'breadcrumbs': breadcrumbs,
+            'disable_last': true,
             'bottom': true
         } only %}
     {% endif %}
