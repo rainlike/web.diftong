@@ -44,6 +44,10 @@ class SiteSettingFixtures extends Fixture implements OrderedFixtureInterface
             'value' => 1
         ],
         [
+            'type' => 'footer_show_socials',
+            'value' => 1
+        ],
+        [
             'type' => 'menu_show_grammar',
             'value' => 1
         ],

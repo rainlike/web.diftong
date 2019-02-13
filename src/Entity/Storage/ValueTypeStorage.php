@@ -45,6 +45,12 @@ class ValueTypeStorage
     public const HEADER_FLAT_ACTIONS = 'header_flat_actions';
 
     /**
+     * Name of value for showing social share icons in footer
+     * @var string
+     */
+    public const FOOTER_SHOW_SOCIALS = 'footer_show_socials';
+
+    /**
      * Name of value for showing grammar in menu
      * @var string
      */

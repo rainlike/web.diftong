@@ -108,6 +108,22 @@ class ValueTypeFixtures extends Fixture implements OrderedFixtureInterface
             ]
         ],
         [
+            'name' => 'footer_show_socials',
+            'title' => 'Show social share icons in footer',
+            'type' => ValueType::TYPE_BOOL,
+            'section' => ValueType::SECTION_FOOTER,
+            'priority' => ValueType::PRIORITY_SITE,
+            'enabled' => true,
+            'translations' => [
+                'title' => [
+                    'es' => 'Mostrar íconos de compartir en social en el pie de página',
+                    'uk' => 'Показати іконки соціальних мереж в підвалі',
+                    'ru' => 'Показать иконки социальных сетей в подвале',
+                    'pl' => 'Pokaż ikony sieci społecznościowych w piwnicy'
+                ]
+            ]
+        ],
+        [
             'name' => 'menu_show_grammar',
             'title' => 'Show grammar section in menu',
             'type' => ValueType::TYPE_BOOL,

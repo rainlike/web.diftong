@@ -43,16 +43,18 @@
                 </menu>
             </div>
             <div class="app-footer__content--column app-footer__content--info-column">
-                <p>{{ 'base.share'|trans~':' }}</p>
-                {% for social in socials %}
-                    <a href="{{ social.link }}"
-                       class="app-footer__social-icon"
-                       title="{{ social.name }}"
-                       target="_blank"
-                    >
-                        <span class="app-mdi"><i class="mdi mdi-{{ social.icon }}"></i></span>
-                    </a>
-                {% endfor %}
+                {% if _setting('footer_show_socials') %}
+                    <p>{{ 'base.share'|trans~':' }}</p>
+                    {% for social in socials %}
+                        <a href="{{ social.link }}"
+                           class="app-footer__social-icon"
+                           title="{{ social.name }}"
+                           target="_blank"
+                        >
+                            <span class="app-mdi"><i class="mdi mdi-{{ social.icon }}"></i></span>
+                        </a>
+                    {% endfor %}
+                {% endif %}
 
                 <p>{{ 'SEO' }}</p>
 
