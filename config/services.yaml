@@ -110,6 +110,12 @@ services:
     arguments:
       $configDir: '%config_dir%'
 
+  App\Service\Socials:
+    autowire: true
+    autoconfigure: true
+    arguments:
+      $configDir: '%config_dir%'
+
   App\Service\Breadcrumbs:
     autowire: true
     autoconfigure: true

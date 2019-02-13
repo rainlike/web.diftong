@@ -15,7 +15,7 @@ use Gedmo\Translatable\TranslatableListener;
  * Class TranslationHelper
  *
  * @package App\Helper
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 class TranslationHelper
 {

@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Trait Unique
  *
  * @package App\Entity\Library\Traits\Url
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 trait Unique
 {

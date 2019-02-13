@@ -13,7 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Trait TranslatableRequiredUnique
  *
  * @package App\Entity\Library\Traits\Title
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 trait TranslatableRequiredUnique
 {

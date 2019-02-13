@@ -10,7 +10,7 @@
         <section class="app-sidebar-topics">
             <h3 class="app-sidebar-topics__headline">
                 <a href="#">
-                    {{ 'topic.last_topics'|trans({}, 'sidebar') }}
+                    {{ 'sidebar.topic.last_topics'|trans({}, 'regions') }}
                     <span class="app-mdi"><i class="mdi mdi-arrow-right-thick"></i></span>
                 </a>
             </h3>
@@ -24,19 +24,19 @@
                     <ul class="app-sidebar-topic__list">
                         <li>
                             <span class="app-sidebar-topic__list-item">
-                                {{ 'topic.date'|trans({}, 'sidebar')~': ' }}
+                                {{ 'sidebar.topic.date'|trans({}, 'regions')~': ' }}
                             </span>
                             <span>{{ topic.created|date('d-m-Y') }}</span>
                         </li>
                         <li>
                             <span class="app-sidebar-topic__list-item">
-                                {{ 'topic.theme'|trans({}, 'sidebar')~': ' }}
+                                {{ 'sidebar.topic.theme'|trans({}, 'regions')~': ' }}
                             </span>
                             <span>{{ topic.theme.title }}</span>
                         </li>
                         <li>
                             <span class="app-sidebar-topic__list-item">
-                                {{ 'topic.portal'|trans({}, 'sidebar')~': ' }}
+                                {{ 'sidebar.topic.portal'|trans({}, 'regions')~': ' }}
                             </span>
                             <span>{{ topic.portal.title|lower }}</span>
                         </li>

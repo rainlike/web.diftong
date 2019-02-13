@@ -7,7 +7,7 @@ namespace App\Entity\Library\Traits\Slug;
  * Trait NonRequired
  *
  * @package App\Entity\Library\Traits\Slug
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 trait NonRequired
 {

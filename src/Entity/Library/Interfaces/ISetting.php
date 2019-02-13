@@ -9,7 +9,7 @@ use App\Entity\ValueType;
  * Interface ISetting
  *
  * @package App\Entity\Library\Interfaces
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 interface ISetting
 {

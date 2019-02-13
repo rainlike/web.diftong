@@ -26,7 +26,7 @@ base:
   attention: "увага"
   absent: "відсутнє"
   filter: "фільтр"
-  github: "GitHub"
+  share: "поділитися"
 # Language
 language:
   en: "англійська"
@@ -55,3 +55,9 @@ language:
 # Routes
 route:
   homepage: "Домашня сторінка"
+# Socials
+socials:
+  github: "GitHub"
+  facebook: "Facebook"
+  twitter: "Twitter"
+  linkedin: "LinkedIn"

@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Trait Required
  *
  * @package App\Entity\Library\Traits\Article
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 trait Required
 {

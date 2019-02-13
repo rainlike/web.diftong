@@ -1,0 +1,20 @@
+# Sidebar
+sidebar:
+  topic:
+    last_topics: "Last topics"
+    date: "date"
+    theme: "theme"
+    portal: "portal"
+# Footer
+footer:
+  column:
+    navigation:
+      self: "navigation"
+      about_us: "About us"
+      contacts: "Contacts"
+    menu:
+      self: "menu"
+    profile:
+      self: "profile"
+    languages:
+      self: "languages"

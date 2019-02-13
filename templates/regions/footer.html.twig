@@ -1,5 +1,66 @@
 <footer class="app-footer">
     <section class="app-footer__layout">
-        <h1>{{ 'footer content here' }}</h1>
+        <div class="app-footer__logo">
+            {% include 'components/logo/sketch-logo.html.twig' with {
+                'sketches': logo
+            } only %}
+        </div>
+        <nav class="app-footer__content">
+            <div class="app-footer__content--column">
+                <p>{{ 'footer.column.navigation.self'|trans({}, 'regions')|lower }}</p>
+                <hr/>
+                <menu class="app-footer__content--list">
+                    <li><a href="#">{{ 'footer.column.navigation.about_us'|trans({}, 'regions') }}</a></li>
+                    <li><a href="#">{{ 'footer.column.navigation.contacts'|trans({}, 'regions') }}</a></li>
+                </menu>
+            </div>
+            <div class="app-footer__content--column">
+                <p>{{ 'footer.column.menu.self'|trans({}, 'regions')|lower }}</p>
+                <hr/>
+                <menu class="app-footer__content--list">
+                    <li><a href="#">{{ 'items.portals'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.grammar'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.phonetics'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.lexis'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.articles'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.topics'|trans({}, 'menu')|capitalize }}</a></li>
+                    <li><a href="#">{{ 'items.lyrics'|trans({}, 'menu')|capitalize }}</a></li>
+                </menu>
+            </div>
+            <div class="app-footer__content--column">
+                <p>{{ 'footer.column.profile.self'|trans({}, 'regions')|lower }}</p>
+                <hr/>
+            </div>
+            <div class="app-footer__content--column">
+                <p>{{ 'footer.column.languages.self'|trans({}, 'regions')|lower }}</p>
+                <hr/>
+                <menu class="app-footer__content--list">
+                    {% for language in language_switcher.items %}
+                        <li>
+                            <a href="{{ language.link }}">{{ language.name }}</a>
+                        </li>
+                    {% endfor %}
+                </menu>
+            </div>
+            <div class="app-footer__content--column app-footer__content--info-column">
+                <p>{{ 'base.share'|trans~':' }}</p>
+                {% for social in socials %}
+                    <a href="{{ social.link }}"
+                       class="app-footer__social-icon"
+                       title="{{ social.name }}"
+                       target="_blank"
+                    >
+                        <span class="app-mdi"><i class="mdi mdi-{{ social.icon }}"></i></span>
+                    </a>
+                {% endfor %}
+
+                <p>{{ 'SEO' }}</p>
+
+                <div class="app-footer__copyright">
+                    <p class="app-footer__copyright--item">{{ '© diftong, 2019'|lower }}</p>
+                    <p class="app-footer__copyright--item">{{ '© made by rainlike.com, 2019'|lower }}</p>
+                </div>
+            </div>
+        </nav>
     </section>
 </footer>

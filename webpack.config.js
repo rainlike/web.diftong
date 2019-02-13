@@ -9,7 +9,6 @@ const CleanPlugin = require('webpack-cleanup-plugin');
 const ChunkHashPlugin = require('webpack-chunk-hash');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-// const { VueLoaderPlugin } = require('vue-loader');
 
 const path = require('path');
 const dotenv = require('dotenv').config();

@@ -10,9 +10,6 @@
  * @section Normalization
  * @description
  *  Base nullification of blocks.
- * @markup
- *  <header class="app-nullify"></header>
- *  <footer class="app-nullify"></footer>
  */
 .#{$prefix}-nullify {
   margin:         0;
@@ -28,9 +25,6 @@
  * @section Normalization
  * @description
  *  Base values for padding and margins for blocks.
- * @markup
- *  <header class="app-trim"></header>
- *  <div class="app-trim"></div>
  */
 .#{$prefix}-trim {
   margin:  0 auto;

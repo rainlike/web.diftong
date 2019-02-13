@@ -7,7 +7,7 @@
  * Sidebar with many useful elements.
  *
  * @structure Sidebar
- * @section Common
+ * @section Sidebar
  * @markup
  *  <aside class="app-sidebar">
  *    <article class="app-sidebar-quote">
@@ -32,7 +32,7 @@
  */
 .#{$prefix}-sidebar {
   @include app--box-sizing();
-  width:     350px;
+  width:     $sidebar-width;
   flex-grow: 0;
   padding:   15px 0 0 15px;
 

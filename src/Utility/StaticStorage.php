@@ -6,7 +6,7 @@
  * @package App\Utility
  * @version 1.0.0
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
- * @copyright 2018 spbcrew.com (https://www.spbcrew.com)
+ * @copyright 2018 diftong.com (https://www.spbcrew.com)
  * @author Alexander Saveliev <alex@spbcrew.com>
  */
 declare(strict_types=1);

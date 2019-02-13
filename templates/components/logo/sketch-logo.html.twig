@@ -1,0 +1,9 @@
+<div class="app-logo-sketch">
+    {% for sketch in sketches %}
+        {% if loop.first %}
+            <span>{{ sketch|capitalize }}</span>
+        {% else %}
+            <span>{{ sketch }}</span>
+        {% endif %}
+    {% endfor %}
+</div>

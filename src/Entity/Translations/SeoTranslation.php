@@ -15,7 +15,7 @@ use App\Entity\Library\Interfaces\ITranslation;
  * Class SeoTranslation
  *
  * @package App\Entity\Translation
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  * @ORM\Entity
  * @ORM\Table(name="app_seo_translation",
  *     indexes={

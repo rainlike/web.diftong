@@ -26,7 +26,7 @@ base:
   attention: "attention"
   absent: "absent"
   filter: "filter"
-  github: "GitHub"
+  share: "share"
 # Language
 language:
   en: "english"
@@ -55,3 +55,9 @@ language:
 # Routes
 route:
   homepage: "Homepage"
+# Socials
+socials:
+  github: "GitHub"
+  facebook: "Facebook"
+  twitter: "Twitter"
+  linkedin: "LinkedIn"

@@ -1,0 +1,20 @@
+# Sidebar
+sidebar:
+  topic:
+    last_topics: "Последние топики"
+    date: "дата"
+    theme: "тема"
+    portal: "портал"
+# Footer
+footer:
+  column:
+    navigation:
+      self: "навигация"
+      about_us: "О нас"
+      contacts: "Контакты"
+    menu:
+      self: "меню"
+    profile:
+      self: "профиль"
+    languages:
+      self: "языки"

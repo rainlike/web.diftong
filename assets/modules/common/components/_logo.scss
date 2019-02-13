@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+@import "../variables";
+@import "../mixins";
+
+/**
+ * Sketch logo in footer
+ *
+ * @molecule Logo
+ * @section Footer
+ * @markup
+ *  <div class="app-logo-sketch">
+ *    <span>Dif</span>
+ *    <span>tong</span>
+ *    <span>.com</span>
+ *  </div>
+ */
+.#{$prefix}-logo-sketch {
+  @include app--non-select();
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items:     flex-start;
+  width:           65px;
+  height:          65px;
+  font-size:       x-large;
+  cursor:          default;
+}

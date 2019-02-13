@@ -12,7 +12,7 @@ use App\Entity\Library\Traits\Locale\Translatable;
  * Interface ITranslatable
  *
  * @package App\Entity\Library\Interfaces
- * @author Alexander Saveliev <alex@spbcrew.com>
+ * @author Alexander Saveliev <me@rainlike.com>
  */
 interface ITranslatable extends IBasic
 {

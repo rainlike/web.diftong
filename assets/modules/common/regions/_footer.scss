@@ -7,13 +7,13 @@
  * Footer with logo as phrase and site map.
  *
  * @structure Footer
- * @section Common
+ * @section Footer
  * @markup
- *   <footer class="app-footer">
- *     <section class="app-footer__layout">
- *       <h1>Footer content here.</h1>
- *     </section>
- *   </footer>
+ *  <footer class="app-footer">
+ *    <section class="app-footer__layout">
+ *      <h1>Footer content here.</h1>
+ *    </section>
+ *  </footer>
  */
 .#{$prefix}-footer {
   @if($footer-absolute) {
@@ -25,11 +25,99 @@
 
   &__layout {
     @include app--box-sizing();
-    @extend .#{$prefix}-trim;
-    display:   flex;
-    width:     $space-full;
-    max-width: $content-max-width;
+    display:    flex;
+    width:      100%;
+    max-width:  $content-max-width;
+    margin:     0 auto;
+    padding:    10px 0 10px 40px;
+    border-top: 2px solid $color-black;
+  }
 
-    background-color: #5CB860; // @TODO: debug bg
+  &__content {
+    display:         flex;
+    flex-flow:       row nowrap;
+    justify-content: space-between;
+    width:           100%;
+    border-left:     1px solid $color-black;
+
+    &--column {
+      margin:       0;
+      padding-left: 15px;
+      width:        100%;
+      cursor:       default;
+
+      p {
+        margin: 0;
+      }
+
+      hr {
+        width:  50%;
+        height: 1px;
+        margin: 0 10px;
+        border: 0;
+        background-color: $color-black;
+      }
+    }
+
+    &--info-column {
+      width:     $sidebar-width;
+      min-width: $sidebar-width;
+      max-width: $sidebar-width;
+    }
+
+    &--list {
+      padding:    0;
+      list-style: none;
+
+      li {
+        a {
+          color: $color-black;
+          text-decoration: none;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Footer' copyright.
+ *
+ * @structure Copyright
+ * @section Footer
+ * @markup
+ *  <div class="app-footer__copyright">
+ *    <p class="app-footer__copyright--item">© diftong, 2019</p>
+ *    <p class="app-footer__copyright--item">© made by rainlike.com, 2019</p>
+ *  </div>
+ */
+.#{$prefix}-footer__copyright {
+  line-height: normal;
+
+  &--item {
+    font-size: x-small;
+  }
+}
+
+/**
+ * Social icon in Footer.
+ *
+ * @structure Social Icon
+ * @section Footer
+ * @markup
+ *  <a href="#" class="app-footer__social-icon">
+ *    <span class="app-mdi">
+ *      <i class="mdi mdi-facebook"></i>
+ *    </span>
+ *  </a>
+ */
+.#{$prefix}-footer__social-icon {
+  .#{$prefix}-mdi {
+    .mdi {
+      font-size: 20px;
+    }
   }
 }
