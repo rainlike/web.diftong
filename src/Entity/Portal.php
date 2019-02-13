@@ -78,7 +78,7 @@ class Portal extends BasicEntity implements
     private $slug;
 
     /**
-     * @ORM\OneToOne(targetEntity="Language")
+     * @ORM\OneToOne(targetEntity="Language", inversedBy="portal")
      * @ORM\JoinColumn(name="language", referencedColumnName="id")
      */
     private $language;
