@@ -51,7 +51,7 @@
  *          <a href="#" class="app-footer__social-icon">
  *            <span class="app-mdi"><i class="mdi mdi-linkedin"></i></span>
  *          </a>
- *          <p>SEO</p>
+ *          <div class="app-footer__seo">English and Spanish online - Diftong</div>
  *          <div class="app-footer__copyright">
  *            <p class="app-footer__copyright--item">© diftong, 2019</p>
  *            <p class="app-footer__copyright--item">© made by rainlike.com, 2019</p>
@@ -146,6 +146,19 @@
   &--item {
     font-size: x-small;
   }
+}
+
+/**
+ * SEO block in Footer.
+ *
+ * @structure SEO
+ * @section Footer
+ * @markup
+ *  <div class="app-footer__seo">English and Spanish online - Diftong</div>
+ */
+.#{$prefix}-footer__seo {
+  margin: 10px 0;
+  color:  $color-secondary;
 }
 
 /**

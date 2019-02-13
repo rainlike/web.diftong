@@ -131,9 +131,19 @@ class Seo
      *
      * @return string
      */
-    public function getLogoText()
+    public function getLogoText(): string
     {
         return $this->translator->trans('logo_text', [], 'seo');
+    }
+
+    /**
+     * Get SEO text for footer
+     *
+     * @return string
+     */
+    public function getFooterSeo(): string
+    {
+        return $this->translator->trans('description', [], 'seo');
     }
 
     /**

@@ -30,9 +30,10 @@ use App\Entity\Topic;
 
 use App\Service\Menu;
 use App\Service\Library;
-use App\Service\Socials;
 use App\Service\Logotype;
+use App\Service\Seo as SeoSrv;
 use App\Service\LanguageSwitcher;
+use App\Service\Socials as SocialsSrv;
 
 /** Class CommonController */
 class CommonController extends AbstractController
@@ -154,7 +155,8 @@ class CommonController extends AbstractController
      * @param Library $library
      * @param LanguageSwitcher $languageSwitcher
      * @param Logotype $logotype
-     * @param Socials $socialsSrv
+     * @param SeoSrv $seoSrv
+     * @param SocialsSrv $socialsSrv
      * @return Response
      */
     public function renderFooter(
@@ -165,7 +167,8 @@ class CommonController extends AbstractController
         Library $library,
         LanguageSwitcher $languageSwitcher,
         Logotype $logotype,
-        Socials $socialsSrv
+        SeoSrv $seoSrv,
+        SocialsSrv $socialsSrv
     ): Response
     {
         $user = $this->getUser();
@@ -181,11 +184,13 @@ class CommonController extends AbstractController
             ->getSwitcher();
 
         $logo = $logotype->getSketch();
+        $seo = $seoSrv->getFooterSeo();
         $socials = $socialsSrv->getFooterItems();
 
         return $this->render('regions/footer.html.twig', [
             'user' => $user,
             'logo' => $logo,
+            'seo' => $seo,
             'socials' => $socials,
             'language_switcher' => $langSwitcher
         ]);
