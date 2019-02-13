@@ -11,7 +11,53 @@
  * @markup
  *  <footer class="app-footer">
  *    <section class="app-footer__layout">
- *      <h1>Footer content here.</h1>
+ *      <div class="app-footer__logo">
+ *        <div class="app-logo-sketch">
+ *          <span>Dif</span>
+ *          <span>tong</span>
+ *          <span>.com</span>
+ *        </div>
+ *      </div>
+ *      <nav class="app-footer__content">
+ *        <div class="app-footer__content--column">
+ *          <p>navigation</p>
+ *          <hr>
+ *          <menu class="app-footer__content--list">
+ *            <li><a href="#">About us</a></li>
+ *            <li><a href="#">Contacts</a></li>
+ *          </menu>
+ *        </div>
+ *        <div class="app-footer__content--column">
+ *          <p>menu</p>
+ *          <hr>
+ *          <menu class="app-footer__content--list">
+ *            <li><a href="#">Portals</a></li>
+ *            <li><a href="#">Grammar</a></li>
+ *            <li><a href="#">Phonetics</a></li>
+ *            <li><a href="#">Lexis</a></li>
+ *            <li><a href="#">Articles</a></li>
+ *            <li><a href="#">Topics</a></li>
+ *            <li><a href="#">Lyrics</a></li>
+ *          </menu>
+ *        </div>
+ *        <div class="app-footer__content--column app-footer__content--info-column">
+ *          <p>share:</p>
+ *          <a href="#" class="app-footer__social-icon">
+ *            <span class="app-mdi"><i class="mdi mdi-facebook"></i></span>
+ *          </a>
+ *          <a href="#" class="app-footer__social-icon">
+ *            <span class="app-mdi"><i class="mdi mdi-twitter"></i></span>
+ *          </a>
+ *          <a href="#" class="app-footer__social-icon">
+ *            <span class="app-mdi"><i class="mdi mdi-linkedin"></i></span>
+ *          </a>
+ *          <p>SEO</p>
+ *          <div class="app-footer__copyright">
+ *            <p class="app-footer__copyright--item">© diftong, 2019</p>
+ *            <p class="app-footer__copyright--item">© made by rainlike.com, 2019</p>
+ *          </div>
+ *        </div>
+ *      </nav>
  *    </section>
  *  </footer>
  */
