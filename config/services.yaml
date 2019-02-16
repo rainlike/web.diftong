@@ -135,6 +135,10 @@ services:
       $layout: 'Any-Latin'
       $asciiLayout: 'Latin-ASCII'
 
+  App\Service\AnnotationReader:
+    autowire: true
+    autoconfigure: true
+
   App\Service\Logger:
     autowire: true
     autoconfigure: true

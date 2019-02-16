@@ -13,6 +13,12 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use Doctrine\ORM\NonUniqueResultException;
+
+use Symfony\Component\Routing\Annotation\Route;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\Translation\TranslatorInterface as Translator;
 
 use Doctrine\ORM\EntityManagerInterface as EntityManager;
@@ -21,14 +27,26 @@ use App\Entity\Library\Interfaces\ISeoable;
 
 use App\Entity\Seo as SeoEntity;
 
+use App\Controller\PortalController;
+use App\Controller\TheoryController;
+
+use App\Entity\Portal;
+use App\Entity\Theory;
+
 /** Class Seo */
 class Seo
 {
+    /** @var Request */
+    private $request;
+
     /** @var EntityManager */
     private $em;
 
     /** @var Translator */
     private $translator;
+
+    /** @var AnnotationReader */
+    private $annotation_reader;
 
     /** @var ISeoable */
     private $target;
@@ -66,19 +84,26 @@ class Seo
     /**
      * Seo constructor
      *
+     * @param RequestStack $requestStack
      * @param EntityManager $em
      * @param Translator $translator
+     * @param AnnotationReader $annotation_reader
      * @param string $domain
      * @param string $siteName
      */
     public function __construct(
+        RequestStack $requestStack,
         EntityManager $em,
         Translator $translator,
+        AnnotationReader $annotation_reader,
         string $domain,
         string $siteName
     ) {
+        $this->request = $requestStack->getCurrentRequest();
+
         $this->em = $em;
         $this->translator = $translator;
+        $this->annotation_reader = $annotation_reader;
 
         $this->domain = $domain;
         $this->site_name = $siteName;
@@ -140,11 +165,59 @@ class Seo
      * Get SEO text for footer
      *
      * @return string
+     * @throws NonUniqueResultException
      */
     public function getFooterSeo(): string
     {
-        return $this->translator->trans('description', [], 'seo');
+        $defaultSeo = $this->translator->trans('description', [], 'seo');
+        $targetRouteName = $this->request->get('_route');
+
+        $showActionRouteName = function ($controller) {
+            return $this->annotation_reader->getMethodAnnotation(
+                Route::class,
+                'show',
+                $controller
+            )->getName();
+        };
+
+        $routeParams = $this->request->get('_route_params');
+        if (\array_key_exists('_locale', $routeParams)) {
+            unset($routeParams['_locale']);
+        }
+
+        switch ($targetRouteName) {
+            case $showActionRouteName(TheoryController::class):
+                if (!\array_key_exists('uri', $routeParams) || !\array_key_exists('portal_uri', $routeParams)) {
+                    return $defaultSeo;
+                }
+
+                $theory = $this->em->getRepository(Theory::class)->findByUltimateUri(
+                    $routeParams['uri'],
+                    true,
+                    $routeParams['portal_uri']
+                );
+
+                return $theory ? $theory->getCaption() : $defaultSeo;
+
+                break;
+            case $showActionRouteName(PortalController::class):
+                if (!\array_key_exists('uri', $routeParams)) {
+                    return $defaultSeo;
+                }
+
+                $portal = $this->em->getRepository(Portal::class)->findByUltimateUri(
+                    $routeParams['uri'],
+                    true
+                );
+
+                return $portal ? $portal->getCaption() : $defaultSeo;
+
+                break;
+        }
+
+        return $defaultSeo;
     }
+
 
     /**
      * Calculate SEO attributes

@@ -158,6 +158,7 @@ class CommonController extends AbstractController
      * @param SeoSrv $seoSrv
      * @param SocialsSrv $socialsSrv
      * @return Response
+     * @throws NonUniqueResultException
      */
     public function renderFooter(
         Request $request,
@@ -172,8 +173,6 @@ class CommonController extends AbstractController
     ): Response
     {
         $user = $this->getUser();
-
-        # @TODO: SEO
 
         $queryParameters = $library->cutUrlQueryParameters($url);
         $langSwitcher = $languageSwitcher
